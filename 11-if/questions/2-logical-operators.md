@@ -93,28 +93,46 @@ fmt.Println(a || b)
 ```go
 // Let's say that there are two functions like this:
 //
-//   `a()` which returns `true` and prints `"A"`.
-//   `b()` which returns `false` and prints `"B"`.
+//   super() which returns true and prints "super ".
+//   duper() which returns false and prints "duper ".
 //
 // Remember: Logical operators short-circuit.
 
-_ = b() && a()
-_ = a() || b()
+package main
+import "fmt"
+
+func main() {
+    _ = duper() && super()
+    _ = super() || duper()
+}
+
+// Don't mind about these functions.
+// Just focus on the problem.
+// These are here just for you to understand it better.
+func super() bool {
+    fmt.Print("super ")
+    return true
+}
+
+func duper() bool {
+    fmt.Print("duper ")
+    return false
+}
 ```
 
-1. "BAAB"
-2. "BA"
-3. "ABBA"
-4. "AB"
+1. "super duper super duper"
+2. "duper super"
+3. "duper super duper super"
+4. "super duper"
 
 > **1, 3:** Remember: Logical operators short-circuit.
 
 > **2:** That's right.
 > 
-> In: `b() && a()`, `b()` returns false, so, logical AND operator short-circuits and doesn't call `a()`; so it prints: `"B"`.
+> In: `duper() && super()`, `duper()` returns false, so, logical AND operator short-circuits and doesn't call `super()`; so it prints: `"duper "`.
 > 
-> Then, in: `a() || b()`, `a()` returns true, so, logical OR operator short circuits and doesn't call `b()`; so it prints `"A"`.
+> Then, in: `super() || duper()`, `super()` returns true, so, logical OR operator short circuits and doesn't call `duper()`; so it prints `"super "`.
 
 > **4:** Think again.
 
-Example program is [here](https://play.golang.org/p/JqEFVh5kOCE).
+Example program is [here](https://play.golang.org/p/C-syhwgXSx2).
