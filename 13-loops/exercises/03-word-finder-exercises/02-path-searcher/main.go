@@ -14,23 +14,22 @@ package main
 //  variable.
 //
 //  Remove the corpus constant then get the corpus from the
-//  environment variable "Path" or "PATH" which
-//  constains paths to the executable programs on your
-//  operating system.
+//  environment variable "Path" or "PATH".
 //
 // HINTS
-//  1. Search the web for what is an environment
-//     variable and how to use it, if you don't know
-//     what it is.
+//  1. Search the web to find out what is an environment
+//     variable and how to use it (if you don't know
+//     what it is already).
 //
-//  2. Look up for the necessary function for getting
+//  2. Look up for the necessary functions for getting
 //     an environment variable. It's in the "os" package.
 //
 //     Search for it on the Go online documentation.
 //
 //  3. Look up for the necessary function for splitting
-//     the path variable into directories. It's in
-//     the "strings" package.
+//     the path variable into directory names.
+//
+//     It's in the "path/filepath" package.
 //
 // EXAMPLE
 //  For example, on my Mac, my PATH environment variable
@@ -53,17 +52,30 @@ package main
 //  the path environment variable when you run it on
 //  a Windows or on a Mac (OS X) or on a Linux.
 //
-// HINT
-//  1. What you're looking for is the runtime.GOOS constant.
-//  2. Get the operating system name using GOOS.
-//  3. Adjust the path environment variable name and
-//     the directory separator accordingly.
+// BONUS EXERCISE #2
+//  Also find the directories for the directories that
+//  contains the searched query.
 //
-//  FOR EXAMPLE: On OS X, path environment variable's name
-//    is PATH and the separator is a colon `:`.
+//  And let it match in a case-insensitive manner. See the examples.
 //
-//  Or, on Windows, its name is Path and the separator is
-//    a semicolon `;`.
+//  EXAMPLE:
+//    Let's say:
+//      PATH="/usr/local/bin:/sbin:/Users/inanc/go/bin"
+//
+//  So, if the user runs the program like this:
+//    go run main.go bin
+//
+//  It should print this:
+//    #1 : "/usr/local/bin"
+//    #2 : "/sbin"
+//    #3 : "/Users/inanc/go/bin"
+//
+//  Or like this (case insensitive):
+//    go run main.go Us
+//
+//  Output:
+//    #1 : "/usr/local/bin"
+//    #2 : "/Users/inanc/go/bin"
 // ---------------------------------------------------------
 
 func main() {

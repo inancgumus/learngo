@@ -17,7 +17,7 @@ import (
 
 const (
 	maxTurns = 5 // less is more difficult
-	usage    = `Welcome to the Lucky Number Game!
+	usage    = `Welcome to the Lucky Number Game! 🍀
 
 The program will pick %d random numbers.
 Your mission is to guess one of those numbers.
@@ -63,7 +63,7 @@ func main() {
 		min = guess2
 	}
 
-	for turn := 1; turn <= maxTurns; turn++ {
+	for turn := 0; turn < maxTurns; turn++ {
 		n := rand.Intn(min + 1)
 
 		if n == guess || n == guess2 {

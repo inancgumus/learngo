@@ -17,7 +17,7 @@ import (
 
 const (
 	maxTurns = 5 // less is more difficult
-	usage    = `Welcome to the Lucky Number Game!
+	usage    = `Welcome to the Lucky Number Game! 🍀
 
 The program will pick %d random numbers.
 Your mission is to guess one of those numbers.
