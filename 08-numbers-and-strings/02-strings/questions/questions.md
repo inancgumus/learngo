@@ -10,9 +10,7 @@
 
 > **1:** Go doesn't interpret the escape sequences in raw string literals.
 >
->
 > **2:** That's right. Go interprets `\"` as `"` but it doesn't do so for ` \"World\"`.
->
 >
 
 
@@ -65,7 +63,6 @@
 >
 > **4:** You don't need to use escape sequences inside raw string literals.
 >
->
 
 
 ## What's the result of the following expression?
@@ -79,7 +76,6 @@ len("lovely")
 4. 0
 
 > **2:** Remember! "a" is 1 char. `a` is also 1 char.
->
 >
 
 
@@ -95,15 +91,11 @@ len("very") + len(`\"cool\"`)
 
 > **1:** There are also double-quotes, count them as well.
 >
->
 > **2:** That's right. Go doesn't interpreted \" in raw string literals.
->
 >
 > **3:** Remember! "very" is 4 characters. `very` is also 4 characters.
 >
->
 > **4:** Remember! Go doesn't interpreted \" in raw string literals.
->
 >
 
 
@@ -119,12 +111,9 @@ len("very") + len("\"cool\"")
 
 > **1:** There are also double-quotes, count them as well.
 >
->
 > **2:** Remember! Go interprets escape sequences in string literals.
 >
->
 > **4:** That's right. Go does interpret \" in a string literal. So, "\"" means ", which is 1 character.
->
 >
 
 
@@ -144,12 +133,9 @@ len("péripatéticien")
 
 > **1:** Remember! é is 2 bytes long.
 >
->
 > **2:** An english letter is 1 byte long. However, é is 2 bytes long. So, that makes up 16 bytes. Cool.
 >
->
 > **3:** You didn't count the double-quotes, did you?
->
 >
 
 
@@ -165,12 +151,9 @@ len("péripatéticien")
 
 > **1:** Where are the double-quotes?
 >
->
 > **2:** This only finds the bytes in a string value.
 >
->
 > **4:** You're close. But, the package's name is utf8 not unicode/utf8.
->
 >
 
 
@@ -186,9 +169,7 @@ utf8.RuneCountInString("péripatéticien")
 
 > **1:** This is its byte count. `RuneCountInString` counts the runes (codepoints) not the bytes.
 >
->
 > **2:** That's right. `RuneCountInString` returns the number of runes (codepoints) in a string value.
->
 >
 
 
@@ -213,15 +194,11 @@ strings.Repeat("*x", 3) + "*"
 
 > **1:** You're close but you missed the concatenation at the end.
 >
->
 > **2:** Look closely.
->
 >
 > **3:** Wow! You should really watch the lectures again. Sorry.
 >
->
 > **4:** That's right. Repeat function repeats the given string. And, the concatenation operator combines the strings.
->
 >
 
 
@@ -237,13 +214,9 @@ strings.ToUpper("bye bye ") + "see you!"
 
 > **1:** You missed the ToUpper?
 >
->
 > **2:** You're close but look closely. ToUpper only changes the first part of the string there.
->
 >
 > **3:** Not even close. Sorry.
 >
->
 > **4:** Perfect! Good catch! ToUpper only changes the first part of the string there.
->
 >

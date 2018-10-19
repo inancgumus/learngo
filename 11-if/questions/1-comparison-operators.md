@@ -125,11 +125,11 @@ func main() {
 5. `weight = int(float64(weight) * factor)` *CORRECT*
 
 > **1:** It can be fixed.
->
+> 
 > **2:** Type mismatch: weight is int.
 >
 > **3:** Lost precision: factor will be 1.
->
+> 
 > **4:** Type mismatch: weight is int (cannot assign back).
 >
 > **5:** That's right. The result would be 750.

@@ -18,7 +18,6 @@
 
 > **1:** "C"onst should be just "c"onst.
 >
->
 
 
 ## Which code below is correct?
@@ -28,12 +27,9 @@
 
 > **1:** `s` not a constant.
 >
->
 > **2:** `len` function can be used as an initial value to a constant, when the argument to `len` is also a constant.
 >
->
 > **3:** You cannot call functions while initializing a constant.
->
 >
 
 
@@ -48,9 +44,7 @@ porsche := speed * 3
 
 > **2:** speed has no type.
 >
->
 > **3:** A variable cannot be typeless.
->
 >
 
 
@@ -64,7 +58,6 @@ spell = "Abracadabra"
 3. `var spell = "Abracadabra"`
 
 > **1:** A constant always have to be initialized to a value. And, sometimes the type declaration is not necessary.
->
 >
 > **2-3:** That's a variable not a constant.
 >
@@ -100,12 +93,9 @@ fmt.Print(int64(total) * x)
 
 > **1:** Now, the total constant is typeless, so it can be used with the x variable.
 >
->
 > **2:** There's still a type mismatch. x is int not int64.
 >
->
 > **3:** total is already int64. No need to convert it again.
->
 >
 
 
@@ -123,5 +113,4 @@ const (
 4. Yes=2 No=7 Both=12 *CORRECT*
 
 > **3:** iota starts at 0, not 1.
->
 >

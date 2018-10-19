@@ -22,7 +22,6 @@ type Millennium time.Duration
 
 > **1:** That's right. A defined type doesn't get its source type's methods.
 >
->
 > **2-4:** Actually the defined type gets it from its underlying type.
 >
 
@@ -37,9 +36,7 @@ type Millennium time.Duration
 >
 > **3:** `radius` is a new type, defined using `float32`.
 >
->
 > **4:** This declares `radius` as an alias to `float32`. So, they become the same types.
->
 >
 
 
@@ -63,7 +60,6 @@ fmt.Print(village + city)
 >
 > **4:** That's right. Now, the `city`'s type is Distance in the expression.
 >
->
 
 
 ## For the following program which types you might want to declare?
@@ -85,9 +81,7 @@ func main() {
 
 > **1:** But a degree value has a floating part. So, using an integer may not the best way.
 >
->
 > **2:** float64 can represent a degree value.
->
 >
 > **3-4:** But a degree value has a floating part. So, using an integer may not the best way. Also, there are two different temperature units here: Celsius and Fahrenheit. Isn't it better to create two distinct types?
 >
@@ -108,12 +102,9 @@ type (
 
 > **1:** That's right. Go's type system is flat. So, the defined type's underlying type is a type with a real structure. int64 is not just a name, it has its own structure, it's a predeclared type.
 >
->
 > **2:** Duration is just a new type name. It doesn't its own structure.
 >
->
 > **3:** Century is just a new type name. It doesn't its own structure.
->
 >
 
 
@@ -127,7 +118,6 @@ type (
 
 > **1:** byte data type is an alias to uint8 data type. So, they don't need conversion between each other. They're the same types.
 >
->
 
 
 ## Which types do not need to be converted between each other?
@@ -139,5 +129,4 @@ type (
 4. byte and int8
 
 > **3:** rune data type is an alias to int32 data type. So, they don't need conversion between each other. They're the same types.
->
 >
