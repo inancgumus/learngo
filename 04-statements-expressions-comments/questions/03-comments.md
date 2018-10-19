@@ -39,17 +39,27 @@ func main() {
 }
 ```
 
-> 1. `/` is not a comment. It should be `//`.
-> 2. Multiline comments can be put almost anywhere. However, when a comment starts with `/*`, it also needs to end with `*/`. Here, Go doesn't interpret `/* ... */`, it just skips it. And, when Go sees `//` as the first two characters in a code, it skips the whole line.
-> 3. `//` prevents Go to interpret the rest of the code line. That's why this code doesn't work. Go can't interpret this part because of the comment: `"this will print Hi!")`
+> **1:** `/` is not a comment. It should be `//`.
+>
+>
+> **2:** Multiline comments can be put almost anywhere. However, when a comment starts with `/*`, it also needs to end with `*/`. Here, Go doesn't interpret `/* ... */`, it just skips it. And, when Go sees `//` as the first two characters in a code, it skips the whole line.
+>
+>
+> **3:** `//` prevents Go to interpret the rest of the code line. That's why this code doesn't work. Go can't interpret this part because of the comment: `"this will print Hi!")`
+>
+>
 
 ## How should you name your code so that Go can generate documentation from your code automatically?
 1. By commenting the each line of the code; then it will generate the documentation from whatever it sees
 2. By starting the comments using the name of the declared names *CORRECT*
 3. By using multi-line comments
 
-> 1. This won't help. Sorry.
-> 3. It doesn't matter whether you type your comments using single-line comments or multi-line comments.
+> **1:** This won't help. Sorry.
+>
+>
+> **3:** It doesn't matter whether you type your comments using single-line comments or multi-line comments.
+>
+>
 
 
 ## Which tool do you need to use from the command-line to print the documentation?
@@ -65,4 +75,6 @@ func main() {
 3. `go` tool is the real tool behind `go doc`
 4. `go` tool is the real tool behind `godoc`
 
-> 2. That's right. go doc tool uses godoc tool behind the scenes. go doc is just a simplified version of the godoc tool.
+> **2:** That's right. go doc tool uses godoc tool behind the scenes. go doc is just a simplified version of the godoc tool.
+>
+>

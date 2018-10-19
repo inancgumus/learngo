@@ -3,5 +3,9 @@
 2. Changing the left-to-right execution of a program
 3. Controlling which statements are executed *CORRECT*
 
-> 1. You can't change that.
-> 2. You can't change that.
+> **1:** You can't change that.
+>
+>
+> **2:** You can't change that.
+>
+>

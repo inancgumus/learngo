@@ -16,7 +16,9 @@
 2. `const version int := 3`
 2. `const version int = 3` *CORRECT*
 
-> 1. "C"onst should be just "c"onst.
+> **1:** "C"onst should be just "c"onst.
+>
+>
 
 
 ## Which code below is correct?
@@ -24,9 +26,15 @@
 2. `const message = "pick me!"; const length = len(message)` *CORRECT*
 3. `const length = utf8.RuneCountInString("pick me")`
 
-> 1. `s` not a constant.
-> 2. `len` function can be used as an initial value to a constant, when the argument to `len` is also a constant.
-> 3. You cannot call functions while initializing a constant.
+> **1:** `s` not a constant.
+>
+>
+> **2:** `len` function can be used as an initial value to a constant, when the argument to `len` is also a constant.
+>
+>
+> **3:** You cannot call functions while initializing a constant.
+>
+>
 
 
 ## Which explanation below is correct for the following code?
@@ -38,8 +46,12 @@ porsche := speed * 3
 2. speed's type is int and porsche's type is also int
 3. speed and porsche are typeless
 
-> 2. speed has no type.
-> 3. A variable cannot be typeless.
+> **2:** speed has no type.
+>
+>
+> **3:** A variable cannot be typeless.
+>
+>
 
 
 ## How to fix the following code?
@@ -51,8 +63,11 @@ spell = "Abracadabra"
 2. `spell := "Abracadabra"`
 3. `var spell = "Abracadabra"`
 
-> 1. A constant always have to be initialized to a value. And, sometimes the type declaration is not necessary.
-> 2-3. That's a variable not a constant.
+> **1:** A constant always have to be initialized to a value. And, sometimes the type declaration is not necessary.
+>
+>
+> **2-3:** That's a variable not a constant.
+>
 
 
 ## How to fix the following code?
@@ -83,9 +98,15 @@ x := 5
 fmt.Print(int64(total) * x)
 ```
 
-> 1. Now, the total constant is typeless, so it can be used with the x variable.
-> 2. There's still a type mismatch. x is int not int64.
-> 3. total is already int64. No need to convert it again.
+> **1:** Now, the total constant is typeless, so it can be used with the x variable.
+>
+>
+> **2:** There's still a type mismatch. x is int not int64.
+>
+>
+> **3:** total is already int64. No need to convert it again.
+>
+>
 
 
 ## What are the values of the following constants?
@@ -101,4 +122,6 @@ const (
 3. Yes=7 No=12 Both=17
 4. Yes=2 No=7 Both=12 *CORRECT*
 
-> 3. iota starts at 0, not 1.
+> **3:** iota starts at 0, not 1.
+>
+>

@@ -41,4 +41,6 @@
 4. -12
 5. -12.0 *CORRECT*
 
-> 4. You're close but remember! The result of an expression with floats and integers is always a float.
+> **4:** You're close but remember! The result of an expression with floats and integers is always a float.
+>
+>

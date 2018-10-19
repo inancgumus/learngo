@@ -22,7 +22,9 @@ func block() {
 3. enabled **CORRECT**
 4. counter
 
-> 3. That's right. `enabled` is out of any functions, so it's a package scoped name. `block()` function is also package scoped; it's out of any function too.
+> **3:** That's right. `enabled` is out of any functions, so it's a package scoped name. `block()` function is also package scoped; it's out of any function too.
+>
+>
 
 
 ## Which name below is file scoped?
@@ -32,7 +34,9 @@ func block() {
 4. block()
 5. counter
 
-> 2. That's right. Imported package names are file scoped. And they can only be used within the same file.
+> **2:** That's right. Imported package names are file scoped. And they can only be used within the same file.
+>
+>
 
 
 ## Which name below is in the scope of the block() func?
@@ -42,7 +46,9 @@ func block() {
 4. block()
 5. counter **CORRECT**
 
-> 5. That's right. `counter` is declared within the `block()` func, so it's in the scope of the block func. Out of the `block()` func, other code can't see it.
+> **5:** That's right. `counter` is declared within the `block()` func, so it's in the scope of the block func. Out of the `block()` func, other code can't see it.
+>
+>
 
 
 ## Can `block()` see `enabled` name?
@@ -50,7 +56,9 @@ func block() {
 2. No: It's in the file scope
 3. No: It's in the block scope of block()
 
-> 1. All code inside the same package can see all the other package level declared names.
+> **1:** All code inside the same package can see all the other package level declared names.
+>
+>
 
 
 ## Can other files in `awesome` package see `counter` name?
@@ -59,7 +67,9 @@ func block() {
 3. No: It's in the file scope
 4. No: It's in the block scope of block() **CORRECT**
 
-> 4. That's right. None of the other code can see the names inside the `block()` function. Only the code inside the `block()` function can see them (Only to some extend. For example: Inside the block, the code can only see the variables declared before it.)
+> **4:** That's right. None of the other code can see the names inside the `block()` function. Only the code inside the `block()` function can see them (Only to some extend. For example: Inside the block, the code can only see the variables declared before it.)
+>
+>
 
 
 ## Can other files in `awesome` package see `fmt` name?
@@ -68,7 +78,9 @@ func block() {
 3. No: It's in the file scope **CORRECT**
 4. No: It's in the block scope of block()
 
-> 3. Only the same file can see the imported packages, not the other files whether they're in the same package or not.
+> **3:** Only the same file can see the imported packages, not the other files whether they're in the same package or not.
+>
+>
 
 
 ## What happens if you declare the same name in the same scope like this:
@@ -90,7 +102,9 @@ func block() {
 2. I can't do that. It's already been declared at the package scope. *CORRECT*
 3. I can't do that. It's already been declared at the file scope.
 
-> 2. That's right. You can't declare the same name in the same scope. If you could do so, then how would you access it again? Or to which one?
+> **2:** That's right. You can't declare the same name in the same scope. If you could do so, then how would you access it again? Or to which one?
+>
+>
 
 
 ## What happens if you declare the same name in another scope like this:
@@ -114,4 +128,6 @@ func block() {
 2. I can't do that. It's already been declared at the package scope.
 3. I can't do that. It's already been declared at the file scope.
 
-> 1. Actually, you can declare the same name in the inner scopes like this. `block()`'s scope is inside its package. This means that it can access to its package's scope (but not vice versa). So, `block()`'s scope is under its package's scope. This means that you can declare the same name again. It will override the parent scope's name. They both can be exist together. Check out the example in the course repository to find out.
+> **1:** Actually, you can declare the same name in the inner scopes like this. `block()`'s scope is inside its package. This means that it can access to its package's scope (but not vice versa). So, `block()`'s scope is under its package's scope. This means that you can declare the same name again. It will override the parent scope's name. They both can be exist together. Check out the example in the course repository to find out.
+>
+>

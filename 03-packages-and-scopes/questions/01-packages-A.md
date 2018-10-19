@@ -8,8 +8,12 @@
 2. It's used for letting Go know that the file belong to a package *CORRECT*
 3. It's used for declaring a new function
 
-> 1. `import` statement does that.
-> 3. `func` statement does that.
+> **1:** `import` statement does that.
+>
+>
+> **3:** `func` statement does that.
+>
+>
 
 
 ## Where you should put the `package clause` in a Go source-code file?
@@ -41,4 +45,6 @@
 3. go run go
 4. go run *.go *CORRECT*
 
-> 4. You can also call it like (assuming there are file1.go file2.go and file3.go in the same directory): go run file1.go file2.go file3.go
+> **4:** You can also call it like (assuming there are file1.go file2.go and file3.go in the same directory): go run file1.go file2.go file3.go
+>
+>

@@ -8,8 +8,12 @@
 3. "Hello" `"World"`
 4. "\"Hello\" `\"World\"`"
 
-> 1. Go doesn't interpret the escape sequences in raw string literals.
-> 2. That's right. Go interprets `\"` as `"` but it doesn't do so for ` \"World\"`.
+> **1:** Go doesn't interpret the escape sequences in raw string literals.
+>
+>
+> **2:** That's right. Go interprets `\"` as `"` but it doesn't do so for ` \"World\"`.
+>
+>
 
 
 ## What's the best way to represent the following text in the code?
@@ -57,8 +61,11 @@
 </xml>`
 ```
 
-> 2-3. You can't write a string literal like that. It can't be multiple-lines.
-> 4. You don't need to use escape sequences inside raw string literals.
+> **2-3:** You can't write a string literal like that. It can't be multiple-lines.
+>
+> **4:** You don't need to use escape sequences inside raw string literals.
+>
+>
 
 
 ## What's the result of the following expression?
@@ -71,7 +78,9 @@ len("lovely")
 3. 6 *CORRECT*
 4. 0
 
-> 2. Remember! "a" is 1 char. `a` is also 1 char.
+> **2:** Remember! "a" is 1 char. `a` is also 1 char.
+>
+>
 
 
 ## What's the result of the following expression?
@@ -84,10 +93,18 @@ len("very") + len(`\"cool\"`)
 3. 16
 4. 10
 
-> 1. There are also double-quotes, count them as well.
-> 2. That's right. Go doesn't interpreted \" in raw string literals.
-> 3. Remember! "very" is 4 characters. `very` is also 4 characters.
-> 4. Remember! Go doesn't interpreted \" in raw string literals.
+> **1:** There are also double-quotes, count them as well.
+>
+>
+> **2:** That's right. Go doesn't interpreted \" in raw string literals.
+>
+>
+> **3:** Remember! "very" is 4 characters. `very` is also 4 characters.
+>
+>
+> **4:** Remember! Go doesn't interpreted \" in raw string literals.
+>
+>
 
 
 ## What's the result of the following expression?
@@ -100,9 +117,15 @@ len("very") + len("\"cool\"")
 3. 16
 4. 10 *CORRECT*
 
-> 1. There are also double-quotes, count them as well.
-> 2. Remember! Go interprets escape sequences in string literals.
-> 4. That's right. Go does interpret \" in a string literal. So, "\"" means ", which is 1 character.
+> **1:** There are also double-quotes, count them as well.
+>
+>
+> **2:** Remember! Go interprets escape sequences in string literals.
+>
+>
+> **4:** That's right. Go does interpret \" in a string literal. So, "\"" means ", which is 1 character.
+>
+>
 
 
 ## What's the result of the following expression?
@@ -119,9 +142,15 @@ len("péripatéticien")
 3. 18
 4. 20
 
-> 1. Remember! é is 2 bytes long.
-> 2. An english letter is 1 byte long. However, é is 2 bytes long. So, that makes up 16 bytes. Cool.
-> 3. You didn't count the double-quotes, did you?
+> **1:** Remember! é is 2 bytes long.
+>
+>
+> **2:** An english letter is 1 byte long. However, é is 2 bytes long. So, that makes up 16 bytes. Cool.
+>
+>
+> **3:** You didn't count the double-quotes, did you?
+>
+>
 
 
 ## How can you find the correct length of the characters in this string literal?
@@ -134,9 +163,15 @@ len("péripatéticien")
 3. `utf8.RuneCountInString("péripatéticien")` *CORRECT*
 4. `unicode/utf8.RuneCountInString("péripatéticien")`
 
-> 1. Where are the double-quotes?
-> 2. This only finds the bytes in a string value.
-> 4. You're close. But, the package's name is utf8 not unicode/utf8.
+> **1:** Where are the double-quotes?
+>
+>
+> **2:** This only finds the bytes in a string value.
+>
+>
+> **4:** You're close. But, the package's name is utf8 not unicode/utf8.
+>
+>
 
 
 ## What's the result of the following expression?
@@ -149,8 +184,12 @@ utf8.RuneCountInString("péripatéticien")
 3. 18
 4. 20
 
-> 1. This is its byte count. `RuneCountInString` counts the runes (codepoints) not the bytes.
-> 2. That's right. `RuneCountInString` returns the number of runes (codepoints) in a string value.
+> **1:** This is its byte count. `RuneCountInString` counts the runes (codepoints) not the bytes.
+>
+>
+> **2:** That's right. `RuneCountInString` returns the number of runes (codepoints) in a string value.
+>
+>
 
 
 ## Which package contains string manipulation functions?
@@ -172,10 +211,18 @@ strings.Repeat("*x", 3) + "*"
 3. `*x3`
 4. `*x*x*x*` *CORRECT*
 
-> 1. You're close but you missed the concatenation at the end.
-> 2. Look closely.
-> 3. Wow! You should really watch the lectures again. Sorry.
-> 4. That's right. Repeat function repeats the given string. And, the concatenation operator combines the strings.
+> **1:** You're close but you missed the concatenation at the end.
+>
+>
+> **2:** Look closely.
+>
+>
+> **3:** Wow! You should really watch the lectures again. Sorry.
+>
+>
+> **4:** That's right. Repeat function repeats the given string. And, the concatenation operator combines the strings.
+>
+>
 
 
 ## What's the result of this expression?
@@ -188,7 +235,15 @@ strings.ToUpper("bye bye ") + "see you!"
 3. `bye bye + see you!`
 4. `BYE BYE see you!` *CORRECT*
 
-> 1. You missed the ToUpper?
-> 2. You're close but look closely. ToUpper only changes the first part of the string there.
-> 3. Not even close. Sorry.
-> 4. Perfect! Good catch! ToUpper only changes the first part of the string there.
+> **1:** You missed the ToUpper?
+>
+>
+> **2:** You're close but look closely. ToUpper only changes the first part of the string there.
+>
+>
+> **3:** Not even close. Sorry.
+>
+>
+> **4:** Perfect! Good catch! ToUpper only changes the first part of the string there.
+>
+>
