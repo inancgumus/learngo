@@ -92,8 +92,8 @@ fmt.Println(2.9 <= 2.9)
 
 ## What does this code print?
 ```go
-fmt.Println(1 >= true)
-fmt.Println(0 <= false)
+fmt.Println(false >= true)
+fmt.Println(true <= false)
 ```
 
 1. true true

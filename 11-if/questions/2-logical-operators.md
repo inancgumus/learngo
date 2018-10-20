@@ -25,6 +25,15 @@
 > **3:** That's right. All the logical operators expect a bool value (or a bool expression that yields a bool value).
 
 
+## Which expression below equals to the sentence below?
+"age is equal or above 15 and hair color is yellow"
+
+1. `age > 15 || hairColor == "yellow"`
+2. `age < 15 || hairColor != "yellow"`
+3. `age >= 15 && hairColor == "yellow"` *CORRECT*
+4. `age > 15 && hairColor == "yellow"`
+
+
 ## What does this program print?
 ```go
 package main
@@ -120,10 +129,10 @@ func duper() bool {
 }
 ```
 
-1. "super duper super duper"
-2. "duper super"
-3. "duper super duper super"
-4. "super duper"
+1. "super duper super duper "
+2. "duper super " *CORRECT*
+3. "duper super super duper "
+4. "super duper "
 
 > **1, 3:** Remember: Logical operators short-circuit.
 
