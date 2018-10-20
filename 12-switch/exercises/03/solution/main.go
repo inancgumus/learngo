@@ -31,10 +31,12 @@ func main() {
 
 	u, p := args[1], args[2]
 
+	// More readable, right? 👍
 	switch {
 	case u != user && u != user2:
 		fmt.Printf(errUser, u)
 	case u == user && p == pass:
+		// notice this one (no more duplication)
 		fallthrough
 	case u == user2 && p == pass2:
 		fmt.Printf(accessOK, u)
