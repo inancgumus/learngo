@@ -35,12 +35,16 @@ package main
 // EXPECTED OUTPUT
 //  go run main.go 18
 //    R-Rated
+//
 //  go run main.go 17
 //    PG-13
+//
 //  go run main.go 12
 //    PG-Rated
+//
 //  go run main.go
 //    Requires age
+//
 //  go run main.go -5
 //    Wrong age: "-5"
 // ---------------------------------------------------------

@@ -32,6 +32,7 @@ package main
 //  -----------------------------------------
 //  go run main.go
 //    Give me a month name
+//
 //  go run main.go sheep
 //    "sheep" is not a month.
 //
@@ -46,22 +47,31 @@ package main
 //
 //  go run main.go march
 //    "march" has 31 days.
+//
 //  go run main.go april
 //    "april" has 30 days.
+//
 //  go run main.go may
 //    "may" has 31 days.
+//
 //  go run main.go june
 //    "june" has 30 days.
+//
 //  go run main.go july
 //    "july" has 31 days.
+//
 //  go run main.go august
 //    "august" has 31 days.
+//
 //  go run main.go september
 //    "september" has 30 days.
+//
 //  go run main.go october
 //    "october" has 31 days.
+//
 //  go run main.go november
 //    "november" has 30 days.
+//
 //  go run main.go december
 //    "december" has 31 days.
 //
@@ -70,6 +80,7 @@ package main
 //  -----------------------------------------
 //  go run main.go DECEMBER
 //    "DECEMBER" has 31 days.
+//
 //  go run main.go dEcEmBeR
 //    "dEcEmBeR" has 31 days.
 // ---------------------------------------------------------

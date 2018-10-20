@@ -19,12 +19,16 @@ package main
 // EXPECTED OUTPUT
 //  go run main.go 16
 //    16 is an even number and it's divisible by 8
+//
 //  go run main.go 4
 //    4 is an even number
+//
 //  go run main.go 3
 //    3 is an odd number
+//
 //  go run main.go
 //    Pick a number
+//
 //  go run main.go ABC
 //    "ABC" is not a number
 // ---------------------------------------------------------

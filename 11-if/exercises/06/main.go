@@ -27,14 +27,19 @@ package main
 // EXPECTED OUTPUT
 //  go run main.go
 //    Give me a letter
+//
 //  go run main.go hey
 //    Give me a letter
+//
 //  go run main.go a
 //    "a" is a vowel.
+//
 //  go run main.go y
 //    "y" is sometimes a vowel, sometimes not.
+//
 //  go run main.go w
 //    "w" is sometimes a vowel, sometimes not.
+//
 //  go run main.go x
 //    "x" is a consonant.
 // ---------------------------------------------------------
