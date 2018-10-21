@@ -3,10 +3,10 @@
 2. `!=`
 3. `>` *CORRECT*
 
-> **3:** That's the greater operator. It checks whether a ordered value is greater than the other or not.
+> **3:** That's the greater operator. It checks whether an ordered value is greater than the other or not.
 
 
-## Which one below is not one of the comparison operators of Go?
+## Which one below is not one of the ordering operators of Go?
 1. `>`
 2. `<=`
 3. `==` *CORRECT*
@@ -24,7 +24,7 @@
 > **3:** That's right. All the comparison operators return an untyped bool value (true or false).
 
 
-## Which one of these cannot be used as an operand to ordering operators (`>`, `<`, `>=`, `<=`)?
+## Which one of these below cannot be used as an operand to ordering operators (`>`, `<`, `>=`, `<=`)?
 1. int value
 2. byte value
 3. string value

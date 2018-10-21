@@ -1,3 +1,16 @@
+## Why error handling is needed?
+1. I don't know.
+2. To control the execution flow.
+3. To make a program malware safe.
+4. Because, things can go wrong. *CORRECT*
+
+> **1:** Then, please watch the lecture again! :)
+>
+> **2:** Actually yes, but that's not the main reason. 
+> 
+> **3:** Come on!
+
+
 ## What's a nil value?
 1. The dark matter that rules the universe.
 2. It's a zero value for pointers or pointer-based types. It means the value is uninitialized. *CORRECT*
@@ -13,25 +26,12 @@
 > 
 
 
-## Why error handling is needed?
-1. I don't know.
-2. To control the execution flow.
-3. To make a program malware safe.
-4. Because, things can go wrong. *CORRECT*
-
-> **1:** Then, please rewatch the lecture! :)
->
-> **2:** Actually yes, but that's not the main reason. 
-> 
-> **3:** Come on!
-
-
 ## How Go handles error handling?
-1. Using a throw/catch block
+1. Using a throw/catch statement
 2. Using a simple if statement with nil comparison *CORRECT*
 3. Using a mechanism called tagging
 
-> **1:** There isn't a throw/catch block in Go; unlike Java, C#, and so on... Go is explicit.
+> **1:** There isn't a throw/catch statement in Go; unlike Java, C#, and so on... Go is explicit.
 
 
 ## When you should handle the errors?

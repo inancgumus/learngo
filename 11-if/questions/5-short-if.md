@@ -62,7 +62,7 @@ func main() {
 3. Change the done declaration of the main() to an assignment
 4. Change the done declaration of the short-if to an assignment. And, after the if statement, assign false back to the done variable. *CORRECT*
 
-> **1:** That will break the program. The last line tries to print it.
+> **1:** That will break the program. Because, the last line prints it.
 > 
 > **2:** The program wants to use it to print true.
 > 

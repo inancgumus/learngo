@@ -117,7 +117,7 @@ func main() {
 
 // Don't mind about these functions.
 // Just focus on the problem.
-// These are here just for you to understand it better.
+// They are here just for you to understand what's going on better.
 func super() bool {
     fmt.Print("super ")
     return true

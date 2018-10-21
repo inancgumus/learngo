@@ -79,7 +79,7 @@ func main() {
 >
 > **3:** Perfect! You don't need to compare the value to `true`. `happy` is already true, so it'll print "cool!".
 >
-> **4:** That won't print anything. `happy` will be true.
+> **4:** That won't print anything. `!happy` yields false.
 
 
 ## How can you simplify the following code? You only need to change the condition expression, but how?
@@ -108,7 +108,7 @@ func main() {
 > **4:** That won't print anything. `happy` will be true.
 
 
-## Is this code going to work? Why?
+## This code contains an error. How to fix it?
 ```go
 package main
 
