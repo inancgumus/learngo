@@ -8,18 +8,17 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print only the directory using `path.Split`
+// EXERCISE: Swapper #2
 //
-//  Discard the file part
+//  1. Swap the values of `red` and `blue` variables
 //
-// RESTRICTION
-//  Use short declaration
+//  2. Print them
 //
 // EXPECTED OUTPUT
-//  secret/
+//  blue red
 // ---------------------------------------------------------
 
 func main() {
-	// ? ?= path.Split("secret/file.txt")
+	// red, blue := "red", "blue"
+	// ?
 }

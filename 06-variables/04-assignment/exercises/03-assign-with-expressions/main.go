@@ -7,30 +7,33 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Assign the correct values to the variables
-//     to match to the EXPECTED OUTPUT below
+// EXERCISE: Assign With Expressions
 //
-//  2- Print the variables
+//  1. Multiply 3.14 with 2 and assign it to `n` variable
+//
+//  2. Print the `n` variable
 //
 // HINT
-//  Use multiple Println calls to print each sentence.
+//  Example: 3 * 2 = 6
+//  * is the product operator (it multiplies numbers)
 //
 // EXPECTED OUTPUT
-//  Air is good on Mars
-//  It's true
-//  It is 19.5 degrees
+//  6.28
 // ---------------------------------------------------------
 
 func main() {
-	// DO NOT TOUCH THIS
+	// DON'T TOUCH THIS
 
-	// var (
-	// 	planet string
-	// 	isTrue bool
-	// 	temp   float64
-	// )
+	// Declares a new float64 variable
+	// 0. means 0.0
+	n := 0.
 
 	// ADD YOUR CODE BELOW
+
+	// ?
+
+	fmt.Println(n)
 }

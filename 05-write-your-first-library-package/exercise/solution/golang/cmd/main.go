@@ -10,7 +10,7 @@ package main
 import (
 	"fmt" // You should replace this with your username
 
-	"github.com/inancgumus/learngo/05-write-your-first-library-package/printer-exercise/solution/golang"
+	"github.com/inancgumus/learngo/05-write-your-first-library-package/exercise/solution/golang"
 )
 
 func main() {

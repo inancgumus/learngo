@@ -8,16 +8,21 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Swap the values of `red` and `blue` variables
+// EXERCISE: Swapper
 //
-//  2- Print them
+//  1. Change `color` to "orange"
+//     and `color2` to "green" at the same time
+//
+//     (use multiple-assignment)
+//
+//  2. Print the variables
 //
 // EXPECTED OUTPUT
-//  blue red
+//  orange green
 // ---------------------------------------------------------
 
 func main() {
-	// red, blue := "red", "blue"
+	// color, color2 := "red", "blue"
+
 	// ?
 }

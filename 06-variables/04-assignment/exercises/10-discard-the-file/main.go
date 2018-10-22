@@ -7,32 +7,20 @@
 
 package main
 
-import "fmt"
-
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Multiply 3.14 with 2 and assign it to `n` variable
+// EXERCISE: Discard The File
 //
-//  2- Print the `n` variable
+//  1. Print only the directory using `path.Split`
 //
-// HINT
-//  Example: 3 * 2 = 6
-//  * is the product operator (it multiplies numbers)
+//  2. Discard the file part
+//
+// RESTRICTION
+//  Use short declaration
 //
 // EXPECTED OUTPUT
-//  6.28
+//  secret/
 // ---------------------------------------------------------
 
 func main() {
-	// DON'T TOUCH THIS
-
-	// Declares a new float64 variable
-	// 0. means 0.0
-	n := 0.
-
-	// ADD YOUR CODE BELOW
-
-	// ?
-
-	fmt.Println(n)
+	// ? ?= path.Split("secret/file.txt")
 }

@@ -7,29 +7,23 @@
 
 package main
 
-import "fmt"
-
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Assign "go" to `lang` variable
-//     and assign 2 to `version` variable
-//     using a multiple assignment statement
+// EXERCISE: Make It Blue
 //
-//  2- Print the variables
+//  1. Change `color` variable's value to "blue"
+//
+//  2. Print it
 //
 // EXPECTED OUTPUT
-//  go version 2
+//  blue
 // ---------------------------------------------------------
 
 func main() {
-	// DO NOT TOUCH THIS
-	var (
-		lang    string
-		version int
-	)
+	// DON'T TOUCH THIS:
 
-	// ADD YOUR CODE BELOW
+	// color := "green"
 
-	// DO NOT TOUCH THIS
-	fmt.Println(lang, "version", version)
+	// ADD YOUR CODE BELOW:
+
+	// ?
 }

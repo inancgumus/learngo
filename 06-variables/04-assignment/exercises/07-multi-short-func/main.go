@@ -8,14 +8,15 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-// 	1- Multiple short declare two variables
+// EXERCISE: Multi Short Func
 //
-//  2- Initialize variables using `multi` function below
+// 	1. Multiple short declare two variables
 //
-//  3- Discard the 1st variable's value in the declaration
+//  2. Initialize variables using `multi` function below
 //
-//  4- Print only the 2nd variable
+//  3. Discard the 1st variable's value in the declaration
+//
+//  4. Print only the 2nd variable
 //
 // NOTE
 //  You should use `multi` function

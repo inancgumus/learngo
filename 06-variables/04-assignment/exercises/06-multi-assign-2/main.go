@@ -8,31 +8,30 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Find the length of a rectangle
-//     Its width is  5
-//     Its height is 6
+// EXERCISE: Multi Assign #2
 //
-//  2- Assign the result to the `length` variable
+//  1. Assign the correct values to the variables
+//     to match to the EXPECTED OUTPUT below
 //
-//  3- Print the `length` variable
+//  2. Print the variables
 //
 // HINT
-//  Rectangle formula = 2 * (width + height)
+//  Use multiple Println calls to print each sentence.
 //
 // EXPECTED OUTPUT
-//  22
+//  Air is good on Mars
+//  It's true
+//  It is 19.5 degrees
 // ---------------------------------------------------------
 
 func main() {
-	// DO NOT CHANGE THIS
+	// DO NOT TOUCH THIS
 
 	// var (
-	// 	length        int
-	// 	width, height = 5, 6
+	// 	planet string
+	// 	isTrue bool
+	// 	temp   float64
 	// )
-
-	// USE THE VARIABLES ABOVE WHEN CALCULATING YOUR RESULT
 
 	// ADD YOUR CODE BELOW
 }
