@@ -22,6 +22,6 @@ func main() {
 	// FIX THIS CODE
 	// count := ?
 
-	// DO NOT TOUCH THIS CODE
+	// UNCOMMENT IT FIRST, THEN DO NOT TOUCH THIS CODE
 	// fmt.Printf("There are %d names.\n", count)
 }

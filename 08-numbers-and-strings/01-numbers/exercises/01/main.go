@@ -29,6 +29,6 @@ func main() {
 	// ADD YOUR CODE BELOW
 	// USE `fmt.Println` for each question
 
-	// DO NOT TOUCH THIS
+	// UNCOMMENT IT FIRST, THEN DO NOT TOUCH THIS CODE
 	// fmt.Println(x)
 }
