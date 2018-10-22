@@ -26,7 +26,7 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// DO NOT CHANGE THIS
+	// UNCOMMENT THE CODE BELOW:
 
 	// var (
 	// 	length        int

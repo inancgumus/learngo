@@ -35,7 +35,7 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// DON'T TOUCH THIS
+	// UNCOMMENT THE CODE BELOW:
 
 	// color := "green"
 

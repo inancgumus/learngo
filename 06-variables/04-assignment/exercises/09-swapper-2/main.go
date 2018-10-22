@@ -19,6 +19,8 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	// UNCOMMENT THE CODE BELOW:
+
 	// red, blue := "red", "blue"
 	// ?
 }

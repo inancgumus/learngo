@@ -25,7 +25,7 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// DO NOT TOUCH THIS
+	// UNCOMMENT THE CODE BELOW:
 
 	// var (
 	// 	planet string
