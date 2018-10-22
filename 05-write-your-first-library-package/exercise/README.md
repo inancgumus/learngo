@@ -1,3 +1,7 @@
+[Check out the exercise and its solution here.](https://github.com/inancgumus/learngo/tree/master/05-write-your-first-library-package/exercise)
+
+---
+
 # EXERCISE
 1. Create a new library
 2. In it, create a function that returns Go version
