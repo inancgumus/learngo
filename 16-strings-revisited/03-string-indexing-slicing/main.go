@@ -29,7 +29,7 @@ func main() {
 	//  | ||||
 	// "wandering"
 
-	//           "w"     + "a" + "nder"   + "ing"
+	//              "w"     + "a" + "nder"   + "ing"
 
 	// wandering := mood[0] + "a" + mood[2:] + "ing"
 	// fmt.Printf("mood[0]   : %T - %[1]v\n", mood[0])   // byte
