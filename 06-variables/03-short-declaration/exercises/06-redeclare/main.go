@@ -8,12 +8,20 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Declare and then print four variables
-//  using the short declaration statement
+// EXERCISE: Redeclare
+//
+// 	1. Short declare two int variables: age and yourAge
+//     (use multiple short declaration syntax)
+//
+//  2. Short declare a new float variable: ratio
+//     And, change the 'age' variable to 42
+//
+//     (! You should use redeclaration)
+//
+//  4. Print all the variables
 //
 // EXPECTED OUTPUT
-//  i: 314 f: 3.14 s: Hello b: true
+//  42, 20, 3.14
 // ---------------------------------------------------------
 
 func main() {
@@ -22,10 +30,5 @@ func main() {
 
 	// THEN UNCOMMENT THE CODE BELOW
 
-	// fmt.Println(
-	// 	"i:", i,
-	// 	"f:", f,
-	// 	"s:", s,
-	// 	"b:", b,
-	// )
+	// fmt.Println(age, yourAge, ratio)
 }

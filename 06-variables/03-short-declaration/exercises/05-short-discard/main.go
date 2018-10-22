@@ -8,18 +8,28 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-// 	1- Short declare a variable named `sum`
-//  2- Initialize it with an expression by adding 27 and 3.5
+// EXERCISE: Short Discard
+//
+// 	1. Short declare two bool variables
+//     (use multiple short declaration syntax)
+//
+//  2. Initialize both variables to true
+//
+//  3. Change your declaration and
+//     discard the 2nd variable's value
+//     using the blank-identifier
+//
+//  4. Print only the 1st variable
 //
 // EXPECTED OUTPUT
-//  30.5
+//  true
 // ---------------------------------------------------------
 
 func main() {
-	// ADD YOUR DECLARATION HERE
+	// ADD YOUR DECLARATIONS HERE
 	//
 
 	// THEN UNCOMMENT THE CODE BELOW
-	// fmt.Println(sum)
+
+	// fmt.Println(on)
 }

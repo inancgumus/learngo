@@ -8,21 +8,20 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-// 	1- Declare two variables using short declaration
+// EXERCISE: Short With Expression
 //
-//  2- `a` variable's value should be 42
-//  3- `c` variable's value should be "good"
+// 	1. Short declare a variable named `sum`
+//
+//  2. Initialize it with an expression by adding 27 and 3.5
 //
 // EXPECTED OUTPUT
-//  42 good
+//  30.5
 // ---------------------------------------------------------
 
 func main() {
-	// ADD YOUR DECLARATIONS HERE
+	// ADD YOUR DECLARATION HERE
 	//
 
 	// THEN UNCOMMENT THE CODE BELOW
-
-	// fmt.Println(a, c)
+	// fmt.Println(sum)
 }

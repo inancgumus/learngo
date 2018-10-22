@@ -8,19 +8,15 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-// 	1- Short declare two int variables: age and yourAge
-//     (use multiple short declaration syntax)
+// EXERCISE: Multiple Short Declare #2
 //
-//  2- Short declare a new float variable: ratio
-//     And, change the 'age' variable to 42
+// 	1. Declare two variables using short declaration
 //
-//     (! You should use redeclaration)
-//
-//  4- Print all the variables
+//  2. `a` variable's value should be 42
+//  3. `c` variable's value should be "good"
 //
 // EXPECTED OUTPUT
-//  42, 20, 3.14
+//  42 good
 // ---------------------------------------------------------
 
 func main() {
@@ -29,5 +25,5 @@ func main() {
 
 	// THEN UNCOMMENT THE CODE BELOW
 
-	// fmt.Println(age, yourAge, ratio)
+	// fmt.Println(a, c)
 }
