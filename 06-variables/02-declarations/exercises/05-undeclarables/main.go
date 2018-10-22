@@ -8,17 +8,27 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Print a variable
-//  2- Then declare it
-//  (This means: Try to print it before its declaration)
-//  3- Observe the error
+// EXERCISE: Undeclarables
+//
+//  1. Declare the variables below:
+//      3speed
+//      !speed
+//      spe?ed
+//      var
+//      func
+//      package
+//
+//  2. Observe the error messages
+//
+// NOTE
+//  The types of the variables are not important.
 // ---------------------------------------------------------
 
 func main() {
-	// First print it:
-	// fmt.Println(?)
-
-	// Then declare it:
-	// var ? ?
+	// var ? int
+	// var ? int
+	// var ? int
+	// var ? int
+	// var ? int
+	// var ? int
 }

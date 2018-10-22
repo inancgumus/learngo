@@ -8,26 +8,17 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Declare the variables below:
-//      3speed
-//      !speed
-//      spe?ed
-//      var
-//      func
-//      package
+// EXERCISE: Declare float64
 //
-//  2- Observe the error messages
+//  1. Declare and print a variable with a float64 type
 //
-// NOTE
-//   The types of the variables are not important.
+//  2. The declared variable's name should be: brightness
+//
+// EXPECTED OUTPUT
+//  0
 // ---------------------------------------------------------
 
 func main() {
-	// var ? int
-	// var ? int
-	// var ? int
-	// var ? int
-	// var ? int
-	// var ? int
+	// var ? ?
+	// ?
 }

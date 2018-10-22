@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Multiple
+//
 //  1. Declare two variables using
 //     multiple variable declaration statement
 //

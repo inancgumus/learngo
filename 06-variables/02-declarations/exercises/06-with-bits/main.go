@@ -8,8 +8,9 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Declare a few variables using the following types
+// EXERCISE: Declare with bits
+//
+//  1. Declare a few variables using the following types
 //    int
 //    int8
 //    int16
@@ -24,8 +25,9 @@ package main
 //    rune
 //    byte
 //
-// 2- Observe their output
-// 3- After you've done, check out the solution
+// 2. Observe their output
+//
+// 3. After you've done, check out the solution
 //    and read the comments there
 //
 // EXPECTED OUTPUT

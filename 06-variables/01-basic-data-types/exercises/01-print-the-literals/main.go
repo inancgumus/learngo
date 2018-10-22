@@ -8,14 +8,20 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Declare a variable
-//  2- Variable's name should be: isLiquid
-//  3- Discard it using a blank-identifier
+// EXERCISE: Print the literals
 //
-// NOTE
-//  Do not print the variable
+//  1. Print a few integer literals
+//
+//  2. Print a few float literals
+//
+//  3. Print true and false bool literals
+//
+//  4. Print your name using a string literal
+//
+//  5. Print a non-english sentence using a string literal
+//
 // ---------------------------------------------------------
 
 func main() {
+	// Use fmt.Println()
 }

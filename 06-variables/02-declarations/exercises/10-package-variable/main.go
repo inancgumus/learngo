@@ -8,15 +8,13 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Declare and print a variable with a float64 type
-//  2- The declared variable's name should be: brightness
+// EXERCISE: Package Variable
 //
-// EXPECTED OUTPUT
-//  0
+//  1. Declare a variable in the package-scope
+//
+//  2. Observe whether something happens when you don't
+//     use it
 // ---------------------------------------------------------
 
 func main() {
-	// var ? ?
-	// ?
 }

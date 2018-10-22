@@ -8,15 +8,17 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Declare and print a variable with an int type
-//  2- The declared variable's name should be: height
+// EXERCISE: Unused
 //
-// EXPECTED OUTPUT
-//  0
+//  1. Declare a variable
+//
+//  2. Variable's name should be: isLiquid
+//
+//  3. Discard it using a blank-identifier
+//
+// NOTE
+//  Do not print the variable
 // ---------------------------------------------------------
 
 func main() {
-	// var ? ?
-	// ?
 }

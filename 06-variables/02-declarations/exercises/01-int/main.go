@@ -8,12 +8,14 @@
 package main
 
 // ---------------------------------------------------------
-// OPTIONAL EXERCISE
-//  1- Declare and print a bool variable
-//  2- The variable's name should be: isOn
+// EXERCISE: Declare int
+//
+//  1. Declare and print a variable with an int type
+//
+//  2. The declared variable's name should be: height
 //
 // EXPECTED OUTPUT
-//  false
+//  0
 // ---------------------------------------------------------
 
 func main() {
