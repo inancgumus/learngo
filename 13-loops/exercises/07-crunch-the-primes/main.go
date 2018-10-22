@@ -26,7 +26,10 @@ package main
 //
 // EXPECTED OUTPUT
 //  go run main.go 2 4 6 7 a 9 c 11 x 12 13
-//  2 7 11 13
+//    2 7 11 13
+//
+//  go run main.go 1 2 3 5 7 A B C
+//    2 3 5 7
 // ---------------------------------------------------------
 
 func main() {

@@ -13,7 +13,6 @@ import (
 	"strconv"
 )
 
-//
 func main() {
 	// remember [1:] skips the first argument
 
@@ -26,13 +25,13 @@ main:
 		}
 
 		switch {
-		// not a prime
-		case n <= 0 || n%2 == 0 || n%3 == 0:
-			continue
-
 		// prime
 		case n == 2 || n == 3:
 			fmt.Print(n, " ")
+			continue
+
+		// not a prime
+		case n <= 1 || n%2 == 0 || n%3 == 0:
 			continue
 		}
 
