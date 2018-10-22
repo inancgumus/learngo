@@ -1,5 +1,6 @@
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Print GOPATH
+//
 //  Print your GOPATH using `go env` tool
 //
 // EXPECTED OUTPUT

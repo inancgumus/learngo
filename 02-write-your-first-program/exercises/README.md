@@ -1,6 +1,6 @@
-1. **Print your name and your best friend's name** using Println twice. [Check out this exercise here](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/exercises/01).
+1. **Print your name and your best friend's name** using Println twice. [Check out this exercise here](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/exercises/01-print-names).
 
-2. **Print your GOPATH** using `go env` tool. [Check out this exercise here](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/exercises/02).
+2. **Print your GOPATH** using `go env` tool. [Check out this exercise here](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/exercises/02-print-gopath).
 
 3. **Say hello to yourself.**
 
