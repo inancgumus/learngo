@@ -7,15 +7,20 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the expected output using operators
+// EXERCISE: Comment out
+//
+//  Use single and multiline comments to comment Printlns.
 //
 // EXPECTED OUTPUT
-//  "Hello!!!?"
+//  You shouldn't see any output after you're done.
 // ---------------------------------------------------------
 
 func main() {
-	// use + operator below multiple times
-	// fmt.Println("Hello!" + ?)
+	fmt.Println("hello")
+	fmt.Println("how")
+	fmt.Println("are")
+	fmt.Println("you")
 }

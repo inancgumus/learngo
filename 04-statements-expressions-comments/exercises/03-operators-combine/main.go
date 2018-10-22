@@ -8,18 +8,19 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1- Look at runtime package documentation
-//  2- Find the func that returns the Go version
-//  3- Print the Go version by calling that func
+// EXERCISE: Operators combine the expressions
+//
+//  Print the expected output below using the string
+//  concatenation operator.
 //
 // HINT
-//  It's here: https://golang.org/pkg/runtime
+//  Use + operator multiple times to create "Hello!!!?".
 //
 // EXPECTED OUTPUT
-//  "go1.10"
+//  "Hello!!!?"
 // ---------------------------------------------------------
 
 func main() {
-	// ?
+
+	// fmt.Println("Hello!" + ?)
 }

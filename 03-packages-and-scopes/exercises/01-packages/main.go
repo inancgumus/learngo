@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Use your own package
+//
 //  Create a few Go files and call their functions from
 //  the main function.
 //

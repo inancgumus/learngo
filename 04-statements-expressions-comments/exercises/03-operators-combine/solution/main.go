@@ -10,7 +10,7 @@ package main
 import "fmt"
 
 func main() {
-	// Operators bind multiple expressions together
-	// as if there's a single expression
+	// Operators combine multiple expressions together
+	// as if there's a single expression.
 	fmt.Println("Hello!" + "!" + "!" + "?")
 }

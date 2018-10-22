@@ -8,10 +8,12 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Try to type just "Hello" on a line.
-//  Do not use Println
-//  Observe the error
+// EXERCISE: Naked Expression
+//
+//  1. Try to type just "Hello" on a line.
+//  2. Do not use Println
+//  3. Observe the error
+//
 // ---------------------------------------------------------
 
 func main() {

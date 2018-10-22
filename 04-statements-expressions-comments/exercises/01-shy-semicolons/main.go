@@ -7,19 +7,15 @@
 
 package main
 
-import "fmt"
-
 // ---------------------------------------------------------
-// EXERCISE
-//  Use single and multiline comments to comment Printlns
+// EXERCISE: Shy Semicolons
 //
-// EXPECTED OUTPUT
-//  None
+//  1. Try to type your statements by separating them using
+//     semicolons
+//
+//  2. Observe how Go fixes them for you
+//
 // ---------------------------------------------------------
 
 func main() {
-	fmt.Println("hello")
-	fmt.Println("how")
-	fmt.Println("are")
-	fmt.Println("you")
 }

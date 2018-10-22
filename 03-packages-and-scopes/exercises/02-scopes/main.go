@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Try the scopes
+//
 //  1. Create two files: main.go and printer.go
 //
 //  2. In printer.go:
@@ -24,9 +25,6 @@ package main
 //  4. In printer.go:
 //     1. Call the bye function from
 //        inside the hello function
-//
-//  5. In main.go:
-//     1.
 // ---------------------------------------------------------
 
 func main() {
