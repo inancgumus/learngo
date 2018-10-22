@@ -8,12 +8,12 @@ So, you can find the lecture files in the same place as they are explained in th
 
 **For the first part of the course; only the following directories contains exercises and quizzes.**
 
-01-get-started/
+* [01-get-started/](https://github.com/inancgumus/learngo/tree/master/01-get-started)
 
-02-write-your-first-program/
+* [02-write-your-first-program/](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program)
 
-03-packages-and-scopes/
+* [03-packages-and-scopes/](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes)
 
-04-statements-expressions-comments/
+* [04-statements-expressions-comments/](https://github.com/inancgumus/learngo/tree/master/04-statements-expressions-comments)
 
-05-write-your-first-library-package/
+* [05-write-your-first-library-package/](https://github.com/inancgumus/learngo/tree/master/05-write-your-first-library-package)
