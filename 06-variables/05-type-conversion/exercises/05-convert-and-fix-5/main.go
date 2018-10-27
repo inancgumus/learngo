@@ -10,7 +10,8 @@ package main
 import "fmt"
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Convert and Fix #5
+//
 //  Fix the code.
 //
 // HINTS

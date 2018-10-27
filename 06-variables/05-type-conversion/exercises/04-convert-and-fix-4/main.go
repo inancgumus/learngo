@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Convert and Fix #4
+//
 //  Fix the code.
 //
 // EXPECTED OUTPUT

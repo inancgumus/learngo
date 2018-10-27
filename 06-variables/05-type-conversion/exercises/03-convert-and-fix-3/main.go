@@ -8,15 +8,14 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Fix the code by using the conversion expression.
+// EXERCISE: Convert and Fix #3
+//
+//  Fix the code.
 //
 // EXPECTED OUTPUT
-//  10.5
+//  5.5
 // ---------------------------------------------------------
 
 func main() {
-	// a, b := 10, 5.5
-	// a = b
-	// fmt.Println(a + b)
+	// fmt.Println(int(5.5))
 }
