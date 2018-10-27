@@ -8,10 +8,11 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Greeat 5 people this time.
-//  Do not copy paste from the previous exercise!
-//  And do not look at it.
+// EXERCISE: Greet 5 People
+//
+//  Greet 5 people this time.
+//
+//  Please do not copy paste from the previous exercise!
 //
 // RESTRICTION
 //  This time do not use variables.

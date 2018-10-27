@@ -8,8 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print your name
+// EXERCISE: Print Your Name
+//
 //  Get it from the first command-line argument
 //
 // INPUT
@@ -20,12 +20,14 @@ package main
 //
 // EXAMPLE
 //  go run main.go inanc
-//  inanc
+//
+//    inanc
 //
 // BONUS: Make the output like this:
+//
 //  go run main.go inanc
-//  Hi inanc
-//  How are you?
+//    Hi inanc
+//    How are you?
 // ---------------------------------------------------------
 
 func main() {

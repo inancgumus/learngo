@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Count the Arguments
+//
 //  Print the count of the command-line arguments
 //
 // INPUT
@@ -19,9 +20,9 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// FIX THIS CODE
+	// UNCOMMENT & FIX THIS CODE
 	// count := ?
 
-	// UNCOMMENT IT FIRST, THEN DO NOT TOUCH THIS CODE
+	// UNCOMMENT IT & THEN DO NOT TOUCH THIS CODE
 	// fmt.Printf("There are %d names.\n", count)
 }

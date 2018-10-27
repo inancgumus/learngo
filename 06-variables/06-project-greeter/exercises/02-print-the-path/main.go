@@ -8,9 +8,10 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the path of the running program
-//  By getting it from `os.Args` variable
+// EXERCISE: Print the Path
+//
+//  Print the path of the running program by getting it
+//  from `os.Args` variable.
 //
 // HINT
 //  Use `go build` to build your program.

@@ -8,8 +8,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Greet more people
+// EXERCISE: Greet More People
 //
 // RESTRICTIONS
 //  Be sure to match to the expected output below
