@@ -13,7 +13,8 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Convert
+//
 //  Convert the if statement to a switch statement.
 // ---------------------------------------------------------
 

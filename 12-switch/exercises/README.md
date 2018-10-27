@@ -1,11 +1,11 @@
-# Header
+# Switch Statement
 
-What you will learn?
+1. **[Richter Scale](https://github.com/inancgumus/learngo/tree/master/12-switch/exercises/01-richter-scale)**
 
-1. **[text](https://github.com/inancgumus/learngo/tree/master/)**
+2. **[Richter Scale #2](https://github.com/inancgumus/learngo/tree/master/12-switch/exercises/02-richter-scale-2)**
 
-    text
+3. **[Convert](https://github.com/inancgumus/learngo/tree/master/12-switch/exercises/03-convert)**
 
-2. **[text](https://github.com/inancgumus/learngo/tree/master/)**
+4. **[String Manipulator](https://github.com/inancgumus/learngo/tree/master/12-switch/exercises/04-string-manipulator)**
 
-    text
+5. **[Days in a Month](https://github.com/inancgumus/learngo/tree/master/12-switch/exercises/05-days-in-month)**

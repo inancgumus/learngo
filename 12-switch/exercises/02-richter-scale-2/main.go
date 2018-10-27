@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Richter Scale #2
+//
 //  Repeat the previous exercise.
 //
 //  But, this time, get the description and print the

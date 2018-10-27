@@ -12,8 +12,10 @@ package main
 //  You want to write a program that will manipulate the
 //  given strings to uppercase, lowercase, and title case.
 //
-// EXERCISE
+// EXERCISE: String Manipulator
+//
 //  1. Get the operation as the first argument.
+//
 //  2. Get the string to be manipulated as the 2nd argument.
 //
 // HINT

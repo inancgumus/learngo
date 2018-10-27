@@ -16,7 +16,8 @@ package main
 //
 //  So, you've decided to write a program to do that for you.
 //
-// EXERCISE
+// EXERCISE: Richter Scale
+//
 //  1. Get the earthquake magnitude from the command-line.
 //  2. Display its corresponding description.
 //

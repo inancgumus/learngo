@@ -15,7 +15,8 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Days in a Month
+//
 //  Refactor the previous exercise from the if statement
 //  section.
 //
