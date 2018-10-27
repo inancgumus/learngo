@@ -8,20 +8,17 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print your name and lastname using Printf
+// EXERCISE: Print Your Age
+//
+//  Print your age using Prinft
 //
 // EXPECTED OUTPUT
-//  My name is Inanc and my lastname is Gumus.
+//  My age is 30 years old.
 //
-// BONUS
-//  Store the formatting specifier (first argument of Printf)
-//    in a variable.
-//  Then pass it to printf
+// NOTE
+//  You should change 30 to your age, of course.
 // ---------------------------------------------------------
 
 func main() {
-	// BONUS: Use a variable for the format specifier
-
-	// fmt.Printf("?", ?, ?)
+	// ?
 }

@@ -8,13 +8,18 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the type and value of 3 using fmt.Printf
+// EXERCISE: Print Your Fullname
+//
+//  1. Get your name and lastname from the command-line
+//  2. Print them using Printf
+//
+// EXAMPLE INPUT
+//  Inanc Gumus
 //
 // EXPECTED OUTPUT
-//  Type of 3 is int
+//  Your name is Inanc and your lastname is Gumus.
 // ---------------------------------------------------------
 
 func main() {
-	// ?
+	// BONUS: Use a variable for the format specifier
 }

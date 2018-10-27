@@ -8,15 +8,12 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the current temperature in your area using Printf
+// EXERCISE: Print the Type #3
 //
-// NOTE
-//  Do not use %v verb
-//  Output "shouldn't" be like 29.500000
+//  Print the type and value of "hello" using fmt.Printf
 //
 // EXPECTED OUTPUT
-//  Temperature is 29.5 degrees.
+// 	Type of hello is string
 // ---------------------------------------------------------
 
 func main() {

@@ -8,18 +8,14 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Use printf to print the expected output using a variable.
+// EXERCISE: Print the Type
+//
+//  Print the type and value of 3 using fmt.Printf
 //
 // EXPECTED OUTPUT
-//  These are false claims.
+//  Type of 3 is int
 // ---------------------------------------------------------
 
 func main() {
-	// UNCOMMENT THE FOLLOWING CODE
-	// AND DO NOT CHANGE IT AFTERWARDS
-	// tf := false
-
-	// TYPE YOUR CODE HERE
 	// ?
 }

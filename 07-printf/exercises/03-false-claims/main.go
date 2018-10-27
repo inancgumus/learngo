@@ -8,13 +8,19 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the type and value of true using fmt.Printf
+// EXERCISE: False Claims
+//
+//  Use printf to print the expected output using a variable.
 //
 // EXPECTED OUTPUT
-//  Type of true is bool
+//  These are false claims.
 // ---------------------------------------------------------
 
 func main() {
+	// UNCOMMENT THE FOLLOWING CODE
+	// AND DO NOT CHANGE IT AFTERWARDS
+	// tf := false
+
+	// TYPE YOUR CODE HERE
 	// ?
 }

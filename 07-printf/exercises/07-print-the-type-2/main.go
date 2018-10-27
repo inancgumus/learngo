@@ -8,11 +8,12 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the type and value of "hello" using fmt.Printf
+// EXERCISE: Print the Type #2
+//
+//  Print the type and value of 3.14 using fmt.Printf
 //
 // EXPECTED OUTPUT
-// 	Type of hello is string
+//  Type of 3.14 is float64
 // ---------------------------------------------------------
 
 func main() {

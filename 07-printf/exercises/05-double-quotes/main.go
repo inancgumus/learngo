@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Double Quotes
+//
 //  Print "hello world" with double-quotes using Printf
 //  (As you see here)
 //

@@ -8,17 +8,13 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  1. Get your name and lastname from the command-line
-//  2. Print them using Printf
-//
-// EXAMPLE INPUT
-//  Inanc Gumus
+// EXERCISE: Print the Type #4
+//  Print the type and value of true using fmt.Printf
 //
 // EXPECTED OUTPUT
-//  Your name is Inanc and your lastname is Gumus.
+//  Type of true is bool
 // ---------------------------------------------------------
 
 func main() {
-	// BONUS: Use a variable for the format specifier
+	// ?
 }

@@ -8,13 +8,21 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
-//  Print the type and value of 3.14 using fmt.Printf
+// EXERCISE: Print Your Name and LastName
+//
+//  Print your name and lastname using Printf
 //
 // EXPECTED OUTPUT
-//  Type of 3.14 is float64
+//  My name is Inanc and my lastname is Gumus.
+//
+// BONUS
+//  Store the formatting specifier (first argument of Printf)
+//    in a variable.
+//  Then pass it to printf
 // ---------------------------------------------------------
 
 func main() {
-	// ?
+	// BONUS: Use a variable for the format specifier
+
+	// fmt.Printf("?", ?, ?)
 }
