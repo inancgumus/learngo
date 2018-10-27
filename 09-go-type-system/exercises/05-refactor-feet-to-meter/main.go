@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Refactor Feet to Meter
+//
 //  Remember the feet to meters program?
 //  Now, it's time to refactor it.
 //  Define your own Feet and Meters types.

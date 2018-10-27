@@ -8,7 +8,8 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Optimal Types
+//
 //  1. Choose the optimal data types for the given situations.
 //  2. Print them all
 //  3. Try converting them to lesser data types.

@@ -10,7 +10,8 @@ package main
 import "fmt"
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Convert the Types
+//
 //  Convert the variables to appropriate types.
 //
 // EXPECTED OUTPUT

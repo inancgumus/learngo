@@ -12,7 +12,8 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: The Type Problem
+//
 //  Solve the data type problem in the program.
 //
 // EXPECTED OUTPUT

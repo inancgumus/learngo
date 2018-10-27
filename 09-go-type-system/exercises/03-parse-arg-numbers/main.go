@@ -14,7 +14,8 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Parse Arg Numbers
+//
 //  Use strconv.ParseInt function to get int8, int16, and
 //  int32, and int64 values from command-line.
 //

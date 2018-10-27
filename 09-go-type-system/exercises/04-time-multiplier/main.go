@@ -13,7 +13,8 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE
+// EXERCISE: Time Multiplier
+//
 //  You should get an argument from the command-line and
 //  you need to multiply the time duration value `t` with
 //  the given argument.
