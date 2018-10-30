@@ -8,7 +8,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Sum the numbers
+// EXERCISE: Sum the Numbers
 //
 //  1. By using a loop, sum the numbers between 1 and 10.
 //  2. Print the sum.

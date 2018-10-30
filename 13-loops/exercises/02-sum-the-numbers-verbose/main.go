@@ -8,7 +8,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Sum the numbers verbose edition
+// EXERCISE: Sum the Numbers: Verbose Edition
 //
 //  By using a loop, sum the numbers between 1 and 10.
 //

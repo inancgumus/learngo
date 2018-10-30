@@ -8,7 +8,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Case Insentive Search
+// EXERCISE: Case Insensitive Search
 //
 //  Allow for case-insensitive searching
 //

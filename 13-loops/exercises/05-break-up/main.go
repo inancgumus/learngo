@@ -8,7 +8,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Break up
+// EXERCISE: Break Up
 //
 //  1. Extend the "Only Evens" exercise
 //  2. This time, use an infinite loop.

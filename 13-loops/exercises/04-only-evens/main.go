@@ -8,7 +8,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Only evens
+// EXERCISE: Only Evens
 //
 //  1. Extend the "Sum up to N" exercise
 //  2. Sum only the even numbers
