@@ -80,9 +80,23 @@ _See the next page..._
 
 ## FIRST PROGRAM
 
-* Under, `~/go/src/github.com/inancgumus/hello`, create a `main.go` file.
-* And add the following code to it.
-* Then, run it like this: `go run main.go`
+* **Create directories:**
+    * **OS X & Linux (or git bash):**
+        * Create a new directory:
+            * `mkdir -p ~/go/src/yourname/hello`
+        * Go to that directory:
+            * `cd ~/go/src/yourname/hello`
+
+    * **Windows:**
+        * Create a new directory:
+            * `mkdir c:\Go\src\yourname\hello`
+        * Go to that directory:
+            * `cd c:\Go\src\yourname\hello`
+
+* Create a new `code main.go` file under Visual Studio Code.
+* And add the following code to it and save it.
+* Then, return back to the command-line.
+    * Run it like this: `go run main.go`
 
 ```go
 package main

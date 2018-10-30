@@ -12,14 +12,15 @@
 
 # 2 Install Git
 
-1. Go to: https://git-scm.com/downloads
-2. Select your OS and start downloading
-3. Run the installer
-4. Select VSCode as the default editor
+1. Grab the installer:
+    1. **Windows:** Go to: [https://gitforwindows.org](https://gitforwindows.org)
+    2. **OS X & Linux:** Go to: [https://git-scm.com/downloads](https://git-scm.com/downloads)
+2. Run the installer
+3. Select VSCode as the default editor
     1. **Windows**:
         1. Enable all the checkboxes
-        2. Select: _"Use Git from the Windows Command Prompt"_
-        3. Encodings: Select: _"Checkout as is..." option._
+        3. Select: _"Use Git from the Windows Command Prompt"_
+        4. Encodings: Select: _"Checkout as is..." option._
 
 # 3 Install Go
 
@@ -57,7 +58,7 @@
 
     * If you don't want to use git bash, it's ok too. It depends on you. But note that, I'll be using bash commands mostly. Because, it allows more advanced commands as well.
 
-    * So, to use git bash, follow these steps:
+    * **So, to use git bash, follow these steps:**
         1. Just search for git bash from the start bar
         2. Or, if there's one, click on the icon on your desktop
 
