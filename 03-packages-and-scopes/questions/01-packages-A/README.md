@@ -3,7 +3,7 @@
 2. In a single directory *CORRECT*
 
 
-## What's a `package clause` in a Go source-code file?
+## Why a package clause is used in a Go source-code file?
 1. It's used for importing a package
 2. It's used for letting Go know that the file belong to a package *CORRECT*
 3. It's used for declaring a new function
