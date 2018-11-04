@@ -16,17 +16,20 @@
 
        So, you should compile your program for her operating system.
 
-       **For OSX, type:**
+       **Create an OSX executable:**
        `GOOS=darwin GOARCH=386 go build`
 
-       **For Windows:**
+       **Create a Windows executable:**
        `GOOS=windows GOARCH=386 go build`
 
-       **For Linux:**
+       **Create a Linux executable:**
        `GOOS=linux GOARCH=arm GOARM=7 go build`
 
        **You can find the full list in here:**
        https://golang.org/doc/install/source#environment
+
+       **NOTE:** If you're using the command prompt or the powershell, you may need to use it like this:
+       `cmd /c "set GOOS=darwin GOARCH=386 && go build"`
    
 4. **Call [Print](https://golang.org/pkg/fmt/#Print) instead of [Println](https://golang.org/pkg/fmt/#Println)** to see what happens.
 
