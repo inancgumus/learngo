@@ -10,13 +10,13 @@ package main
 // ---------------------------------------------------------
 // EXERCISE: Find the Rectangle's Area
 //
-//  1. Find the length of a rectangle
+//  1. Find the area of a rectangle
 //     Its width is  5
 //     Its height is 6
 //
-//  2. Assign the result to the `length` variable
+//  2. Assign the result to the `area` variable
 //
-//  3. Print the `length` variable
+//  3. Print the `area` variable
 //
 // HINT
 //  Rectangle formula = 2 * (width + height)
@@ -29,7 +29,7 @@ func main() {
 	// UNCOMMENT THE CODE BELOW:
 
 	// var (
-	// 	length        int
+	// 	area        int
 	// 	width, height = 5, 6
 	// )
 
