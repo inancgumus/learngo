@@ -11,7 +11,7 @@ import "fmt"
 
 func main() {
 	var (
-		area          int
+		perimeter     int
 		width, height = 5, 6
 	)
 
@@ -20,7 +20,7 @@ func main() {
 
 	// just like in math
 
-	area = 2 * (width + height)
+	perimeter = 2 * (width + height)
 
-	fmt.Println(area)
+	fmt.Println(perimeter)
 }

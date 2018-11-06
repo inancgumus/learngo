@@ -8,15 +8,15 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Find the Rectangle's Area
+// EXERCISE: Find the Rectangle's Perimeter
 //
-//  1. Find the area of a rectangle
+//  1. Find the perimeter of a rectangle
 //     Its width is  5
 //     Its height is 6
 //
-//  2. Assign the result to the `area` variable
+//  2. Assign the result to the `perimeter` variable
 //
-//  3. Print the `area` variable
+//  3. Print the `perimeter` variable
 //
 // HINT
 //  Rectangle formula = 2 * (width + height)
@@ -29,7 +29,7 @@ func main() {
 	// UNCOMMENT THE CODE BELOW:
 
 	// var (
-	// 	area        int
+	// 	perimeter        int
 	// 	width, height = 5, 6
 	// )
 

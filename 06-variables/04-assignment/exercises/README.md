@@ -10,7 +10,7 @@ Now, get your feet wet and try some assignment exercises.
 
 3. **[Assign With Expressions](https://github.com/inancgumus/learngo/tree/master/06-variables/04-assignment/exercises/03-assign-with-expressions)**
 
-4. **[Find the Rectangle's Area](https://github.com/inancgumus/learngo/tree/master/06-variables/04-assignment/exercises/04-find-the-rectangle-area)**
+4. **[Find the Rectangle's Perimeter](https://github.com/inancgumus/learngo/tree/master/06-variables/04-assignment/exercises/04-find-the-rectangle-perimeter)**
 
 5. **[Multi Assign](https://github.com/inancgumus/learngo/tree/master/06-variables/04-assignment/exercises/05-multi-assign)**
 
