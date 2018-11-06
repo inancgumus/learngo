@@ -21,10 +21,9 @@
 8 % 3
 ```
 1. 4
-2. 2
+2. 2 *CORRECT*
 3. 0
-4. 1 *CORRECT*
-
+4. 1 
 
 ## What's the result of this expression?
 ```go
