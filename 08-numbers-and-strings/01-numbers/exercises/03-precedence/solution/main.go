@@ -29,5 +29,9 @@ func main() {
 	fmt.Println(10 / 2 * (10 % 7))
 
 	// 100 / 5 / 2
-	fmt.Println(100 / (5 / 2))
+	// 5  / 2 = 2
+	//  5 and 2 are integers, so, the fractional part drops
+	// 5. / 2 = 2.5
+	//  because 5. is a float, so the result becomes a float
+	fmt.Println(100 / (5. / 2))
 }
