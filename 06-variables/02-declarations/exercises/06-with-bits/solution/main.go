@@ -21,6 +21,10 @@ func main() {
 	var f32 float32
 	var f64 float64
 
+	// complex types
+	var c64 complex64
+	var c128 complex128
+
 	// bool type
 	var b bool
 
@@ -32,6 +36,7 @@ func main() {
 	fmt.Println(
 		i, i8, i16, i32, i64,
 		f32, f64,
+		c64, c128,
 		b, r, by,
 	)
 

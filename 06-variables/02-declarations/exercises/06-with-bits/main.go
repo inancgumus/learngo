@@ -31,7 +31,7 @@ package main
 //    and read the comments there
 //
 // EXPECTED OUTPUT
-//  0 0 0 0 0 0 0 false 0 0
+//  0 0 0 0 0 0 0 (0+0i) (0+0i) false 0 0
 //  ""
 // ---------------------------------------------------------
 
