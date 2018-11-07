@@ -89,8 +89,8 @@ var n int
 
 ## Which code below equals to `x = x % 2`?
 1. `x = x / 2`
-2. `x =% x`
-3. `x %= x` *CORRECT*
+2. `x =% 2`
+3. `x %= 2` *CORRECT*
 
 > **1:** This is a division. You need to use the remainder operator.
 >

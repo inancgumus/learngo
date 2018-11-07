@@ -36,4 +36,7 @@ func main() {
 
 	// This expression should print 15
 	fmt.Println(10 / 2 * 10 % 7)
+
+	// This expression should print 40
+	fmt.Println(100 / 5 / 2)
 }

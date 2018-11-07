@@ -13,12 +13,13 @@
 ```go
 5 - (2 * 5) + 7
 ```
-1. 2
-2. 22 *CORRECT*
+1. 2 *CORRECT*
+2. 22
 3. -19
 4. 36
 5. -12
 
+> **1:** The expression can also be: 5 + (2 * 5) + 7
 
 ## What's the result of the expression?
 ```go
