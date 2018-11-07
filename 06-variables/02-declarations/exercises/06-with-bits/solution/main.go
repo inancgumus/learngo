@@ -35,8 +35,8 @@ func main() {
 
 	fmt.Println(
 		i, i8, i16, i32, i64,
-		c64, c128,
 		f32, f64,
+		c64, c128,
 		b, r, by,
 	)
 
