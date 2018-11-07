@@ -28,7 +28,11 @@ import (
 //  https://golang.org/pkg/math/#Pow
 //
 // EXPECTED OUTPUT
-//  1256.64
+//  go run main.go 10
+//    1256.64
+//
+//  go run main.go 54.2
+//    36915.47
 // ---------------------------------------------------------
 
 func main() {

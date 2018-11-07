@@ -25,7 +25,11 @@ import (
 //  Use `math.Pow` to calculate the volume
 //
 // EXPECTED OUTPUT
-//  4188.79
+//  go run main.go 10
+//    4188.79
+//
+//  go run main.go .5
+//    0.52
 // ---------------------------------------------------------
 
 func main() {
