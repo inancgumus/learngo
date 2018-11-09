@@ -17,11 +17,13 @@ package main
 //     then kill it using CTRL+C keys
 //
 // RESTRICTIONS
-//  1. Print one of those characters randomly: \ / |
+//  1. Print one of those characters randomly: \ / | -
 //  2. Before printing a character print also this
 //     escape sequence: \r
 //
 //     Like this: "\r/", or this: "\r|", and so on...
+//
+//  3. NOTE : If you're using Go Playground, use "\f" instead of "\r"
 //
 // HINTS
 //  1. Use `time.Sleep` to sleep.
@@ -36,6 +38,17 @@ package main
 //  lucky number lecture. Even then so, then just skip it.
 //
 //  You can return back to it afterwards.
+//
+// EXPECTED OUTPUT
+//  - The program should display the following messages in any order.
+//  - And, the first character (\, -, /, or |) should be randomly
+//    displayed.
+//  - \r or \f sequence will clear the line.
+//
+//  \ Please Wait. Processing....
+//  - Please Wait. Processing....
+//  / Please Wait. Processing....
+//  | Please Wait. Processing....
 // ---------------------------------------------------------
 
 func main() {
