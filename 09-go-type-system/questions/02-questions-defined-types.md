@@ -8,7 +8,7 @@
 >
 
 
-## Let's suppose that you've declared the following defined type. Which property below that the new type doesn't get from its underlying type?
+## Let's suppose that you've declared the following defined type. Which property below the new type doesn't get from its underlying type?
 
 ```go
 // For example, let's say that you've defined a new type
@@ -102,9 +102,9 @@ type (
 
 > **1:** That's right. Go's type system is flat. So, the defined type's underlying type is a type with a real structure. int64 is not just a name, it has its own structure, it's a predeclared type.
 >
-> **2:** Duration is just a new type name. It doesn't its own structure.
+> **2:** Duration is just a new type name. It doesn't have its own structure.
 >
-> **3:** Century is just a new type name. It doesn't its own structure.
+> **3:** Century is just a new type name. It doesn't have its own structure.
 >
 
 

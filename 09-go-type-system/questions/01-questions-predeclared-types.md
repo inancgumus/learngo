@@ -37,7 +37,7 @@
 
 ## What's the output of following code?
 ```go
-fmt.Printf("%08b = %d", 2)
+fmt.Printf("%08b = %d", 2, 2)
 ```
 1. 00000001
 2. 00000010 *CORRECT*
