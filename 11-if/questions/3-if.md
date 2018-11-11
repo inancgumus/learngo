@@ -15,10 +15,10 @@ if (mood == "perfect") {
 }
 ```
 
-1. `if {mood == perfect}`
-2. `if [mood == perfect]`
-3. `if mood = perfect`
-4. `if mood == perfect` *CORRECT*
+1. `if {mood == "perfect"}`
+2. `if [mood == "perfect"]`
+3. `if mood = "perfect"`
+4. `if mood == "perfect"` *CORRECT*
 
 > **1, 2:** That's a syntax error. Try again.
 > 
