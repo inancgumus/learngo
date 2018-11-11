@@ -44,28 +44,41 @@ func main() {
 > **3:** Yes. It shadows the main()'s done variable, and inside the if statement, it prints "true". Then, after the if statement ends, it prints the main()'s done variable which is "false".
 
 
-## How can you fix this code?
+## There's a shadowing issue in this program. The program should print: 10, now it prints: 0.
+
+**How can you fix this it?**
+
 ```go
 package main
-import "fmt"
+
+import (
+  "fmt"
+  "strconv"
+)
 
 func main() {
-	done := false
-	if done := true; done {
-		fmt.Println(done)
-	}
-	fmt.Println(done)
+  var n int
+
+  if n, err := strconv.Atoi("10"); err != nil {
+    fmt.Printf("error: %s (n: %d)", err, n)
+    return
+  }
+
+  fmt.Println(n)
 }
 ```
-1. Remove the first declaration (main()'s done)
-2. Remove the declaration in the short-if (if's done)
-3. Change the done declaration of the main() to an assignment
-4. Change the done declaration of the short-if to an assignment. And, after the if statement, assign false back to the done variable. *CORRECT*
+
+_See the code also in here: https://play.golang.org/p/fDrmcXWGnQB_
+
+1. Remove the first declaration (main()'s n variable).
+2. Remove the declaration in the short-if (if's n).
+3. Declare an error variable outside of the main.
+4. Declare an error variable along with main's n variable, then change the short-if declaration to an assignment. *CORRECT*
 
 > **1:** That will break the program. Because, the last line prints it.
 > 
-> **2:** The program wants to use it to print true.
+> **2:** The program uses it to set the n.
 > 
-> **3:** There will be "undefined variable" error.
-> **4:** Yes, that will solve the shadowing issue. Short-if will reuse the same done variable of the main(). And, after the short-if, done will be false because of the assignment, and it will print false.
+> **3:** There will be "unused variable" error.
+> **4:** Yes, that will solve the shadowing issue. Short-if will reuse the same 'n' variable (main()'s n). So, the converted number 'n' will be printed as: 10. See the solution here: https://play.golang.org/p/6jc-nZJNHYb
 
