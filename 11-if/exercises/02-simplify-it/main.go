@@ -28,7 +28,7 @@ import "fmt"
 
 func main() {
 	// DO NOT TOUCH THIS
-	isSphere, radius := true, 100
+	isSphere, radius := true, 200
 
 	var big bool
 
