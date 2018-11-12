@@ -46,7 +46,7 @@ func main() {
 	case r >= 8 && r < 10:
 		desc = "great"
 	default:
-		desc = "meteoric"
+		desc = "massive"
 	}
 
 	fmt.Printf("%.2f is %s\n", richter, desc)
