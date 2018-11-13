@@ -13,11 +13,12 @@ import (
 	"strconv"
 )
 
-// WHY?
-// Because, you can add methods to your types in the future
-// And, they're type-safe and more readable now.
-
 func main() {
+	// WHY ADDING YOUR OWN TYPES IS IMPORTANT?
+	//
+	// 1. Type-Safety
+	// 2. Increased Readability
+	// 3. Adding Methods to your Types
 	type (
 		Feet   float64
 		Meters float64

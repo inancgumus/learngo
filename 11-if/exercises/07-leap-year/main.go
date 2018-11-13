@@ -22,6 +22,9 @@ package main
 //  go run main.go 2018
 //    2018 is not a leap year.
 //
+//  go run main.go 2100
+//    2100 is not a leap year.
+//
 //  go run main.go 2019
 //    2019 is not a leap year.
 //

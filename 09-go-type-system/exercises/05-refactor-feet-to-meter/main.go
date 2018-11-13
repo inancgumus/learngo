@@ -20,7 +20,7 @@ package main
 func main() {
 	// ----------------------------
 	// 1. Define Feet and Meters types below
-	//    Their underlying type can be int64
+	//    Their underlying type can be float64
 	// ...
 
 	// ----------------------------
@@ -32,7 +32,7 @@ func main() {
 
 	// ----------------------------
 	// 3. Get feet value from the command-line
-	// 4. Convert it to an int64 first using ParseFloat
+	// 4. Convert it to an float64 first using ParseFloat
 	// 5. Then, convert it into a Feet type
 	// ... TYPE YOUR CODE HERE
 

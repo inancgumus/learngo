@@ -102,8 +102,8 @@ fmt.Println(a || b)
 ```go
 // Let's say that there are two functions like this:
 //
-//   super() which returns true and prints "super ".
-//   duper() which returns false and prints "duper ".
+//   isOn() which returns true and prints "on ".
+//   isOff() which returns false and prints "off ".
 //
 // Remember: Logical operators short-circuit.
 
@@ -111,37 +111,37 @@ package main
 import "fmt"
 
 func main() {
-    _ = duper() && super()
-    _ = super() || duper()
+    _ = isOff() && isOn()
+    _ = isOn() || isOff()
 }
 
 // Don't mind about these functions.
 // Just focus on the problem.
 // They are here just for you to understand what's going on better.
-func super() bool {
-    fmt.Print("super ")
+func isOn() bool {
+    fmt.Print("on ")
     return true
 }
 
-func duper() bool {
-    fmt.Print("duper ")
+func isOff() bool {
+    fmt.Print("off ")
     return false
 }
 ```
 
-1. "super duper super duper "
-2. "duper super " *CORRECT*
-3. "duper super super duper "
-4. "super duper "
+1. "on off on off "
+2. "off on " *CORRECT*
+3. "off on on off "
+4. "on off "
 
 > **1, 3:** Remember: Logical operators short-circuit.
 
 > **2:** That's right.
 > 
-> In: `duper() && super()`, `duper()` returns false, so, logical AND operator short-circuits and doesn't call `super()`; so it prints: `"duper "`.
+> In: `isOff() && isOn()`, `isOff()` returns false, so, logical AND operator short-circuits and doesn't call `isOn()`; so it prints: `"off "`.
 > 
-> Then, in: `super() || duper()`, `super()` returns true, so, logical OR operator short circuits and doesn't call `duper()`; so it prints `"super "`.
+> Then, in: `isOn() || isOff()`, `isOn()` returns true, so, logical OR operator short circuits and doesn't call `isOff()`; so it prints `"on "`.
 
 > **4:** Think again.
 
-Example program is [here](https://play.golang.org/p/C-syhwgXSx2).
+Example program is [here](https://play.golang.org/p/6z3afaOf7yT).

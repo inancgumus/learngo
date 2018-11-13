@@ -1,8 +1,7 @@
 # Learn Go Programming: Complete Bootcamp Course (Golang)
-This repository provides the downloadable example programs
-for the course, [Learn Go Programming: Complete Bootcamp (Golang)](https://udemy.com/TBA).
+This repository contains the examples, exercises and quizzes for the course.
 
-**The course will be available end of Oct'18.**
+**Get it now for 80% off with the link: https://www.udemy.com/learn-go-the-complete-bootcamp-course-golang/?couponCode=FROM-GITHUB**
 
 ---
 
@@ -12,13 +11,19 @@ for the course, [Learn Go Programming: Complete Bootcamp (Golang)](https://udemy
 
 [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
 
-[Learn Go Programming Blog](http://blog.learngoprogramming.com)
+👉 [Subscribe to my Go emailing list](http://eepurl.com/c4DMNX)
+
+  _(5K+ developers already subscribed!)_
+
+👉 [Learn Go Programming Blog](http://blog.learngoprogramming.com)
 
   _(Followed by 3K+ developers)_
 
-[Subscribe to my Go emailing list](http://eepurl.com/c4DMNX)
+👉 [Learn Go Programming Youtube Channel](https://www.youtube.com/channel/UCYxepZhtnFIVRh8t5H_QAdg?view_as=subscriber)
 
-  _(5K+ developers already subscribed!)_
+  _(For 4K Videos — The channel is very young right now)_
+
+👉 [Learn Go Programming Facebook Group](https://www.facebook.com/learngoprogramming/)
 
 ---
 
