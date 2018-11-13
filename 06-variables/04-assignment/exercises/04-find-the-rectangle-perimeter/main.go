@@ -19,10 +19,14 @@ package main
 //  3. Print the `perimeter` variable
 //
 // HINT
-//  Rectangle formula = 2 * (width + height)
+//  Formula = 2 times the width and height
 //
 // EXPECTED OUTPUT
 //  22
+//
+// BONUS
+//  Find more formulas here and calculate them in new programs
+//  https://www.mathsisfun.com/area.html
 // ---------------------------------------------------------
 
 func main() {
