@@ -10,5 +10,11 @@ package main
 import "fmt"
 
 func main() {
-  fmt.Println("Hi Gopher!")
+	rates := [3]float64{
+		0.5,
+		2.5,
+		1.5,
+	}
+
+	fmt.Println(rates)
 }
