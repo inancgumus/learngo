@@ -13,7 +13,7 @@ package main
 //  Print your age using Prinft
 //
 // EXPECTED OUTPUT
-//  My age is 30 years old.
+//  I'm 30 years old.
 //
 // NOTE
 //  You should change 30 to your age, of course.
