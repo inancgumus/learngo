@@ -36,11 +36,15 @@ var (
   m int
   f float64
 )
+
+// one of the assignments below will be here
+
+fmt.Println(n, m, f)
 ```
 
 * `n, m = 4, f`
 * `n = false`
-* `n, m = m + n, n + 5.0` *CORRECT*
+* `n, m, f = m + n, n + 5, 0.5` *CORRECT*
 * `n, m = 3.82, "hi"`
 
 ## Which one is a correct assignment statement?
@@ -51,8 +55,8 @@ var (
 )
 ```
 * `a = _`
-* `c, _ = _, false` *CORRECT*
-* `_, _ = true, true`
+* `c, _ = _, false` 
+* `_, _ = a, c` *CORRECT*
 
 ## Which one is a correct assignment?
 **REMEMBER:** `path.Split` returns two `string` values

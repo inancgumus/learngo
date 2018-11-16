@@ -11,7 +11,9 @@ package main
 // EXERCISE: Greet More People
 //
 // RESTRICTIONS
-//  Be sure to match to the expected output below
+//  1. Be sure to match to the expected output below
+//  2. Store the length of the arguments in a variable
+//  3. Store the all the arguments in variables as well
 //
 // INPUT
 //  bilbo balbo bungo

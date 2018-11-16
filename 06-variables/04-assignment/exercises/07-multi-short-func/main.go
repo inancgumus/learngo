@@ -10,9 +10,9 @@ package main
 // ---------------------------------------------------------
 // EXERCISE: Multi Short Func
 //
-// 	1. Multiple short declare two variables
+// 	1. Declare two variables using multiple short declaration syntax
 //
-//  2. Initialize variables using `multi` function below
+//  2. Initialize the variables using `multi` function below
 //
 //  3. Discard the 1st variable's value in the declaration
 //
