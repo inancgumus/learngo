@@ -12,7 +12,7 @@ package main
 //
 //  Get the size of the table from the command-line
 //    Passing 5 should create a 5x5 table
-//    Passing 10 for a 10x10 tableCreate an infinite loop
+//    Passing 10 for a 10x10 table
 //
 // RESTRICTION
 //  Solve this exercise without looking at the original
