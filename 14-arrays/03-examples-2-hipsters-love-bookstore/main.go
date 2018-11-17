@@ -57,7 +57,20 @@ func main() {
 
 	for i := range sBooks {
 		sBooks[i] = books[i+1]
+		// changes to sBooks[i] will not be visible here.
+		// sBooks here is a copy of the original array.
 	}
+	// changes to sBooks are visible here
+
+	// sBooks is a copy of the original sBooks array.
+	//
+	// v is also a copy of the original array element.
+	//
+	// if you want to update the original element, use it as in the loop above.
+	//
+	// for _, v := range sBooks {
+	// 	v += "won't effect"
+	// }
 
 	fmt.Printf("\nwinter : %#v\n", wBooks)
 	fmt.Printf("\nsummer : %#v\n", sBooks)

@@ -10,33 +10,46 @@ package main
 // ---------------------------------------------------------
 // EXERCISE: Declare empty arrays
 //
-//  1. Declare and printf the following arrays:
+//  1. Declare and print the following arrays with their types:
 //
-//   1. A string array with 4 items
-//   2. An int array 5 items
-//   3. A byte array with 5 items
-//   4. A float64 array with 1 item
-//   5. A bool array with 4 items
-//   6. A byte array without any items
+//    1. The names of your best three friends
+//    2. The distances to five different locations
+//    3. A data buffer with five bytes of capacity
+//    4. Currency exchange ratios only for a single currency
+//    5. Up/Down status of four different web servers
+//    6. A byte array that doesn't occupy memory space
 //
-//  2. Print the types of the previous arrays.
+//  2. Print only the types of the same arrays.
 //
-// NOTE
-//  You should use printf with #v verb.
+//  3. Print only the elements of the same arrays.
+//
+// HINT
+//   When printing the elements of an array, you can use the usual Printf verbs.
+//
+//   For example:
+//     When printing a string array, you can use "%q" verb as usual.
 //
 // EXPECTED OUTPUT
-//  names    : [4]string{"", "", "", ""}
+//  names    : [3]string{"", "", "", ""}
 //  distances: [5]int{0, 0, 0, 0, 0}
 //  data     : [5]uint8{0x0, 0x0, 0x0, 0x0, 0x0}
 //  ratios   : [1]float64{0}
-//  switches : [4]bool{false, false, false, false}
-//  zero     : [0]bool{}
-//  names    : [4]string
+//  alives   : [4]bool{false, false, false, false}
+//  zero     : [0]uint8{}
+//
+//  names    : [3]string
 //  distances: [5]int
 //  data     : [5]uint8
 //  ratios   : [1]float64
-//  switches : [4]bool
-//  zero     : [0]bool
+//  alives   : [4]bool
+//  zero     : [0]uint8
+//
+//  names    : ["" "" ""]
+//  distances: [0 0 0 0 0]
+//  data     : [0 0 0 0 0]
+//  ratios   : [0.00]
+//  alives   : [false false false false]
+//  zero     : []
 // ---------------------------------------------------------
 
 func main() {

@@ -1,0 +1,2 @@
+- [ ] add challenge link to the moodly's resources
+- [ ] add exercises 1 and 2 after the array basics quiz

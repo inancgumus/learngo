@@ -1,20 +1,19 @@
 # Array Exercises
 
+## Basic Exercises
+
 1. **[Declare Empty Arrays](https://github.com/inancgumus/learngo/tree/master/14-arrays/exercises/01-declare-empty)**
 
-- get data from command-line
-  - into a fixed array; see how it blows beyond its len
+2. **[Get and Set Array Elements](https://github.com/inancgumus/learngo/tree/master/14-arrays/exercises/02-get-set-arrays)**
 
-- add items
-- get items
-- check the length
-- print the items
-- reverse the array
-- shuffle the items
-- find the first item that contains x
-- find the last item that contains y
-- find the duplicate items
+3. **[Refactor to Array Literals](https://github.com/inancgumus/learngo/tree/master/14-arrays/exercises/03-array-literal)**
 
-1. **[text](https://github.com/inancgumus/learngo/tree/master/)**
+4. **[Refactor to Ellipsis](https://github.com/inancgumus/learngo/tree/master/14-arrays/exercises/04-ellipsis)**
 
-    text
+---
+
+## Program Exercises
+
+????. **[text](https://github.com/inancgumus/learngo/tree/master/14-arrays/exercises/)**
+
+    ?

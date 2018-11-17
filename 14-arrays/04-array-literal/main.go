@@ -17,23 +17,64 @@ import "fmt"
 
 // So, let's create a 4 elements string array for the books.
 
-const (
-	winter = 1
-	summer = 3
-	yearly = winter + summer
-)
-
 func main() {
-	// ALTERNATIVE:
 	// Use this only when you don't know about the elements beforehand
-	//
-	// var books [yearly]string
+	{
+		var books [4]string
 
-	books := [yearly]string{
-		"Kafka's Revenge",
-		"Stay Golden",
-		"Everythingship",
-		"Kafka's Revenge 2nd Edition",
+		books[0] = "Kafka's Revenge"
+		books[1] = "Stay Golden"
+		books[2] = "Everythingship"
+		books[3] += "Kafka's Revenge 2nd Edition"
+
+		_ = books
 	}
-	fmt.Printf("books  : %#v\n", books)
+
+	// This is not necessary, use the short declaration syntax below
+	{
+		var books = [4]string{
+			"Kafka's Revenge",
+			"Stay Golden",
+			"Everythingship",
+			"Kafka's Revenge 2nd Edition",
+		}
+
+		_ = books
+	}
+
+	// Use this if you know about the elements
+	{
+		books := [4]string{
+			"Kafka's Revenge",
+			"Stay Golden",
+			"Everythingship",
+			"Kafka's Revenge 2nd Edition",
+		}
+
+		_ = books
+	}
+
+	{
+		// Use this if you know about the elements
+		books := [4]string{
+			"Kafka's Revenge",
+			"Stay Golden",
+		}
+
+		// Uninitialized elements will be set to their zero values
+		fmt.Printf("books  : %#v\n", books)
+	}
+
+	// You can also use the ellipsis syntax
+	// ... equals to 4
+	{
+		books := [...]string{
+			"Kafka's Revenge",
+			"Stay Golden",
+			"Everythingship",
+			"Kafka's Revenge 2nd Edition",
+		}
+
+		_ = books
+	}
 }

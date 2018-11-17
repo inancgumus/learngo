@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 // STORY:
 // Hipster's Love store publishes limited books
 // twice a year.
@@ -31,10 +33,30 @@ func main() {
 	books[2] = "Everythingship"
 	books[3] += books[0] + " 2nd Edition"
 
+	// --------------------
+	// INDEXING
+	// --------------------
+
 	// Go compiler can catch indexing errors when constant is used
 	// books[4] = "Neverland"
 
 	// Go compiler cannot catch indexing errors when non-constant is used
 	// i := 4
 	// books[i] = "Neverland"
+
+	// --------------------
+	// PRINTING ARRAYS
+	// --------------------
+
+	// print the type
+	fmt.Printf("books  : %T\n", books)
+
+	// print the elements
+	fmt.Println("books  :", books)
+
+	// print the elements in quoted string
+	fmt.Printf("books  : %q\n", books)
+
+	// print the elements along with their types
+	fmt.Printf("books  : %#v\n", books)
 }
