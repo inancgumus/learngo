@@ -10,7 +10,7 @@ package main
 import "fmt"
 
 func main() {
-	// I'm using multiple declaration instead of singular
+	// I'm using multiple declarations instead of singular
 	var (
 		speed int
 		heat  float64

@@ -30,7 +30,7 @@ func block() {
 ## Which name below is file scoped?
 1. awesome
 2. fmt **CORRECT**
-3. enabled 
+3. enabled
 4. block()
 5. counter
 
@@ -42,7 +42,7 @@ func block() {
 ## Which name below is in the scope of the block() func?
 1. awesome
 2. fmt
-3. enabled 
+3. enabled
 4. block()
 5. counter **CORRECT**
 
@@ -67,7 +67,7 @@ func block() {
 3. No: It's in the file scope
 4. No: It's in the block scope of block() **CORRECT**
 
-> **4:** That's right. None of the other code can see the names inside the `block()` function. Only the code inside the `block()` function can see them (Only to some extend. For example: Inside the block, the code can only see the variables declared before it.)
+> **4:** That's right. None of the other code can see the names inside the `block()` function. Only the code inside the `block()` function can see them (Only to some extent. For example: Inside the block, the code can only see the variables declared before it.)
 >
 >
 
@@ -83,7 +83,7 @@ func block() {
 >
 
 
-## What happens if you declare the same name in the same scope like this:
+## What happens if you declare the same name in the same scope as this:
 ```go
 package awesome
 
@@ -128,6 +128,6 @@ func block() {
 2. I can't do that. It's already been declared at the package scope.
 3. I can't do that. It's already been declared at the file scope.
 
-> **1:** Actually, you can declare the same name in the inner scopes like this. `block()`'s scope is inside its package. This means that it can access to its package's scope (but not vice versa). So, `block()`'s scope is under its package's scope. This means that you can declare the same name again. It will override the parent scope's name. They both can be exist together. Check out the example in the course repository to find out.
+> **1:** Actually, you can declare the same name in the inner scopes like this. `block()`'s scope is inside its package. This means that it can access its package's scope (but not vice versa). So, `block()`'s scope is under its package's scope. This means that you can declare the same name again. It will override the parent scope's name. They both can exist together. Check out the example in the course repository to find out.
 >
 >

@@ -2,13 +2,13 @@
 **NOTE** _There are explanations inside the answers. Even if you know the answer please try to select all of them one by one, so you can read the explanations._
 
 1. You can run a library package.
-2. In a library package there should be a function named main (func main).
+2. In a library package, there should be a function named main (func main).
 3. You can compile a library package. *CORRECT*
 4. You have to compile a library package.
 
 > **1:** You can't, but you can import it from other packages.
 >
-> **2:** In a library package, you don't have to include a main function. Because, it isn't an executable package. Only in executable packages you need a main func.
+> **2:** In a library package, you don't have to include the main function. Because it isn't an executable package. Only in executable packages, you need a main func.
 >
 > **4:** You don't have to compile it. When you import it, it will automatically be built by the other program or library when it gets compiled or ran.
 
@@ -29,8 +29,8 @@
 
 
 ## How can you use a function from your library from an executable program?
-1. You need to export your library package first; then you can access to its imported names
-2. You need to import your library package first; then you can access to its exported names *CORRECT*
+1. You need to export your library package first; then you can access its imported names
+2. You need to import your library package first; then you can access its exported names *CORRECT*
 3. You can access your library package as if it's in your executable program
 4. You can import it just by using its name
 
@@ -38,9 +38,9 @@
 >
 > **2:** That's right.
 >
-> **3:** You can't access to a package from another package without importing it.
+> **3:** You can't access a package from another package without importing it.
 >
-> **4:** No, you can't. You need to import it using its full directory path after GOPATH. BTW, in the near future this may change with the Go modules support.
+> **4:** No, you can't. You need to import it using its full directory path after GOPATH. BTW, in the near future, this may change with the Go modules support.
 
 
 ## In the following program, which names are exported?

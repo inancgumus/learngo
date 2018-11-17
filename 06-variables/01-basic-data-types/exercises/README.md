@@ -4,4 +4,4 @@
 
 2. **[Print hexes](https://github.com/inancgumus/learngo/tree/master/06-variables/01-basic-data-types/exercises/02-print-hexes)** (optional exercise)
 
-    Print numbers in hexadecimals
+    Print numbers in hexadecimal

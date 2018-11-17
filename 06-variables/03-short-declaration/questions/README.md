@@ -49,7 +49,7 @@ b := true
 ```
 
 * bool *CORRECT*
-* string 
+* string
 * int
 * float64
 
@@ -59,7 +59,7 @@ i := 42
 ```
 
 * bool
-* string 
+* string
 * int *CORRECT*
 * float64
 
@@ -69,7 +69,7 @@ f := 6.28
 ```
 
 * bool
-* string 
+* string
 * int
 * float64 *CORRECT*
 
@@ -94,7 +94,7 @@ x, z := 10, "hi"
 * 20
 * false
 
-## Which following declaration can be used in the package scope?
+## Which the following declaration can be used in the package scope?
 
 * x := 10
 * y, x := 10, 5

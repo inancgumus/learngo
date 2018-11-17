@@ -56,13 +56,13 @@
 5. **Additional Step for Windows Users: Git-Bash**
     * In this course I'll be using bash commands. Bash is just a command-line interface used in OS X and Linux. It's one of the most popular command-line interfaces. So, if you want to use it too, instead of using the Windows default command-line, you can use git bash that you've installed. With git bash, you can type a command in command-line as you're on OS X or Linux.
 
-    * If you don't want to use git bash, it's ok too. It depends on you. But note that, I'll be using bash commands mostly. Because, it allows more advanced commands as well.
+    * If you don't want to use git bash, it's ok too. It depends on you. But note that, I'll be using bash commands mostly. Because it allows more advanced commands as well.
 
     * **So, to use git bash, follow these steps:**
         1. Just search for git bash from the start bar
         2. Or, if there's one, click on the icon on your desktop
 
-        3. Also setup VS Code to use git-bash by default:
+        3. Also, setup VS Code to use git-bash by default:
             1. Open VS Code
             2. Go to Command Palette
                 1. Type: `terminal`
@@ -76,9 +76,9 @@
 <div style="page-break-after: always;"></div>
 
 > For more tutorials: [https://blog.learngoprogramming.com](https://blog.learngoprogramming.com)
-> 
+>
 > Copyright © 2018 Inanc Gumus
-> 
+>
 > Learn Go Programming Course
-> 
+>
 > [Click here to read the license.](https://creativecommons.org/licenses/by-nc-sa/4.0/)

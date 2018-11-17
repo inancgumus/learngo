@@ -5,7 +5,7 @@
 
 
 ## Which of the following code is correct?
-1. 
+1.
 ```go
 package main
 
@@ -50,7 +50,7 @@ func main() {
 >
 
 ## How should you name your code so that Go can generate documentation from your code automatically?
-1. By commenting the each line of the code; then it will generate the documentation from whatever it sees
+1. By commenting each line of the code; then it will generate the documentation from whatever it sees
 2. By starting the comments using the name of the declared names *CORRECT*
 3. By using multi-line comments
 
@@ -75,6 +75,6 @@ func main() {
 3. `go` tool is the real tool behind `go doc`
 4. `go` tool is the real tool behind `godoc`
 
-> **2:** That's right. go doc tool uses godoc tool behind the scenes. go doc is just a simplified version of the godoc tool.
+> **2:** That's right. go doc tool uses the godoc tool behind the scenes. go doc is just a simplified version of the godoc tool.
 >
 >
