@@ -3,7 +3,7 @@
 2. A statement produces a value
 3. A statement can't change the execution flow
 
-> **2:** A statement can't produce a value. However, it can indirectly help producing a value.
+> **2:** A statement can't produce a value. However, it can indirectly help to produce a value.
 >
 >
 > **3:** It surely can.

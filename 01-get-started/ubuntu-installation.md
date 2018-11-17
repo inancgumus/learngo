@@ -14,7 +14,7 @@
 
 ## 3. Install Go
 
-Select linux and the download will begin.
+Select Linux and the download will begin.
 
   ```bash
   firefox https://golang.org/dl
@@ -47,7 +47,7 @@ Select linux and the download will begin.
 
 * These are very handy tools to ease the development (like goimports)
 
-* `go get` cannot be usable without installing a code versioning program like Git which we already have got it above.
+* `go get` cannot be used without installing a code versioning program like Git which we already have got it above.
 
 * This will create `~/go` directory and will download go tools into there.
 
@@ -71,9 +71,9 @@ Select linux and the download will begin.
     ```bash
     cat <<EOF > $GOPATH/src/hello.go
     package main
-    
+
     import "fmt"
-    
+
     func main() {
         fmt.Println("hello gopher!")
     }
@@ -91,9 +91,9 @@ Select linux and the download will begin.
 <div style="page-break-after: always;"></div>
 
 > For more tutorials: [https://blog.learngoprogramming.com](https://blog.learngoprogramming.com)
-> 
+>
 > Copyright © 2018 Inanc Gumus
-> 
+>
 > Learn Go Programming Course
-> 
+>
 > [Click here to read the license.](https://creativecommons.org/licenses/by-nc-sa/4.0/)

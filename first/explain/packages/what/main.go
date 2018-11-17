@@ -17,7 +17,7 @@ func main() {
 
 	// Here, `main()` can access `bye()` and `hey()`
 
-	// It's because: bye.go, hey.go and main.go
+	// It's because bye.go, hey.go and main.go
 	//   are in the main package.
 
 	bye()

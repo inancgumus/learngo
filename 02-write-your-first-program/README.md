@@ -67,7 +67,7 @@ _See the next page..._
 
 * **Example:**
 
-    * My github username is: inancgumus
+    * My GitHub username is: inancgumus
 
     * So, I put all my programs under: `~/go/src/github.com/inancgumus/`
 
@@ -117,9 +117,9 @@ That's all! Enjoy!
 * BTW, There's a new *Go Modules* support which allows you to run your programs in any directory that you want. After the section ends, you'll also find an information about it.
 
 > For more tutorials: [https://blog.learngoprogramming.com](https://blog.learngoprogramming.com)
-> 
+>
 > Copyright © 2018 Inanc Gumus
-> 
+>
 > Learn Go Programming Course
-> 
+>
 > [Click here to read the license.](https://creativecommons.org/licenses/by-nc-sa/4.0/)

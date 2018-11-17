@@ -5,7 +5,7 @@
 
 ## Why a package clause is used in a Go source-code file?
 1. It's used for importing a package
-2. It's used for letting Go know that the file belong to a package *CORRECT*
+2. It's used for letting Go know that the file belongs to a package *CORRECT*
 3. It's used for declaring a new function
 
 > **1:** `import` statement does that.
