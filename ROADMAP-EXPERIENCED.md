@@ -1,18 +1,18 @@
 # ROADMAP FOR EXPERIENCED DEVELOPERS
 
-Hi! 
+Hi!
 
 If you're an experienced developer, you might want to follow this roadmap while taking this course.
 
-This course starts from the most basics than advances toward the end, step by step. So, the complexity of the topics increase on each step. I've intentionally designed it so to make it easy for everyone. 
+This course starts from the most basics than advances toward the end, step by step. So, the complexity of the topics increases on each step. I've intentionally designed it so to make it easy for everyone.
 
-If you think some of the topics are easy for you, then just watch the recap lectures and skip the lectures in that section all together, you can always come back to them later.
+If you think some of the topics are easy for you, then just watch the recap lectures and skip the lectures in that section altogether, you can always come back to them later.
 
 1. **Git clone the repo**
    https://github.com/inancgumus/learngo
 
 2. Read **"Experimental: Using Go Modules"** document and you won't have to use GOPATH
-    1. If you want learn about GOPATH, just watch:
+    1. If you want to learn about GOPATH, just watch:
     2. Learn about GOPATH and Go directory structure
 
 3. You might want to increase the video speed.
@@ -37,7 +37,7 @@ If you think some of the topics are easy for you, then just watch the recap lect
 * Importing and File Scope
 * Importing - Rename imported packages
 
-## PART I — Statements, Expressions and Comments
+## PART I — Statements, Expressions, and Comments
 * Go Doc: Generate documentation automatically from your code
 
 ## PART I — Create Your First Library Package

@@ -5,7 +5,7 @@
 3. **Say hello to yourself.**
 
     1. Build your program using `go build`
-   
+
     2. **Send it to your friend**
 
        S/he should use be using the same operating system.
@@ -28,9 +28,9 @@
        **You can find the full list in here:**
        https://golang.org/doc/install/source#environment
 
-       **NOTE:** If you're using the command prompt or the powershell, you may need to use it like this:
+       **NOTE:** If you're using the command prompt or the PowerShell, you may need to use it like this:
        `cmd /c "set GOOS=darwin GOARCH=386 && go build"`
-   
+
 4. **Call [Print](https://golang.org/pkg/fmt/#Print) instead of [Println](https://golang.org/pkg/fmt/#Println)** to see what happens.
 
 5. **Call [Println](https://golang.org/pkg/fmt/#Println) or [Print](https://golang.org/pkg/fmt/#Print) with multiple values** by separating them using commas.
@@ -45,10 +45,10 @@
 
     2. Look at their source-code by clicking on their titles.
 
-    3. You don't have to understand everything, just do it.This will warm you up for the upcoming lectures.
+    3. You don't have to understand everything, just do it. This will warm you up for the upcoming lectures.
 
 9. Also, **take a tour on**: https://tour.golang.org/
 
     1. Have a quick look. Check out the language features.
-    
+
     2. We're going to talk all about them soon.

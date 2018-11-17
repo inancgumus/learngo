@@ -32,12 +32,12 @@
 
 
 ## Which one below is true for runtime?
-1. It happens when your program starts running in a computer *CORRECT*
+1. It happens when your program starts running on a computer *CORRECT*
 2. It happens while your program is being compiled
 
 
 ## Which one below is true for the compile-time?
-1. It happens when your program starts running in a computer
+1. It happens when your program starts running on a computer
 2. It happens while your program is being compiled  *CORRECT*
 
 

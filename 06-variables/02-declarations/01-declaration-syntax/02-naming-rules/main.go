@@ -17,7 +17,7 @@ func main() {
 	// underscore is allowed but not recommended
 	var _speed int
 
-	// unicode letters are allowed
+	// Unicode letters are allowed
 	var 速度 int
 
 	// keep the compiler happy

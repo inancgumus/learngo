@@ -19,7 +19,7 @@ import "fmt"
 // safe := true
 
 // However, you can use the normal declaration at the
-// package scope. Since, it has a keyword: `var`
+// package scope. Since it has a keyword: `var`
 var safe = true
 
 func main() {

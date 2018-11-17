@@ -30,7 +30,7 @@ func block() {
 ## Which name below is file scoped?
 1. awesome
 2. fmt **CORRECT**
-3. enabled 
+3. enabled
 4. block()
 5. counter
 
@@ -42,7 +42,7 @@ func block() {
 ## Which name below is in the scope of the block() func?
 1. awesome
 2. fmt
-3. enabled 
+3. enabled
 4. block()
 5. counter **CORRECT**
 
@@ -67,7 +67,7 @@ func block() {
 3. No: It's in the file scope
 4. No: It's in the block scope of block() **CORRECT**
 
-> **4:** That's right. None of the other code can see the names inside the `block()` function. Only the code inside the `block()` function can see them (Only to some extend. For example: Inside the block, the code can only see the variables declared before it.)
+> **4:** That's right. None of the other code can see the names inside the `block()` function. Only the code inside the `block()` function can see them (Only to some extent. For example: Inside the block, the code can only see the variables declared before it.)
 >
 >
 
@@ -83,7 +83,7 @@ func block() {
 >
 
 
-## What happens if you declare the same name in the same scope like this:
+## What happens if you declare the same name in the same scope as this:
 ```go
 package awesome
 

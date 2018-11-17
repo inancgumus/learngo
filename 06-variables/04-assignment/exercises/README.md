@@ -1,6 +1,6 @@
 # Assignments
 
-Assignment means "copying" values. Everything is get copied in Go. You'll learn more about this afterwards.
+Assignment means "copying" values. Everything is getting copied in Go. You'll learn more about this afterward.
 
 Now, get your feet wet and try some assignment exercises.
 
