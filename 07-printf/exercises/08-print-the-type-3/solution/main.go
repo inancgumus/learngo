@@ -10,5 +10,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("Type of %s is %T\n", "hello", "hello")
+	fmt.Printf("Type of %s is %[1]T\n", "hello")
 }
