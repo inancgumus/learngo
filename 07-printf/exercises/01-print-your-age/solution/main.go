@@ -10,5 +10,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Printf("My age is %d years old.\n", 30)
+	fmt.Printf("I'm %d years old.\n", 30)
 }
