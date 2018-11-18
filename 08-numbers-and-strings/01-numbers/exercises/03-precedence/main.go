@@ -38,5 +38,6 @@ func main() {
 	fmt.Println(10 / 2 * 10 % 7)
 
 	// This expression should print 40
+	// Note that you may need to use floats to solve this
 	fmt.Println(100 / 5 / 2)
 }
