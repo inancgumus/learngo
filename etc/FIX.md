@@ -9,3 +9,5 @@
 - [ ] Apply grammar mistakes to Udemy [Ref](https://github.com/inancgumus/learngo/commit/06891c57fc5299db5f5178bde4da7dd8e569c082)
 
 - [ ] Fix the printing lecture 78 exercise (numbers) [Ref](https://learngoprogramming.slack.com/archives/DC86N4QJK/p1542552870174800)
+
+- [ ] Fix the strings quiz [Ref](https://learngoprogramming.slack.com/archives/DC86N4QJK/p1542566248185500)
