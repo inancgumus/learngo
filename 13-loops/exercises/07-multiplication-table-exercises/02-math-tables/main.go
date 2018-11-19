@@ -86,6 +86,21 @@ package main
 //    2    0    0    0    2    2
 //    3    0    0    1    0    3
 //    4    0    0    0    1    0
+//
+// NOTES:
+//
+//   When running the program in Windows Git Bash, you might need
+//   to escape the characters like this.
+//
+//   This happens because those characters have special meaning.
+//
+//   Division:
+//     go run main.go // 4
+//
+//   Multiplication and others:
+//   (this is also necessary for non-Windows bashes):
+//
+//     go run main.go "*" 4
 // ---------------------------------------------------------
 
 func main() {
