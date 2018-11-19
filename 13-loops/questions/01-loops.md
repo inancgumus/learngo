@@ -97,7 +97,7 @@ go run main.go go is awesome
 ```
 
 ```go
-for i, v := range os.Args {
+for i, v := range os.Args[1:] {
     fmt.Println(i+1, v)
 }
 ```
@@ -131,7 +131,7 @@ go run main.go go is awesome
 ```
 
 ```go
-for i := range os.Args {
+for i := range os.Args[1:] {
     fmt.Println(i+1)
 }
 ```
@@ -165,7 +165,7 @@ go run main.go go is awesome
 ```
 
 ```go
-for _, v := range os.Args {
+for _, v := range os.Args[1:] {
     fmt.Println(v)
 }
 ```
@@ -210,6 +210,6 @@ fmt.Println(i)
 1. go is awesome
 2. 1 2 3
 3. 2
-4. 3 *CORRECT*
+4. 4 *CORRECT*
 
 > **4:** As you can see, you can also use a for range statement for counting things.
