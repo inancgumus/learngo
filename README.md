@@ -7,15 +7,21 @@ This repository contains the examples, exercises, and quizzes for the course.
 
 # Stay in touch
 
-[Follow me on Twitter](https://twitter.com/inancgumus)
+**[Follow me on Twitter](https://twitter.com/inancgumus)**:
+
+I usually tweet Go tips and tricks.
 
 [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
 
-👉 [Subscribe to my Go emailing list](https://eepurl.com/c4DMNX)
+👉 **[Subscribe to my Go emailing list](https://eepurl.com/c4DMNX)**:
 
   _(5K+ developers already subscribed!)_
+  
+  Get new course announcements and other updates about the course.
 
-👉 [Learn Go Programming Blog](https://blog.learngoprogramming.com)
+👉 **[Learn Go Programming Blog](https://blog.learngoprogramming.com)**:
+
+  My blog contains ebook sized, visual, and easy to understand articles for beginner and experienced Go programmers.
 
   _(Followed by 3K+ developers)_
 
@@ -23,9 +29,8 @@ This repository contains the examples, exercises, and quizzes for the course.
 
   _(For 4K Videos — The channel is very young right now)_
 
-👉 [Learn Go Programming Facebook Page](https://www.facebook.com/learngoprogramming/)
-
 👉 [Learn Go Programming Facebook Group](https://www.facebook.com/groups/learngoprogramming/)
+
 ---
 
 ## License
