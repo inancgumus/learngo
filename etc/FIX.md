@@ -11,3 +11,5 @@
 - [ ] Fix the printing lecture 78 exercise (numbers) [Ref](https://learngoprogramming.slack.com/archives/DC86N4QJK/p1542552870174800)
 
 - [ ] Fix the strings quiz [Ref](https://learngoprogramming.slack.com/archives/DC86N4QJK/p1542566248185500)
+
+- [ ] Type conversion lecture doesn't talk about literal conversion but it asks a question as if it's been explained [Ref](https://www.udemy.com/message/thread/120614366/)
