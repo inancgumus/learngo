@@ -32,18 +32,19 @@ func main() {
 	)
 
 	for {
-		if i%2 != 0 {
+		if i > max {
+			break
+		} else if i%2 != 0 {
 			i++
 			continue
 		}
-		sum += i
 
 		fmt.Print(i)
-		if i != max {
+		if i < max-1 {
 			fmt.Print(" + ")
-		} else {
-			break
 		}
+
+		sum += i
 		i++
 	}
 	fmt.Printf(" = %d\n", sum)

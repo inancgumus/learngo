@@ -34,7 +34,7 @@ func main() {
 		sum += i
 
 		fmt.Print(i)
-		if i != max {
+		if i < max-1 {
 			fmt.Print(" + ")
 		}
 	}
