@@ -13,3 +13,5 @@
 - [ ] Fix the strings quiz [Ref](https://learngoprogramming.slack.com/archives/DC86N4QJK/p1542566248185500)
 
 - [ ] Type conversion lecture doesn't talk about literal conversion but it asks a question as if it's been explained [Ref](https://www.udemy.com/message/thread/120614366/)
+
+- [ ] Underlying types conversion possible misundertanding [Ref](https://twitter.com/in_aanand/status/1065136567629553664)
