@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	var brightness int
+	var brightness float64
 
 	fmt.Println(brightness)
 }
