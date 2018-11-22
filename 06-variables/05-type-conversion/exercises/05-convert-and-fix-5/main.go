@@ -16,7 +16,7 @@ import "fmt"
 //
 // HINTS
 //   maximum of int8  can be 127
-//   maximum of int16 can be
+//   maximum of int16 can be 32767
 //
 // EXPECTED OUTPUT
 //  1127
