@@ -115,8 +115,9 @@ func main() {
 >
 
 
-## Do you have to call the functions yourself (_except the main func_)?
-1. Yes, so that, I can execute that function. *CORRECT*
+## Do you have to call a function to execute it?
+_(except the main func)_
+1. Yes, so that, Go can execute that function. *CORRECT*
 2. Yes, so that, Go can execute my program.
 3. No, Go calls the functions automatically.
 
