@@ -15,3 +15,5 @@
 - [ ] Type conversion lecture doesn't talk about literal conversion but it asks a question as if it's been explained [Ref](https://www.udemy.com/message/thread/120614366/)
 
 - [ ] Underlying types conversion possible misundertanding [Ref](https://twitter.com/in_aanand/status/1065136567629553664)
+
+- [ ] Comment: Gram vs Gram1 — He's asking Gram1 should have been clearer. Explain this in the video. If it was Gram1 then the example would be pointless.
