@@ -10,12 +10,12 @@ package main
 // ---------------------------------------------------------
 // EXERCISE: Declare string
 //
-//  1. Declare a string variable
+//  1. Declare a string variable with the name s
 //
 //  2. Print that variable
 //
 // EXPECTED OUTPUT
-//  ""
+//  s (string): ""
 // ---------------------------------------------------------
 
 func main() {
