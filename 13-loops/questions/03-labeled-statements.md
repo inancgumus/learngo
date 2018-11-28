@@ -8,7 +8,7 @@
 > **2:** They can be used throughout the function, even before their declaration inside the function. This also what makes goto statement jump to any label within a function.
 
 
-## Which statement that the word label labels?
+## There two for loop statements below and a label called "words". Which statement does the "words label" label?"
 ```go
 for range words {
 words:
@@ -25,6 +25,8 @@ words:
 
 
 ## Will this loop terminate after the break?
+**BTW:** _"terminate" is the same thing with "quit". Remember, statements can also terminate. This means that the statement will end. It doesn't mean that the program will end._
+
 ```go
 package main
 
@@ -132,7 +134,7 @@ func main() {
 
 > **1:** Yes! Here, the switcher label labels the first switch statement. So, it's a switch label. And, then it tries to jump to that label using a continue. However, a continue statement can only be used to jump to a loop label.
 >
-> **2:** It can be used to continue for the next loop step.
+> **2:** Yes, it can be used in a switch statement to continue for the next loop step. But, that's not the problem with this program.
 >
 > **3:** Yes, but that's not the real problem.
 
