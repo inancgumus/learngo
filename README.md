@@ -7,9 +7,9 @@ This repository contains the examples, exercises, and quizzes for the course.
 
 # Stay in touch
 
-👉 **[Join the Student Chat Channel](http://bit.ly/LEARNGOSLACK)**: Follow for the updates to the course.
+📣 **[Join the Student Chat Channel](http://bit.ly/LEARNGOSLACK)**: Follow for the updates to the course.
 
-**[Follow me on Twitter](https://twitter.com/inancgumus)**: I usually tweet Go tips and tricks.
+👉 **[Follow me on Twitter](https://twitter.com/inancgumus)**: I usually tweet Go tips and tricks.
 
 [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
 
