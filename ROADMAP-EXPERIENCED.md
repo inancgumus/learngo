@@ -6,9 +6,9 @@ If you're an experienced developer, you might want to follow this roadmap while 
 
 This course starts from the most basics than advances toward the end, step by step. So, the complexity of the topics increases on each step. I've intentionally designed it so to make it easy for everyone. 
 
-If you think some of the topics are easy for you, then just watch the recap lectures and skip the lectures in that section altogether, you can always come back to them later.
+If you think some of the topics are easy for you, then watch the recap lectures and skip the lectures in that section altogether, you can always come back to them later.
 
-BTW, if you're also wondering about why should you learn Go, then just scroll down to the bottom of this article.
+BTW, if you're also wondering about why should you learn Go, then scroll down to the bottom of this article.
 
 ---
 
@@ -18,7 +18,7 @@ BTW, if you're also wondering about why should you learn Go, then just scroll do
    https://github.com/inancgumus/learngo
 
 2. Read **"Side Note About Go Modules"** part right after the outline below.
-   1. If you also want to learn about GOPATH, just watch: "Learn about GOPATH and Go directory structure" lecture
+   1. If you also want to learn about GOPATH, watch: "Learn about GOPATH and Go directory structure" lecture
 
 3. You might want to **increase the video speed**.
     1. If you don't know how, [here](https://support.udemy.com/hc/en-us/articles/229231247-Change-the-Video-Speed)'s how you can do that.
@@ -40,7 +40,7 @@ BTW, if you're also wondering about why should you learn Go, then just scroll do
 
 ### PART I — Packages, Scopes and Importing
 * Packages - Learn how to run multiple files
-* Packages - Executable vs Library Packages
+* Packages - Executable vs. Library Packages
 * Importing and File Scope
 * Importing - Rename imported packages
 
@@ -100,7 +100,7 @@ BTW, if you're also wondering about why should you learn Go, then just scroll do
 * Labeled Statements: Break from a Switch
 * Labeled Statements: Goto (Optional)
 
-The rest will be coming soon.
+The rest is coming soon.
 
 ---
 
@@ -114,20 +114,20 @@ If you're a power user and want to try this **experimental feature**, just put y
 
     `go mod init [module-name]`
 
-Afterward, while in this directory, Go will assume that it's like you're under your own GOPATH. However, you'll be under your module's directory. You can create as many modules as you want. But, keep it simple and use only one module for now.
+Afterward, while in this directory, Go assumes that it's like you're under your GOPATH. However, you'll be under your module's directory. You can create as many modules as you want. However, keep it simple and use only one module for now.
 
 ### EXAMPLE:
 
 1. Let's say that my module directory is under: `~/Desktop/go`
-2. And, my github.com username is: `inancgumus`
-3. And, I've a program called: `hello`
+2. Also, my github.com username is: `inancgumus`
+3. And, I have a program called: `hello`
 4. So, I put my hello program under: `~/Desktop/go/hello`
 5. Then, while under `~/Desktop/go` I would call mod init like this:
 
     `go mod init github.com/inancgumus`
     
-6. So, if I want to build my program, I will go into `~/Desktop/go/hello`
-7. And, I can use usual go build and go run commands there.
+6. So, if I want to build my program, Go into `~/Desktop/go/hello`
+7. Moreover, I can use usual go build and go run commands there.
 8. By doing so, I've created a single module for all my projects. As I've said, you can also create separate modules for each of your projects, like this:
 
     `go mod init github.com/inancgumus/hello`
@@ -140,7 +140,7 @@ For more information check out [this wiki article](https://github.com/golang/go/
 
 If you're curious about why you should learn Go, then check out this summary here.
 
-**In summary:** Go is easy as Python and Javascript and it's as fast as C/C++. It's more enjoyable to work with Go than C/C++. You can go low-level or you can stay high-level.
+**In summary:** Go is easy as Python and Javascript and it's as fast as C/C++. It's more enjoyable to work with Go than C/C++. You can go low-level, or you can stay high-level.
 
 ### WHAT GO IS USED FOR?
 
@@ -148,7 +148,7 @@ Go is used mostly by web companies: Google, Facebook, Twitter, Uber, Apple, Drop
 
 **Go is best for:** Cross-Platform Command-line Tools, Distributed Network Applications, Cloud technologies like Microservices and Serverless, Web APIs, Database Engines, Big-Data Processing Pipelines, Embedded Development, and so on.
 
-**Go is not best for (but doable):** Desktop Apps, Writing Operating Systems, Kernel Drivers, Game Development etc
+**Go is not best for (but doable):** Desktop Apps, Writing Operating Systems, Kernel Drivers, Game Development, etc
 
 ### WHO DESIGNED GO?
 
@@ -168,7 +168,7 @@ Go designed by one of the most influential people in the industry:
 * VM image deduplication utility
 * Chat server
 * RUM beacon collector
-* Time-series database engine, client for it, cmdline tools etc
+* Time-series database engine, a client for it, cmd line tools, etc
 * Map-reduce library
 * Clustered front-end-optimizing reverse proxy with on the fly content rewriting, image resizing, caching, Lua event handler execution (all multi-tenant)
 * Geographically distributed reverse proxy CDN nodes
@@ -185,13 +185,13 @@ Go designed by one of the most influential people in the industry:
 * On the fly image processing services
 * 3d render farm/content production pipeline (pretty large project)
 * Production lxc container deployment
-* Automated testing managemen
+* Automated testing management
 
 Reference: [This reddit post](https://www.reddit.com/r/golang/comments/5nac2b/what_have_you_used_go_for_in_your_professional/).
 
 ### [From Eight years of Go post](https://blog.golang.org/8years):
 
-> Today, **every single cloud company has critical components of their cloud infrastructure implemented in Go** including Google Cloud, AWS, Microsoft Azure, Heroku and many others. Go is a key part of cloud companies like Alibaba, Cloudflare, and Dropbox. Go is a critical part of open infrastructure including Kubernetes, Cloud Foundry, Openshift, NATS, Docker, Istio, Etcd, Consul, Juju and many more. Companies are increasingly choosing Go to build cloud infrastructure solutions.
+> Today, **every single cloud company has critical components of their cloud infrastructure implemented in Go** including Google Cloud, AWS, Microsoft Azure, Heroku, and many others. Go is a vital part of cloud companies like Alibaba, Cloudflare, and Dropbox. Go is a critical part of open infrastructure including Kubernetes, Cloud Foundry, Openshift, NATS, Docker, Istio, Etcd, Consul, Juju and many more. Companies are increasingly choosing Go, to build cloud infrastructure solutions.
 
 ### HOW MUCH YOU CAN EARN?
 
