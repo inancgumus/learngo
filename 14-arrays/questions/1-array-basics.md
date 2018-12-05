@@ -1,4 +1,4 @@
-# Arrays
+# Array Basics Quiz
 
 ## What's an array?
 1. Accelerated charged particle array gun from Star Wars

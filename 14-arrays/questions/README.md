@@ -1,3 +1,4 @@
 # Array Quizzes
 
-* [Array Basics](array-basics.md)
+* [Array Basics](1-array-basics.md)
+* [Arrays](2-arrays.md)
