@@ -14,8 +14,9 @@ import "fmt"
 // whether they're equal or not.
 
 func main() {
-	// When comparing two arrays,
-	// Their types should be identical
+	// When comparing two arrays, their types should be identical
+
+	// Comment out one of the following pair of variables and observe the results.
 
 	var (
 		// equal (types + elements are identical)::
