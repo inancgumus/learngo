@@ -50,6 +50,11 @@ package main
 //   go run main.go void
 //     Search Results:
 //     We don't have the book: "void"
+//
+// HINTS:
+//   + To find out whether a string contains another string value, you can use the strings.Contains function.
+//   + To convert a string value to lowercase, you can use the strings.ToLower function.
+//   + Check out the strings package for more information.
 // ---------------------------------------------------------
 
 func main() {
