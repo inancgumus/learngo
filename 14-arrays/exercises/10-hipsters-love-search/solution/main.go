@@ -13,27 +13,24 @@ import (
 	"strings"
 )
 
-const yearly = 4
-
 func main() {
-	var books [yearly]string
+	books := [4]string{
+		"Kafka's Revenge",
+		"Stay Golden",
+		"Everythingship",
+		"Kafka's Revenge 2nd Edition",
+	}
 
-	books[0] = "Kafka's Revenge"
-	books[1] = "Stay Golden"
-	books[2] = "Everythingship"
-	books[3] += books[0] + " 2nd Edition"
-
-	if len(os.Args) != 2 {
+	args := os.Args[1:]
+	if len(args) != 1 {
 		fmt.Println("Tell me a book title")
 		return
 	}
-	query := os.Args[1]
+	query := strings.ToLower(args[0])
 
 	fmt.Println("Search Results:")
-	fmt.Println("---------------")
 
 	var found bool
-
 	for _, v := range books {
 		if strings.Contains(strings.ToLower(v), query) {
 			fmt.Println("+", v)
@@ -42,6 +39,6 @@ func main() {
 	}
 
 	if !found {
-		fmt.Printf("We don't have that book: %q\n", query)
+		fmt.Printf("We don't have the book: %q\n", query)
 	}
 }
