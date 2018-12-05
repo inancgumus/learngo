@@ -19,7 +19,8 @@ package main
 //  + You can use the bubble-sort algorithm to sort the numbers.
 //    Please watch this: https://youtu.be/nmhjrI-aW5o?t=7
 //
-//  + When swapping for elements, do not check for the last element.
+//  + When swapping the elements, do not check for the last element.
+//
 //    Or, you will receive this error:
 //    "panic: runtime error: index out of range"
 //

@@ -21,8 +21,9 @@ package main
 //   + The search and the filtering should be case insensitive
 //
 // HINT
-//   + strings.Fields function converts a given string a slice.
-//     You can find its example in the worder finder program that I've mentioned
+//   + strings.Fields function converts a given string to a slice.
+//
+//     You can find its example in the word finder program that I've mentioned
 //     above.
 //
 // EXPECTED OUTPUT

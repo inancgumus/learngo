@@ -4,11 +4,17 @@ package main
 // EXERCISE: Assign the Arrays
 //
 //  1. Create an array named books
+//
 //  2. Add book titles to the array
+//
 //  3. Create two more copies of the array named: upper and lower
+//
 //  4. Change the book titles to uppercase in the upper array only
+//
 //  5. Change the book titles to lowercase in the lower array only
+//
 //  6. Print all the arrays
+//
 //  7. Observe that the arrays are not connected when they're copied.
 //
 // NOTE

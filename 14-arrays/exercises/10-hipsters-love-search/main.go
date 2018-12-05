@@ -8,11 +8,11 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Hipster's Love Search Engine
+// EXERCISE: Hipster's Love Bookstore Search Engine
 //
-//  Your goal is to let people search for books of Hipster's Love Bookstore.
+//  Your goal is to allow people to search for books.
 //
-//  1. Create an array with these book titles:
+//  1. Create an array with the following book titles:
 //      Kafka's Revenge
 //      Stay Golden
 //      Everythingship
@@ -22,7 +22,7 @@ package main
 //
 //  3. Search for the books in the books array
 //
-//  4. When the programs find the book, print it.
+//  4. When the program finds the book, print it.
 //  5. Otherwise, print that the book doesn't exist.
 //
 //  6. Handle the errors.

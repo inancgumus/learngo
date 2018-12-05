@@ -12,12 +12,17 @@ package main
 //
 //  1. Declare and print the following arrays with their types:
 //
-//    1. The names of your best three friends
-//    2. The distances to five different locations
-//    3. A data buffer with five bytes of capacity
-//    4. Currency exchange ratios only for a single currency
-//    5. Up/Down status of four different web servers
-//    6. A byte array that doesn't occupy memory space
+//    1. The names of your best three friends (names array)
+//
+//    2. The distances to five different locations (distances array)
+//
+//    3. A data buffer with five bytes of capacity (data array)
+//
+//    4. Currency exchange ratios only for a single currency (ratios array)
+//
+//    5. Up/Down status of four different web servers (alives array)
+//
+//    6. A byte array that doesn't occupy memory space (zero array)
 //
 //  2. Print only the types of the same arrays.
 //

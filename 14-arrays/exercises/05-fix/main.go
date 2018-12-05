@@ -4,7 +4,9 @@ package main
 // EXERCISE: Fix
 //
 //  1. Uncomment the code
+//
 //  2. And fix the problems
+//
 //  3. BONUS: Simplify the code
 // ---------------------------------------------------------
 
