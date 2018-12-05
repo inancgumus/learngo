@@ -126,7 +126,7 @@ Afterward, while in this directory, Go assumes that it's like you're under your 
 
     `go mod init github.com/inancgumus`
     
-6. So, if I want to build my program, Go into `~/Desktop/go/hello`
+6. So, if I want to build my program, I'll go into `~/Desktop/go/hello`
 7. Moreover, I can use usual go build and go run commands there.
 8. By doing so, I've created a single module for all my projects. As I've said, you can also create separate modules for each of your projects, like this:
 
@@ -148,7 +148,7 @@ Go is used mostly by web companies: Google, Facebook, Twitter, Uber, Apple, Drop
 
 **Go is best for:** Cross-Platform Command-line Tools, Distributed Network Applications, Cloud technologies like Microservices and Serverless, Web APIs, Database Engines, Big-Data Processing Pipelines, Embedded Development, and so on.
 
-**Go is not best for (but doable):** Desktop Apps, Writing Operating Systems, Kernel Drivers, Game Development, etc
+**Go is not best for (but doable):** Desktop Apps, Writing Operating Systems, Kernel Drivers, Game Development, etc.
 
 ### WHO DESIGNED GO?
 
@@ -168,7 +168,7 @@ Go designed by one of the most influential people in the industry:
 * VM image deduplication utility
 * Chat server
 * RUM beacon collector
-* Time-series database engine, a client for it, cmd line tools, etc
+* Time-series database engine, a client for it, commnad-line tools, etc.
 * Map-reduce library
 * Clustered front-end-optimizing reverse proxy with on the fly content rewriting, image resizing, caching, Lua event handler execution (all multi-tenant)
 * Geographically distributed reverse proxy CDN nodes
@@ -191,7 +191,7 @@ Reference: [This reddit post](https://www.reddit.com/r/golang/comments/5nac2b/wh
 
 ### [From Eight years of Go post](https://blog.golang.org/8years):
 
-> Today, **every single cloud company has critical components of their cloud infrastructure implemented in Go** including Google Cloud, AWS, Microsoft Azure, Heroku, and many others. Go is a vital part of cloud companies like Alibaba, Cloudflare, and Dropbox. Go is a critical part of open infrastructure including Kubernetes, Cloud Foundry, Openshift, NATS, Docker, Istio, Etcd, Consul, Juju and many more. Companies are increasingly choosing Go, to build cloud infrastructure solutions.
+> Today, **every single cloud company has critical components of their cloud infrastructure implemented in Go** including Google Cloud, AWS, Microsoft Azure, Heroku, and many others. Go is a key part of cloud companies like Alibaba, Cloudflare, and Dropbox. Go is a critical part of open infrastructure including Kubernetes, Cloud Foundry, Openshift, NATS, Docker, Istio, Etcd, Consul, Juju and many more. Companies are increasingly choosing Go, to build cloud infrastructure solutions.
 
 ### HOW MUCH YOU CAN EARN?
 
