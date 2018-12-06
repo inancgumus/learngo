@@ -10,21 +10,8 @@ package main
 import (
 	"fmt"
 	"time"
-)
 
-// screenClear  : When printed clears the screen.
-// cursorMoveTop: Moves the cursor to top-left screen position
-//
-// + Note: This only works on bash command prompts.
-//
-// + For Go Playground, use these instead:
-//   screenClear   = "\f"
-//   cursorMoveTop = "\f"
-//
-// See for more info: https://bluesock.org/~willkg/dev/ansi.html
-const (
-	screenClear   = "\033[2J"
-	cursorMoveTop = "\033[H"
+	"github.com/inancgumus/screen"
 )
 
 func main() {
@@ -135,15 +122,16 @@ func main() {
 		zero, one, two, three, four, five, six, seven, eight, nine,
 	}
 
-	// clears the command screen
-	fmt.Print(screenClear)
+	// For Go Playground, do not use this.
+	screen.Clear()
 
 	// Go Playground will not run an infinite loop.
 	// Loop for example 1000 times instead, like this:
 	//   for i := 0; i < 1000; i++ { ... }
 	for {
-		// moves the cursor to the top-left position
-		fmt.Print(cursorMoveTop)
+		// For Go Playground, use this instead:
+		// fmt.Print("\f")
+		screen.MoveTopLeft()
 
 		// get the current hour, minute and second
 		now := time.Now()

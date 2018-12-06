@@ -10,14 +10,8 @@ package main
 import (
 	"fmt"
 	"time"
-)
 
-// GOAL:
-// Blink the colons
-
-const (
-	screenClear   = "\033[2J"
-	cursorMoveTop = "\033[H"
+	"github.com/inancgumus/screen"
 )
 
 func main() {
@@ -115,10 +109,10 @@ func main() {
 		zero, one, two, three, four, five, six, seven, eight, nine,
 	}
 
-	fmt.Print(screenClear)
+	screen.Clear()
 
 	for {
-		fmt.Print(cursorMoveTop)
+		screen.MoveTopLeft()
 
 		now := time.Now()
 		hour, min, sec := now.Hour(), now.Minute(), now.Second()
@@ -143,8 +137,6 @@ func main() {
 			fmt.Println()
 		}
 
-		// pause for 1 second
 		time.Sleep(time.Second)
-		// fmt.Println()
 	}
 }
