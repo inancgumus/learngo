@@ -72,7 +72,7 @@ func main() {
 	i, _ := strconv.ParseInt("00000010", 2, 64)
 	fmt.Println(i)
 
-	// 0 0 0 1 0 1 1 0 is equal to 2 because:
+	// 0 0 0 1 0 1 1 0 is equal to 22 because:
 	// ^ ^ ^ ^ ^ ^ ^ ^
 	// | | | | | | | |
 	// | | | | | | | +-> 2^0 * 0 = 0
