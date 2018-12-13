@@ -37,12 +37,12 @@ package main
 //  go run main.go sheep
 //    "sheep" is not a month.
 //
-//  go run main.go january
-//    "january" has 31 days.
-//
 //  -----------------------------------------
 //  Your solution should handle the leap years
 //  -----------------------------------------
+//  go run main.go january
+//    "january" has 31 days.
+//
 //  go run main.go february
 //    "february" has 28 days.
 //
