@@ -15,7 +15,6 @@ import (
 )
 
 func main() {
-	// by using 'shift' we can create the slide effect for placeholders.
 	for shift := 0; ; shift++ {
 		// we need to clear the screen here.
 		// or the previous character will be left on the screen
@@ -39,24 +38,30 @@ func main() {
 		for line := range clock[0] {
 			l := len(clock)
 
-			// this sets the beginning and the ending placeholders.
-			// to prevent the indexing error: we use the remainder operator.
+			// this sets the beginning and the ending placeholder positions (indexes).
+			// shift%l prevents the indexing error.
 			s, e := shift%l, l
 
-			// to slide placeholders from the right part of the screen.
+			// to slide the placeholders from the right part of the screen.
 			//
 			// here, we assume that as if the clock's length is double of its length.
 			// this makes things easy to manage: that's why: l*2 is there.
 			//
-			// whenever, the current shift factor's double remainder is greater than
-			// the length of the clock - 1, it changes the starting and ending positions.
-			if shift%(l*2) > l-1 {
-				s, e = 0, shift%l+1
+			// shift is always increasing, for it's to go beyond the clock's length,
+			// it should be equal or greater than l*2, right (after the remainder of course)?
+			//
+			// so, if the clock goes beyond its length; this code detects that,
+			// and resets the starting the position to the first placeholder's index,
+			// and it keeps doing so until the clock is fully displayed again.
+			if shift%(l*2) >= l {
+				s, e = 0, s
 			}
 
-			// print empty lines for the right-to-left slide effect.
-			//
+			// print empty lines for the missing place holders.
 			// this creates the effect of moving placeholders from right to left.
+			//
+			// l-e can only be non-zero when the above if statement runs.
+			// otherwise, l-e is always zero, because l == e.
 			for j := 0; j < l-e; j++ {
 				fmt.Print("     ")
 			}
