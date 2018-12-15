@@ -51,7 +51,7 @@ func main() {
 			// it should be equal or greater than l*2, right (after the remainder of course)?
 			//
 			// so, if the clock goes beyond its length; this code detects that,
-			// and resets the starting the position to the first placeholder's index,
+			// and resets the starting position to the first placeholder's index,
 			// and it keeps doing so until the clock is fully displayed again.
 			if shift%(l*2) >= l {
 				s, e = 0, s
@@ -62,6 +62,9 @@ func main() {
 			//
 			// l-e can only be non-zero when the above if statement runs.
 			// otherwise, l-e is always zero, because l == e.
+			//
+			// this is one of the other benefits of assuming the length of the
+			// clock as the double of its length. otherwise, l-e would always be 0.
 			for j := 0; j < l-e; j++ {
 				fmt.Print("     ")
 			}
