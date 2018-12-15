@@ -9,33 +9,17 @@
 // ★ GOAL 2  : Printing the Clock
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★
 //
-// - [ ] Get the current time
+// 1. Get the current time
 //
-// - [ ] Get the current hour, minute and second from the current time
+// 2. Get the current hour, minute and second from the current time
 //
-// - [ ] Create the clock array
+// 3. Create the clock array by getting the digits from the digits array
 //
-//   - [ ] Get the individual digits from the digits array
+// 4. Print the clock by using the clock array
 //
-// - [ ] Print the clock
+// 5. Create a separator array (it's also a placeholder type)
 //
-//   - [ ] In the loops, use the clocks array instead
-//
-// - [ ] Create a separator array (it's also a placeholder)
-//
-// - [ ] Add the separators into the correct positions of
-//       the clock array
-//
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// ★ Usable Artifacts
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
-// Clock Characters:
-//
-//   You can put these in constants if you like.
-//
-//   Use this for the digits       : "█"
-//   Use this for the separators   : "░"
+// 6. Add the separators into the correct positions of the clock array
 
 package main
 

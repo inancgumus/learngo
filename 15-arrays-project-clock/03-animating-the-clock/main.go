@@ -9,10 +9,10 @@
 // ★ GOAL 3  : Animate the Clock
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
-// - [ ] Create an infinite loop to update the clock
+// 1. Create an infinite loop to update the clock
 //
 //
-// - [ ] Update the clock every second
+// 2. Update the clock every second
 //
 //       time.Sleep(time.Second) will stop the world for 1 second
 //
@@ -20,23 +20,23 @@
 //       https://golang.org/pkg/time/#Sleep
 //
 //
-// - [ ] Clear the screen before the infinite loop
+// 3. Clear the screen before the infinite loop
 //
-//       + Get my library for clearing the screen:
+//       1. Get my library for clearing the screen:
 //
 //           go get -u github.com/inancgumus/screen
 //
-//       + Then, import it and call it in your code like this:
+//       2. Then, import it and call it in your code like this:
 //
 //           screen.Clear()
 //
-//       + If you're using Go Playground instead, do this:
+//       3. If you're using Go Playground instead, do this:
 //
 //           fmt.Println("\f")
 //
 //
-// - [ ] Move the cursor to the top-left corner of the screen,
-//       before each step of the infinite loop
+// 1. Move the cursor to the top-left corner of the screen, before each step
+//    of the infinite loop
 //
 //       + Call this in your code like this:
 //

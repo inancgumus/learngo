@@ -9,9 +9,7 @@
 // ★ GOAL 4: Blinking the Separators
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
-// - [ ] Blink the separators
-//
-//       They should be visible per two seconds.
+// They should be visible per two seconds.
 //
 //       Example: 1st second invisible
 //                2nd second visible
@@ -20,15 +18,10 @@
 //
 // HINT: There are two ways to do this.
 //
-//   1- Manipulating the clock array directly
+//   A- Manipulating the clock array directly
 //      (by adding/removing the separators)
 //
-//   2- Deciding what to print when printing the clock
-
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// YOU CAN ALSO FIND THE FINAL SOLUTION WITH ANNOTATIONS:
-// 05-full-annotated-solution
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+//   B- Deciding what placeholders to print when printing the clock
 
 package main
 
