@@ -5,34 +5,13 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// ★ GOAL 4: Blinking the Separators
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
-// They should be visible per two seconds.
-//
-//       Example: 1st second invisible
-//                2nd second visible
-//                3rd second invisible
-//                4th second visible
-//
-// HINT: There are two ways to do this.
-//
-//   A- Manipulating the clock array directly
-//      (by adding/removing the separators)
-//
-//   B- Deciding what placeholders to print when printing the clock
-
 package main
 
 import (
 	"fmt"
 	"time"
-)
 
-const (
-	screenClear   = "\033[2J"
-	cursorMoveTop = "\033[H"
+	"github.com/inancgumus/screen"
 )
 
 func main() {
@@ -130,10 +109,10 @@ func main() {
 		zero, one, two, three, four, five, six, seven, eight, nine,
 	}
 
-	fmt.Print(screenClear)
+	screen.Clear()
 
 	for {
-		fmt.Print(cursorMoveTop)
+		screen.MoveTopLeft()
 
 		now := time.Now()
 		hour, min, sec := now.Hour(), now.Minute(), now.Second()
