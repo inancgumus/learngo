@@ -2,7 +2,7 @@
 
     Observe how Go fixes semicolons for you.
 
-2. **[Naked Expression](https://github.com/inancgumus/learngo/tree/master/04-statements-expressions-comments/exercises/01-shy-semicolons)**
+2. **[Naked Expression](https://github.com/inancgumus/learngo/tree/master/04-statements-expressions-comments/exercises/02-naked-expression)**
 
     Observe what happens when you use an expression without a statement.
 
