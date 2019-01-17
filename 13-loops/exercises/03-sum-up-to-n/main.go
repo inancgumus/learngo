@@ -19,7 +19,7 @@ package main
 //     pass enough arguments or she passes non-numerics,
 //     then warn the user and exit from the program.
 //
-//  2. Also, check that, min < max.
+//  2. Also, check that, min > max.
 //
 // HINT
 //  For converting the numbers, you can use `strconv.Atoi`.
