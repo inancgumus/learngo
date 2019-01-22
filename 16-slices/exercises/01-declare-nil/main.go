@@ -8,9 +8,9 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: ?
+// EXERCISE: Declare nil slices
 //
-//  1. Declare the following slices:
+//  1. Declare the following slices as nil slices:
 //
 //    1. The names of your friends (names slice)
 //

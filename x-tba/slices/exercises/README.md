@@ -1,14 +1,41 @@
 # Slice Exercises
 
-// TODO:
-//     + Fix the problem
-//       -> Don't compare using nil, use the len(s)
-//
-//   + Compare two slices whether they're equal (using a loop)
-//     + Compare arrays and slices using for loops
-//
-//   + Try to compare a slice to an array
+## TODO
+* append to slices
+  * append to a nil slice
+  * append to an empty slice
 
+  * check their length — see how they grow
+
+  * fix the problem (forgetten overwriting to the same slice)
+
+  * get arguments from command line and make them uppercase
+  * multiply the numbers
+
+* slicing
+  * slice exercises... n:m.. using len etc..
+  * create a pagination
+  * use the same slice variable
+
+* internals
+  * shared array: implicit/explicit
+  * appending to a nil array
+  * sorts package sorting
+
+  * exercises about capacity
+  * exercises about the mechanics of append
+    * growing
+    * adding elements at the middle etc
+  * exercises about full slice expressions
+
+  * questions:
+    * slice header questions
+    * slice and ask what's the pointer field, len, cap etc
+    * when a new backing array is allocated: nil, empty, no capacity
+    * when to use a full slice expression
+
+
+---
 
 ## Exercises Level I - Basics
 

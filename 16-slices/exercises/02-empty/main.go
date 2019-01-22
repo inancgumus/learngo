@@ -10,7 +10,7 @@ package main
 import "fmt"
 
 // ---------------------------------------------------------
-// EXERCISE: ?
+// EXERCISE: Assign empty slices
 //
 //   Assign empty slices to all the slices that you've declared in the previous
 //   exercise, and print them here.

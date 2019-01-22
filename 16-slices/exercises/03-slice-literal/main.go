@@ -10,7 +10,7 @@ package main
 import "fmt"
 
 // ---------------------------------------------------------
-// EXERCISE: ?
+// EXERCISE: Assign slice literals
 //
 //   1. Assign the following data using slice literals to the slices that
 //      you've declared in the first exercise.
