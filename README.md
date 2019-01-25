@@ -7,15 +7,15 @@ This repository contains the examples, exercises, and quizzes for the course.
 
 # Stay in touch
 
+👉 **[Subscribe to Learn Go emailing list](https://eepurl.com/c4DMNX)**: Get new course announcements and other updates about the course. _(5K+ developers already subscribed!)_
+
 📣 **[Join the Student Chat Channel](http://bit.ly/LEARNGOSLACK)**: Follow for the updates to the course.
+
+👉 **[Learn Go Programming Blog](https://blog.learngoprogramming.com)**: My blog contains ebook sized, visual, and easy to understand articles for beginner and experienced Go programmers. _(Followed by 3K+ developers)_
 
 👉 **[Follow me on Twitter](https://twitter.com/inancgumus)**: I usually tweet Go tips and tricks.
 
 [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
-
-👉 **[Subscribe to my Go emailing list](https://eepurl.com/c4DMNX)**: Get new course announcements and other updates about the course. _(5K+ developers already subscribed!)_
-
-👉 **[Learn Go Programming Blog](https://blog.learngoprogramming.com)**: My blog contains ebook sized, visual, and easy to understand articles for beginner and experienced Go programmers. _(Followed by 3K+ developers)_
 
 👉 [Learn Go Programming Youtube Channel](https://www.youtube.com/channel/UCYxepZhtnFIVRh8t5H_QAdg?view_as=subscriber): _(For 4K Videos — The channel is very young right now)_
 
