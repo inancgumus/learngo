@@ -36,10 +36,10 @@ loop:
 			}
 		}
 
-		// append can add new elements the slice
+		// append function can add new elements to a slice
 		uniques = append(uniques, n)
 
-		// a slice doesn't contain any elements from the beginning
+		// a slice doesn't contain any elements right from the start
 		// uniques[found] = n
 		// found++
 	}
