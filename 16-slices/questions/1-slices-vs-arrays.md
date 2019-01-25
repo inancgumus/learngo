@@ -6,10 +6,11 @@
 3. A slice's length is dynamic, so I can create dynamic collections *CORRECT*
 
 
-## When does the length of a slice is determined?
-1. At compile-time
-2. In runtime *CORRECT*
-3. When a program terminates
+## Where does the length of a slice belong to?
+1. Compile-Time
+2. Runtime *CORRECT*
+3. Walk-Time
+4. Sleep-Time
 
 > **2:** A slice's length is not a part of its type. So its length can change at runtime.
 
