@@ -20,7 +20,7 @@ func main() {
 	fmt.Printf("names    : %[1]T %[1]q\n", names)
 	fmt.Printf("distances: %[1]T %[1]d\n", distances)
 	fmt.Printf("data     : %[1]T %[1]d\n", data)
-	fmt.Printf("ratios   : %[1]T %[1].2f\n", ratios)
+	fmt.Printf("ratios   : %[1]T %.2[1]f\n", ratios)
 	fmt.Printf("alives   : %[1]T %[1]t\n", alives)
 	fmt.Printf("zero     : %[1]T %[1]d\n", zero)
 }
