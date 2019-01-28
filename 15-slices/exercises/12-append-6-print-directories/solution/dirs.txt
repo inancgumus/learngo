@@ -1,0 +1,9 @@
+dir/
+	subdir1/
+	subdir2/
+
+dir2/
+	subdir1/
+	subdir2/
+	subdir3/
+

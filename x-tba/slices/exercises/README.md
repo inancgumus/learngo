@@ -1,17 +1,6 @@
 # Slice Exercises
 
 ## TODO
-* append to slices
-  * append to a nil slice
-  * append to an empty slice
-
-  * check their length — see how they grow
-
-  * fix the problem (forgetten overwriting to the same slice)
-
-  * get arguments from command line and make them uppercase
-  * multiply the numbers
-
 * slicing
   * slice exercises... n:m.. using len etc..
   * create a pagination
