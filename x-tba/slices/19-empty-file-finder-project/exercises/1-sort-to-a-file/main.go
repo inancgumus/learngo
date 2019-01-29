@@ -1,7 +1,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Append #4 — Sort to a file
+// EXERCISE: Sort to a file
 //
 //  1. Get arguments from command-line
 //

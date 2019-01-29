@@ -6,16 +6,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-
-	ps "github.com/inancgumus/prettyslice"
+	"runtime"
 )
 
 func main() {
-	var (
-		pngHeader     = [...]byte{137, 80, 78, 71, 13, 10, 26, 10}
-		ihdrChunkType = [...]byte{73, 72, 68, 82}
-	)
-
 	args := os.Args[1:]
 	if len(args) == 0 {
 		fmt.Println("run with a PNG file")
@@ -31,10 +25,19 @@ func main() {
 		return
 	}
 
-	// limit the capacity to prevent the errors downward
-	// 'cause we only need the first 24 bytes
+	img = append([]byte(nil), img[:24]...)
 	img = img[:24:24]
-	// ps.Show("first 24 bytes", img)
+
+	// s.PrintBacking = true
+	// s.MaxPerLine = 8
+	// s.MaxElements = 24
+	// s.PrintBytesHex = true
+	// s.Show("first 24 bytes", img)
+
+	var (
+		pngHeader     = [...]byte{0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a}
+		ihdrChunkType = [...]byte{0x49, 0x48, 0x44, 0x52}
+	)
 
 	// ------------------------------------------
 	// Read the PNG header
@@ -78,9 +81,9 @@ func main() {
 		binary.BigEndian.Uint32(ihdr[4:8]))
 }
 
-func init() {
-	ps.PrintBacking = true
-	ps.PrettyByteRune = false
-	ps.MaxPerLine = 8
-	ps.MaxElements = 32
+func report() {
+	var m runtime.MemStats
+	runtime.GC()
+	runtime.ReadMemStats(&m)
+	fmt.Printf(" > Memory Usage: %v KB\n", m.Alloc/1024)
 }

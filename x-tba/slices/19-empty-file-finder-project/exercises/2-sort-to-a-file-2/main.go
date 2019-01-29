@@ -8,7 +8,7 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE: Append #5 — Sort to a file with ordinals
+// EXERCISE: Sort to a file with ordinals
 //
 //  Use the previous exercise: Append #4
 //

@@ -1,7 +1,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Append #6 — Print the directories
+// EXERCISE: Print the directories
 //
 //  Create a program that can get multiple directory paths from
 //  the command-line, and prints only their subdirectories into a
