@@ -2,6 +2,8 @@
 
 ## Exercises Level I - Basics — Warm-Up
 
+These are warm-up exercises that will reinforce your knowledge of slices.
+
 1. **[Declare nil slices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/01-declare-nil)**
 
 2. **[Assign empty slices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/02-empty)**
