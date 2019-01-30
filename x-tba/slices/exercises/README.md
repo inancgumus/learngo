@@ -1,11 +1,6 @@
 # Slice Exercises
 
 ## TODO
-* slicing
-  * slice exercises... n:m.. using len etc..
-  * create a pagination
-  * use the same slice variable
-
 * internals
   * shared array: implicit/explicit
   * appending to a nil array

@@ -25,3 +25,20 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 2. **[Append #2 — Append to a nil slice](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/08-append-2)**
 
 3. **[Append #3 — Fix the problems](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/09-append-3-fix)**
+
+4. **[Append and Sort Numbers](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/10-append-sort-nums)**
+
+5. **[Housing Prices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/11-housing-prices)**
+
+6. **[Housing Prices and Averages](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/12-housing-prices-averages)**
+
+
+---
+
+## Exercises Level III - Slicing
+
+1. **[Slice the numbers](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/13-slicing-basics)**
+
+2. **[Slicing by arguments](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/14-slicing-by-args)**
+
+3. **[Slicing the Housing Prices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/15-slicing-housing-prices)**
