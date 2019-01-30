@@ -45,10 +45,15 @@ Istanbul,500,10,5,1000000`
 		}
 	}
 
+	// from cannot be greater than to: reset invalid arg to 0
+	if from > to {
+		from = 0
+	}
+
 	for i, row := range rows {
 		cols := strings.Split(row, separator)
 
-		// print the only the requested columns
+		// print only the requested columns
 		for _, h := range cols[from:to] {
 			fmt.Printf("%-15s", h)
 		}

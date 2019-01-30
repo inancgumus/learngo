@@ -94,6 +94,21 @@ package main
 //    Istanbul       500            10             5              1000000
 //
 //
+// Note : It works even if the Price's index > Size's index
+//
+//        In that case, it resets the invalid starting position to 0.
+//
+//        But it still uses the Size column.
+//
+//  go run main.go Price Size
+//    Location       Size
+//
+//    New York       100
+//    New York       150
+//    Paris          200
+//    Istanbul       500
+//
+//
 // HINTS
 //
 //  + strings.Split function can separate a string into a []string
