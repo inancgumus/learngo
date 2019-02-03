@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 3 {
+	if len(os.Args) != 3 {
 		fmt.Println("gimme two numbers")
 		return
 	}
