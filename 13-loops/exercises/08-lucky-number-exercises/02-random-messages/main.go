@@ -18,14 +18,14 @@ package main
 //  3. I would use a short switch.
 //
 // EXAMPLES
-//  Player wins: then randomly printone of these:
+//  The Player wins: then randomly print one of these:
 //
 //  go run main.go 5
 //    YOU WON
 //  go run main.go 5
 //    YOU'RE AWESOME
 //
-//  Player loses: then randomly printone of these:
+//  The Player loses: then randomly print one of these:
 //
 //  go run main.go 5
 //    LOSER!
