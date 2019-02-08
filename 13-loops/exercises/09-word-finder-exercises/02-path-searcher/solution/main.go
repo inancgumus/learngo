@@ -14,8 +14,6 @@ import (
 	"strings"
 )
 
-const notFound = -1
-
 func main() {
 	// Get and split the PATH environment variable
 
@@ -34,7 +32,7 @@ func main() {
 		for i, w := range words {
 			q, w = strings.ToLower(q), strings.ToLower(w)
 
-			if strings.Index(w, q) != notFound {
+			if strings.Contains(w, q) {
 				fmt.Printf("#%-2d: %q\n", i+1, w)
 			}
 		}
