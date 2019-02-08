@@ -28,7 +28,7 @@ import (
 //
 //  Original: [pacman mario tetris doom galaga frogger asteroids simcity metroid defender rayman tempest ultima]
 //
-// Sorted  : [pacman mario tetris doom galaga asteroids frogger simcity metroid defender rayman tempest ultima]
+//  Sorted  : [pacman mario tetris doom galaga asteroids frogger simcity metroid defender rayman tempest ultima]
 //
 //
 // HINT:
@@ -47,6 +47,7 @@ func main() {
 	}
 
 	fmt.Println("Original:", items)
+	// ADD YOUR CODE HERE
 	fmt.Println()
 	fmt.Println("Sorted  :", items)
 }

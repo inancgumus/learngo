@@ -27,7 +27,7 @@ import (
 //
 // RESTRICTION
 //
-//  Fix your problem only in the designated area of the code below.
+//  Fix the problem only in the designated area of the code below.
 //
 //
 // EXPECTED OUTPUT

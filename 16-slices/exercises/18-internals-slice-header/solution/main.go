@@ -57,6 +57,6 @@ func passSlice(items []int) {
 func report(msg string) {
 	var m runtime.MemStats
 	runtime.ReadMemStats(&m)
-	fmt.Printf("<<< %s >>>\n", msg)
+	fmt.Printf("[%s]\n", msg)
 	fmt.Printf("\t> Memory Usage: %v KB\n", m.Alloc/1024)
 }
