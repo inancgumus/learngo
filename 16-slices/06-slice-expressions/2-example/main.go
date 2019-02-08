@@ -17,18 +17,9 @@ func main() {
 	// think of this as search results of a search engine.
 	// it could have been fetched from a database
 	items := []string{
-		"pacman",
-		"mario",
-		"tetris",
-		"doom",
-		"galaga",
-		"frogger",
-		"asteroids",
-		"simcity",
-		"metroid",
-		"defender",
-		"rayman",
-		"tempest",
+		"pacman", "mario", "tetris", "doom",
+		"galaga", "frogger", "asteroids", "simcity",
+		"metroid", "defender", "rayman", "tempest",
 		"ultima",
 	}
 

@@ -42,3 +42,13 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 2. **[Slicing by arguments](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/14-slicing-by-args)**
 
 3. **[Slicing the Housing Prices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/15-slicing-housing-prices)**
+
+---
+
+## Exercises Level IV - Internals
+
+1. **[Fix the backing array problems](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/16-internals-backing-array-fix)**
+
+2. **[Sort the backing array](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/17-internals-backing-array-sort)**
+
+3. **[Observe the memory allocations](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/18-internals-slice-header)**

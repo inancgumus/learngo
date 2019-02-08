@@ -19,7 +19,7 @@ type collection []string // #2
 
 // go is pass by copy
 // only the slice header is copied: 3 integer fields (24 bytes)
-// think of passing an array with millions of elements.
+// think of passing an array with millions of elements instead.
 
 func main() {
 	// SliceHeader lives here:
