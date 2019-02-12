@@ -1,7 +1,7 @@
 # Learn Go Programming: Complete Bootcamp Course (Golang)
-This repository contains the examples, exercises, and quizzes for the course.
+This repository contains the examples, exercises, and quizzes for my Go course. However, even without the course you can learn a great deal about Go. Inside, there are thousands of examples, exercises and quizzes. Enjoy!
 
-**Get it now for 80% off with this [link](https://www.udemy.com/learn-go-the-complete-bootcamp-course-golang/?couponCode=FROM-GITHUB).**
+**Get the course now for 80% off with this [link](https://www.udemy.com/learn-go-the-complete-bootcamp-course-golang/?couponCode=FROM-GITHUB).**
 
 ---
 
