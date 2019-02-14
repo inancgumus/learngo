@@ -15,8 +15,8 @@ import (
 )
 
 const (
-	asciiStart = '\u0001' // 1
-	asciiStop  = '\u007f' // 127
+	asciiStart = 0x41 // 65
+	asciiStop  = 0x5a // 90
 
 	cols = 1
 )
@@ -36,14 +36,15 @@ func main() {
 
 	// PRINT HEADER
 	for i := 0; i < cols; i++ {
-		fmt.Printf("| %-6s %-8s %-8s %-14s", "rune", "dec", "code", "bytes")
+		fmt.Printf("%-10s %-12s %-12s %-14s",
+			"literal", "decimal", "codepoint", "bytes")
 	}
-	fmt.Print("\n", strings.Repeat("-", 40*cols), "\n")
+	fmt.Print("\n", strings.Repeat("-", 50*cols), "\n")
 
 	// PRINT TABLE
 	for n, l := start, 0; n <= stop; n++ {
 		// draw the line
-		fmt.Printf("| %-6q %-8d %-8U % -14x", n, n, n, string(n))
+		fmt.Printf("%-10q %-12d %-12U % -14x", n, n, n, string(n))
 
 		// go to next line if columns are consumed
 		if l++; l%cols == 0 {
@@ -62,15 +63,24 @@ EXAMPLE BLOCKS
 asciiStart     = '\u0001'      ->  32
 asciiStop      = '\u007f'      ->  127
 
+upperCaseStart = '\u0041'      ->  65
+upperCaseStop  = '\u005a'      ->  90
+
+lowerCaseStart = '\u0061'      ->  97
+lowerCaseStop  = '\u007a'      ->  122
+
+
 2 bytes
 ------------------------------------------------------------
 latin1Start    = '\u0080'      ->  128
 latin1Stop     = '\u00ff'      ->  255
 
+
 3 bytes
 ------------------------------------------------------------
 dingbatStart   = '\u2700'      ->  9984
 dingbatStop    = '\u27bf'      ->  10175
+
 
 4 bytes
 ------------------------------------------------------------

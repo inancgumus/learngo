@@ -75,7 +75,7 @@ func main() {
 			for x := range board {
 				ball = '🎱'
 				if board[x][y] {
-					ball = '🎾'
+					ball = '🏈'
 				}
 				buf = append(buf, ball, ' ')
 			}
