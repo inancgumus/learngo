@@ -28,6 +28,6 @@ func main() {
 			c = "-"
 		}
 		fmt.Printf("\r%s Please Wait. Processing....", c)
-		time.Sleep(time.Millisecond * 150)
+		time.Sleep(time.Millisecond * 250)
 	}
 }
