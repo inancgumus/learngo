@@ -14,30 +14,41 @@
 
 ## 3. Install Go
 
-Select Linux and the download will begin.
+There are two ways:
+
+1- From Web: Select Linux and the download will begin.
 
   ```bash
   firefox https://golang.org/dl
   ```
 
+2- By using snap: If you use this option, skip to the 5th step.
+
+  ```bash
+  sudo snap install go --classic
+  ```
+
 ## 4. Copy Go into the proper directory
 
 1. Find out the name of the downloaded file
+
 2. Use that filename to uncompress it
 
     ```bash
     gofile="DELETE_THIS_AND_TYPE_THE_NAME_OF_THE_DOWNLOADED_FILE_HERE (without its extension)"
 
-    tar -C /usr/local -xzf ~/Downloads/$gofile.tar.gz
+    tar -C /usr/local -xzf ~/Downloads/$gofile
     ```
 
-3. Add `go/bin` directory to `$PATH` to be able to run the fundamental Go commands.
+## 5. Add Go executables directory to your PATH
+
+1. Add `go/bin` directory to `$PATH` to be able to run the fundamental Go commands.
 
     ```bash
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
     ```
 
-4. Add "$HOME/go/bin" directory to $PATH
+2. Add "$HOME/go/bin" directory to $PATH
 
     ```bash
     echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.profile
@@ -60,9 +71,12 @@ Select Linux and the download will begin.
 
 ## Install VSCode
 
+Note: You may use another coding editor if you like. However, the course uses Visual Studio Code (VSCode).
+
 1. Open "Ubuntu Software" application
+
 2. Search for VSCode then click "Install"
-3. Install [Vim-Go](https://github.com/fatih/vim-go#install)
+
 
 ## OPTIONAL STEP:
 
