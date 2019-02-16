@@ -36,5 +36,5 @@ func main() {
 	fmt.Println("last 2      :", nums[len(nums)-2:])
 
 	fmt.Println("evens last 1:", evens[len(evens)-1:])
-	fmt.Println("odds last 2 :", evens[len(evens)-2:])
+	fmt.Println("odds last 2 :", odds[len(odds)-2:])
 }

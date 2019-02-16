@@ -34,7 +34,7 @@ package main
 //     first 2     : [2 4]
 //     last 2      : [3 5]
 //     evens last 1: [6]
-//     odds last 2 : [4 6]
+//     odds last 2 : [3 5]
 //
 //
 // NOTE
