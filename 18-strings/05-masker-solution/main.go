@@ -7,11 +7,11 @@
 
 /*
 #1- Get and check the input
-#2- Create a buffer with a sufficient size
+#2- Create a byte buffer and use it as the output
 #3- Write input to the buffer as it is and print it
 #4- Detect the link
 #5- Mask the link
-#6- Detect white spaces and disable the masking
+#6- Stop masking when a whitespace is detected
 #7- Write http:// to the buffer, just before the link
 */
 
@@ -23,8 +23,9 @@ import (
 )
 
 const (
-	link = "http://"
-	mask = '*'
+	link  = "http://"
+	nlink = len(link)
+	mask  = '*'
 )
 
 func main() {
@@ -37,30 +38,23 @@ func main() {
 	var (
 		text = args[0]
 		size = len(text)
-
-		// create a sufficient buffer for the output
-		//
-		// and adjust its slice pointer to the first element
-		//   of the backing array! -> make(..., 0, ...)
-		buf = make([]byte, 0, size)
+		buf  = make([]byte, 0, size)
 
 		in bool
 	)
 
 	for i := 0; i < size; i++ {
-		nlink := len(link)
-
 		// slice the input and look for the link pattern
 		// do not slice it when it goes beyond the input text's capacity
 		if len(text[i:]) >= nlink && text[i:i+nlink] == link {
-			// jump to the next character after "http://"
-			i += nlink
-
 			// set the flag: we're in a link! -> "http://....."
 			in = true
 
 			// add the "http://" manually
 			buf = append(buf, link...)
+
+			// jump to the next character after "http://"
+			i += nlink
 		}
 
 		// get the current byte from the input
@@ -78,8 +72,6 @@ func main() {
 		if in {
 			c = mask
 		}
-
-		// add the current character to the buffer
 		buf = append(buf, c)
 	}
 

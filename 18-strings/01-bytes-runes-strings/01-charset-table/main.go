@@ -14,15 +14,7 @@ import (
 	"strings"
 )
 
-const (
-	asciiStart = 0x41 // 65
-	asciiStop  = 0x5a // 90
-
-	cols = 1
-)
-
 func main() {
-	// DETERMINE START - STOP POSITIONS
 	var start, stop int
 
 	if args := os.Args[1:]; len(args) == 2 {
@@ -31,32 +23,20 @@ func main() {
 	}
 
 	if start == 0 || stop == 0 {
-		start, stop = asciiStart, asciiStop
+		start, stop = 'A', 'Z'
 	}
 
-	// PRINT HEADER
-	for i := 0; i < cols; i++ {
-		fmt.Printf("%-10s %-12s %-12s %-14s",
-			"literal", "decimal", "codepoint", "bytes")
-	}
-	fmt.Print("\n", strings.Repeat("-", 50*cols), "\n")
+	fmt.Printf("%-10s %-10s %-10s %-12s\n%s\n",
+		"literal", "dec", "hex", "encoded",
+		strings.Repeat("-", 45))
 
-	// PRINT TABLE
-	for n, l := start, 0; n <= stop; n++ {
-		// draw the line
-		fmt.Printf("%-10q %-12d %-12U % -14x", n, n, n, string(n))
-
-		// go to next line if columns are consumed
-		if l++; l%cols == 0 {
-			fmt.Println()
-			continue
-		}
+	for n := start; n <= stop; n++ {
+		fmt.Printf("%-10c %-10[1]d %-10[1]x % -12x\n", n, string(n))
 	}
-	fmt.Println()
 }
 
 /*
-EXAMPLE BLOCKS
+EXAMPLE UNICODE BLOCKS
 
 1 byte
 ------------------------------------------------------------
@@ -72,7 +52,7 @@ lowerCaseStop  = '\u007a'      ->  122
 
 2 bytes
 ------------------------------------------------------------
-latin1Start    = '\u0080'      ->  128
+latin1Start    = '\u0080'      ->  161
 latin1Stop     = '\u00ff'      ->  255
 
 
@@ -86,8 +66,4 @@ dingbatStop    = '\u27bf'      ->  10175
 ------------------------------------------------------------
 emojiStart     = '\U0001f600'  ->  128512
 emojiStop      = '\U0001f64f'  ->  128591
-transportStart = '\U0001F680'  ->  128640
-transportStop  = '\U0001f6ff'  ->  128767
-
-BIG THANK YOU! -> https://unicode-table.com/
 */
