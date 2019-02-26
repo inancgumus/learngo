@@ -62,7 +62,7 @@ func main() {
 	// fmt.Println("perfect   -> ", dict["perfect"])
 
 	/*
-		#11: looping over a map might be a sign for a design mistake
+		#11: looping over a map might be a sign of a design mistake
 			 in your software.
 
 			 (it prints unordered output)
