@@ -1,3 +1,7 @@
+full slice exp
+make
+copy
+
 # Slice Internals Quiz
 
 ## Where does a slice value stores its elements?
