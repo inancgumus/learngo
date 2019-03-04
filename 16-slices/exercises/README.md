@@ -52,3 +52,9 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 2. **[Sort the backing array](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/17-internals-backing-array-sort)**
 
 3. **[Observe the memory allocations](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/18-internals-slice-header)**
+
+4. **[Observe the length and capacity](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/19-observe-len-cap)**
+
+5. **[Observe the capacity growth](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/20-observe-the-cap-growth)**
+
+6. **[Correct the lyric](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/21-correct-the-lyric)**
