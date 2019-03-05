@@ -48,7 +48,7 @@ import (
 // EXPECTED OUTPUT
 //
 //   Now the program cannot change the API's original backing array
-//  (beyond the returned capacity) (so the api now owns the control)
+//   (beyond the returned capacity) (so the api now owns the control)
 //                           ^  ^
 //                           |  |
 //   API's readings: [5 10 3 25 45 80 90]

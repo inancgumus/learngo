@@ -78,12 +78,11 @@ func main() {
 	//
 	// #4: Copy elements from an array to the `names` slice.
 	//
-	//     Currently, `cap(names)` is 5. So, copy only
-	//     the first two elements of the following array
-	//     to the last two elements of the `names` slice.
+	//     Copy only the first two elements of the following
+	//     array to the last two elements of the `names` slice.
 	//
-	//     Print the names slice (do not forget extending it).
-	//     You should print 5 elements.
+	//     Print the names slice (do not forget extending it
+	//     after appending). You should print 5 elements.
 	//
 	//     Observe how the backing array stays the same.
 	//

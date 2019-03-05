@@ -4,10 +4,10 @@ package main
 // EXERCISE: Print daily requests
 //
 //  You've got a requests log for a system in a slice: `reqs`.
-//  The log contains the total requests counts per 8 hours.
+//  The log contains the total request counts per 8 hours.
 //
 //  The reqs slice is a single-dimensional slice but you need
-//  to group the daily into a slice named: `daily`.
+//  to group the requests daily into a slice named: `daily`.
 //
 //  Please follow the instructions inside the code to solve
 //  the exercise.
@@ -40,11 +40,16 @@ func main() {
 	//
 
 	// reqs := []int{
-	// 	500, 600, 250,
-	// 	200, 400, 50,
-	// 	900, 800, 600,
-	// 	750, 250, 100,
-	// 	100, 150,
+	//	// 1st day
+	//	500, 600, 250,
+	//	// 2nd day
+	//	200, 400, 50,
+	//	// 3rd day
+	//	900, 800, 600,
+	//	// 4th day
+	//	750, 250, 100,
+	//	// last day
+	//	100, 150,
 	// }
 
 	//
@@ -93,12 +98,12 @@ func main() {
 	//
 	// ❤️ NOTE ❤️
 	//
-	// If you could't solve this challenge. Please do not get discouraged.
+	// If you could't solve this challenge, please do not get discouraged.
 	//
 	// Look at the solution, then try to solve it again. This is valuable too.
 	//
-	// Then ️change the request data, the number of requests per day (now it's 3), etc
-	// and then try to solve it again.
+	// Then ️change the request data, the number of requests per day (now it's 3),
+	// etc., and then try to solve it again.
 	//
 	// ------------------------------------------------------------------------
 }

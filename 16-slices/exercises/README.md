@@ -79,7 +79,7 @@ Commonly used and more advanced operations are available to slices. Now, it's ti
 
     Your API does not control the slices that it share with the outside world. You need to fix it.
 
-3. **[Fix the Memory Leak](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/25-fix-the-memory-leak)**
+3. **[Fix the Memory Leak](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/24-fix-the-memory-leak)**
 
     A slice retrieved from an API causes a memory leak in your program. You need to fix it.
 

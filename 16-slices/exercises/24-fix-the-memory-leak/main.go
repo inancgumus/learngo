@@ -17,7 +17,7 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Fix the memory leak
 //
-//  You're receiving millions of temperature data points from
+//  You receive millions of temperature data points from
 //  an API, but you only need the last 10 data points.
 //
 //  Currently, there is a memory leak in your program.
@@ -33,7 +33,7 @@ import (
 // EXPECTED OUTPUT EXPLANATION
 //
 //   Your output will be different. Your goal is to reduce the
-//   difference between the two measurements of the memory usage.
+//   difference between two measurements of the memory usage.
 //
 //   For the expected output above:
 //

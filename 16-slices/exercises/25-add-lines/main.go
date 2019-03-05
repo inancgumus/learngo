@@ -15,9 +15,9 @@ import (
 //  each sentence of the lyric to the new buffer, then
 //  after each sentence adding a newline character.
 //
-//  You cannot guess how many times you will get across
-//  something like this. Believe me, learning this will
-//  make you a better Gopher.
+//  You will get across something like this all the time
+//  in your gopher life. Believe me, learning how to
+//  solve this exercise will make you a better hopher.
 //
 //
 // RESTRICTIONS
@@ -26,14 +26,14 @@ import (
 //
 //  	. Instead, only use the `copy()` func.
 //
-//  . You cannot use slicing for printing the sentences.
+//  . Don't use slicing for printing the sentences.
 //
-//    . Instead, use slicing to fill the new buffer, then print it.
+//    . Instead, use slicing for filling the new buffer.
 //
 //
 // STEPS
 //
-//  . Follow the instructions inside the code.
+//  . Please follow the instructions inside the code.
 //
 //
 // EXPECTED OUTPUT
@@ -51,7 +51,7 @@ func main() {
 	// This inits some options for the prettyslice package.
 	// You can change the options if you want.
 	//
-	// s.Colors(false)     // if your editor is light colored then enable this
+	// s.Colors(false)     // if your editor is light background color then enable this
 	s.PrintBacking = true  // prints the backing arrays
 	s.MaxPerLine = 15      // prints max 15 elements per line
 	s.SpaceCharacter = "*" // print this instead of printing a newline (for debugging)
@@ -65,10 +65,10 @@ func main() {
 	//
 	// RESTRICTION EXPLANATION:
 	//
-	// Don't do something like this:
-	// (Do not use slicing for printing the sentences)
+	// Do not use slicing for printing the sentences.
 	//
-
+	// For example, don't do something like this:
+	//
 	// fmt.Println(lyric[:8])
 	// fmt.Println(lyric[8:18])
 	// fmt.Println(lyric[18:23])
@@ -77,7 +77,8 @@ func main() {
 	//
 	// #1: CREATE A LARGE ENOUGH BUFFER (A NEW SLICE)
 	//
-	//     You need to put each lyric sentence + a newline into this buffer
+	//     You need to put each lyric sentence
+	//     + a newline character into this buffer
 	//
 
 	// I name the buffer: `fix`, you can name it however you want
