@@ -71,6 +71,9 @@ Peek into the internals of the slices and gain more insight. This is necessary f
 
 Commonly used and more advanced operations are available to slices. Now, it's time to test yourself and fix some common problems.
 
+★ WARNING ★
+Please update your local copy of the prettyslice package for some examples to work. [Please find the intructions how to do so here](../README.md).
+
 1. **[Practice Advanced Slice Operations](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/22-adv-ops-practice)**
 
     Let's warm you up for the advanced slice operations, and reinforce your neurons.
