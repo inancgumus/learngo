@@ -4,6 +4,13 @@ import (
 	s "github.com/inancgumus/prettyslice"
 )
 
+//
+// ! NOTE If the program does not work, please update your
+//        local copy of the prettyslice package:
+//
+//        go get -u github.com/inancgumus/prettyslice
+//
+
 // ---------------------------------------------------------
 // EXERCISE: Add newlines to the lyric sentences
 //

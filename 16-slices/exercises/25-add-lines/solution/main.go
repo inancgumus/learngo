@@ -14,6 +14,13 @@ import (
 	s "github.com/inancgumus/prettyslice"
 )
 
+//
+// ! NOTE If the program does not work, please update your
+//        local copy of the prettyslice package:
+//
+//        go get -u github.com/inancgumus/prettyslice
+//
+
 func main() {
 	//
 	// YOU DON'T NEED TO TOUCH THIS
@@ -24,7 +31,7 @@ func main() {
 	// s.Colors(false)     // if your editor is light colored then enable this
 	s.PrintBacking = true  // prints the backing arrays
 	s.MaxPerLine = 15      // prints max 15 elements per line
-	s.SpaceCharacter = "*" // print this instead of printing a newline (for debugging)
+	s.SpaceCharacter = '⏎' // print this instead of printing a newline (for debugging)
 
 	lyric := strings.Fields(`yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday`)
 
