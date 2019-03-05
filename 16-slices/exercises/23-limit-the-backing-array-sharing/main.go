@@ -10,7 +10,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/inancgumus/learngo/16-slices/exercises/19-limit-the-backing-array-sharing/api"
+	"github.com/inancgumus/learngo/16-slices/exercises/23-limit-the-backing-array-sharing/api"
 )
 
 // ---------------------------------------------------------

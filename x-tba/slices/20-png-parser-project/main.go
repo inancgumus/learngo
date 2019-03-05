@@ -25,8 +25,10 @@ func main() {
 		return
 	}
 
+	report()
 	img = append([]byte(nil), img[:24]...)
-	img = img[:24:24]
+	// img = img[:24:24] // unnecessary
+	report()
 
 	// s.PrintBacking = true
 	// s.MaxPerLine = 8

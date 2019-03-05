@@ -2,7 +2,7 @@
 
 ## Exercises Level I - Basics — Warm-Up
 
-These are warm-up exercises that will reinforce your knowledge of slices.
+Let's reinforce your basic knowledge of slices.
 
 1. **[Declare nil slices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/01-declare-nil)**
 
@@ -19,6 +19,8 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 ---
 
 ## Exercises Level II - Appending
+
+Discover the power of the append function.
 
 1. **[Append #1 — Append and compare byte slices](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/07-append)**
 
@@ -37,6 +39,8 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 
 ## Exercises Level III - Slicing
 
+Discover the power of slicing.
+
 1. **[Slice the numbers](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/13-slicing-basics)**
 
 2. **[Slicing by arguments](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/14-slicing-by-args)**
@@ -46,6 +50,8 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 ---
 
 ## Exercises Level IV - Internals
+
+Peek into the internals of the slices and gain more insight. This is necessary for complete command of the slices.
 
 1. **[Fix the backing array problems](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/16-internals-backing-array-fix)**
 
@@ -58,3 +64,29 @@ These are warm-up exercises that will reinforce your knowledge of slices.
 5. **[Observe the capacity growth](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/20-observe-the-cap-growth)**
 
 6. **[Correct the lyric](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/21-correct-the-lyric)**
+
+---
+
+## Exercises Level V - Advanced Operations
+
+Commonly used and more advanced operations are available to slices. Now, it's time to test yourself and fix some common problems.
+
+1. **[Practice Advanced Slice Operations](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/22-adv-ops-practice)**
+
+    Let's warm you up for the advanced slice operations, and reinforce your neurons.
+
+2. **[Limit the backing array sharing](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/23-limit-the-backing-array-sharing)**
+
+    Your API does not control the slices that it share with the outside world. You need to fix it.
+
+3. **[Fix the Memory Leak](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/25-fix-the-memory-leak)**
+
+    A slice retrieved from an API causes a memory leak in your program. You need to fix it.
+
+4. **[Add newlines to the lyric sentences](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/25-add-lines)**
+
+    Use the power of the `copy()` function and add newlines into a new buffer from a string slice. This exercise is more tricky than you might think.
+
+5. **[Print Daily Requests](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/26-print-daily-requests)**
+
+    Group the requests log into a multi-dimensional from a single-dimensional slice. Allocate a slice with the exact size needed by doing some wizardary calculations. And lastly, pretty print the result.

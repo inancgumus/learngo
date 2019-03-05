@@ -10,12 +10,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/inancgumus/learngo/16-slices/exercises/19-limit-the-backing-array-sharing/solution/api"
+	"github.com/inancgumus/learngo/16-slices/exercises/23-limit-the-backing-array-sharing/solution/api"
 )
 
 func main() {
 	temps := api.Read(0, 3)
-
 	temps = append(temps, []int{1, 3}...)
 
 	fmt.Println("API's readings:", api.All())
