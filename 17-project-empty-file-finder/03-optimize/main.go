@@ -29,7 +29,17 @@ func main() {
 	// 1st: You can also take the average of the total file length
 	//      across platforms. It's about 255.
 	//
-	//      https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits
+	// https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits
+	//
+	// BTRFS   255 bytes
+	// exFAT   255 UTF-16 characters
+	// ext2    255 bytes
+	// ext3    255 bytes
+	// ext3cow 255 bytes
+	// ext4    255 bytes
+	// FAT32   255 bytes
+	// NTFS    255 characters
+	// XFS     255 bytes
 	//
 	// total := len(files) * 256
 
