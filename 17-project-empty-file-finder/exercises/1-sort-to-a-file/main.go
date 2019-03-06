@@ -1,7 +1,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Sort to a file
+// EXERCISE: Sort and write items to a file
 //
 //  1. Get arguments from command-line
 //
@@ -25,17 +25,18 @@ package main
 //
 // HINTS
 //
-//   ONLY READ THIS IF YOU GET STUCK
+//   + REMEMBER: os.Args is a []string
 //
-//   Below, []string means string slice, []byte means byte slice.
+//   + String slices are sortable using `sort.Strings`
 //
-//   + You can use the os.Args[1:] to get a []string
-//   + Then you can sort it using sort.Strings
 //   + Use ioutil.WriteFile to write to a file.
+//
 //   + But you need to convert []string to []byte to be able to
 //     write it to a file using the ioutil.WriteFile.
+//
 //   + To do that, create a new []byte and append the elements of your
 //     []string.
+//
 // ---------------------------------------------------------
 
 func main() {

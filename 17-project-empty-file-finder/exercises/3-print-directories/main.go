@@ -1,7 +1,7 @@
 package main
 
 // ---------------------------------------------------------
-// EXERCISE: Print the directories
+// EXERCISE: Find and write the names of subdirectories to a file
 //
 //  Create a program that can get multiple directory paths from
 //  the command-line, and prints only their subdirectories into a
@@ -43,7 +43,14 @@ package main
 //     (A directory is also a file)
 //
 //   + You can use IsDir method of a FileInfo value to detect
-//     whether a file is a directory or not: go doc os.FileInfo.IsDir
+//     whether a file is a directory or not.
+//
+//     Check out its documentation:
+//
+//     go doc os.FileInfo.IsDir
+//
+//     # or using godocc
+//     godocc os.FileInfo.IsDir
 //
 //   + You can use '\t' escape sequence for indenting the subdirs.
 //
