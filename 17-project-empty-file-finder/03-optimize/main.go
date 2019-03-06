@@ -13,15 +13,6 @@ import (
 	"os"
 )
 
-// You can easily write to a file using bash.
-//
-// However, when what you're creating is a library,
-// then you won't have that option. So, it's good to learn
-// how to write to a file using a byte slice.
-
-// ioutil.ReadDir
-// os.FileInfo
-
 func main() {
 	args := os.Args[1:]
 	if len(args) == 0 {
@@ -35,15 +26,23 @@ func main() {
 		return
 	}
 
-	// 1st: find the total size of all the empty files
+	// 1st: You can also take the average of the total file length
+	//      across platforms. It's about 255.
+	//
+	//      https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits
+	//
+	// total := len(files) * 256
+
+	// 1st B: To be exact, find the total size of all the empty files
 	var total int
 	for _, file := range files {
 		if file.Size() == 0 {
 			// +1 for the newline character
-			// when printing the filename
+			// when printing the filename afterward
 			total += len(file.Name()) + 1
 		}
 	}
+	fmt.Printf("Total required space: %d bytes.\n", total)
 
 	// 2nd: allocate a large enough byte slice in one go
 	names := make([]byte, 0, total)

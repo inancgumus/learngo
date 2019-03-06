@@ -32,6 +32,7 @@ func main() {
 		if file.Size() == 0 {
 			name := file.Name()
 
+			fmt.Println(cap(names))
 			names = append(names, name...)
 			names = append(names, '\n')
 		}
