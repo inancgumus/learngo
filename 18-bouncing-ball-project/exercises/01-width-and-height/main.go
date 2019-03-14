@@ -20,6 +20,9 @@
 //
 //  1. Go here: https://godoc.org/golang.org/x/crypto/ssh/terminal
 //
+//     Download the package:
+//     go get -u golang.org/x/crypto/ssh/terminal
+//
 //  2. Find the function that gives you the width and height
 //     of the terminal.
 //
@@ -47,7 +50,7 @@
 //     columns (or cells). Ordinary characters have a
 //     single column.
 //
-//     1. Get the width of the ball emoji using function
+//     1. Get the width of the ball emoji using a function
 //        from the following package:
 //
 //        go get -u github.com/mattn/go-runewidth
