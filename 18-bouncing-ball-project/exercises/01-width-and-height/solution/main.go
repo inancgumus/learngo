@@ -9,9 +9,13 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 
+	"github.com/mattn/go-runewidth"
+
 	"github.com/inancgumus/screen"
+	"golang.org/x/crypto/ssh/terminal"
 )
 
 func main() {
@@ -23,18 +27,29 @@ func main() {
 		speed     = time.Second / 20
 	)
 
-	// get the width and height of the terminal dynamically ***
-	width, height := screen.Size()
-	width /= 2 // our emoji is 2 chars wide
-	height--   // for the border
-
 	var (
-		px, py   int    // ball position
-		ppx, ppy int    // previous ball position ***
-		vx, vy   = 1, 1 // velocities
+		px, py int    // ball position
+		vx, vy = 1, 1 // velocities
 
 		cell rune // current cell (for caching)
 	)
+
+	// get the width and height
+	width, height, err := terminal.GetSize(int(os.Stdout.Fd()))
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// you can get the width and height using the screen package easily:
+	// width, height := screen.Size()
+
+	// get the rune width of the ball emoji
+	ballWidth := runewidth.RuneWidth(cellBall)
+
+	// adjust the width and height
+	width /= ballWidth
+	height-- // there is a 1 pixel border in my terminal
 
 	// create the board
 	board := make([][]bool, width)
@@ -61,14 +76,15 @@ func main() {
 			vy *= -1
 		}
 
-		// check whether the ball goes beyond the borders
-		if !(px >= width || py >= height) {
-			// remove the previous ball and put the new ball
-			board[px][py], board[ppx][ppy] = true, false
-
-			// save the previous positions
-			ppx, ppy = px, py
+		// remove the previous ball
+		for y := range board[0] {
+			for x := range board {
+				board[x][y] = false
+			}
 		}
+
+		// put the new ball
+		board[px][py] = true
 
 		// rewind the buffer (allow appending from the beginning)
 		buf = buf[:0]
