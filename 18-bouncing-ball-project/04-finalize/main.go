@@ -9,11 +9,9 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/inancgumus/screen"
-	"golang.org/x/crypto/ssh/terminal"
 )
 
 func main() {
@@ -26,12 +24,9 @@ func main() {
 	)
 
 	// get the width and height of the terminal dynamically ***
-	width, height, err := terminal.GetSize(int(os.Stdout.Fd()))
-	if err != nil {
-		fmt.Println("cannot get width and height", err)
-		return
-	}
+	width, height := screen.Size()
 	width /= 2 // our emoji is 2 chars wide
+	height--   // for the border
 
 	var (
 		px, py   int    // ball position
