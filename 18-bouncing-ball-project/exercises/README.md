@@ -8,3 +8,6 @@
 
     Let's optimize the program once more. This time you're going to optimize the clearing off the previous positions.
 
+3. **[Use a single dimensional slice]()**
+
+    For the board slice, instead of using a multi-dimensional slice, let's use a single-dimensional slice. In this exercise, you'll understand and deeply internalize why I've used a multi-dimensional board slice.
