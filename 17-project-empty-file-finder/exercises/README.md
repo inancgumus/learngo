@@ -1,4 +1,4 @@
-# File Append Exercises
+# Empty File Finder Exercises
 
 1. **[Sort and write items to a file](https://github.com/inancgumus/learngo/tree/master/17-project-empty-file-finder/exercises/1-sort-to-a-file)**
 
