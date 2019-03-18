@@ -1,5 +1,4 @@
-// For more Go tutorials: learngoprogramming.com
-
+// ⭐️ LearnGoProgramming.com ⭐️ @inancgumus ⭐️
 package main
 
 func main() {
