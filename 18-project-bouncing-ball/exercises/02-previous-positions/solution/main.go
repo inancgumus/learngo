@@ -22,12 +22,14 @@ func main() {
 
 		maxFrames = 1200
 		speed     = time.Second / 20
+
+		initVx, initVy = 5, 2
 	)
 
 	var (
-		px, py   int    // ball position
-		ppx, ppy int    // previous ball position
-		vx, vy   = 5, 2 // velocities
+		px, py   int              // ball position
+		ppx, ppy int              // previous ball position
+		vx, vy   = initVx, initVy // velocities
 
 		cell rune // current cell (for caching)
 	)
@@ -60,21 +62,18 @@ func main() {
 		py += vy
 
 		// when the ball hits a border reverse its direction
-		if px <= 0 || px >= width-1 {
+		if px <= 0 || px >= width-initVx {
 			vx *= -1
 		}
-		if py <= 0 || py >= height-1 {
+		if py <= 0 || py >= height-initVy {
 			vy *= -1
 		}
 
-		// check whether the ball goes beyond the borders
-		if px < width && py < height {
-			// remove the previous ball and put the new ball
-			board[px][py], board[ppx][ppy] = true, false
+		// remove the previous ball and put the new ball
+		board[px][py], board[ppx][ppy] = true, false
 
-			// save the previous positions
-			ppx, ppy = px, py
-		}
+		// save the previous positions
+		ppx, ppy = px, py
 
 		// rewind the buffer (allow appending from the beginning)
 		buf = buf[:0]
