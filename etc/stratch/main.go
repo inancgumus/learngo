@@ -1,4 +1,4 @@
-// ⭐️ LearnGoProgramming.com ⭐️ @inancgumus ⭐️
+// LearnGoProgramming.com ⭐️ @inancgumus
 package main
 
 func main() {
