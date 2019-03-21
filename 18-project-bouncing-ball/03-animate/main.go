@@ -35,8 +35,8 @@ func main() {
 
 	// create the board
 	board := make([][]bool, width)
-	for row := range board {
-		board[row] = make([]bool, height)
+	for column := range board {
+		board[column] = make([]bool, height)
 	}
 
 	// create a drawing buffer
