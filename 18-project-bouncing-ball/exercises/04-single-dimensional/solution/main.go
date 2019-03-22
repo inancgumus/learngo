@@ -23,13 +23,14 @@ func main() {
 		maxFrames = 1200
 		speed     = time.Second / 20
 
-		initVx, initVy = 5, 2
+		// initial velocities
+		ivx, ivy = 5, 2
 	)
 
 	var (
-		px, py   int              // ball position
-		ppx, ppy int              // previous ball position
-		vx, vy   = initVx, initVy // velocities
+		px, py   int        // ball position
+		ppx, ppy int        // previous ball position
+		vx, vy   = ivx, ivy // velocities
 
 		cell rune // current cell (for caching)
 	)
@@ -47,8 +48,13 @@ func main() {
 	// create a single-dimensional board
 	board := make([]bool, width*height)
 
+	// drawing buffer length
+	// *2 for extra spaces
+	// +1 for newlines
+	bufLen := (width*2 + 1) * height
+
 	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buf := make([]rune, 0, bufLen)
 
 	// clear the screen once
 	screen.Clear()
@@ -59,25 +65,22 @@ func main() {
 		py += vy
 
 		// when the ball hits a border reverse its direction
-		if px <= 0 || px >= width-initVx {
+		if px <= 0 || px >= width-ivx {
 			vx *= -1
 		}
-		if py <= 0 || py >= height-initVy {
+		if py <= 0 || py >= height-ivy {
 			vy *= -1
 		}
 
-		// check whether the ball goes beyond the borders
-		if px < width && py < height {
-			// calculate the new and the previous ball positions
-			pos := py*width + px
-			ppos := ppy*width + ppx
+		// calculate the new and the previous ball positions
+		pos := py*width + px
+		ppos := ppy*width + ppx
 
-			// remove the previous ball and put the new ball
-			board[pos], board[ppos] = true, false
+		// remove the previous ball and put the new ball
+		board[pos], board[ppos] = true, false
 
-			// save the previous positions
-			ppx, ppy = px, py
-		}
+		// save the previous positions
+		ppx, ppy = px, py
 
 		// rewind the buffer (allow appending from the beginning)
 		buf = buf[:0]

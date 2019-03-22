@@ -5,6 +5,15 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/inancgumus/screen"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Adjust the width and height automatically
 //
@@ -88,15 +97,6 @@
 //
 // ---------------------------------------------------------
 
-package main
-
-import (
-	"fmt"
-	"time"
-
-	"github.com/inancgumus/screen"
-)
-
 func main() {
 	const (
 		width  = 50
@@ -107,6 +107,12 @@ func main() {
 
 		maxFrames = 1200
 		speed     = time.Second / 20
+
+		// drawing buffer length
+		//
+		// *2 for extra spaces
+		// +1 for newlines
+		bufLen = (width*2 + 1) * height
 	)
 
 	var (
@@ -123,7 +129,7 @@ func main() {
 	}
 
 	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buf := make([]rune, 0, bufLen)
 
 	// clear the screen once
 	screen.Clear()

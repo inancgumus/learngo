@@ -9,36 +9,14 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 
-	"github.com/inancgumus/screen"
 	"github.com/mattn/go-runewidth"
-)
 
-// ---------------------------------------------------------
-// EXERCISE: Previous positions
-//
-//  Let's optimize the program once more. This time you're
-//  going to optimize the clearing off the previous positions.
-//
-//  1. Find the code below marked as "remove the previous ball"
-//
-//  2. Instead of clearing every position on the board to false,
-//     only set the previous position to false. So, don't use
-//     a loop, remove it.
-//
-//  3. Change the velocity of the ball like so:
-//
-//     vx, vy = 5, 2
-//
-//  4. Run the program and solve the problem
-//
-//
-// HINT
-//
-//  Don't forget saving the previous position.
-//
-// ---------------------------------------------------------
+	"github.com/inancgumus/screen"
+	"golang.org/x/crypto/ssh/terminal"
+)
 
 func main() {
 	const (
@@ -56,8 +34,15 @@ func main() {
 		cell rune // current cell (for caching)
 	)
 
+	// get the width and height
+	width, height, err := terminal.GetSize(int(os.Stdout.Fd()))
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	// you can get the width and height using the screen package easily:
-	width, height := screen.Size()
+	// width, height := screen.Size()
 
 	// get the rune width of the ball emoji
 	ballWidth := runewidth.RuneWidth(cellBall)
@@ -72,8 +57,13 @@ func main() {
 		board[column] = make([]bool, height)
 	}
 
+	// drawing buffer length
+	// *2 for extra spaces
+	// +1 for newlines
+	bufLen := (width*2 + 1) * height
+
 	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buf := make([]rune, 0, bufLen)
 
 	// clear the screen once
 	screen.Clear()

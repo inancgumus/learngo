@@ -15,6 +15,26 @@ import (
 	"github.com/mattn/go-runewidth"
 )
 
+// ---------------------------------------------------------
+// EXERCISE: Single Dimensional
+//
+//  In this exercise you will understand why I use
+//  a multi-dimensional board slice instead of a
+//  single-dimensional one.
+//
+//  1. Remove this:
+//     board := make([][]bool, width)
+//
+//  2. Use this:
+//     board := make([]bool, width*height)
+//
+//  3. Adjust the rest of the operations in the code to work
+//     with this single-dimensional slice.
+//
+//     You'll see how hard it becomes to work with it.
+//
+// ---------------------------------------------------------
+
 func main() {
 	const (
 		cellEmpty = ' '
@@ -23,13 +43,14 @@ func main() {
 		maxFrames = 1200
 		speed     = time.Second / 20
 
-		initVx, initVy = 5, 2
+		// initial velocities
+		ivx, ivy = 5, 2
 	)
 
 	var (
-		px, py   int              // ball position
-		ppx, ppy int              // previous ball position
-		vx, vy   = initVx, initVy // velocities
+		px, py   int        // ball position
+		ppx, ppy int        // previous ball position
+		vx, vy   = ivx, ivy // velocities
 
 		cell rune // current cell (for caching)
 	)
@@ -50,8 +71,13 @@ func main() {
 		board[column] = make([]bool, height)
 	}
 
+	// drawing buffer length
+	// *2 for extra spaces
+	// +1 for newlines
+	bufLen := (width*2 + 1) * height
+
 	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buf := make([]rune, 0, bufLen)
 
 	// clear the screen once
 	screen.Clear()
@@ -62,10 +88,10 @@ func main() {
 		py += vy
 
 		// when the ball hits a border reverse its direction
-		if px <= 0 || px >= width-initVx {
+		if px <= 0 || px >= width-ivx {
 			vx *= -1
 		}
-		if py <= 0 || py >= height-initVy {
+		if py <= 0 || py >= height-ivy {
 			vy *= -1
 		}
 

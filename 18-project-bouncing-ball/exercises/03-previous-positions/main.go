@@ -16,22 +16,27 @@ import (
 )
 
 // ---------------------------------------------------------
-// EXERCISE: Single Dimensional
+// EXERCISE: Previous positions
 //
-//  In this exercise you will understand why I use
-//  a multi-dimensional board slice instead of a
-//  single-dimensional one.
+//  Let's optimize the program once more. This time you're
+//  going to optimize the clearing off the previous positions.
 //
-//  1. Remove this:
-//     board := make([][]bool, width)
+//  1. Find the code below marked as "remove the previous ball"
 //
-//  2. Use this:
-//     board := make([]bool, width*height)
+//  2. Instead of clearing every position on the board to false,
+//     only set the previous position to false. So, don't use
+//     a loop, remove it.
 //
-//  3. Adjust the rest of the operations in the code to work
-//     with this single-dimensional slice.
+//  3. Change the velocity of the ball like so:
 //
-//     You'll see how hard it becomes to work with it.
+//     vx, vy = 5, 2
+//
+//  4. Run the program and solve the problem
+//
+//
+// HINT
+//
+//  Don't forget saving the previous position.
 //
 // ---------------------------------------------------------
 
@@ -42,14 +47,11 @@ func main() {
 
 		maxFrames = 1200
 		speed     = time.Second / 20
-
-		initVx, initVy = 5, 2
 	)
 
 	var (
-		px, py   int              // ball position
-		ppx, ppy int              // previous ball position
-		vx, vy   = initVx, initVy // velocities
+		px, py int    // ball position
+		vx, vy = 1, 1 // velocities
 
 		cell rune // current cell (for caching)
 	)
@@ -70,8 +72,13 @@ func main() {
 		board[column] = make([]bool, height)
 	}
 
+	// drawing buffer length
+	// *2 for extra spaces
+	// +1 for newlines
+	bufLen := (width*2 + 1) * height
+
 	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buf := make([]rune, 0, bufLen)
 
 	// clear the screen once
 	screen.Clear()
@@ -82,18 +89,22 @@ func main() {
 		py += vy
 
 		// when the ball hits a border reverse its direction
-		if px <= 0 || px >= width-initVx {
+		if px <= 0 || px >= width-1 {
 			vx *= -1
 		}
-		if py <= 0 || py >= height-initVy {
+		if py <= 0 || py >= height-1 {
 			vy *= -1
 		}
 
-		// remove the previous ball and put the new ball
-		board[px][py], board[ppx][ppy] = true, false
+		// remove the previous ball
+		for y := range board[0] {
+			for x := range board {
+				board[x][y] = false
+			}
+		}
 
-		// save the previous positions
-		ppx, ppy = px, py
+		// put the new ball
+		board[px][py] = true
 
 		// rewind the buffer (allow appending from the beginning)
 		buf = buf[:0]

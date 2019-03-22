@@ -9,13 +9,10 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"time"
 
-	"github.com/mattn/go-runewidth"
-
 	"github.com/inancgumus/screen"
-	"golang.org/x/crypto/ssh/terminal"
+	"github.com/mattn/go-runewidth"
 )
 
 func main() {
@@ -25,24 +22,21 @@ func main() {
 
 		maxFrames = 1200
 		speed     = time.Second / 20
+
+		// initial velocities
+		ivx, ivy = 5, 2
 	)
 
 	var (
-		px, py int    // ball position
-		vx, vy = 1, 1 // velocities
+		px, py   int        // ball position
+		ppx, ppy int        // previous ball position
+		vx, vy   = ivx, ivx // velocities
 
 		cell rune // current cell (for caching)
 	)
 
-	// get the width and height
-	width, height, err := terminal.GetSize(int(os.Stdout.Fd()))
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
 	// you can get the width and height using the screen package easily:
-	// width, height := screen.Size()
+	width, height := screen.Size()
 
 	// get the rune width of the ball emoji
 	ballWidth := runewidth.RuneWidth(cellBall)
@@ -57,8 +51,13 @@ func main() {
 		board[column] = make([]bool, height)
 	}
 
+	// drawing buffer length
+	// *2 for extra spaces
+	// +1 for newlines
+	bufLen := (width*2 + 1) * height
+
 	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buf := make([]rune, 0, bufLen)
 
 	// clear the screen once
 	screen.Clear()
@@ -69,22 +68,18 @@ func main() {
 		py += vy
 
 		// when the ball hits a border reverse its direction
-		if px <= 0 || px >= width-1 {
+		if px <= 0 || px >= width-ivx {
 			vx *= -1
 		}
-		if py <= 0 || py >= height-1 {
+		if py <= 0 || py >= height-ivx {
 			vy *= -1
 		}
 
-		// remove the previous ball
-		for y := range board[0] {
-			for x := range board {
-				board[x][y] = false
-			}
-		}
+		// remove the previous ball and put the new ball
+		board[px][py], board[ppx][ppy] = true, false
 
-		// put the new ball
-		board[px][py] = true
+		// save the previous positions
+		ppx, ppy = px, py
 
 		// rewind the buffer (allow appending from the beginning)
 		buf = buf[:0]
