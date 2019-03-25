@@ -61,7 +61,7 @@ func main() {
 	// s.Colors(false)     // if your editor is light background color then enable this
 	s.PrintBacking = true  // prints the backing arrays
 	s.MaxPerLine = 15      // prints max 15 elements per line
-	s.SpaceCharacter = "*" // print this instead of printing a newline (for debugging)
+	s.SpaceCharacter = '*' // print this instead of printing a newline (for debugging)
 
 	//
 	// UNCOMMENT THE VARIABLE BELOW THEN START!
