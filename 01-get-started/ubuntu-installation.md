@@ -1,5 +1,11 @@
 # Linux Installation Cheatsheet
 
+If you want to use snap, you can easily install Go like so:
+
+    sudo snap install go --classic
+    
+Otherwise, please follow the steps below:
+
 ## 1. Update the local packages
 
   ```bash
