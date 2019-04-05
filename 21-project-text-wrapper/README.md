@@ -7,12 +7,16 @@ In this project your goal is to mimic the soft text wrapping feature of text edi
 Wrap the text for 40 characters in a line. For example, for the following input, the program should print the following output.
 
 **INPUT:**
-Hello world, how is it going? It is ok. The weather is beautiful.
+
+    Hello world, how is it going? It is ok. The weather is beautiful.
 
 **OUTPUT:**
-Hello world, how is it going? It is ok.
-The weather is beautiful.
+
+    Hello world, how is it going? It is ok.
+    The weather is beautiful.
 
 ## RULES
 
 * The program should also work with Unicode text. You can find a unicode story in [story.txt](story.txt) file in the current folder. Please use the text in the file and soft-wrap it to 40 characters.
+
+* The program should not cut the words, and should put the whole words on the next line.
