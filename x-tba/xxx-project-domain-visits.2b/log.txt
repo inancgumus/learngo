@@ -1,0 +1,8 @@
+learngoprogramming.com turkey 10
+learngoprogramming.com turkey 5
+learngoprogramming.com usa 10
+learngoprogramming.com usa 20fds
+golang.org germany 4
+golang.org germany 6
+golang.org italy 5
+golang.org italy 10
