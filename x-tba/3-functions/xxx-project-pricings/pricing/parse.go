@@ -12,6 +12,7 @@ import (
 	"strings"
 )
 
+// named result values
 func parse(data string) (props []Property) {
 	rows := strings.Split(data, "\n")
 
