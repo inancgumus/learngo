@@ -1,5 +1,20 @@
 # OS X INSTALLATION CHEATSHEET
 
+## NOTE
+
+If you have [homebrew](https://brew.sh) installed, you can easily install Go like so:
+
+```
+# if you don't have git install it like so:
+brew install git
+
+# then install go
+brew install go
+
+# add GOBIN path to your PATH in ~/.bash_profile
+export PATH=${HOME}/go/bin:$PATH
+```
+
 ## 1- Install Visual Studio Code Editor
 
 1. Install it but don't open it yet.
