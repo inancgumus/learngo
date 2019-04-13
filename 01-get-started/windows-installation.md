@@ -1,5 +1,13 @@
 # WINDOWS INSTALLATION CHEATSHEET
 
+## NOTE
+
+If you have [chocolatey.org](https://chocolatey.org/) package manager, you can easily install Go like so:
+
+```
+choco install golang
+```
+
 ## 1- Install Visual Studio Code Editor
 
 1. Install it but don't open it yet.
