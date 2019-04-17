@@ -9,7 +9,7 @@ package main
 
 // Remember: This should point to the directory exactly after GOPATH
 // Use / not \ even on Windows
-import "github.com/inancgumus/learngo/x-tba/functions/03-project-pricings/pricing"
+import "github.com/inancgumus/learngo/x-tba/3-functions/xxx-project-pricings/pricing"
 
 func main() {
 	// TODO: funcs can call other funcs
