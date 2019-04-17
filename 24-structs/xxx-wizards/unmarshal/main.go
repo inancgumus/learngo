@@ -5,9 +5,15 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strings"
-
-	"github.com/inancgumus/learngo/x-tba/structs/xxx-json/wizards"
 )
+
+// Wizard is one of the greatest of people
+type Wizard struct {
+	// name won't be marshalled (should be exported)
+	Name     string `json:name`
+	Lastname string `json:"-"`
+	Nick     string `json:"nick"`
+}
 
 func main() {
 	file, err := ioutil.ReadFile("../marshal/wizards.json")
@@ -15,7 +21,7 @@ func main() {
 		panic(err)
 	}
 
-	wizards := make([]wizards.Wizard, 10)
+	wizards := make([]Wizard, 10)
 	if json.Unmarshal(file, &wizards) != nil {
 		panic(err)
 	}
