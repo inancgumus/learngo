@@ -19,13 +19,15 @@ Wrap the given text for 40 characters per line. For example, for the following i
 
 * The program should work with Unicode text. You can find a unicode text in [story.txt](story.txt) file.
 
-* The program should not cut the words before they finish. Instead, it should put the whole word on the next line. For example, this is not OK:
+* The program should not cut the words before they finish. Instead, it should put the whole word on the next line. 
 
+For example, this is not OK:
+ 
     Hello world, how is it goi
     ng? It is o
     k. The weather is beautifu
     l.
-    
+
 ## SOLUTION
 
 * [Get the solution source code here](main.go).
