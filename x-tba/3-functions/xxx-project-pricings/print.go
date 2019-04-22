@@ -5,29 +5,29 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package pricing
+package main
 
 import (
 	"fmt"
 	"strings"
 )
 
-// Print prints the given properties
-func Print(props Properties) {
-	printHeader()
+// show shows the given properties
+func show(props []property) {
+	showHeader()
 
-	for _, p := range props.list {
-		fmt.Printf("%-15s", p.Location)
-		fmt.Printf("%-15d", p.Size)
-		fmt.Printf("%-15d", p.Beds)
-		fmt.Printf("%-15d", p.Baths)
-		fmt.Printf("%-15d", p.Price)
+	for _, p := range props {
+		fmt.Printf("%-15s", p.location)
+		fmt.Printf("%-15d", p.size)
+		fmt.Printf("%-15d", p.beds)
+		fmt.Printf("%-15d", p.baths)
+		fmt.Printf("%-15d", p.price)
 		fmt.Println()
 	}
 }
 
-// printHeader prints the header
-func printHeader() {
+// showHeader prints the header
+func showHeader() {
 	const header = "Location,Size,Beds,Baths,Price"
 
 	for _, h := range strings.Split(header, separator) {

@@ -9,18 +9,24 @@ package main
 
 // Remember: This should point to the directory exactly after GOPATH
 // Use / not \ even on Windows
-import "github.com/inancgumus/learngo/x-tba/3-functions/xxx-project-pricings/pricing"
+import (
+	"fmt"
+)
 
 func main() {
 	// TODO: funcs can call other funcs
 
 	const data = `New York,100,2,1,100000
-New York,150,3,2,200000
-Paris,200,4,3,400000
-Istanbul,500,10,5,1000000`
+Hong Kong,150,3,2,300000
+Paris,200,4,3,250000
+Istanbul,500,10,5,four hundred thousand`
 
-	props := pricing.New(data)
-	pricing.Print(props)
+	props, err := parse(data)
+	if err != nil {
+		fmt.Printf("> err: %s\n\n", err)
+	}
+
+	show(props)
 
 	// fmt.Printf("%#v\n", props.list)
 }

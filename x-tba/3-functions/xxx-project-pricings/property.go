@@ -5,11 +5,10 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package pricing
+package main
 
-const separator = ","
-
-// New parses and returns a new Properties data
-func New(data string) Properties {
-	return Properties{parse(data)}
+// property stores data about a property
+type property struct {
+	location                 string
+	size, beds, baths, price int
 }
