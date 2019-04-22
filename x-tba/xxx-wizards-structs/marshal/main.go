@@ -1,3 +1,10 @@
+// For more tutorials: https://blog.learngoprogramming.com
+//
+// Copyright © 2018 Inanc Gumus
+// Learn Go Programming Course
+// License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+//
+
 package main
 
 import (
@@ -8,9 +15,9 @@ import (
 // Wizard is one of the greatest of people
 type Wizard struct {
 	// name won't be marshalled (should be exported)
-	Name     string `json:name`
-	Lastname string `json:"-"`
-	Nick     string `json:"nick"`
+	Name     string `json:"name,omitempty"`
+	Lastname string `json:"last_name"`
+	Nick     string `json:"-"`
 }
 
 func main() {
@@ -19,13 +26,13 @@ func main() {
 		{Name: "Isaac", Lastname: "Newton", Nick: "apple"},
 		{Name: "Stephen", Lastname: "Hawking", Nick: "blackhole"},
 		{Name: "Marie", Lastname: "Curie", Nick: "radium"},
-		{Name: "Charles", Lastname: "Darwin", Nick: "fittest"},
+		{Name: "", Lastname: "Darwin", Nick: "fittest"},
 	}
 
-	bytes, err := json.Marshal(wizards)
+	bytes, err := json.MarshalIndent(wizards, "", "\t")
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Print(string(bytes))
+	fmt.Println(string(bytes))
 }
