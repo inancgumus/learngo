@@ -24,17 +24,25 @@ type parser struct {
 }
 
 // newParser creates and returns a new parser.
+//
+// bare func, it doesn't need to operate on a parser value.
 func newParser() *parser {
 	return &parser{sum: make(map[string]int)}
 }
 
-func add(p *parser, line string) {
+// PUBLIC METHODS (API)
+
+// add parses the given line and saves the result to the internal list of
+// domains. it doesn't add the record when the parsing fails.
+//
+// WRITE METHOD
+func (p *parser) add(line string) {
 	// if there was a previous error do not add
 	if p.err != nil {
 		return
 	}
 
-	dom, err := parse(p, line)
+	dom, err := p.parse(line)
 
 	// store only the last error
 	if err != nil {
@@ -42,7 +50,7 @@ func add(p *parser, line string) {
 		return
 	}
 
-	push(p, dom)
+	p.push(dom)
 }
 
 // iterator returns two functions for iterating over domains.
@@ -50,7 +58,7 @@ func add(p *parser, line string) {
 // cur  = returns the current domain
 //
 // READ METHOD
-func iterator(p *parser) (next func() bool, cur func() domain) {
+func (p *parser) iterator() (next func() bool, cur func() domain) {
 	// remember the last received line
 	var last int
 
@@ -73,17 +81,22 @@ func iterator(p *parser) (next func() bool, cur func() domain) {
 // error returns the last error occurred
 //
 // READ METHOD
-func err(p *parser) error {
+func (p *parser) error() error {
 	return p.err
 }
 
-func parse(p *parser, line string) (dom domain, err error) {
+// PRIVATE METHODS
+
+// parse parses the given text and returns a domain struct
+//
+// WRITE METHOD
+func (p *parser) parse(line string) (dom domain, err error) {
 	p.lines++ // increase the parsed line counter (only write is here)
 
 	fields := strings.Fields(line)
 	if len(fields) != 2 {
 		err = fmt.Errorf("wrong input: %v (line #%d)", fields, p.lines)
-		return dom, err
+		return
 	}
 
 	name, visits := fields[0], fields[1]
@@ -91,13 +104,17 @@ func parse(p *parser, line string) (dom domain, err error) {
 	n, err := strconv.Atoi(visits)
 	if n < 0 || err != nil {
 		err = fmt.Errorf("wrong input: %q (line #%d)", visits, p.lines)
-		return dom, err
+		return
 	}
 
 	return domain{name: name, visits: n}, nil
 }
 
-func push(p *parser, d domain) {
+// push pushes the given domain to the internal list of domains.
+// it also increases the total visits for all the domains.
+//
+// WRITE METHOD
+func (p *parser) push(d domain) {
 	// collect the unique domains
 	if _, ok := p.sum[d.name]; !ok {
 		p.domains = append(p.domains, d)
