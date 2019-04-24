@@ -51,8 +51,8 @@ func main() {
 		name, visits := fields[0], fields[1]
 
 		// Sum the total visits per domain
-		n, _ := strconv.Atoi(visits)
-		if n < 0 {
+		n, err := strconv.Atoi(visits)
+		if n < 0 || err != nil {
 			fmt.Printf("wrong input: %q (line #%d)\n", visits, p.lines)
 			return
 		}
@@ -60,11 +60,11 @@ func main() {
 		d := domain{name: name, visits: n}
 
 		// Collect the unique domains
-		if _, ok := p.sum[name]; !ok {
+		if _, ok := p.sum[d.name]; !ok {
 			p.domains = append(p.domains, d)
 		}
 
-		p.sum[d.name] += n
+		p.sum[d.name] += d.visits
 		p.total += d.visits
 	}
 
