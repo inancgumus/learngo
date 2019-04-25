@@ -16,18 +16,18 @@ type domain struct {
 //
 // the parser struct is carefully crafted to be usable using its zero values except the map field
 type parser struct {
-	sum     map[string]int // visits per unique domain
-	domains []domain       // unique domain names
-	total   int            // total visits to all domains
-	lines   int            // number of parsed lines (for the error messages)
-	err     error          // saves the last error occurred
+	sum     map[string]domain // visits per unique domain
+	domains []string          // unique domain names
+	total   int               // total visits to all domains
+	lines   int               // number of parsed lines (for the error messages)
+	lerr    error             // saves the last error occurred
 }
 
 // newParser creates and returns a new parser.
 //
 // bare func, it doesn't need to operate on a parser value.
 func newParser() *parser {
-	return &parser{sum: make(map[string]int)}
+	return &parser{sum: make(map[string]domain)}
 }
 
 // PUBLIC METHODS (API)
@@ -38,7 +38,7 @@ func newParser() *parser {
 // WRITE METHOD
 func (p *parser) add(line string) {
 	// if there was a previous error do not add
-	if p.err != nil {
+	if p.lerr != nil {
 		return
 	}
 
@@ -46,7 +46,7 @@ func (p *parser) add(line string) {
 
 	// store only the last error
 	if err != nil {
-		p.err = err
+		p.lerr = err
 		return
 	}
 
@@ -68,11 +68,9 @@ func (p *parser) iterator() (next func() bool, cur func() domain) {
 	}
 
 	cur = func() domain {
-		d := p.domains[last-1]
-		vis := p.sum[d.name]
-
 		// return a copy so the caller cannot change it
-		return domain{name: d.name, visits: vis}
+		dn := p.domains[last-1]
+		return p.sum[dn]
 	}
 
 	return
@@ -82,7 +80,7 @@ func (p *parser) iterator() (next func() bool, cur func() domain) {
 //
 // READ METHOD
 func (p *parser) error() error {
-	return p.err
+	return p.lerr
 }
 
 // PRIVATE METHODS
@@ -115,11 +113,14 @@ func (p *parser) parse(line string) (dom domain, err error) {
 //
 // WRITE METHOD
 func (p *parser) push(d domain) {
+	dn := d.name
+
 	// collect the unique domains
-	if _, ok := p.sum[d.name]; !ok {
-		p.domains = append(p.domains, d)
+	if _, ok := p.sum[dn]; !ok {
+		p.domains = append(p.domains, dn)
 	}
 
-	p.sum[d.name] += d.visits
 	p.total += d.visits
+	d.visits += p.sum[dn].visits
+	p.sum[dn] = d
 }
