@@ -45,16 +45,16 @@ func main() {
 			return
 		}
 
-		name := fields[0]
+		domain := fields[0]
 
 		// Collect the unique domains
-		if _, ok := sum[name]; !ok {
-			domains = append(domains, name)
+		if _, ok := sum[domain]; !ok {
+			domains = append(domains, domain)
 		}
 
 		// Keep track of total and per domain visits
 		total += visits
-		sum[name] += visits
+		sum[domain] += visits
 	}
 
 	// Print the visits per domain
@@ -63,9 +63,9 @@ func main() {
 	fmt.Printf("%-30s %10s\n", "DOMAIN", "VISITS")
 	fmt.Println(strings.Repeat("-", 45))
 
-	for _, name := range domains {
-		visits := sum[name]
-		fmt.Printf("%-30s %10d\n", name, visits)
+	for _, domain := range domains {
+		visits := sum[domain]
+		fmt.Printf("%-30s %10d\n", domain, visits)
 	}
 
 	// Print the total visits for all domains

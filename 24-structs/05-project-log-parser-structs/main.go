@@ -19,7 +19,7 @@ import (
 // visit stores metrics for a domain
 type visit struct {
 	domain string
-	count  int
+	total  int
 	// add more metrics if needed
 }
 
@@ -53,11 +53,11 @@ func main() {
 			return
 		}
 
-		name := fields[0]
+		domain := fields[0]
 
 		// Collect the unique domains
-		if _, ok := p.sum[name]; !ok {
-			p.domains = append(p.domains, name)
+		if _, ok := p.sum[domain]; !ok {
+			p.domains = append(p.domains, domain)
 		}
 
 		// Keep track of total and per domain visits
@@ -67,9 +67,9 @@ func main() {
 		// p.sum[name].count += visits
 
 		// create and assign a new copy of `visit`
-		p.sum[name] = visit{
-			domain: name,
-			count:  visits + p.sum[name].count,
+		p.sum[domain] = visit{
+			domain: domain,
+			total:  visits + p.sum[domain].total,
 		}
 	}
 
@@ -79,9 +79,9 @@ func main() {
 	fmt.Printf("%-30s %10s\n", "DOMAIN", "VISITS")
 	fmt.Println(strings.Repeat("-", 45))
 
-	for _, name := range p.domains {
-		visits := p.sum[name]
-		fmt.Printf("%-30s %10d\n", name, visits.count)
+	for _, domain := range p.domains {
+		visits := p.sum[domain]
+		fmt.Printf("%-30s %10d\n", domain, visits.total)
 	}
 
 	// Print the total visits for all domains
