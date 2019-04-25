@@ -11,34 +11,31 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
-// domain represents a domain log record
-type domain struct {
-	name   string
-	visits int
+// visit stores metrics for a domain
+type visit struct {
+	domain string
+	count  int
+	// add more metrics if needed
 }
 
-// parser parses a log file and provides an iterator to iterate upon the domains
-//
-// the parser struct is carefully crafted to be usable using its zero values except the map field
+// parser keep tracks of the parsing
 type parser struct {
-	sum     map[string]domain // visits per unique domain
-	domains []string          // unique domain names
-	total   int               // total visits to all domains
-	lines   int               // number of parsed lines (for the error messages)
+	sum     map[string]visit // metrics per domain
+	domains []string         // unique domain names
+	total   int              // total visits for all domains
+	lines   int              // number of parsed lines (for the error messages)
 }
 
 func main() {
-	in := bufio.NewScanner(os.Stdin)
-
-	p := parser{
-		sum: make(map[string]domain),
-	}
+	p := parser{sum: make(map[string]visit)}
 
 	// Scan the standard-in line by line
+	in := bufio.NewScanner(os.Stdin)
 	for in.Scan() {
 		p.lines++
 
@@ -48,34 +45,45 @@ func main() {
 			fmt.Printf("wrong input: %v (line #%d)\n", fields, p.lines)
 			return
 		}
-		name, visits := fields[0], fields[1]
 
 		// Sum the total visits per domain
-		n, err := strconv.Atoi(visits)
-		if n < 0 || err != nil {
-			fmt.Printf("wrong input: %q (line #%d)\n", visits, p.lines)
+		visits, err := strconv.Atoi(fields[1])
+		if visits < 0 || err != nil {
+			fmt.Printf("wrong input: %q (line #%d)\n", fields[1], p.lines)
 			return
 		}
 
-		d := domain{name: name, visits: n}
+		name := fields[0]
 
 		// Collect the unique domains
-		if _, ok := p.sum[d.name]; !ok {
+		if _, ok := p.sum[name]; !ok {
 			p.domains = append(p.domains, name)
 		}
 
-		p.total += d.visits
-		d.visits += p.sum[name].visits
-		p.sum[name] = d
+		// Keep track of total and per domain visits
+		p.total += visits
+
+		// You cannot assign to composite values
+		// p.sum[name].count += visits
+
+		// create and assign a new copy of `visit`
+		p.sum[name] = visit{
+			domain: name,
+			count:  visits + p.sum[name].count,
+		}
 	}
 
 	// Print the visits per domain
-	for _, name := range p.domains {
-		d := p.sum[name]
+	sort.Strings(p.domains)
 
-		fmt.Printf("%-25s -> %d\n", d.name, d.visits)
+	fmt.Printf("%-30s %10s\n", "DOMAIN", "VISITS")
+	fmt.Println(strings.Repeat("-", 45))
+
+	for _, name := range p.domains {
+		visits := p.sum[name]
+		fmt.Printf("%-30s %10d\n", name, visits.count)
 	}
 
 	// Print the total visits for all domains
-	fmt.Printf("\n%-25s -> %d\n", "TOTAL", p.total)
+	fmt.Printf("\n%-30s %10d\n", "TOTAL", p.total)
 }
