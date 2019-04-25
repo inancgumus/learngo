@@ -25,17 +25,17 @@ type domain struct {
 //
 // the parser struct is carefully crafted to be usable using its zero values except the map field
 type parser struct {
-	sum     map[string]int // visits per unique domain
-	domains []domain       // unique domain names
-	total   int            // total visits to all domains
-	lines   int            // number of parsed lines (for the error messages)
+	sum     map[string]domain // visits per unique domain
+	domains []string          // unique domain names
+	total   int               // total visits to all domains
+	lines   int               // number of parsed lines (for the error messages)
 }
 
 func main() {
 	in := bufio.NewScanner(os.Stdin)
 
 	p := parser{
-		sum: make(map[string]int),
+		sum: make(map[string]domain),
 	}
 
 	// Scan the standard-in line by line
@@ -61,18 +61,19 @@ func main() {
 
 		// Collect the unique domains
 		if _, ok := p.sum[d.name]; !ok {
-			p.domains = append(p.domains, d)
+			p.domains = append(p.domains, name)
 		}
 
-		p.sum[d.name] += d.visits
 		p.total += d.visits
+		d.visits += p.sum[name].visits
+		p.sum[name] = d
 	}
 
 	// Print the visits per domain
-	for _, d := range p.domains {
-		vis := p.sum[d.name]
+	for _, name := range p.domains {
+		d := p.sum[name]
 
-		fmt.Printf("%-25s -> %d\n", d.name, vis)
+		fmt.Printf("%-25s -> %d\n", d.name, d.visits)
 	}
 
 	// Print the total visits for all domains
