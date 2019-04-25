@@ -69,8 +69,8 @@ func (p *parser) iterator() (next func() bool, cur func() domain) {
 
 	cur = func() domain {
 		// return a copy so the caller cannot change it
-		dn := p.domains[last-1]
-		return p.sum[dn]
+		name := p.domains[last-1]
+		return p.sum[name]
 	}
 
 	return
@@ -113,14 +113,14 @@ func (p *parser) parse(line string) (dom domain, err error) {
 //
 // WRITE METHOD
 func (p *parser) push(d domain) {
-	dn := d.name
+	name := d.name
 
 	// collect the unique domains
-	if _, ok := p.sum[dn]; !ok {
-		p.domains = append(p.domains, dn)
+	if _, ok := p.sum[name]; !ok {
+		p.domains = append(p.domains, name)
 	}
 
 	p.total += d.visits
-	d.visits += p.sum[dn].visits
-	p.sum[dn] = d
+	d.visits += p.sum[name].visits
+	p.sum[name] = d
 }
