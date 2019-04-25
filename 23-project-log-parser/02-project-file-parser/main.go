@@ -27,8 +27,7 @@ func main() {
 	)
 
 	// Scan the standard-in line by line
-	for line := 0; in.Scan(); line++ {
-
+	for line := 1; in.Scan(); line++ {
 		// Parse the fields
 		fields := strings.Fields(in.Text())
 		if len(fields) != 2 {
@@ -43,8 +42,8 @@ func main() {
 		}
 
 		// Sum the total visits per domain
-		n, _ := strconv.Atoi(visits)
-		if n < 0 {
+		n, err := strconv.Atoi(visits)
+		if n < 0 || err != nil {
 			fmt.Printf("wrong input: %q (line #%d)\n", visits, line)
 			return
 		}
