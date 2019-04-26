@@ -16,23 +16,23 @@ import (
 	"strings"
 )
 
-// visit stores metrics for a domain
-type visit struct {
+// result stores the parsed result for a domain
+type result struct {
 	domain string
-	total  int
+	visits int
 	// add more metrics if needed
 }
 
 // parser keep tracks of the parsing
 type parser struct {
-	sum     map[string]visit // metrics per domain
-	domains []string         // unique domain names
-	total   int              // total visits for all domains
-	lines   int              // number of parsed lines (for the error messages)
+	sum     map[string]result // metrics per domain
+	domains []string          // unique domain names
+	total   int               // total visits for all domains
+	lines   int               // number of parsed lines (for the error messages)
 }
 
 func main() {
-	p := parser{sum: make(map[string]visit)}
+	p := parser{sum: make(map[string]result)}
 
 	// Scan the standard-in line by line
 	in := bufio.NewScanner(os.Stdin)
@@ -46,14 +46,14 @@ func main() {
 			return
 		}
 
+		domain := fields[0]
+
 		// Sum the total visits per domain
 		visits, err := strconv.Atoi(fields[1])
 		if visits < 0 || err != nil {
 			fmt.Printf("wrong input: %q (line #%d)\n", fields[1], p.lines)
 			return
 		}
-
-		domain := fields[0]
 
 		// Collect the unique domains
 		if _, ok := p.sum[domain]; !ok {
@@ -67,9 +67,9 @@ func main() {
 		// p.sum[name].count += visits
 
 		// create and assign a new copy of `visit`
-		p.sum[domain] = visit{
+		p.sum[domain] = result{
 			domain: domain,
-			total:  visits + p.sum[domain].total,
+			visits: visits + p.sum[domain].visits,
 		}
 	}
 
@@ -80,8 +80,8 @@ func main() {
 	fmt.Println(strings.Repeat("-", 45))
 
 	for _, domain := range p.domains {
-		visits := p.sum[domain]
-		fmt.Printf("%-30s %10d\n", domain, visits.total)
+		parsed := p.sum[domain]
+		fmt.Printf("%-30s %10d\n", domain, parsed.visits)
 	}
 
 	// Print the total visits for all domains

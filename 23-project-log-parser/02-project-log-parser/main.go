@@ -38,14 +38,14 @@ func main() {
 			return
 		}
 
+		domain := fields[0]
+
 		// Sum the total visits per domain
 		visits, err := strconv.Atoi(fields[1])
 		if visits < 0 || err != nil {
 			fmt.Printf("wrong input: %q (line #%d)\n", fields[1], lines)
 			return
 		}
-
-		domain := fields[0]
 
 		// Collect the unique domains
 		if _, ok := sum[domain]; !ok {
