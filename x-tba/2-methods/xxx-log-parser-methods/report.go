@@ -7,6 +7,8 @@
 
 package main
 
+import "sort"
+
 // report aggregates the final report
 type report struct {
 	sum     map[string]result // metrics per domain
@@ -36,4 +38,27 @@ func (r *report) update(parsed parserResult) {
 	// and this way it becomes easily extendable
 	r.total = r.total.add(parsed.result)
 	r.sum[domain] = parsed.add(r.sum[domain])
+}
+
+// iterator returns `next()` to detect when the iteration ends,
+// and a `cur()` to return the current result.
+// iterator iterates sorted by domains.
+func (r *report) iterator() (next func() bool, cur func() result) {
+	sort.Strings(r.domains)
+
+	// remember the last iterated result
+	var last int
+
+	next = func() bool {
+		defer func() { last++ }()
+		return len(r.domains) > last
+	}
+
+	cur = func() result {
+		// returns a copy so the caller cannot change it
+		name := r.domains[last-1]
+		return r.sum[name]
+	}
+
+	return
 }
