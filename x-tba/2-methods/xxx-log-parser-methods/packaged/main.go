@@ -9,8 +9,6 @@ package main
 
 import (
 	"bufio"
-	"encoding/json"
-	"fmt"
 	"os"
 
 	"github.com/inancgumus/learngo/x-tba/2-methods/xxx-log-parser-methods/packaged/metrics"
@@ -23,7 +21,9 @@ func main() {
 	for in.Scan() {
 		report.Update(parser.Parse(in.Text()))
 	}
-	s, _ := json.Marshal(report)
-	fmt.Println(string(s))
+
 	summarize(report, parser.Err(), in.Err())
+
+	// s, _ := json.Marshal(report)
+	// fmt.Println(string(s))
 }

@@ -20,5 +20,5 @@ func main() {
 		report.update(p.parse(in.Text()))
 	}
 
-	summarize(report, p.lerr, in.Err())
+	summarize(report, p.err(), in.Err())
 }

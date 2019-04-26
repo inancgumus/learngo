@@ -29,24 +29,24 @@ func NewParser() *Parser {
 }
 
 // Parse parses a log line and returns a result with an injected error
-func (l *Parser) Parse(line string) (parsed Parsed) {
+func (p *Parser) Parse(line string) (parsed Parsed) {
 	// always set the error
-	defer func() { parsed.err = l.lerr }()
+	defer func() { parsed.err = p.lerr }()
 
 	// if there was an error do not continue
-	if l.lerr != nil {
+	if p.lerr != nil {
 		return
 	}
 
 	// chain the parser's error to the result's
 	res, err := parse(line)
-	if l.lines++; err != nil {
-		l.lerr = fmt.Errorf("%s: (line #%d)", err, l.lines)
+	if p.lines++; err != nil {
+		p.lerr = fmt.Errorf("%s: (line #%d)", err, p.lines)
 	}
 	return Parsed{result: res}
 }
 
 // Err returns the last error encountered
-func (l *Parser) Err() error {
-	return l.lerr
+func (p *Parser) Err() error {
+	return p.lerr
 }

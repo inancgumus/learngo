@@ -22,7 +22,7 @@ func newReport() *report {
 }
 
 // update updates the errors for the given parsing result
-func (r *report) update(parsed parserResult) {
+func (r *report) update(parsed parsed) {
 	// do not update the report if the result has an error
 	if parsed.err != nil {
 		return

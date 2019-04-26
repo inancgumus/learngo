@@ -13,16 +13,16 @@ import (
 )
 
 // summarize prints the report and errors if any
-func summarize(r *report, errs ...error) {
+func summarize(rep *report, errs ...error) {
 	fmt.Printf("%-30s %10s\n", "DOMAIN", "VISITS")
 	fmt.Println(strings.Repeat("-", 45))
 
-	next, cur := r.iterator()
+	next, cur := rep.iterator()
 	for next() {
 		rec := cur()
 		fmt.Printf("%-30s %10d\n", rec.domain, rec.visits)
 	}
-	fmt.Printf("\n%-30s %10d\n", "TOTAL", r.total.visits)
+	fmt.Printf("\n%-30s %10d\n", "TOTAL", rep.total.visits)
 
 	// only handle the errors once
 	dumpErrs(errs...)
