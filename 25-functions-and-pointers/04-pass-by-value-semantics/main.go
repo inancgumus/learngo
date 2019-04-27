@@ -26,7 +26,7 @@ func main() {
 		parsed, err := parse(p, in.Text())
 		if err != nil {
 			fmt.Println(err)
-			break
+			return
 		}
 
 		p = update(p, parsed)

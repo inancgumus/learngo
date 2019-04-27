@@ -30,8 +30,8 @@ type parser struct {
 }
 
 // newParser constructs, initializes and returns a new parser
-func newParser() parser {
-	return parser{sum: make(map[string]result)}
+func newParser() *parser {
+	return &parser{sum: make(map[string]result)}
 }
 
 // parse parses a log line and returns the parsed result with an error
@@ -80,4 +80,9 @@ func update(p *parser, parsed result) {
 		domain: domain,
 		visits: visits + p.sum[domain].visits,
 	}
+}
+
+// err returns the last error encountered
+func err(p *parser) error {
+	return p.lerr
 }
