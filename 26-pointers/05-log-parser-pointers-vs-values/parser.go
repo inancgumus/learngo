@@ -35,7 +35,7 @@ func newParser() *parser {
 }
 
 // parse parses a log line and returns the parsed result with an error
-func parse(p *parser, line string) (parsed result) {
+func parse(p *parser, line string) (r result) {
 	if p.lerr != nil {
 		return
 	}
@@ -48,37 +48,35 @@ func parse(p *parser, line string) (parsed result) {
 		return
 	}
 
-	parsed.domain = fields[0]
-
 	var err error
 
-	parsed.visits, err = strconv.Atoi(fields[1])
-	if parsed.visits < 0 || err != nil {
+	r.domain = fields[0]
+	r.visits, err = strconv.Atoi(fields[1])
+
+	if r.visits < 0 || err != nil {
 		p.lerr = fmt.Errorf("wrong input: %q (line #%d)", fields[1], p.lines)
 	}
 	return
 }
 
 // update updates the errors for the given parsing result
-func update(p *parser, parsed result) {
+func update(p *parser, r result) {
 	if p.lerr != nil {
 		return
 	}
 
-	domain, visits := parsed.domain, parsed.visits
-
 	// Collect the unique domains
-	if _, ok := p.sum[domain]; !ok {
-		p.domains = append(p.domains, domain)
+	if _, ok := p.sum[r.domain]; !ok {
+		p.domains = append(p.domains, r.domain)
 	}
 
 	// Keep track of total and per domain visits
-	p.total += visits
+	p.total += r.visits
 
 	// create and assign a new copy of `visit`
-	p.sum[domain] = result{
-		domain: domain,
-		visits: visits + p.sum[domain].visits,
+	p.sum[r.domain] = result{
+		domain: r.domain,
+		visits: r.visits + p.sum[r.domain].visits,
 	}
 }
 

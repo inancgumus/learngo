@@ -20,7 +20,8 @@ func main() {
 
 	in := bufio.NewScanner(os.Stdin)
 	for in.Scan() {
-		update(p, parse(p, in.Text()))
+		parsed := parse(p, in.Text())
+		update(p, parsed)
 	}
 
 	summarize(p)
@@ -35,8 +36,7 @@ func summarize(p *parser) {
 	fmt.Println(strings.Repeat("-", 45))
 
 	for _, domain := range p.domains {
-		parsed := p.sum[domain]
-		fmt.Printf("%-30s %10d\n", domain, parsed.visits)
+		fmt.Printf("%-30s %10d\n", domain, p.sum[domain].visits)
 	}
 	fmt.Printf("\n%-30s %10d\n", "TOTAL", p.total)
 }
