@@ -88,6 +88,10 @@ func main() {
 	// // Print the total visits for all domains
 	// fmt.Printf("\n%-30s %10d\n", "TOTAL", p.Total)
 
+	// if err := in.Err(); err != nil {
+	// 	fmt.Println("> Err:", err)
+	// }
+
 	s, _ := json.MarshalIndent(p, "", "\t")
 	fmt.Println(string(s))
 }

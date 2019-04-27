@@ -17,6 +17,9 @@ func main() {
 	// Create a new scanner that scans from the standard-input
 	in := bufio.NewScanner(os.Stdin)
 
+	// Simulate an error
+	// os.Stdin.Close()
+
 	// Stores the total number of lines in the input
 	var lines int
 
@@ -27,6 +30,12 @@ func main() {
 		// Get the current line from the scanner's buffer
 		// fmt.Println("Scanned Text :", in.Text())
 		// fmt.Println("Scanned Bytes:", in.Bytes())
+		in.Text()
 	}
 	fmt.Printf("There %d lines.\n", lines)
+
+	err := in.Err()
+	if err != nil {
+		fmt.Println("ERROR:", err)
+	}
 }

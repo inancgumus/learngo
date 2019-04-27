@@ -70,4 +70,9 @@ func main() {
 
 	// Print the total visits for all domains
 	fmt.Printf("\n%-30s %10d\n", "TOTAL", total)
+
+	// Let's handle the error
+	if err := in.Err(); err != nil {
+		fmt.Println("> Err:", err)
+	}
 }

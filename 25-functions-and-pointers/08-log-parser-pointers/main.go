@@ -31,6 +31,10 @@ func main() {
 	fmt.Printf("\n%-25s -> %d\n", "TOTAL", p.total)
 
 	if p.lerr != nil {
-		fmt.Printf("> Err: %s\n", p.lerr)
+		fmt.Println("> Err:", p.lerr)
+	}
+
+	if err := in.Err(); err != nil {
+		fmt.Println("> Err:", err)
 	}
 }
