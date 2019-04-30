@@ -43,6 +43,7 @@ func main() {
 
 	fmt.Println("\n••••• CHANGE IN: passPtrVal")
 	passPtrVal(&counter) // same as passPtrVal(&counter) (no need to return)
+	passPtrVal(&counter) // same as passPtrVal(&counter) (no need to return)
 	fmt.Printf("counter : %-16d address: %-16p\n", counter, &counter)
 }
 
@@ -53,6 +54,9 @@ func passPtrVal(pn *int) {
 	// pointers can breach function isolation borders
 	*pn++ // counter changes because `pn` points to `counter` — (*pn)++
 	fmt.Printf("pn      : %-16p address: %-16p *pn: %d\n", pn, &pn, *pn)
+
+	// setting it to nil doesn't effect the caller (the main function)
+	pn = nil
 }
 
 // n is a int variable (copy of counter)
