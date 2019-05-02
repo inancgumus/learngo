@@ -27,10 +27,12 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// Scanner can scan the lines, words, anything.
-	// Use the following code after creating the scanner to
-	// scan for the words instead.
+	// I'll talk about this in the function values section later on.
 	//
+	// Simply put:
+	// Scanner can scan the lines, words, anything.
+	// Use the following code after creating the scanner
+	// to scan for the words instead.
 	// Below, I assumed that you put your scanner into the "in" variable.
 
 	// in.Split(bufio.ScanWords)
