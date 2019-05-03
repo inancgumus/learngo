@@ -48,7 +48,7 @@
 >
 
 
-## Why the following code doesn't work?
+## Why doesn't the following program work?
 ```go
 package main
 import "fmt"
@@ -63,7 +63,7 @@ func main() {
 3. By moving "Hello" out of the func main.
 
 
-## Does the following code works? And why?
+## Does the following program work?
 ```go
 package main
 import (
@@ -91,7 +91,7 @@ func main() {
 >
 
 
-## Why this code works?
+## Why does this program work?
 ```go
 package main
 import (

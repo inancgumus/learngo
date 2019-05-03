@@ -1,4 +1,4 @@
-## Which keyword below defines a new package for the following program?
+## Which keyword below that you need use to define a package?
 ```go
 package main
 
@@ -10,33 +10,33 @@ func main() {
 3. fmt.Println
 4. import
 
-> **1:** This keyword is used to declare a new function.
+> **1:** func keyword is used to declare a new function.
 >
 >
-> **2:** That's right! package keyword allows you to define which package a Go file belongs to.
+> **2:** That's right! package keyword allows you to define a package for a Go file.
 >
 >
-> **3:** This is not a keyword. It's the Println function of the fmt package.
+> **3:** It's not a keyword, it's a function of the fmt package.
 >
 >
-> **4:** This keyword is used to import a package.
+> **4:** import keyword is used to import a package.
 >
 >
 
 
-## Why `package main` is used in the following program?
+## What is the purpose of using package main in the following program?
 ```go
 package main
 
 func main() {
 }
 ```
-* It creates a library package
-* It allows us to properly exit from this program
-* It creates an executable Go program *CORRECT*
+* To create a library package
+* To properly exit from the program
+* To create an executable Go program *CORRECT*
 
 
-## Why `func main` is used in the following program?
+## What is the purpose of func main in the following program?
 ```go
 package main
 
@@ -44,21 +44,21 @@ func main() {
 }
 ```
 1. It defines a package called main
-2. It allows Go to start executing this program by using the code inside func main *CORRECT*
+2. It allows Go to start executing the program *CORRECT*
 3. It prints a message to the console
 
 > **1:** main function doesn't create a package.
 >
 >
-> **2:** That's right. Go automatically calls the main function to execute your program.
+> **2:** That's right. Go automatically calls the main function to execute a program.
 >
 >
-> **3:** It doesn't print anything at least directly.
+> **3:** It doesn't print anything (at least directly).
 >
 >
 
 
-## Why `import "fmt"` is used in the following program?
+## What is the purpose of import "fmt" in the following program?
 ```go
 package main
 import "fmt"
@@ -133,7 +133,7 @@ _(except the main func)_
 >
 
 
-## What the following program does?
+## What does the following program print?
 ```go
 package main
 
@@ -141,14 +141,14 @@ func main() {
 }
 ```
 1. It prints a message to the console
-2. It's a correct program and it doesn't print anything *CORRECT*
+2. It's a correct program but it doesn't print anything *CORRECT*
 3. It's an incorrect program
 
 > **1:** It doesn't print a message. To do that you can use fmt.Println function.
 >
 >
 
-> **2:** Yes, it's a correct program but since it doesn't contain fmt.Println it doesn't print anything.
+> **2:** Yes, it's a correct program, however since it doesn't contain fmt.Println it doesn't print anything.
 >
 >
 
