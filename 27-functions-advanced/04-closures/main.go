@@ -22,7 +22,7 @@ func main() {
 
 	// ========================================================================
 
-	fmt.Println("\n••• FUNC LITERALS •••")
+	fmt.Println("\n••• CLOSURES •••")
 
 	var min int
 	greaterThan := func(n int) bool {
@@ -35,16 +35,29 @@ func main() {
 	min = 6
 	fmt.Printf("> 6        : %d\n", filter(greaterThan, nums...))
 
-	// ========================================================================
+	// min = 1
+	// fmt.Printf("> 1        : %d\n", filter(greaterThan, nums...))
+	// min = 2
+	// fmt.Printf("> 2        : %d\n", filter(greaterThan, nums...))
+	// min = 3
+	// fmt.Printf("> 3        : %d\n", filter(greaterThan, nums...))
 
-	fmt.Println("\n••• HIGHER-ORDER FUNCS •••")
-	fmt.Printf("> 3        : %d\n", filter(greater(3), nums...))
-	fmt.Printf("> 6        : %d\n", filter(greater(6), nums...))
+	var filterers []filterFunc
+	for i := 1; i <= 3; i++ {
+		current := i
+
+		filterers = append(filterers, func(n int) bool {
+			min = current
+			return greaterThan(n)
+		})
+	}
+
+	printer(filterers, nums...)
 }
 
-func greater(min int) filterFunc {
-	return func(n int) bool {
-		return n > min
+func printer(filterers []filterFunc, nums ...int) {
+	for i, filterer := range filterers {
+		fmt.Printf("> %d        : %d\n", i+1, filter(filterer, nums...))
 	}
 }
 

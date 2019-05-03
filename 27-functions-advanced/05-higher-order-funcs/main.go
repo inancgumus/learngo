@@ -40,7 +40,7 @@ func main() {
 	fmt.Printf("dups uniqs : %v\n", filter(uniques(), out...))
 
 	dups = reverse(uniques())
-	chained := chain(reverse(greater(2)), dups, uniques())
+	chained := chain(reverse(greater(1)), dups, uniques())
 	fmt.Printf("dups chain : %v\n", filter(chained, 1, 1, 2, 3, 3, 3, 3, 0, 0))
 }
 
@@ -78,6 +78,12 @@ func greater(min int) filterFunc {
 	}
 }
 
+func lesseq(max int) filterFunc {
+	return func(n int) bool {
+		return n <= max
+	}
+}
+
 func filter(f filterFunc, nums ...int) (filtered []int) {
 	for _, n := range nums {
 		if f(n) {
@@ -89,9 +95,3 @@ func filter(f filterFunc, nums ...int) (filtered []int) {
 
 func isEven(n int) bool { return n%2 == 0 }
 func isOdd(m int) bool  { return m%2 == 1 }
-
-func lesseq(max int) filterFunc {
-	return func(n int) bool {
-		return n <= max
-	}
-}

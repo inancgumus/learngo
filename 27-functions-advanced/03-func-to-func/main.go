@@ -7,7 +7,11 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+	"unicode"
+)
 
 type filterFunc func(int) bool
 
@@ -23,6 +27,17 @@ func main() {
 	fmt.Println("\n••• FUNC VALUES •••")
 	fmt.Printf("evens      : %d\n", filter(isEven, nums...))
 	fmt.Printf("odds       : %d\n", filter(isOdd, nums...))
+
+	fmt.Println("\n••• MAPPING •••")
+	fmt.Println(strings.Map(unpunct, "hello!!! HOW ARE YOU???? :))"))
+	fmt.Println(strings.Map(unpunct, "TIME IS UP!"))
+}
+
+func unpunct(r rune) rune {
+	if unicode.IsPunct(r) {
+		return -1
+	}
+	return unicode.ToLower(r)
 }
 
 func filter(f filterFunc, nums ...int) (filtered []int) {
@@ -33,6 +48,7 @@ func filter(f filterFunc, nums ...int) (filtered []int) {
 	}
 	return
 }
+
 func filterOdds(nums ...int) (filtered []int) {
 	for _, n := range nums {
 		if isOdd(n) {
