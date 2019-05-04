@@ -24,45 +24,29 @@ func main() {
 		"good":    "iyi",
 		"great":   "harika",
 		"perfect": "mükemmel",
-
-		// #5: this overwrites the mükemmel in the turkish map
-		"awesome": "mükemmel",
+		"awesome": "mükemmel", // #5
 	}
 
-	// #1: map value is a pointer to a real map in the memory
-	// turkish := dict
+	// turkish := dict // #1
 	// turkish["good"] = "güzel"
 	// dict["great"] = "kusursuz"
 
-	// #6: delete can delete a pair from a map
-	delete(dict, "awesome")
-
-	// #7: no-op
-	delete(dict, "awesome")
+	delete(dict, "awesome") // #6
+	delete(dict, "awesome") // #7: no-op
 	delete(dict, "notexisting")
-
-	// #8: destroying a map completely (false)
-	// dict = nil
-
-	// #9: destroying a map completely (true)
-	//     replaces the whole loop with a single instruction:
-	//     "call runtime.mapclear()"
-	for k := range dict {
+	
+	// dict = nil // #8
+	for k := range dict { // #9
 		delete(dict, k)
 	}
 
-	// #2: make initializes a new map value and returns a pointer to it
-	// turkish := make(map[string]string)
-
-	// #3: make(T, hint) => hint is an advice for initing a large enough map
-	turkish := make(map[string]string, len(dict))
+	// turkish := make(map[string]string) // #2
+	turkish := make(map[string]string, len(dict)) // #3
 	for k, v := range dict {
 		turkish[v] = k
 	}
 
-	// #4: add turkish dictionary
-	// fmt.Printf("english: %q\nturkish: %q\n", dict, turkish)
-
+	// fmt.Printf("english: %q\nturkish: %q\n", dict, turkish) // #4
 	if value, ok := dict[query]; ok {
 		fmt.Printf("%q means %#v\n", query, value)
 		return
