@@ -22,7 +22,7 @@ func main() {
 		"bobo":       {"wizardry", "unwanted"},
 	}
 
-	// remove "bobo" house
+	// remove the "bobo" house
 	delete(houses, "bobo")
 
 	args := os.Args[1:]

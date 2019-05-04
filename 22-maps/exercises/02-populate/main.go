@@ -6,7 +6,7 @@ package main
 //  Add elements to the maps that you've declared in the
 //  first exercise, and try them by looking up for the keys.
 //
-//  Use map literals.
+//  Either use the `make()` or `map literals`.
 //
 //  After completing the exercise, remove the data and check
 //  that your program still works.

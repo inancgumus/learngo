@@ -21,7 +21,7 @@ func main() {
 
 	// #1
 	// Key        : Last name
-	// Element    : Last name
+	// Element    : Phone number
 
 	// #2
 	// Key        : Product ID
