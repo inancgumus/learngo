@@ -11,6 +11,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
+	"strings"
 )
 
 func main() {
@@ -24,10 +26,20 @@ func main() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
 
+	rx := regexp.MustCompile(`[^a-z]+`)
+
 	words := make(map[string]bool)
 	for in.Scan() {
-		words[in.Text()] = true
+		word := strings.ToLower(in.Text())
+		word = rx.ReplaceAllString(word, "")
+		if len(word) > 2 {
+			words[word] = true
+		}
 	}
+
+	// for word := range words {
+	// 	fmt.Println(word)
+	// }
 
 	if words[query] {
 		fmt.Printf("The input contains %q.\n", query)
