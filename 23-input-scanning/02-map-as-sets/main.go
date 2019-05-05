@@ -24,21 +24,24 @@ func main() {
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
 
-	// index the words
 	words := make(map[string]bool)
 	for in.Scan() {
 		words[in.Text()] = true
 	}
 
-	// unnecessary
-	// if _, ok := words[query]; ok {
-	// ...
-	// }
-
-	// answer the user query
 	if words[query] {
-		fmt.Printf("The input contains %q word.\n", query)
+		fmt.Printf("The input contains %q.\n", query)
 		return
 	}
-	fmt.Printf("Sorry. The input does contain %q word.\n", query)
+	fmt.Printf("Sorry. The input does contain %q.\n", query)
+
+	// query := "sun"
+	// fmt.Println("sun:", words["sun"], "tesla:", words["tesla"])
+
+	// unnecessary
+	// if _, ok := words[query]; ok {
+	// 	fmt.Printf("The input contains %q.\n", query)
+	// 	return
+	// }
+	// fmt.Printf("Sorry. The input does contain %q.\n", query)
 }
