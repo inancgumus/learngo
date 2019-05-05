@@ -18,7 +18,6 @@ package main
 //  2. Scan the input using a new Scanner.
 //
 //  3. Configure the scanner to scan for the words.
-//     See the explanation inside the code below.
 //
 //  4. Count the unique words using a map.
 //
@@ -27,13 +26,4 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// I'll talk about this in the function values section later on.
-	//
-	// Simply put:
-	// Scanner can scan the lines, words, anything.
-	// Use the following code after creating the scanner
-	// to scan for the words instead.
-	// Below, I assumed that you put your scanner into the "in" variable.
-
-	// in.Split(bufio.ScanWords)
 }
