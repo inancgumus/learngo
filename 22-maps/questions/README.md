@@ -1,5 +1,5 @@
-## Why are maps used?
-For example, here is a program that uses a slice to find an element among millions of elements.
+## Why are maps used for?
+For example, here is an inefficient program that uses a loop to find an element among millions of elements.
 ```go
 millions := []int{/* millions of elements */}
 for _, v := range millions {
@@ -17,7 +17,7 @@ for _, v := range millions {
 > **2:** Map doesn't work in O(n) time for key lookup.
 >
 
-## When shouldn't you use a map?
+## When should you not use a map?
 1. To find an element through a key
 2. To loop over the map keys *CORRECT*
 3. To add structured data to your program
@@ -39,19 +39,19 @@ for _, v := range millions {
 > **5:** Slices, maps, and function values are not comparable. So, they cannot be map keys.
 >
 
-## Which are the following map's key and element types?
+## Which are the key and element types of the map below?
 ```go
 map[string]map[int]bool
 ```
 1. Key: string Element: bool
 2. Key: string Element: int
 3. Key: string Element: map[int]
-4. Key: string Element: map[int]string *CORRECT*
+4. Key: string Element: map[int]bool *CORRECT*
 
 > **4:** The map contains other maps. The element type of a map can be of any type.
 >
 
-## What is a map behind the scenes?
+## What is a map value behind the scenes?
 1. A map header
 2. A pointer to a map header *CORRECT*
 3. Tiny data structure with 3 fields: Pointer, Length and Capacity
