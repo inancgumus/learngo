@@ -23,15 +23,16 @@ func main() {
 	}
 	query := args[0]
 
+	rx := regexp.MustCompile(`[^a-z]+`)
+
 	in := bufio.NewScanner(os.Stdin)
 	in.Split(bufio.ScanWords)
-
-	rx := regexp.MustCompile(`[^a-z]+`)
 
 	words := make(map[string]bool)
 	for in.Scan() {
 		word := strings.ToLower(in.Text())
 		word = rx.ReplaceAllString(word, "")
+
 		if len(word) > 2 {
 			words[word] = true
 		}
@@ -45,7 +46,7 @@ func main() {
 		fmt.Printf("The input contains %q.\n", query)
 		return
 	}
-	fmt.Printf("Sorry. The input does contain %q.\n", query)
+	fmt.Printf("Sorry. The input does not contain %q.\n", query)
 
 	// query := "sun"
 	// fmt.Println("sun:", words["sun"], "tesla:", words["tesla"])
@@ -55,5 +56,5 @@ func main() {
 	// 	fmt.Printf("The input contains %q.\n", query)
 	// 	return
 	// }
-	// fmt.Printf("Sorry. The input does contain %q.\n", query)
+	// fmt.Printf("Sorry. The input does not contain %q.\n", query)
 }
