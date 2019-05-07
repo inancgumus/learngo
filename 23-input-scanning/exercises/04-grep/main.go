@@ -15,10 +15,14 @@ package main
 //
 //  4. If no pattern is provided, print all the lines
 //
+//
 // EXPECTED OUTPUT
+//
 //  go run main.go come < shakespeare.txt
+//
 //    come night come romeo come thou day in night
 //    come gentle night come loving black-browed night
+//
 // ---------------------------------------------------------
 
 func main() {
