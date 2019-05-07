@@ -11,7 +11,7 @@ import (
 	"bufio"
 	"os"
 
-	"github.com/inancgumus/learngo/x-tba/2-methods/xxx-log-parser-methods/packaged/metrics"
+	"github.com/inancgumus/learngo/28-methods/xxx-log-parser-methods/packaged/metrics"
 )
 
 func main() {
