@@ -64,7 +64,7 @@ func main() {
 		p.total += visits
 
 		// You cannot assign to composite values
-		// p.sum[name].count += visits
+		// p.sum[domain].visits += visits
 
 		// create and assign a new copy of `visit`
 		p.sum[domain] = result{

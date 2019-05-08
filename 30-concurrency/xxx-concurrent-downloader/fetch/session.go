@@ -32,8 +32,8 @@ func (s *Session) Start(transfers ...Transfer) <-chan Progress {
 
 	for _, t := range transfers {
 		go func(t Transfer) {
+			defer wg.Done()
 			t.Start(updates, s.done)
-			wg.Done()
 		}(t)
 	}
 
