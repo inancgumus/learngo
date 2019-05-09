@@ -176,3 +176,55 @@ fmt.Println(m.title, "&", m.item.title)
 > **4:** Right! `m.title` returns "avengers: end game" because the outer type always takes priority. However, `m.item.title` returns "midnight in paris" because you explicitly get it from the inner type: item.
 >
 
+
+## What is a field tag?
+1. It allows Go to index struct fields more efficiently
+2. You can use it for documenting your code
+3. It's like a comment
+4. Associates metadata about the field *CORRECT*
+
+> **4:** Correct. For example, the json package can read and encode/decode depending on the associated metadata.
+
+
+## Which one is correct about a field tag?
+1. It needs to be typed according to some rules
+2. You can change it to a different value in runtime
+3. It's just a string value, and it doesn't have a meaning on its own *CORRECT*
+
+> **1:** This is true to some extent but it can have any value.
+> 
+> **2:** Fields tags are part of a struct type definition so you cannot change their value in runtime.
+> 
+> **3:** Right! It's just a string value. It's only meaningful when other code reads it. For example, the json package can read it and encode/decode depending on the field tag's value.
+> 
+
+
+## What is wrong with the following program?
+```go
+type movie struct {
+    title string `json:"title"`
+}
+
+m := movie{"black panthers"}
+encoded, _ := json.Marshal(m)
+
+fmt.Println(string(encoded))
+```
+1. `movie` is unexported so you cannot encode
+2. `title` is unexported so you cannot encode *CORRECT*
+3. Error handling is missing so you cannot encode
+
+> **1:** The json package can encode a struct even though its type is unexported.
+> 
+> **2:** Right! The json package can only encode exported fields.
+> 
+> **3:** It's better to handle errors but it's not the main problem here.
+> 
+
+
+## Why do you need to pass a pointer to the Unmarshal function?
+1. To make it work faster and efficient
+2. So it can update the value on memory *CORRECT*
+3. To prevent errors
+
+> **2:** Otherwise, it would not be able to update the given value. It's because, every value in Go is passed by value. So a function can only change the copy, not the original value. However, through a pointer, a function can change the original value.

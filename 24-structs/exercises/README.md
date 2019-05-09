@@ -13,3 +13,11 @@ You'll build a queryable command-line game store.
 3. **[Query By Id](https://github.com/inancgumus/learngo/tree/master/24-structs/exercises/03-query-by-id)**
 
     Add a new command: "id". So the users can query the games by id.
+
+4. **[Encode](https://github.com/inancgumus/learngo/tree/master/24-structs/exercises/04-encode)**
+
+    Add a new command: "save". Encode the games to json, and print it, then terminate the loop.
+
+5. **[Decode](https://github.com/inancgumus/learngo/tree/master/24-structs/exercises/05-decode)**
+
+    Load the initial data to the game store from json.
