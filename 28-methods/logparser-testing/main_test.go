@@ -46,13 +46,7 @@ func TestSummary(t *testing.T) {
 
 func run(t *testing.T, in, out string) {
 	cmd := exec.Command("go", "run", ".")
-
-	stdin, err := cmd.StdinPipe()
-	if err != nil {
-		t.Fatal(err)
-	}
-	stdin.Write([]byte(in))
-	stdin.Close()
+	cmd.Stdin = strings.NewReader(in)
 
 	got, err := cmd.CombinedOutput()
 	if err != nil {
