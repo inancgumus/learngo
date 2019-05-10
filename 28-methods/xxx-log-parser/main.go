@@ -11,19 +11,16 @@ import (
 	"bufio"
 	"os"
 
-	"github.com/inancgumus/learngo/28-methods/xxx-log-parser-methods/packaged/metrics"
+	"github.com/inancgumus/learngo/28-methods/xxx-log-parser/report"
 )
 
 func main() {
 	in := bufio.NewScanner(os.Stdin)
 
-	parser, report := metrics.NewParser(), metrics.NewReport()
+	r := report.New()
 	for in.Scan() {
-		report.Update(parser.Parse(in.Text()))
+		r.Parse(in.Text())
 	}
 
-	summarize(report, parser.Err(), in.Err())
-
-	// s, _ := json.Marshal(report)
-	// fmt.Println(string(s))
+	summarize(r.Summarize(), r.Err(), in.Err())
 }

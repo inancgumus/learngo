@@ -1,5 +1,5 @@
 learngoprogramming.com 10 200
-learngoprogramming.com 10 -500
+learngoprogramming.com 10 300
 golang.org -100 50
 golang.org 6 100
 blog.golang.org 20 25

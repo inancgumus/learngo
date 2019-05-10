@@ -5,7 +5,7 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package metrics
+package report
 
 import (
 	"fmt"
@@ -15,19 +15,19 @@ import (
 
 // always put all the related things together as in here
 
-// result stores metrics for a domain
+// Result stores metrics for a domain
 // it uses the value mechanics,
 // because it doesn't have to update anything
-type result struct {
-	Domain    string
-	Visits    int
-	TimeSpent int
+type Result struct {
+	Domain    string `json:"domain"`
+	Visits    int    `json:"visits"`
+	TimeSpent int    `json:"time_spent"`
 	// add more metrics if needed
 }
 
 // add adds the metrics of another Result to itself and returns a new Result
-func (r result) add(other result) result {
-	return result{
+func (r Result) add(other Result) Result {
+	return Result{
 		Domain:    r.Domain,
 		Visits:    r.Visits + other.Visits,
 		TimeSpent: r.TimeSpent + other.TimeSpent,
@@ -35,24 +35,26 @@ func (r result) add(other result) result {
 }
 
 // parse parses a single log line
-func parse(line string) (r result, err error) {
+func parse(line string) (r Result, err error) {
 	fields := strings.Fields(line)
 	if len(fields) != 3 {
-		err = fmt.Errorf("wrong input: %v", fields)
-		return
+		return r, fmt.Errorf("missing fields: %v", fields)
 	}
 
+	f := new(field)
 	r.Domain = fields[0]
+	r.Visits = f.atoi("visits", fields[1])
+	r.TimeSpent = f.atoi("time spent", fields[2])
+	return r, f.err
+}
 
-	r.Visits, err = strconv.Atoi(fields[1])
-	if r.Visits < 0 || err != nil {
-		err = fmt.Errorf("wrong input: %q", fields[1])
+// field helps for field parsing
+type field struct{ err error }
+
+func (f *field) atoi(name, val string) int {
+	n, err := strconv.Atoi(val)
+	if n < 0 || err != nil {
+		f.err = fmt.Errorf("incorrect %s: %q", name, val)
 	}
-
-	r.TimeSpent, err = strconv.Atoi(fields[2])
-	if r.TimeSpent < 0 || err != nil {
-		err = fmt.Errorf("wrong input: %q", fields[2])
-	}
-
-	return
+	return n
 }
