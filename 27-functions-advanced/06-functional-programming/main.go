@@ -25,6 +25,45 @@ func main() {
 	fmt.Printf("> 6        : %d\n", filter(greater(6), nums...))
 	fmt.Printf("<= 6       : %d\n", filter(lesseq(6), nums...))
 	fmt.Printf("<= 6       : %d\n", filter(reverse(greater(6)), nums...))
+
+	fmt.Println("\n••• CLOSURES •••")
+	fmt.Printf("uniques    : %d\n", filter(uniques(), 1, 1, 2, 3, 3))
+
+	dups := reverse(uniques())
+	fmt.Printf("dups       : %v\n", filter(dups, 1, 1, 2, 3, 3))
+
+	dups = reverse(uniques())
+	fmt.Printf("dups dups  : %v\n", filter(dups, 1, 1, 2, 3, 3, 3, 3))
+
+	dups = reverse(uniques())
+	out := filter(dups, 1, 1, 2, 3, 3, 3, 3)
+	fmt.Printf("dups uniqs : %v\n", filter(uniques(), out...))
+
+	dups = reverse(uniques())
+	chained := chain(reverse(greater(1)), dups, uniques())
+	fmt.Printf("dups chain : %v\n", filter(chained, 1, 1, 2, 3, 3, 3, 3, 0, 0))
+}
+
+func chain(filters ...filterFunc) filterFunc {
+	return func(n int) bool {
+		for _, next := range filters {
+			if !next(n) {
+				return false
+			}
+		}
+		return true
+	}
+}
+
+func uniques() filterFunc {
+	seen := make(map[int]bool)
+
+	return func(n int) (ok bool) {
+		if !seen[n] {
+			seen[n], ok = true, true
+		}
+		return
+	}
 }
 
 func reverse(f filterFunc) filterFunc {
