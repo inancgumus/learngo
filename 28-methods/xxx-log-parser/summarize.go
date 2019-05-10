@@ -44,21 +44,21 @@ func encode(sum *report.Summary) {
 
 // prints the summary to standard out
 func stdout(sum *report.Summary) {
-	const format = "%-30s %10s %20s\n"
-	const formatValue = "%-30s %10d %20d\n"
+	const (
+		head = "%-30s %10s %20s\n"
+		val  = "%-30s %10d %20d\n"
+	)
 
-	fmt.Printf(format, "DOMAIN", "VISITS", "TIME SPENT")
+	fmt.Printf(head, "DOMAIN", "VISITS", "TIME SPENT")
 	fmt.Println(strings.Repeat("-", 65))
 
-	next, cur := sum.Iterator()
-	for next() {
-		rec := cur()
-		fmt.Printf(formatValue, rec.Domain, rec.Visits, rec.TimeSpent)
+	for next, cur := sum.Iterator(); next(); {
+		r := cur()
+		fmt.Printf(val, r.Domain, r.Visits, r.TimeSpent)
 	}
 
-	fmt.Printf("\n"+formatValue, "TOTAL",
-		sum.Total().Visits, sum.Total().TimeSpent,
-	)
+	t := sum.Total()
+	fmt.Printf("\n"+val, "TOTAL", t.Visits, t.TimeSpent)
 }
 
 // this variadic func simplifies the multiple error handling
