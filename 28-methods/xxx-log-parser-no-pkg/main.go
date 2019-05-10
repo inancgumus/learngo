@@ -10,17 +10,15 @@ package main
 import (
 	"bufio"
 	"os"
-
-	"github.com/inancgumus/learngo/28-methods/xxx-log-parser/report"
 )
 
 func main() {
-	p := report.New()
+	p := newParser()
 
 	in := bufio.NewScanner(os.Stdin)
 	for in.Scan() {
-		p.Parse(in.Text())
+		p.parse(in.Text())
 	}
 
-	summarize(p.Summarize(), p.Err(), in.Err())
+	summarize(p.summarize(), p.err(), in.Err())
 }

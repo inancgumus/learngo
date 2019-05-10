@@ -5,29 +5,28 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package report
+package main
 
 import (
-	"encoding/json"
 	"sort"
 )
 
-// Summary aggregates the parsing results
-type Summary struct {
-	sum     map[string]Result // metrics per domain
+// summary aggregates the parsing results
+type summary struct {
+	sum     map[string]result // metrics per domain
 	domains []string          // unique domain names
-	total   Result            // total visits for all domains
+	total   result            // total visits for all domains
 }
 
 // newSummary constructs and initializes a new summary
 // You can't use its methods without pointer mechanics
-func newSummary() *Summary {
-	return &Summary{sum: make(map[string]Result)}
+func newSummary() *summary {
+	return &summary{sum: make(map[string]result)}
 }
 
 // Update updates the report for the given parsing result
-func (s *Summary) update(r Result) {
-	domain := r.Domain
+func (s *summary) update(r result) {
+	domain := r.domain
 	if _, ok := s.sum[domain]; !ok {
 		s.domains = append(s.domains, domain)
 	}
@@ -42,7 +41,7 @@ func (s *Summary) update(r Result) {
 // Iterator returns `next()` to detect when the iteration ends,
 // and a `cur()` to return the current result.
 // iterator iterates sorted by domains.
-func (s *Summary) Iterator() (next func() bool, cur func() Result) {
+func (s *summary) iterator() (next func() bool, cur func() result) {
 	sort.Strings(s.domains)
 
 	// remember the last iterated result
@@ -53,7 +52,7 @@ func (s *Summary) Iterator() (next func() bool, cur func() Result) {
 		return len(s.domains) > last
 	}
 
-	cur = func() Result {
+	cur = func() result {
 		// returns a copy so the caller cannot change it
 		name := s.domains[last-1]
 		return s.sum[name]
@@ -62,24 +61,7 @@ func (s *Summary) Iterator() (next func() bool, cur func() Result) {
 	return
 }
 
-// Total returns the total metrics
-func (s *Summary) Total() Result {
+// totals returns the total metrics
+func (s *summary) totals() result {
 	return s.total
-}
-
-// MarshalJSON marshals a report to JSON
-// Alternative: unexported embedding
-func (s *Summary) MarshalJSON() ([]byte, error) {
-	type total struct {
-		*Result
-		IgnoreDomain *string `json:"domain,omitempty"`
-	}
-
-	return json.Marshal(struct {
-		Sum     map[string]Result `json:"summary"`
-		Domains []string          `json:"domains"`
-		Total   total             `json:"total"`
-	}{
-		Sum: s.sum, Domains: s.domains, Total: total{Result: &s.total},
-	})
 }
