@@ -75,7 +75,7 @@ There are two ways:
     go get -v -u golang.org/x/tools/...
     ```
 
-## Install VSCode
+## Install VSCode (Optional)
 
 Note: You may use another coding editor if you like. However, the course uses Visual Studio Code (VSCode).
 
@@ -86,10 +86,10 @@ Note: You may use another coding editor if you like. However, the course uses Vi
 
 ## OPTIONAL STEP:
 
-1. Create a hello.go inside `$GOPATH/src`
+1. Create a hello.go file in a new directory but anywhere outside of `$GOPATH`
 
     ```bash
-    cat <<EOF > $GOPATH/src/hello.go
+    cat <<EOF > hello.go
     package main
 
     import "fmt"
@@ -100,10 +100,9 @@ Note: You may use another coding editor if you like. However, the course uses Vi
     EOF
     ```
 
-2. Go to Go source directory and run our sample program
+2. Run the program
 
     ```bash
-    cd $GOPATH/src
     go run hello.go
     It should print: hello gopher!
     ```
