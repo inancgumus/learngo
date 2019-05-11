@@ -16,10 +16,18 @@ import (
 )
 
 func main() {
+	const usageMsg = `Type a couple of unique numbers.
+Separate them with spaces.`
+
 	// remember [1:] skips the first argument
+	args := os.Args[1:]
+	if len(args) == 0 {
+		fmt.Println(usageMsg)
+		return
+	}
 
 main:
-	for _, arg := range os.Args[1:] {
+	for _, arg := range args {
 		n, err := strconv.Atoi(arg)
 		if err != nil {
 			// skip non-numerics

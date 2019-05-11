@@ -32,9 +32,11 @@ func main() {
 		for i, w := range words {
 			q, w = strings.ToLower(q), strings.ToLower(w)
 
-			if strings.Contains(w, q) {
-				fmt.Printf("#%-2d: %q\n", i+1, w)
+			if !strings.Contains(w, q) {
+				continue
 			}
+
+			fmt.Printf("#%-2d: %q\n", i+1, w)
 		}
 	}
 }

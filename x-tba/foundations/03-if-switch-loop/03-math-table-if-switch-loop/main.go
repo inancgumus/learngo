@@ -15,31 +15,21 @@ import (
 )
 
 const (
-	validOps = "%*/+-"
-
-	usageMsg       = "Usage: [op=" + validOps + "] [size]"
-	sizeMissingMsg = "Size is missing"
+	validOps       = "* / + - mul div add sub"
+	usageMsg       = "Usage: [valid ops: " + validOps + "] [size]"
+	sizeMissingMsg = "Size is missing\n" + usageMsg
 	invalidOpMsg   = `Invalid operator.
 Valid ops one of: ` + validOps
-
-	invalidOp = -1
 )
 
 func main() {
+	// CHECK THE ARGUMENTS
 	args := os.Args[1:]
-
-	switch l := len(args); {
-	case l == 1:
+	if l := len(args); l == 1 {
 		fmt.Println(sizeMissingMsg)
-		fallthrough
-	case l < 1:
-		fmt.Println(usageMsg)
 		return
-	}
-
-	op := args[0]
-	if strings.IndexAny(op, validOps) == invalidOp {
-		fmt.Println(invalidOpMsg)
+	} else if l < 1 {
+		fmt.Println(usageMsg)
 		return
 	}
 
@@ -49,12 +39,32 @@ func main() {
 		return
 	}
 
+	// CHECK THE VALIDITY OF THE OP
+	op, ops := args[0], strings.Fields(validOps)
+
+	var ok bool
+	for _, o := range ops {
+		if strings.ToLower(o) == op {
+			ok = true
+			break
+		}
+	}
+
+	if !ok {
+		fmt.Println(invalidOpMsg)
+		return
+	}
+
+	// PRINT THE TABLE
+
+	// HEADER
 	fmt.Printf("%5s", op)
 	for i := 0; i <= size; i++ {
 		fmt.Printf("%5d", i)
 	}
 	fmt.Println()
 
+	// CELLS
 	for i := 0; i <= size; i++ {
 		fmt.Printf("%5d", i)
 
@@ -62,21 +72,23 @@ func main() {
 			var res int
 
 			switch op {
-			case "*":
+			default:
+				fallthrough // default is multiplication
+			case "*", "mul":
 				res = i * j
-			case "%":
-				if j != 0 {
-					res = i % j
-				}
-			case "/":
-				if j != 0 {
-					res = i / j
-				}
-			case "+":
+			case "+", "add":
 				res = i + j
-			case "-":
+			case "-", "sub":
 				res = i - j
+			case "%", "mod":
+				if j == 0 {
+					// continue // will continue the loop
+					break // breaks the switch
+				}
+				res = i % j
 			}
+
+			// break // breaks the loop
 
 			fmt.Printf("%5d", res)
 		}

@@ -10,12 +10,40 @@ package main
 import "fmt"
 
 func main() {
+	// zero-values
 	var (
-		planet   = "venus"
-		distance = 261
-		orbital  = 224.701
-		hasLife  = false
+		planet   string
+		distance int
+		orbital  float64
+		hasLife  bool
 	)
+
+	// assignment
+	planet = "venus"
+	distance = 261
+	orbital = 224.701
+	hasLife = false
+
+	// var (
+	// 	planet   = "venus"
+	// 	distance = 261
+	// 	orbital  = 224.701
+	// 	hasLife  = false
+	// )
+
+	distance += 5
+	distance *= 2
+	distance++
+	distance--
+	orbital++
+
+	// orbital *= 10
+	const constFactor = 10
+	orbital *= constFactor
+
+	factor := 10
+	// orbital *= factor
+	orbital *= float64(factor)
 
 	// swiss army knife %v verb
 	fmt.Printf("Planet: %v\n", planet)
