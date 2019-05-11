@@ -49,7 +49,7 @@ func main() {
 	songs := []song{
 		// #7b: you don't have to type the element types
 		{title: "wonderwall", artist: "oasis"},
-		{title: "radioactive", artist: "imagine dragons"},
+		{title: "supersonic", artist: "oasis"},
 	}
 
 	// #7: a struct can include another struct
