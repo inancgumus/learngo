@@ -3,103 +3,68 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
+
+	rainbow "github.com/guineveresaenger/golang-rainbow"
 )
 
 const (
+	maxTurn = 9
+
 	// skin options :-)
-	emptyMark = "☆"
-	mark1     = "💀"
-	mark2     = "🎈"
-	banner    = `
+	empty     = "   "
+	player1   = " X "
+	player2   = " O "
+	header    = "---+---+---"
+	footer    = "---+---+---"
+	separator = "|"
+
+	banner = `
 ~~~~~~~~~~~~~~~
   TIC~TAC~TOE 
 ~~~~~~~~~~~~~~~`
+)
 
-	maxTurn = 9
+// -------------------------------------------------
+// INITIALIZE THE GAME
+// -------------------------------------------------
+var (
+	turn int
+	won  bool
 
-	prompt = "\n%s [1-9]: "
+	board = [3][3]string{
+		{empty, empty, empty},
+		{empty, empty, empty},
+		{empty, empty, empty},
+	}
+
+	player = player1
+
+	// for saving the replay.log
+	inputs []byte
 )
 
 func main() {
-	// -------------------------------------------------
-	// INITIALIZE THE GAME
-	// -------------------------------------------------
-
-	fmt.Println(banner)
+	rainbow.Rainbow(banner, strings.Count(banner, "\n"))
 
 	in := bufio.NewScanner(os.Stdin)
-
-	var (
-		turn   int
-		player = mark1
-		board  = [3][3]string{
-			{emptyMark, emptyMark, emptyMark},
-			{emptyMark, emptyMark, emptyMark},
-			{emptyMark, emptyMark, emptyMark},
-		}
-	)
-
-game:
 	for {
 		// -------------------------------------------------
 		// PRINT THE BOARD AND THE PROMPT
 		// -------------------------------------------------
-		fmt.Println()
-		fmt.Println("---+----+---")
+		fmt.Printf("\n %s\n", header)
 		for _, line := range board {
-			fmt.Printf("%s\n", strings.Join(line[:], "  | "))
-			fmt.Println("---+----+---")
+			fmt.Printf(" %s\n", strings.Join(line[:], separator))
+			fmt.Printf(" %s\n", footer)
 		}
-		fmt.Printf(prompt, player)
-
-		// get the input
-		if !in.Scan() {
-			break
-		}
-
-		// -------------------------------------------------
-		// CHECK THE MOVE AND PLAY
-		// -------------------------------------------------
-		var (
-			pos      int
-			row, col int
-		)
-
-		// Atoi already return 0 on error; no need to check
-		// it for the following switch to work
-		pos, _ = strconv.Atoi(in.Text())
-
-		switch {
-		case pos >= 7 && pos <= 9:
-			row = 2
-		case pos >= 4 && pos <= 6:
-			row = 1
-		case pos >= 1 && pos <= 3:
-			row = 0
-		default:
-			fmt.Println("\n>>>", "wrong position!")
-			continue
-		}
-
-		col = pos - row*3 - 1
-
-		if board[row][col] != emptyMark {
-			fmt.Println("\n>>>", "already played!")
-			continue
-		}
-
-		// put a mark on the board
-		board[row][col] = player
 
 		// -------------------------------------------------
 		// IS THERE A WINNER? OR IS IT A TIE?
 		// -------------------------------------------------
-		var won bool
-
-		for _, m := range [2]string{mark1, mark2} {
+		for _, m := range [2]string{player1, player2} {
 			b, mmm := board, strings.Repeat(m, 3)
 
 			won = /* horizontals */
@@ -117,25 +82,69 @@ game:
 					b[0][2]+b[1][1]+b[2][0] == mmm
 
 			if won {
+				player = m
 				break
 			}
 		}
 
 		if won {
-			fmt.Printf("\nWINNER: %s\n", player)
-			break game
-		} else if turn++; turn == maxTurn {
-			fmt.Printf("\nTIE!\n")
-			break game
+			player = strings.TrimSpace(player)
+			fmt.Printf("\n>>> WINNER: %s\n", player)
+			break
+		} else if turn++; turn == maxTurn+1 {
+			fmt.Printf("\n>>> TIE!\n")
+			break
 		}
 
 		// -------------------------------------------------
-		// CHANGE THE MARKER TO THE NEXT PLAYER
+		// CHECK THE MOVE AND PLAY
 		// -------------------------------------------------
-		if player == mark1 {
-			player = mark2
-		} else {
-			player = mark1
+
+		// get the input
+		fmt.Printf("\nPLAYER: %q [1-9]: ", player)
+		if !in.Scan() {
+			break
 		}
+
+		// Atoi already return 0 on error; no need to check
+		// it for the following switch to work
+		pos, _ := strconv.Atoi(in.Text())
+
+		// Save the input for replaying
+		inputs = append(inputs, byte(pos+48), '\n')
+
+		var row int
+		switch {
+		case pos >= 1 && pos <= 3:
+			row = 0
+		case pos >= 4 && pos <= 6:
+			row = 1
+		case pos >= 7 && pos <= 9:
+			row = 2
+		default:
+			fmt.Println("\n>>>", "wrong position!")
+			continue
+		}
+
+		col := pos - row*3 - 1
+
+		if board[row][col] != empty {
+			fmt.Println("\n>>>", "already played!")
+			continue
+		}
+
+		// put a mark on the board
+		board[row][col] = player
+
+		// switch to the next player
+		if player == player1 {
+			player = player2
+		} else {
+			player = player1
+		}
+	}
+
+	if err := ioutil.WriteFile("replay.log", inputs, 0644); err != nil {
+		fmt.Fprintf(os.Stderr, "Cannot save replay: ", err)
 	}
 }
