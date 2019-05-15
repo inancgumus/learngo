@@ -43,15 +43,15 @@ func main() {
 		"pngs/empty.png",
 	}
 
-	pngs := detectPNG(files)
+	pngs := detect(files)
 
-	fmt.Printf("Correct PNG Files:\n")
+	fmt.Printf("Correct Files:\n")
 	for _, png := range pngs {
 		fmt.Printf(" + %s\n", png)
 	}
 }
 
-func detectPNG(filenames []string) (pngs []string) {
+func detect(filenames []string) (pngs []string) {
 	const pngHeader = "\x89PNG\r\n\x1a\n"
 
 	buf := make([]byte, len(pngHeader))

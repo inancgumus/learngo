@@ -1,6 +1,8 @@
 # Cheatsheet: Write your First Go Program
 
-Hi! For reference, you can store this cheatsheet after you take the lectures in this section.
+Hi!
+
+For reference, you can store this cheatsheet after you take the lectures in this section.
 
 You can also print this cheatsheet and then follow the video lectures in this section along with it.
 
@@ -20,9 +22,7 @@ Enjoy!
 
     * List files in a directory: `ls`
 
----
-
-## BUILDING & RUNNING PROGRAMS:
+## BUILDING & RUNNING GO PROGRAMS:
 
 * **Build a Go program:**
 
@@ -33,11 +33,6 @@ Enjoy!
 
     * While inside a program directory, type:
         * `go run main.go`
-
-<br /><br /><br /><br />
-_See the next page..._
-
-<div style="page-break-after: always;"></div>
 
 ## WHAT IS $GOPATH?
 
@@ -59,8 +54,6 @@ _See the next page..._
 
         * _You might want to add this to your `PATH` environment variable if it's not there already._
 
----
-
 ## WHERE YOU SHOULD PUT YOUR SOURCE FILES?
 
 * `$GOPATH/src/github.com/yourUsername/programDirectory`
@@ -72,11 +65,6 @@ _See the next page..._
     * So, I put all my programs under: `~/go/src/github.com/inancgumus/`
 
     * And, let's say that I've a program named hello, then I put it under this directory: `~/go/src/github.com/inancgumus/hello`
-
-<br /><br /><br /><br />
-_See the next page..._
-
-<div style="page-break-after: always;"></div>
 
 ## FIRST PROGRAM
 
@@ -110,11 +98,9 @@ func main() {
 
 That's all! Enjoy!
 
----
-
 ## NOTE:
 
-* BTW, There's a new *Go Modules* support which allows you to run your programs in any directory that you want. After the section ends, you'll also find an information about it.
+* There is a new *Go Modules* support that allows you to run your programs in any directory that you want. It's still an experimental feature, when it stabilizes, I'll update the course and include Go Modules as well.
 
 > For more tutorials: [https://blog.learngoprogramming.com](https://blog.learngoprogramming.com)
 >

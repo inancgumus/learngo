@@ -48,6 +48,9 @@ func (s *summary) iterator() (next func() bool, cur func() result) {
 	var last int
 
 	next = func() bool {
+		// done := len(s.domains) > last
+		// last++
+		// return done
 		defer func() { last++ }()
 		return len(s.domains) > last
 	}
