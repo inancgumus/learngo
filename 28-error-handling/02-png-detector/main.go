@@ -14,25 +14,6 @@ import (
 	"os"
 )
 
-/*
-	// Most other languages do this:
-	try {
-		// open a file
-		// throws an exception
-	} catch (ExceptionType name) {
-		// handle the error
-	} finally {
-		// close the file
-	}
-
-	// Go way:
-	file, err := // open the file
-	if err != nil {
-		// handle the error
-	}
-	// close the file
-*/
-
 func main() {
 	files := []string{
 		"pngs/cups-jpg.png",
@@ -43,11 +24,11 @@ func main() {
 		"pngs/empty.png",
 	}
 
-	pngs := detect(files)
+	valids := detect(files)
 
 	fmt.Printf("Correct Files:\n")
-	for _, png := range pngs {
-		fmt.Printf(" + %s\n", png)
+	for _, valid := range valids {
+		fmt.Printf(" + %s\n", valid)
 	}
 }
 
@@ -89,7 +70,7 @@ func read(filename string, buf []byte) error {
 	return err
 }
 
-func detectPNGUnsafeAndVerbose(filenames []string) (pngs []string) {
+func detectPNGUnsafeAndVerbose(filenames []string) (valids []string) {
 	const pngHeader = "\x89PNG\r\n\x1a\n"
 
 	buf := make([]byte, len(pngHeader))
@@ -118,7 +99,7 @@ func detectPNGUnsafeAndVerbose(filenames []string) (pngs []string) {
 		}
 
 		if bytes.Equal([]byte(pngHeader), buf) {
-			pngs = append(pngs, filename)
+			valids = append(valids, filename)
 		}
 	}
 	return
