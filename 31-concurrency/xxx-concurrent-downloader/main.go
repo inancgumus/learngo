@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	dl "github.com/inancgumus/learngo/30-concurrency/xxx-concurrent-downloader/fetch"
+	dl "github.com/inancgumus/learngo/31-concurrency/xxx-concurrent-downloader/fetch"
 )
 
 //
