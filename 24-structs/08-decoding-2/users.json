@@ -1,0 +1,24 @@
+[
+	{
+		"username": "inanc",
+		"devices": [
+			{ "name": "laptop", "battery": 10 },
+			{ "name": "phone", "battery": 30 }
+		]
+	},
+	{
+		"username": "god",
+		"perms": {
+			"admin": true
+		},
+		"devices": [
+			{ "name": "omniverse", "battery": 95 }
+		]
+	},
+	{
+		"username": "devil",
+		"perms": {
+			"write": true
+		}
+	}
+]
