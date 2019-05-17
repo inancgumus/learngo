@@ -14,7 +14,8 @@ import (
 	"os"
 )
 
-// Detect returns only the valid filenames that match to a header of the given format.
+// Detect returns the files that have a valid header (file signature).
+// A valid header is determined by the format.
 func Detect(format string, filenames []string) (valids []string, err error) {
 	defer func() {
 		if rerr := recover(); rerr != nil {
