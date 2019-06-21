@@ -24,6 +24,4 @@ Let's exercise with the scanner and maps.
 
 6. **[Create the Log Parser program from scratch](https://github.com/inancgumus/learngo/tree/master/23-input-scanning/exercises/06-log-parser)**
 
-  You've watched the lecture. Now, try to create the same log parser program on your own. Do not look at the lecture, and the existing source code.
-
-  Click the link for more details.
+  You've watched the lecture. Now, try to create the same log parser program on your own. Do not look at the lecture, and the existing source code. The link contains the code where you need to start working on.
