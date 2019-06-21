@@ -11,10 +11,9 @@ import "fmt"
 
 func showN() {
 	if N == 0 {
-		fmt.Println("showN       : N is zero, increment it.")
 		return
 	}
-	fmt.Printf("showN       : N = %d\n", N)
+	fmt.Printf("showN       : N is %d\n", N)
 }
 
 func incrN() {

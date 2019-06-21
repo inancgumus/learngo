@@ -16,8 +16,8 @@
 // BUT NOT like so:
 //   go run main.go
 //
-// Because, the compiler needs to see global.go too
-// It can't magically find global.go — what you give is what you get.
+// Because, the compiler needs to see bad.go too
+// It can't magically find bad.go — what you give is what you get.
 //
 
 package main
