@@ -16,44 +16,45 @@ func main() {
 		P       *int
 	)
 
-	if P == nil {
-		fmt.Printf("P is nil and its address is %p\n", P)
-	}
-
 	counter = 100 // counter is an int variable
 	P = &counter  // P is a pointer int variable
 	V = *P        // V is a int variable (a copy of counter)
 
-	if P == &counter {
-		fmt.Printf("P's address is equal to counter: %p == %p\n", P, &counter)
+	if P == nil {
+		fmt.Printf("P is nil and its address is %p\n", P)
 	}
 
-	fmt.Printf("counter : %-16d address: %-16p\n", counter, &counter)
-	fmt.Printf("P       : %-16p address: %-16p *P: %-16d\n", P, &P, *P)
-	fmt.Printf("V       : %-16d address: %-16p\n", V, &V)
+	if P == &counter {
+		fmt.Printf("P is equal to counter's address: %p == %p\n", 
+			P, &counter)
+	}
 
-	fmt.Println("\n••••• CHANGE: counter")
+	fmt.Printf("counter: %-13d addr: %-13p\n", counter, &counter)
+	fmt.Printf("P      : %-13p addr: %-13p *P: %-13d\n", P, &P, *P)
+	fmt.Printf("V      : %-13d addr: %-13p\n", V, &V)
+
+	fmt.Println("\n••••• change counter")
 	counter = 10 // V doesn't change because it's a copy
-	fmt.Printf("counter : %-16d address: %-16p\n", counter, &counter)
-	fmt.Printf("V       : %-16d address: %-16p\n", V, &V)
+	fmt.Printf("counter: %-13d addr: %-13p\n", counter, &counter)
+	fmt.Printf("V      : %-13d addr: %-13p\n", V, &V)
 
-	fmt.Println("\n••••• CHANGE IN: passVal")
+	fmt.Println("\n••••• change counter in passVal()")
 	counter = passVal(counter)
-	fmt.Printf("counter : %-16d address: %-16p\n", counter, &counter)
+	fmt.Printf("counter: %-13d addr: %-13p\n", counter, &counter)
 
-	fmt.Println("\n••••• CHANGE IN: passPtrVal")
+	fmt.Println("\n••••• change counter in passPtrVal()")
 	passPtrVal(&counter) // same as passPtrVal(&counter) (no need to return)
 	passPtrVal(&counter) // same as passPtrVal(&counter) (no need to return)
-	fmt.Printf("counter : %-16d address: %-16p\n", counter, &counter)
+	fmt.Printf("counter: %-13d addr: %-13p\n", counter, &counter)
 }
 
 // *pn is a int pointer variable (copy of P)
 func passPtrVal(pn *int) {
-	fmt.Printf("pn      : %-16p address: %-16p *pn: %d\n", pn, &pn, *pn)
+	fmt.Printf("pn     : %-13p addr: %-13p *pn: %d\n", pn, &pn, *pn)
 
 	// pointers can breach function isolation borders
 	*pn++ // counter changes because `pn` points to `counter` — (*pn)++
-	fmt.Printf("pn      : %-16p address: %-16p *pn: %d\n", pn, &pn, *pn)
+	fmt.Printf("pn     : %-13p addr: %-13p *pn: %d\n", pn, &pn, *pn)
 
 	// setting it to nil doesn't effect the caller (the main function)
 	pn = nil
@@ -62,6 +63,6 @@ func passPtrVal(pn *int) {
 // n is a int variable (copy of counter)
 func passVal(n int) int {
 	n = 50 // counter doesn't change because `n` is a copy
-	fmt.Printf("n       : %-16d address: %-16p\n", n, &n)
+	fmt.Printf("n      : %-13d addr: %-13p\n", n, &n)
 	return n
 }
