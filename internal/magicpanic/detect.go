@@ -17,12 +17,17 @@ import (
 // Detect returns the files that have a valid header (file signature).
 // A valid header is determined by the format.
 func Detect(format string, filenames []string) (valids []string, err error) {
-	header := headerOf(format)
-	if header == "unknown" {
-		err = fmt.Errorf("unknown format: %s", format)
-		return
-	}
+	defer func() {
+		if rerr := recover(); rerr != nil {
+			err = fmt.Errorf("cannot detect: %v", rerr)
+		}
+	}()
 
+	return detect(format, filenames), nil
+}
+
+func detect(format string, filenames []string) (valids []string) {
+	header := headerOf(format)
 	buf := make([]byte, len(header))
 
 	for _, filename := range filenames {
@@ -45,8 +50,7 @@ func headerOf(format string) string {
 		return "\xff\xd8\xff"
 	}
 	// this should never occur
-	// panic("unknown format: " + format)
-	return "unknown"
+	panic("unknown format: " + format)
 }
 
 // read reads len(buf) bytes to buf from a file

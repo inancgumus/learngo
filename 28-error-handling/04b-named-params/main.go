@@ -12,6 +12,10 @@ import (
 	"os"
 
 	"github.com/inancgumus/learngo/internal/magic"
+	//
+	// Use the following one for the panicking library:
+	// magic "github.com/inancgumus/learngo/internal/magicpanic"
+	//
 )
 
 func main() {
