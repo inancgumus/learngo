@@ -26,5 +26,12 @@ func main() {
 		return
 	}
 
+	// err1 := ...
+	// err2 := ...
+	// if err1 != nil || err2 != nil {
+	// 	fmt.Println("Please provide a valid number")
+	// 	return
+	// }
+
 	fmt.Printf("%v + %v = %v\n", a, b, a+b)
 }

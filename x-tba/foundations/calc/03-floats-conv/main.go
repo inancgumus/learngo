@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	// lesson: floats encompass integers too
+	// lesson: len(), floats encompass integers too
 
 	if len(os.Args) != 3 {
 		fmt.Println("Usage: calc <number1> <number2>")

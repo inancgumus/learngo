@@ -36,12 +36,12 @@ main:
 
 		switch {
 		// prime
-		case n == 2 || n == 3:
+		case n == 2, n == 3:
 			fmt.Print(n, " ")
 			continue
 
 		// not a prime
-		case n <= 1 || n%2 == 0 || n%3 == 0:
+		case n <= 1, n%2 == 0, n%3 == 0:
 			continue
 		}
 

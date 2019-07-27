@@ -26,7 +26,9 @@ func main() {
 		return
 	}
 
+	// multiple declare
 	var (
+		// declare & assign
 		op  = os.Args[2]
 		res float64
 	)
