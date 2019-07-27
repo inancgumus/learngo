@@ -59,7 +59,7 @@ func parse(p *parser, line string) (parsed result) {
 	return
 }
 
-// update updates the errors for the given parsing result
+// update updates all the parsing results using the given parsing result
 func update(p *parser, parsed result) {
 	if p.lerr != nil {
 		return
