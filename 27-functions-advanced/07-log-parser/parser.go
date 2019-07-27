@@ -9,6 +9,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -59,7 +60,7 @@ func parse(p *parser, line string) (r result) {
 	return
 }
 
-// update updates the errors for the given parsing result
+// update updates all the parsing results using the given parsing result
 func update(p *parser, r result) {
 	if p.lerr != nil {
 		return
@@ -83,4 +84,18 @@ func update(p *parser, r result) {
 // err returns the last error encountered
 func err(p *parser) error {
 	return p.lerr
+}
+
+// loop allows a func to access all the copies of parsing results
+func loop(p *parser, feed func(result)) {
+	sort.Strings(p.domains)
+
+	for _, domain := range p.domains {
+		feed(p.sum[domain])
+	}
+}
+
+// total returns the total visits
+func totalVisits(p *parser) int {
+	return p.total
 }
