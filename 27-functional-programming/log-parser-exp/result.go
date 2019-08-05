@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 // result stores the parsed result for a domain
@@ -13,9 +12,8 @@ type result struct {
 	uniques int
 }
 
-// parseLine parses a log line and returns the parsed result with an error
-func parseLine(line string) (r result, err error) {
-	fields := strings.Fields(line)
+// parseFields parses and returns the parsing result
+func parseFields(fields []string) (r result, err error) {
 	if len(fields) != 4 {
 		return r, fmt.Errorf("wrong number of fields -> %v", fields)
 	}

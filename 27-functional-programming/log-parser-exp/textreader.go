@@ -11,6 +11,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"strings"
 )
 
 func textReader(r io.Reader) ([]result, error) {
@@ -27,7 +28,7 @@ func parseText(in *bufio.Scanner) ([]result, error) {
 	for in.Scan() {
 		lines++
 
-		result, err := parseLine(in.Text())
+		result, err := parseFields(strings.Fields(in.Text()))
 		if err != nil {
 			// TODO: custom error type for line information
 			return nil, fmt.Errorf("line %d: %v", lines, err)
