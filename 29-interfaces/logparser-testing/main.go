@@ -11,7 +11,7 @@ import (
 	"bufio"
 	"os"
 
-	"github.com/inancgumus/learngo/29-methods/logparser-testing/report"
+	"github.com/inancgumus/learngo/29-interfaces/logparser-testing/report"
 )
 
 func main() {
