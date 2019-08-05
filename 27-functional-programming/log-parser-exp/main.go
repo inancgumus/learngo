@@ -20,7 +20,7 @@ func main() {
 		to(os.Stdout).
 		retrieveFrom(textReader).
 		filterBy(orgDomainsFilter).
-		// filterBy(not(domainExtFilter("org", "io"))).
+		// filterBy(notUsing(domainExtFilter("org", "io"))).
 		// groupBy(pageGrouper).
 		groupBy(domainGrouper).
 		writeTo(textWriter).
@@ -44,6 +44,17 @@ func recoverErr() {
 }
 
 /*
-newReport -> stats.NewReport().
-Result    -> stats.Record
+newReport -> report.New().
+Result    -> report.Line
+
+notUsing = report.Not
+
+_, err := stats.Parse().
+	From(os.Stdin).
+	To(os.Stdout).
+	RetrieveFrom(stats.TextReader).
+	FilterBy(notUsing(stats.DomainExtFilter("org", "io"))).
+	GroupBy(stats.DomainGrouper).
+	WriteTo(stats.TextWriter).
+	Run()
 */

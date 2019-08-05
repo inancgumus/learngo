@@ -1,5 +1,7 @@
 package main
 
+type groupFunc func(result) (key string)
+
 func groupBy(results []result, keyer groupFunc) []result {
 	grouped := make(map[string]result, len(results))
 

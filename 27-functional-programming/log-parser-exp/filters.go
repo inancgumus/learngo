@@ -6,7 +6,7 @@ func noopFilter(r result) bool {
 	return true
 }
 
-func not(filter filterFunc) filterFunc {
+func notUsing(filter filterFunc) filterFunc {
 	return func(r result) bool {
 		return !filter(r)
 	}

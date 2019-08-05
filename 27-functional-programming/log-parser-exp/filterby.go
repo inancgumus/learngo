@@ -1,5 +1,7 @@
 package main
 
+type filterFunc func(result) (include bool)
+
 func filterBy(results []result, filterer filterFunc) []result {
 	out := results[:0]
 

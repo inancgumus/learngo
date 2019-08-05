@@ -4,8 +4,6 @@ import "io"
 
 type (
 	retrieveFunc func(io.Reader) ([]result, error)
-	filterFunc   func(result) bool
-	groupFunc    func(result) string
 	writeFunc    func(io.Writer, []result) error
 )
 

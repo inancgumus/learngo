@@ -8,23 +8,28 @@ import (
 
 // TODO: sort by result key interfaces section
 
-func textWriter(w io.Writer, results []result) error {
-	fmt.Fprintf(w, "%-25s %-10s %10s %10s\n",
-		"DOMAINS", "PAGES", "VISITS", "UNIQUES")
+const (
 
-	fmt.Fprintln(w, strings.Repeat("-", 58))
+	//          DOMAINS PAGES VISITS UNIQUES
+	//             ^      ^     ^    ^
+	//             |      |     |    |
+	header     = "%-25s %-10s %10s %10s\n"
+	line       = "%-25s %-10s %10d %10d\n"
+	footer     = "\n%-36s %10d %10d\n" // -> "" VISITS UNIQUES
+	dashLength = 58
+)
+
+func textWriter(w io.Writer, results []result) error {
+	fmt.Fprintf(w, header, "DOMAINS", "PAGES", "VISITS", "UNIQUES")
+	fmt.Fprintln(w, strings.Repeat("-", dashLength))
 
 	var total result
-
 	for _, r := range results {
 		total = total.add(r)
-
-		fmt.Fprintf(w, "%-25s %-10s %10d %10d\n",
-			r.domain, r.page, r.visits, r.uniques)
+		fmt.Fprintf(w, line, r.domain, r.page, r.visits, r.uniques)
 	}
 
-	fmt.Fprintf(w, "\n%-36s %10d %10d\n",
-		"", total.visits, total.uniques)
+	fmt.Fprintf(w, footer, "", total.visits, total.uniques)
 
 	return nil
 }
