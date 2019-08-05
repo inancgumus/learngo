@@ -9,6 +9,7 @@ package magic
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -63,7 +64,7 @@ func read(filename string, buf []byte) error {
 	}
 
 	if fi.Size() <= int64(len(buf)) {
-		return fmt.Errorf("file size < len(buf)")
+		return errors.New("file size < len(buf)")
 	}
 
 	_, err = io.ReadFull(file, buf)

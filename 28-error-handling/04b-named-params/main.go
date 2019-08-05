@@ -11,10 +11,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/inancgumus/learngo/internal/magic"
+	"github.com/inancgumus/learngo/magic"
 	//
 	// Use the following one for the panicking library:
-	// magic "github.com/inancgumus/learngo/internal/magicpanic"
+	// magic "github.com/inancgumus/learngo/magicpanic"
 	//
 )
 
