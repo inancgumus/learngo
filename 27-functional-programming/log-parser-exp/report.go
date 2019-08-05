@@ -3,25 +3,24 @@ package main
 import "io"
 
 type (
-	parserFunc func(io.Reader) ([]result, error)
-	filterFunc func(result) bool
-	groupFunc  func(result) string
-	outputFunc func(io.Writer, []result) error
+	retrieveFunc func(io.Reader) ([]result, error)
+	filterFunc   func(result) bool
+	groupFunc    func(result) string
+	writeFunc    func(io.Writer, []result) error
 )
 
 type report struct {
-	input     io.Reader
-	output    io.Writer
-	parser    parserFunc
-	filterer  filterFunc
-	grouper   groupFunc
-	outputter outputFunc
+	input    io.Reader
+	output   io.Writer
+	retrieve retrieveFunc
+	filter   filterFunc
+	group    groupFunc
+	write    writeFunc
 }
 
 func newReport() *report {
 	return &report{
-		// parser:   textParser,
-		filterer: noopFilter,
+		filter: noopFilter,
 	}
 }
 
@@ -35,48 +34,48 @@ func (r *report) to(writer io.Writer) *report {
 	return r
 }
 
-func (r *report) retrieveFrom(fn parserFunc) *report {
-	r.parser = fn
+func (r *report) retrieveFrom(fn retrieveFunc) *report {
+	r.retrieve = fn
 	return r
 }
 
 func (r *report) filterBy(fn filterFunc) *report {
-	r.filterer = fn
+	r.filter = fn
 	return r
 }
 
 func (r *report) groupBy(fn groupFunc) *report {
-	r.grouper = fn
+	r.group = fn
 	return r
 }
 
-func (r *report) writeTo(fn outputFunc) *report {
-	r.outputter = fn
+func (r *report) writeTo(fn writeFunc) *report {
+	r.write = fn
 	return r
 }
 
 func (r *report) run() ([]result, error) {
-	if r.parser == nil {
-		panic("report retriever cannot be nil")
+	if r.retrieve == nil {
+		panic("report retrieve cannot be nil")
 	}
 
-	results, err := r.parser(r.input)
+	results, err := r.retrieve(r.input)
 	if err != nil {
 		return nil, err
 	}
 
-	// noop if filterer is nil
-	results = filterBy(results, r.filterer)
+	// noop if filter is nil
+	results = filterBy(results, r.filter)
 
-	// grouper is more tricky
+	// group func is more tricky
 	// you don't want to create an unnecessary map
-	if r.grouper != nil {
-		results = groupBy(results, r.grouper)
+	if r.group != nil {
+		results = groupBy(results, r.group)
 	}
 
-	// prefer: noop output
-	if r.output != nil {
-		if err := r.outputter(r.output, results); err != nil {
+	// TODO: prefer: noop writer
+	if r.write != nil {
+		if err := r.write(r.output, results); err != nil {
 			return nil, err
 		}
 	}
