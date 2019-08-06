@@ -1,5 +1,7 @@
 package main
 
+import "os"
+
 type (
 	inputFunc  func() ([]result, error)
 	outputFunc func([]result) error
@@ -15,6 +17,8 @@ type report struct {
 func newReport() *report {
 	return &report{
 		filter: noopFilter,
+		input:  textReader(os.Stdin),
+		output: textWriter(os.Stdout),
 	}
 }
 

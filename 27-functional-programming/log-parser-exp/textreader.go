@@ -27,16 +27,18 @@ func parseText(in *bufio.Scanner) ([]result, error) {
 		lines   int
 	)
 
+	results = make([]result, 0, 5000000)
+
 	for in.Scan() {
 		lines++
 
-		result, err := parseFields(strings.Fields(in.Text()))
+		res, err := parseFields(strings.Fields(in.Text()))
 		if err != nil {
 			// TODO: custom error type for line information
 			return nil, fmt.Errorf("line %d: %v", lines, err)
 		}
 
-		results = append(results, result)
+		results = append(results, res)
 	}
 
 	if err := in.Err(); err != nil {

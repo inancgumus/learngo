@@ -9,15 +9,12 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {
 	defer recoverErr()
 
 	_, err := newReport().
-		from(textReader(os.Stdin)).
-		to(textWriter(os.Stdout)).
 		// filterBy(orgDomainsFilter).
 		filterBy(notUsing(domainExtFilter("com", "io"))).
 		groupBy(domainGrouper).
