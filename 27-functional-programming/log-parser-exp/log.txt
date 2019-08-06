@@ -1,4 +1,4 @@
-learngoprogramming.com.tr / 10 5
+learngoprogramming.com / 10 5
 learngoprogramming.com /courses 15 10
 learngoprogramming.com /courses 10 5
 learngoprogramming.com /articles 20 15

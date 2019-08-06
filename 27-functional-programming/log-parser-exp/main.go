@@ -16,15 +16,12 @@ func main() {
 	defer recoverErr()
 
 	_, err := newReport().
-		from(os.Stdin).
-		to(os.Stdout).
-		retrieveFrom(textReader).
-		filterBy(orgDomainsFilter).
-		// filterBy(notUsing(domainExtFilter("org", "io"))).
-		// groupBy(pageGrouper).
+		from(textReader(os.Stdin)).
+		to(textWriter(os.Stdout)).
+		// filterBy(orgDomainsFilter).
+		filterBy(notUsing(domainExtFilter("com", "io"))).
 		groupBy(domainGrouper).
-		writeTo(textWriter).
-		run()
+		start()
 
 	if err != nil {
 		fmt.Println("> Err:", err)
@@ -49,12 +46,11 @@ Result    -> report.Line
 
 notUsing = report.Not
 
-_, err := stats.Parse().
-	From(os.Stdin).
-	To(os.Stdout).
-	RetrieveFrom(stats.TextReader).
-	FilterBy(notUsing(stats.DomainExtFilter("org", "io"))).
-	GroupBy(stats.DomainGrouper).
-	WriteTo(stats.TextWriter).
-	Run()
+_, err := report.New().
+	From(report.TextReader(os.Stdin)).
+	To(report.TextWriter(os.Stdout)).
+	// FilterBy(report.OrgDomainsFilter).
+	FilterBy(notUsing(report.DomainExtFilter("com", "io"))).
+	GroupBy(report.DomainGrouper).
+	Start()
 */

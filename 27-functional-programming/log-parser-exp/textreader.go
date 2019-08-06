@@ -14,9 +14,11 @@ import (
 	"strings"
 )
 
-func textReader(r io.Reader) ([]result, error) {
-	in := bufio.NewScanner(r)
-	return parseText(in)
+func textReader(r io.Reader) inputFunc {
+	return func() ([]result, error) {
+		in := bufio.NewScanner(r)
+		return parseText(in)
+	}
 }
 
 func parseText(in *bufio.Scanner) ([]result, error) {

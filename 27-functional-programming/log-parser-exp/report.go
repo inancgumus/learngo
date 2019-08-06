@@ -1,19 +1,15 @@
 package main
 
-import "io"
-
 type (
-	retrieveFunc func(io.Reader) ([]result, error)
-	writeFunc    func(io.Writer, []result) error
+	inputFunc  func() ([]result, error)
+	outputFunc func([]result) error
 )
 
 type report struct {
-	input    io.Reader
-	output   io.Writer
-	retrieve retrieveFunc
-	filter   filterFunc
-	group    groupFunc
-	write    writeFunc
+	input  inputFunc
+	filter filterFunc
+	group  groupFunc
+	output outputFunc
 }
 
 func newReport() *report {
@@ -22,18 +18,13 @@ func newReport() *report {
 	}
 }
 
-func (r *report) from(reader io.Reader) *report {
-	r.input = reader
+func (r *report) from(fn inputFunc) *report {
+	r.input = fn
 	return r
 }
 
-func (r *report) to(writer io.Writer) *report {
-	r.output = writer
-	return r
-}
-
-func (r *report) retrieveFrom(fn retrieveFunc) *report {
-	r.retrieve = fn
+func (r *report) to(fn outputFunc) *report {
+	r.output = fn
 	return r
 }
 
@@ -47,17 +38,12 @@ func (r *report) groupBy(fn groupFunc) *report {
 	return r
 }
 
-func (r *report) writeTo(fn writeFunc) *report {
-	r.write = fn
-	return r
-}
-
-func (r *report) run() ([]result, error) {
-	if r.retrieve == nil {
-		panic("report retrieve cannot be nil")
+func (r *report) start() ([]result, error) {
+	if r.input == nil {
+		panic("report input cannot be nil")
 	}
 
-	results, err := r.retrieve(r.input)
+	results, err := r.input()
 	if err != nil {
 		return nil, err
 	}
@@ -72,8 +58,8 @@ func (r *report) run() ([]result, error) {
 	}
 
 	// TODO: prefer: noop writer
-	if r.write != nil {
-		if err := r.write(r.output, results); err != nil {
+	if r.output != nil {
+		if err := r.output(results); err != nil {
 			return nil, err
 		}
 	}
