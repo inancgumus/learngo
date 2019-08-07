@@ -17,6 +17,7 @@ type report struct {
 func newReport() *report {
 	return &report{
 		filter: noopFilter,
+		group:  noopGrouper,
 		input:  textReader(os.Stdin),
 		output: textWriter(os.Stdout),
 	}
@@ -43,30 +44,19 @@ func (r *report) groupBy(fn groupFunc) *report {
 }
 
 func (r *report) start() ([]result, error) {
-	if r.input == nil {
-		panic("report input cannot be nil")
-	}
+	//            input      filterBy    groupBy
+	//           scanner  (result) bool  map[string]result
+	//
+	// stdin -> []result -> []results -> []result -> output(stdout)
 
-	results, err := r.input()
+	res, err := r.input()
 	if err != nil {
 		return nil, err
 	}
 
-	// noop if filter is nil
-	results = filterBy(results, r.filter)
+	res = filterBy(res, r.filter)
+	res = groupBy(res, r.group)
+	err = r.output(res)
 
-	// group func is more tricky
-	// you don't want to create an unnecessary map
-	if r.group != nil {
-		results = groupBy(results, r.group)
-	}
-
-	// TODO: prefer: noop writer
-	if r.output != nil {
-		if err := r.output(results); err != nil {
-			return nil, err
-		}
-	}
-
-	return results, nil
+	return res, err
 }

@@ -35,3 +35,9 @@ func textWriter(w io.Writer) outputFunc {
 		return nil
 	}
 }
+
+func noWhere() outputFunc {
+	return func(res []result) error {
+		return nil
+	}
+}

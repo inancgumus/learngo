@@ -15,7 +15,7 @@ func main() {
 	defer recoverErr()
 
 	_, err := newReport().
-		// filterBy(orgDomainsFilter).
+		// from(fastTextReader(os.Stdin)).
 		filterBy(notUsing(domainExtFilter("com", "io"))).
 		groupBy(domainGrouper).
 		start()

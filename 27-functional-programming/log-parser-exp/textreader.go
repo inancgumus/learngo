@@ -9,6 +9,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"io"
 	"strings"
@@ -16,34 +17,51 @@ import (
 
 func textReader(r io.Reader) inputFunc {
 	return func() ([]result, error) {
-		in := bufio.NewScanner(r)
-		return parseText(in)
+		// first: count the lines, so the parseText can create
+		// enough buffer.
+		var buf bytes.Buffer
+		lines, err := countLines(io.TeeReader(r, &buf))
+		if err != nil {
+			return nil, err
+		}
+
+		return parseText(bufio.NewScanner(&buf), lines)
 	}
 }
 
-func parseText(in *bufio.Scanner) ([]result, error) {
+// TODO: custom error type for line information
+func parseText(in *bufio.Scanner, nlines int) ([]result, error) {
+	res := make([]result, 0, nlines)
+
+	for l := 1; in.Scan(); l++ {
+		fields := strings.Fields(in.Text())
+		r, err := parseFields(fields)
+
+		if err != nil {
+			return nil, fmt.Errorf("line %d: %v", l, err)
+		}
+		res = append(res, r)
+	}
+
+	return res, in.Err()
+}
+
+func countLines(r io.Reader) (int, error) {
 	var (
-		results []result
-		lines   int
+		lines int
+		buf   = make([]byte, 1024<<4) // read via 16 KB blocks
 	)
 
-	results = make([]result, 0, 5000000)
+	for {
+		n, err := r.Read(buf)
+		lines += bytes.Count(buf[:n], []byte{'\n'})
 
-	for in.Scan() {
-		lines++
-
-		res, err := parseFields(strings.Fields(in.Text()))
-		if err != nil {
-			// TODO: custom error type for line information
-			return nil, fmt.Errorf("line %d: %v", lines, err)
+		if err == io.EOF {
+			return lines, nil
 		}
 
-		results = append(results, res)
+		if err != nil {
+			return lines, err
+		}
 	}
-
-	if err := in.Err(); err != nil {
-		return nil, err
-	}
-
-	return results, nil
 }

@@ -12,8 +12,7 @@ func pageGrouper(r result) string {
 	return r.domain + r.page
 }
 
-// you could have created a noopGrouper as well
-// but it's not necessary i think (map allocation)
+// groupBy allocates map unnecessarily
 func noopGrouper(r result) string {
 	// with something like:
 	// return randomStrings()
