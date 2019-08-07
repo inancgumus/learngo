@@ -32,9 +32,7 @@ func recoverErr() {
 		return
 	}
 
-	if err, ok := val.(string); ok {
-		fmt.Println("> Error occurred:", err)
-	}
+	fmt.Println("> Error occurred:", val)
 }
 
 /*
