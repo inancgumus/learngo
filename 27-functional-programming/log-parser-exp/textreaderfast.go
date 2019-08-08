@@ -13,6 +13,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"os"
 )
 
 // this could be made faster.
@@ -105,4 +106,24 @@ func atoi(input []byte) (int, error) {
 		val = val*10 + int(char) - '0'
 	}
 	return val, nil
+}
+
+func countLines(r io.Reader) (int, error) {
+	var (
+		lines int
+		buf   = make([]byte, os.Getpagesize()) // read via 16 KB blocks
+	)
+
+	for {
+		n, err := r.Read(buf)
+		lines += bytes.Count(buf[:n], []byte{'\n'})
+
+		if err == io.EOF {
+			return lines, nil
+		}
+
+		if err != nil {
+			return lines, err
+		}
+	}
 }

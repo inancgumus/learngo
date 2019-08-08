@@ -9,30 +9,20 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"fmt"
 	"io"
-	"os"
 	"strings"
 )
 
 func textReader(r io.Reader) inputFn {
 	return func() ([]result, error) {
-		// first: count the lines, so the parseText can create
-		// enough buffer.
-		var buf bytes.Buffer
-		lines, err := countLines(io.TeeReader(r, &buf))
-		if err != nil {
-			return nil, err
-		}
-
-		return parseText(bufio.NewScanner(&buf), lines)
+		return parseText(bufio.NewScanner(r))
 	}
 }
 
 // TODO: custom error type for line information
-func parseText(in *bufio.Scanner, nlines int) ([]result, error) {
-	res := make([]result, 0, nlines)
+func parseText(in *bufio.Scanner) ([]result, error) {
+	var res []result
 
 	for l := 1; in.Scan(); l++ {
 		fields := strings.Fields(in.Text())
@@ -45,24 +35,4 @@ func parseText(in *bufio.Scanner, nlines int) ([]result, error) {
 	}
 
 	return res, in.Err()
-}
-
-func countLines(r io.Reader) (int, error) {
-	var (
-		lines int
-		buf   = make([]byte, os.Getpagesize()) // read via 16 KB blocks
-	)
-
-	for {
-		n, err := r.Read(buf)
-		lines += bytes.Count(buf[:n], []byte{'\n'})
-
-		if err == io.EOF {
-			return lines, nil
-		}
-
-		if err != nil {
-			return lines, err
-		}
-	}
 }
