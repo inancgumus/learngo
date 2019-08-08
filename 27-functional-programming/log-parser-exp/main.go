@@ -41,6 +41,14 @@ Result    -> report.Line
 
 notUsing = report.Not
 
+pl := newPipeline(pipeOpts{
+  from:     fastTextReader(os.Stdin),
+  filterBy: notUsing(domainExtFilter("com", "io")),
+  groupBy:  domainGrouper,
+})
+
+err := pl.start()
+
 _, err := report.New().
 	From(report.TextReader(os.Stdin)).
 	To(report.TextWriter(os.Stdout)).
