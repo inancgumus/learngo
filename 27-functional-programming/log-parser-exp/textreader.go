@@ -12,10 +12,11 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"os"
 	"strings"
 )
 
-func textReader(r io.Reader) inputFunc {
+func textReader(r io.Reader) inputFn {
 	return func() ([]result, error) {
 		// first: count the lines, so the parseText can create
 		// enough buffer.
@@ -49,7 +50,7 @@ func parseText(in *bufio.Scanner, nlines int) ([]result, error) {
 func countLines(r io.Reader) (int, error) {
 	var (
 		lines int
-		buf   = make([]byte, 1024<<4) // read via 16 KB blocks
+		buf   = make([]byte, os.Getpagesize()) // read via 16 KB blocks
 	)
 
 	for {

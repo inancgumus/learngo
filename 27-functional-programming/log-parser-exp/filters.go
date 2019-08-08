@@ -6,13 +6,13 @@ func noopFilter(r result) bool {
 	return true
 }
 
-func notUsing(filter filterFunc) filterFunc {
+func notUsing(filter filterFn) filterFn {
 	return func(r result) bool {
 		return !filter(r)
 	}
 }
 
-func domainExtFilter(domains ...string) filterFunc {
+func domainExtFilter(domains ...string) filterFn {
 	return func(r result) bool {
 		for _, domain := range domains {
 			if strings.HasSuffix(r.domain, "."+domain) {
@@ -23,7 +23,7 @@ func domainExtFilter(domains ...string) filterFunc {
 	}
 }
 
-func domainFilter(domain string) filterFunc {
+func domainFilter(domain string) filterFn {
 	return func(r result) bool {
 		return strings.Contains(r.domain, domain)
 	}

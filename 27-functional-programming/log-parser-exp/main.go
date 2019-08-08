@@ -14,7 +14,7 @@ import (
 func main() {
 	defer recoverErr()
 
-	_, err := newReport().
+	_, err := newPipeline().
 		// from(fastTextReader(os.Stdin)).
 		filterBy(notUsing(domainExtFilter("com", "io"))).
 		groupBy(domainGrouper).

@@ -19,7 +19,7 @@ const (
 	dashLength = 58
 )
 
-func textWriter(w io.Writer) outputFunc {
+func textWriter(w io.Writer) outputFn {
 	return func(results []result) error {
 		fmt.Fprintf(w, header, "DOMAINS", "PAGES", "VISITS", "UNIQUES")
 		fmt.Fprintln(w, strings.Repeat("-", dashLength))
@@ -36,7 +36,7 @@ func textWriter(w io.Writer) outputFunc {
 	}
 }
 
-func noWhere() outputFunc {
+func noWhere() outputFn {
 	return func(res []result) error {
 		return nil
 	}

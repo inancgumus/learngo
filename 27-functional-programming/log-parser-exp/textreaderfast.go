@@ -26,7 +26,7 @@ import (
 // + uses a manual atoi
 // +
 
-func fastTextReader(r io.Reader) inputFunc {
+func fastTextReader(r io.Reader) inputFn {
 	return func() ([]result, error) {
 		// first: count the lines, so the parseText can create
 		// enough buffer.
@@ -45,7 +45,9 @@ func fastParseText(in *bufio.Scanner, nlines int) ([]result, error) {
 	res := make([]result, 0, nlines)
 
 	for l := 0; in.Scan(); l++ {
+		_ = in.Bytes()
 		r, err := fastParseFields(in.Bytes())
+		// r, err := result{"foo.com", "/bar", 10, 10}, error(nil)
 
 		if err != nil {
 			return nil, fmt.Errorf("line %d: %v", l, err)
