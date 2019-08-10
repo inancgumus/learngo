@@ -40,10 +40,7 @@ func (p *pipeline) start() ([]result, error) {
 		return nil, err
 	}
 
-	var (
-		out  []result
-		gres = make(map[string]int)
-	)
+	gres := make(map[string]result)
 
 	for _, r := range res {
 		if !p.filter(r) {
@@ -51,14 +48,12 @@ func (p *pipeline) start() ([]result, error) {
 		}
 
 		k := p.groupKey(r)
+		gres[k] = r.add(gres[k])
+	}
 
-		if i, ok := gres[k]; ok {
-			out[i] = out[i].add(r)
-			continue
-		}
-		gres[k] = len(out)
-
-		out = append(out, r)
+	var out []result
+	for _, v := range gres {
+		out = append(out, v)
 	}
 
 	err = p.output(out)
