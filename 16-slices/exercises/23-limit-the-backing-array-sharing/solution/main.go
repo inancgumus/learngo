@@ -17,6 +17,6 @@ func main() {
 	temps := api.Read(0, 3)
 	temps = append(temps, []int{1, 3}...)
 
-	fmt.Println("API's readings:", api.All())
-	fmt.Println("Your readings :", temps)
+	fmt.Println("api.temps     :", api.All())
+	fmt.Println("main.temps    :", temps)
 }

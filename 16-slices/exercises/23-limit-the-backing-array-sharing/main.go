@@ -16,43 +16,45 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Limit the backing array sharing
 //
-//  You've created an API that returns population counts in a country.
-//  To do that, you return an int slice up to some portion of it.
+//  You've created a package and saved the temperatures in an int slice.
+//  (find it in the api folder).
 //
-//  There is a program that uses your API but it appends to the slice
-//  that your API returns. Doing so, overwrites your API's slice's
-//  backing array as well.
+//  When `Read()` function is called, you return the desired elements.
 //
-//  Change your API so that it prevents the overwriting when
-//  the client code wants to append to the returned slice from your
-//  API.
+//  Another programmer has decided to use your package.
+//  She calls: `api.Read(0, 3)` and gets a slice with a length of 3.
+//
+//  However: She appends to the slice, so she practically changes
+//  the elements in the api package's `temps` slice (the original one).
+//
+//  Only allow her to change the first three elements.
+//  Prevent her from changing the rest of the elements of
+//  `api.temps` slice.
 //
 //
 // STEPS
 //
-//   1. Open the code inside the `api/api.go` folder
-//
-//   2. Fix the code there (not here — but run this code after)
+//   You only need to change the code inside the `api/api.go` folder
 //
 //
-// CURRENT OUTPUT
+// CURRENT
 //
-//       The following program overwrites the elements incorrectly
-//          You need to change your API to prevent this behavior
-//                           ^ ^
 //                           | |
-//   API's readings: [5 10 3 1 3 80 90]
-//   Your readings : [5 10 3 1 3]
+//                           v v
+//   api.temps     : [5 10 3 1 3 80 90]
+//   main.temps    : [5 10 3 1 3]
+//                           ^ ^ append changes the api package's
+//                               temps slice: [1 3]
 //
 //
-// EXPECTED OUTPUT
 //
-//   Now the program cannot change the API's original backing array
-//   (beyond the returned capacity) (so the api now owns the control)
-//                           ^  ^
+// EXPECTED
+//
+//   Now the program cannot change the API's original backing array.
 //                           |  |
-//   API's readings: [5 10 3 25 45 80 90]
-//   Your readings : [5 10 3 1 3]
+//                           v  v
+//   api.temps     : [5 10 3 25 45 80 90]
+//   main.temps    : [5 10 3 1 3]
 //
 // ---------------------------------------------------------
 
@@ -61,13 +63,13 @@ func main() {
 	// THIS IS THE CLIENT PROGRAM THAT USES YOUR API
 	// YOU CANNOT CONTROL IT! :)
 
-	// reads the first three temperatures
+	// get the first three elements from api.temps
 	temps := api.Read(0, 3)
 
-	// appends two new temperature readings
+	// changes the api.temps's backing array.
+	// you need to prevent this.
 	temps = append(temps, []int{1, 3}...)
 
-	// prints the current temperatures
-	fmt.Println("API's readings:", api.All())
-	fmt.Println("Your readings :", temps)
+	fmt.Println("api.temps     :", api.All())
+	fmt.Println("main.temps    :", temps)
 }

@@ -1,21 +1,20 @@
 package api
 
+// The original temperatures slice.
 var temps = []int{5, 10, 3, 25, 45, 80, 90}
 
 // Read returns a range of temperature readings beginning from
 // the `start` until to the `stop`.
 func Read(start, stop int) []int {
 	//
-	// Uses a full slice expression to control the length of the
-	// backing array (or the capacity of the returned slice).
-	//
-	// So the next append allocates a new backing array, which
-	// in turn doesn't overwrite the temps slice's backing array.
-	//                           ^^
-	//                           ||
-	//                          /  \
-	//                         |    |
+	// This third index prevents the clients of this package from
+	// overwriting the original temps slice's backing array. It
+	// limits the capacity of the returned slice. See the
+	// full slice expressions lecture.
+	//                            ^
+	//                            |
 	portion := temps[start:stop:stop]
+
 	return portion
 }
 
