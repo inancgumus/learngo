@@ -21,25 +21,36 @@ func main() {
 	// reads 65 MB of temperature data into the memory!
 	temps := api.Read()
 
-	//
+	// ------------------------------------------------------
 	// SOLUTION #1:
-	//
+	// ------------------------------------------------------
 
-	// clone the last 10 elements of the returned temperatures
-	// into a new slice
+	//
+	// Copy the last 10 elements of the returned temperatures
+	// to a new slice.
+	//
+	// This will create a new backing array.
+	//
 	need := make([]int, 10)
 	copy(need, temps[len(temps)-10:])
-	// make the temp slice lose reference to its backing array
-	// so that it can be cleaned from the memory
+
+	//
+	// Make the temp slice lose reference to its backing array
+	// so that its backing array can be cleaned from the memory.
+	//
 	temps = need
 
-	//
+	// ------------------------------------------------------
 	// SOLUTION #2:
-	//
+	// ------------------------------------------------------
 
-	// The code below does the same thing like the code above but in one line.
+	// Similar to the 1st solution. It does the same thing.
+	// But this code is more concise. Use this one.
+
 	// temps = append([]int(nil), temps[len(temps)-10:]...)
 
+	// ------------------------------------------------------
+	// don't worry about this code yet.
 	api.Report()
 	fmt.Fprintln(ioutil.Discard, temps[0])
 }

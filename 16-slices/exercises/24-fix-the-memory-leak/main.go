@@ -17,11 +17,25 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Fix the memory leak
 //
-//  You receive millions of temperature data points from
-//  an API, but you only need the last 10 data points.
+//  WARNING! This is a very difficult exercise. You need to
+//  do some research on your own to solve it. Please don't
+//  get discouraged if you can't solve it yet.
 //
-//  Currently, there is a memory leak in your program.
-//  Find the leak and fix it.
+//  Imagine that you receive millions of temperature data
+//  points but you only need the last 10 data points
+//  (temperatures).
+//
+//  Problem: There is a memory leak in your program.
+//  Please find the leak and fix it.
+//
+//  Memory leak means: Your program uses computer memory
+//  unnecessarily. See this: https://en.wikipedia.org/wiki/Memory_leak
+//
+//
+// CURRENT OUTPUT
+//
+//   > Memory Usage: 113 KB
+//   > Memory Usage: 65651 KB
 //
 //
 // EXPECTED OUTPUT
@@ -32,16 +46,14 @@ import (
 //
 // EXPECTED OUTPUT EXPLANATION
 //
-//   Your output will be different. Your goal is to reduce the
-//   difference between two measurements of the memory usage.
-//
-//   For the expected output above:
-//
-//     118 KB - 116 KB = Only 2 KB so that's OK.
-//
-//   However, in the current program, because of the memory leak,
+//   In the current program, because of the memory leak,
 //   the difference is huge: about ~60 MB. Run the program and,
-//   see yourself.
+//   see it yourself.
+//
+//   Your goal is reducing the memory usage.
+//
+//   See the code in api/api.go to see how it allocates
+//   a huge memory.
 //
 // ---------------------------------------------------------
 
@@ -49,7 +61,7 @@ func main() {
 	// reports the initial memory usage
 	api.Report()
 
-	// reads 65 MB of temperature data into the memory!
+	// reads 65 MB of temperature data into memory!
 	temps := api.Read()
 
 	// -----------------------------------------------------
@@ -60,8 +72,9 @@ func main() {
 	// ✪ ONLY ADD YOUR CODE INSIDE THIS BOX ✪
 	// -----------------------------------------------------
 
-	// fix the problem so that the memory usage stays low
-	// dont touch this code
+	// dont touch this code.
 	api.Report()
+
+	// don't worry about this code yet.
 	fmt.Fprintln(ioutil.Discard, temps[0])
 }
