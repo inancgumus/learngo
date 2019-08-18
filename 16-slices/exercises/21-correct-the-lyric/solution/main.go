@@ -17,7 +17,6 @@ func main() {
 	// yesterday all my troubles seemed so far away
 	// now it looks as though they are here to stay
 	// oh i believe in yesterday
-
 	lyric := strings.Fields(`all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay`)
 
 	// ------------------------------------------------------------------------
@@ -36,7 +35,7 @@ func main() {
 	lyric = append([]string{"yesterday"}, lyric...)
 
 	// ------------------------------------------------------------------------
-	// #2: Put the words to the correct position in the `lyric` slice.
+	// #2: Put the words to the correct positions in the `lyric` slice.
 	// ------------------------------------------------------------------------
 
 	//

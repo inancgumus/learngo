@@ -3,8 +3,9 @@ package main
 // ---------------------------------------------------------
 // EXERCISE: Observe the capacity growth
 //
-//  Write a program that loops 10 million times to append an element
-//  to a slice, on each step of the loop. Observe the capacity.
+//  Write a program that appends elements to a slice
+//  10 million times in a loop. Observe how the capacity of
+//  the slice changes.
 //
 //
 // STEPS
@@ -13,13 +14,12 @@ package main
 //
 //  2. Loop 10e6 times
 //
-//  3. On each loop step: Append an element to the slice
+//  3. On each iteration: Append an element to the slice
 //
-//  4. Only print the length and capacity of the slice everytime
-//     the capacity changes.
+//  4. Print the length and capacity of the slice "only"
+//     when its capacity changes.
 //
-//  5. Print also the growth rate by calculating the previous and
-//     the current capacity.
+//  BONUS: Print also the growth rate of the capacity.
 //
 //
 // EXPECTED OUTPUT
