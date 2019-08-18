@@ -17,7 +17,6 @@ import (
 const size = 1e7
 
 func main() {
-	// stops the gc: prevents cleaning up the memory
 	debug.SetGCPercent(-1)
 
 	report("initial memory usage")

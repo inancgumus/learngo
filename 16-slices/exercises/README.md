@@ -80,11 +80,11 @@ Please update your local copy of the prettyslice package for some examples to wo
 
 2. **[Limit the backing array sharing](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/23-limit-the-backing-array-sharing)**
 
-    Your API does not control the slices that it share with the outside world. You need to fix it.
+    Your package needs to control the slices that it shares with the outside world.
 
 3. **[Fix the Memory Leak](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/24-fix-the-memory-leak)**
 
-    A slice retrieved from an API causes a memory leak in your program. You need to fix it.
+    A slice retrieved from a package causes a memory leak in your program. You need to fix it.
 
 4. **[Add a newline after each sentence](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/25-add-lines)**
 
@@ -92,4 +92,4 @@ Please update your local copy of the prettyslice package for some examples to wo
 
 5. **[Print Daily Requests](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/26-print-daily-requests)**
 
-    Group the requests log into a multi-dimensional from a single-dimensional slice. Allocate a slice with the exact size needed by doing some wizardary calculations. And lastly, pretty print the result.
+    Group the web request logs into a multi-dimensional slice. Allocate a slice with the exact size needed by doing some wizardary calculations. And lastly, pretty print the result.

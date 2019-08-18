@@ -34,7 +34,7 @@ import (
 //
 // BONUS
 //
-//   + Think about when does the append allocates a new backing array.
+//   + Think about when does the append allocate a new backing array.
 //
 //   + Check whether your conclusions are correct.
 //

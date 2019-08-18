@@ -9,25 +9,19 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 // ---------------------------------------------------------
 // EXERCISE: Fix the backing array problem
 //
-//  You receive numbers from an API. After you're done working
-//  with it, the API needs to continue using those numbers.
-//
-//  But your program changes the numbers (changes the API's slice).
-//
-//  Fix the program so that your program doesn't modify
-//  the original numbers.
+//  Ensure that changing the elements of the `mine` slice
+//  does not change the elements of the `nums` slice.
 //
 //
-// RESTRICTION
+// CURRENT OUTPUT (INCORRECT)
 //
-//  Fix the problem only in the designated area of the code below.
+//  Mine         : [-50 -100 -150 25 30 50]
+//  Original nums: [-50 -100 -150]
 //
 //
 // EXPECTED OUTPUT
@@ -35,26 +29,27 @@ import (
 //  Mine         : [-50 -100 -150]
 //  Original nums: [56 89 15]
 //
-//  Note: Original nums may vary (they're random)
-//        But your slice should look like the above (mine slice)
-//
-//        Yes, it should output only three numbers for the both slices!
-//
 // ---------------------------------------------------------
 
 func main() {
-	// API returns random numbers in an int slice
-	rand.Seed(time.Now().UnixNano())
-	nums := rand.Perm(100)
+	// DON'T TOUCH THE FOLLOWING CODE
+	nums := []int{56, 89, 15, 25, 30, 50}
 
 	// ----------------------------------------
-	// RESTRICTIONS — ONLY ADD YOUR CODE HERE
+	// ONLY ADD YOUR CODE HERE
 	//
+	// Ensure that nums slice never changes even though
+	// the mine slice changes.
 	mine := nums
-	//
 	// ----------------------------------------
 
+	// DON'T TOUCH THE FOLLOWING CODE
+	//
+	// This code changes the elements of the nums
+	// slice.
+	//
 	mine[0], mine[1], mine[2] = -50, -100, -150
-	fmt.Println("Mine         :", mine)
+
+	fmt.Println("Mine         :", mine[:3])
 	fmt.Println("Original nums:", nums[:3])
 }

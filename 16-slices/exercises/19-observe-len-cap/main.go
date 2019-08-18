@@ -27,7 +27,7 @@ func main() {
 	//
 	// 7. comment out everything
 	//
-	// 8. declare it again using a slice literal
+	// 8. declare the games slice again using a slice literal
 	//    (use the same elements from step 3)
 
 	// --- #2 ---

@@ -9,13 +9,10 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
-	nums := rand.Perm(100)
+	nums := []int{56, 89, 15, 25, 30, 50}
 
 	// ----------------------------------------
 	// breaks the connection:

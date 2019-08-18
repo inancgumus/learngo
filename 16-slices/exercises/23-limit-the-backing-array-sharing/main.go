@@ -32,6 +32,19 @@ import (
 //  `api.temps` slice.
 //
 //
+// BE CAREFUL
+//
+//   This code imports the api package from the learn go programming
+//   original repository. So, when you change the code in the api folder
+//   ensure that this code imports your own code.
+//
+//   see above (this is the original repository code):
+//   you need to change it to your own repository if you're using your own
+//   repository:
+//
+//   "github.com/inancgumus/learngo/16-slices/exercises/23-limit-the-backing-array-sharing/api"
+//
+//
 // STEPS
 //
 //   You only need to change the code inside the `api/api.go` folder

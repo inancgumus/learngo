@@ -16,12 +16,12 @@ import (
 //
 //  1. Sort only the middle 3 items.
 //
-//  2. All the slices should see your change.
+//  2. All the slices should see your changes.
 //
 //
 // RESTRICTION
 //
-//  Do not sort manually. Sort by slicing then by using the sort package.
+//  Do not sort manually. Sort by using the sort package.
 //
 //
 // EXPECTED OUTPUT

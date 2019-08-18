@@ -20,9 +20,9 @@ import (
 //
 // EXPECTED OUTPUT
 //
-//  Note that, your memory usage numbers may vary. These are on my
-//  own system. However, the size of the arrays and slices should be
-//  the same on your own system as well (if you're on 64-bit machine).
+//  Note that, your memory usage numbers may vary. However, the size of the
+//  arrays and slices should be the same on your own system as well
+//  (if you're on a 64-bit machine).
 //
 //
 //  [initial memory usage]
@@ -54,62 +54,73 @@ import (
 //    - Just call it with a message that matches to the expected output.
 //
 //    passArray function:
-//    - Accepts a [size]int array, so you can pass it your array.
 //    - It automatically prints the memory usage.
+//    - Accepts a [size]int array, so you can pass your array to it.
 //
 //    passSlice function:
-//    - Accepts an int slice, so you can pass it one of your slices.
 //    - It automatically prints the memory usage.
+//    - Accepts an int slice, so you can pass it one of your slices.
 //
 // ---------------------------------------------------------
 
 const size = 1e7
 
 func main() {
-	// stops the gc: prevents cleaning up the memory
+	// don't worry about this code.
+	// it stops the garbage collector: prevents cleaning up the memory.
+	// see the link if you're curious:
+	// https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
 	debug.SetGCPercent(-1)
 
-	// run the program to see what this prints
+	// run the program to see the initial memory usage.
 	report("initial memory usage")
 
 	// 1. allocate an array with 10 million int elements
-	//    this array's size is equal to ~80MB
-	//    hint: use the `size` constant
-	//
-	// 2. print the memory usage
+	//    the array's size will be equal to ~80MB
+	//    hint: use the `size` constant above.
 
-	// 3. copy the array to a new array (just assign)
+	// 2. print the memory usage (use the report func).
+
+	// 3. copy the array to a new array.
+
 	// 4. print the memory usage
 
 	// 5. pass the array to the passArray function
 
-	// 6. convert the one of the arrays to a slice (by slicing)
+	// 6. convert one of the arrays to a slice
+
 	// 7. slice only the first 1000 elements of the array
+
 	// 8. slice only the elements of the array between 1000 and 10000
-	// 9. print the memory usage
+
+	// 9. print the memory usage (report func)
 
 	// 10. pass the one of the slices to the passSlice function
 
 	// 11. print the sizes of the arrays and slices
 	//     hint: use the unsafe.Sizeof function
+	//     see more here: https://golang.org/pkg/unsafe/#Sizeof
 }
 
-// observe that passing an array affects the memory usage dramatically
-//
 // passes [size]int array — about 80MB!
+//
+// observe that passing an array to a function (or assigning it to a variable)
+// affects the memory usage dramatically
 func passArray(items [size]int) {
 	items[0] = 100
 	report("inside passArray")
 }
 
-// observe that passing a slice doesn't affect the memory usage
-//
 // only passes 24-bytes of slice header
+//
+// observe that passing a slice doesn't affect the memory usage
 func passSlice(items []int) {
 	items[0] = 100
 	report("inside passSlice")
 }
 
+// reports the current memory usage
+// don't worry about this code
 func report(msg string) {
 	var m runtime.MemStats
 	runtime.ReadMemStats(&m)
