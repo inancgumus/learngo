@@ -7,9 +7,6 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Practice advanced slice operations
 //
-//  This exercise's intention is warm you up and reinforce
-//  your memory for the advanced slice operations.
-//
 //  Please follow the directions in the following code.
 //
 //  To see the expected output, please run:
@@ -24,7 +21,6 @@ func main() {
 	// or do it with your own Printf that matches the output
 	// of the prettyslice package.
 	//
-
 	// This allows you to see the backing array of the slices.
 	s.PrintBacking = true
 	// Shows 10 slice elements per line
@@ -34,10 +30,10 @@ func main() {
 
 	// ########################################################
 	//
-	// #1: Create a string slice with a length and capacity
-	//     of 5. Call the slice: `names` and print it.
+	// #1: Create a string slice: `names` with a length and
+	//     capacity of 5, and print it.
 	//
-
+	//
 	// ...
 	// s.Show("1st step", names)
 
@@ -51,82 +47,73 @@ func main() {
 	//
 	//     Observe how the slice and its backing array change.
 	//
-
+	//
 	// ...
 	// s.Show("2nd step", names)
 
 	// ########################################################
 	//
-	// #3: Fix the append problem by reinitializing the
-	//     names slice below (currently the previous code
-	//     appends after 5 elements).
+	// #3: The previous code appends at the end of the names
+	//     slice:
 	//
-	//     Append the new elements to the head of the names
-	//     slice instead.
+	//     ["" "" "" "" "" "einstein", "tesla", "aristo"]
 	//
-	//     Print the names slice.
+	//     Append the new elements to the beginning of the names
+	//     slice instead:
 	//
-	// HINT:
+	//     ["einstein", "tesla", "aristo" "" ""]
 	//
-	//    The problem is in the `make` function.
+	//     So: Overwrite and print the names slice.
 	//
-
 	// ...
 	// s.Show("3rd step", names)
 
 	// ########################################################
 	//
-	// #4: Copy elements from an array to the `names` slice.
-	//
-	//     Copy only the first two elements of the following
+	// #4: Copy only the first two elements of the following
 	//     array to the last two elements of the `names` slice.
 	//
-	//     Print the names slice (do not forget extending it
-	//     after appending). You should print 5 elements.
+	//     Print the names slice, you should see 5 elements.
+	//     So, do not forget extending the slice.
 	//
-	//     Observe how the backing array stays the same.
+	//     Observe how its backing array stays the same.
 	//
-
+	//
 	// Array (uncomment):
 	// moreNames := [...]string{"plato", "khayyam", "ptolemy"}
-
+	//
 	// ...
-
+	//
 	// s.Show("4th step", names)
 
 	// ########################################################
 	//
-	// #5: Clone the `names` slice to the `clone` slice.
+	// #5:  Only copy the last 3 elements of the `names` slice
+	//      to a new slice: `clone`.
 	//
-	//     But only clone (copy) the last 3 elements of the
-	//     `names` slice.
-	//
-	//     Then, append the first two elements of the `names`
-	//     slice to the `clone` slice.
+	//     Append the first two elements of the `names` to the
+	//    `clone`.
 	//
 	//     Ensure that after appending no new backing array
 	//     allocations occur for the `clone` slice.
 	//
 	//     Print the clone slice before and after the append.
 	//
-
+	//
 	// ...
 	// s.Show("5th step (before append)", clone)
-
+	//
 	// ...
 	// s.Show("5th step (after append)", clone)
 
 	// ########################################################
 	//
-	// #6: Slice the `clone` slice between 2nd and 4th
-	//     elements.
+	// #6: Slice the `clone` slice between 2nd and 4th (inclusive)
+	//     elements into a new slice: `sliced`.
 	//
-	//     Put the sliced slice into a variable named:
-	//     `sliced`.
+	//     Append "hypatia" to the `sliced`.
 	//
-	//     Append "hypatia" to the `sliced` slice.
-	//
-	//     Ensure that new backing array allocation "happens".
+	//     Ensure that new backing array allocation "occurs".
 	//
 	//       Change the 3rd element of the `clone` slice
 	//       to "elder".
@@ -136,7 +123,7 @@ func main() {
 	//
 	//     Print the `clone` and `sliced` slices.
 	//
-
+	//
 	// ...
 	// s.Show("6th step", clone, sliced)
 }
