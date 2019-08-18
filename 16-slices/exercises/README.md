@@ -86,7 +86,7 @@ Please update your local copy of the prettyslice package for some examples to wo
 
     A slice retrieved from an API causes a memory leak in your program. You need to fix it.
 
-4. **[Add newlines to the lyric sentences](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/25-add-lines)**
+4. **[Add a newline after each sentence](https://github.com/inancgumus/learngo/tree/master/16-slices/exercises/25-add-lines)**
 
     Use the power of the `copy()` function and add newlines into a new buffer from a string slice. This exercise is more tricky than you might think.
 
