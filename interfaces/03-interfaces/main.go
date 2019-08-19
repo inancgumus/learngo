@@ -16,37 +16,18 @@ func main() {
 	)
 
 	var store list
-
 	store = append(store, &minecraft, &tetris, mobydick, rubik)
 
 	tetris.discount(.8)
 	// printer(tetris).discount(.8)
-
 	store.print()
+
+	// type printer interface {
+	// 	print()
+	// }
+
+	// p can store a value of any type that has a `print()` method
+	var p printer
+	p = puzzle{title: "sidewinder", price: 10}
+	p.print()
 }
-
-/*
-var my list
-
-// + only the `*game` have methods.
-// + `game` doesn't have any methods.
-// + `item` interface couldn't be satisfied with a `game` value.
-// + it can only be satisfied with a `*game` value.
-// my = my.add(minecraft)
-my = append(my, &minecraft)
-my = append(my, &tetris)
-my = append(my, &mobydick)
-
-// interface value stores a pointer to minecraft
-minecraft.discount(.5)
-my.list()
-
-my.discount(.5)
-my.list()
-*/
-
-// ! cannot add mobydick to the store: it's a book type, not a game type.
-// interfaces to the rescue!
-// mobydick := book{title: "moby dick", price: 10}
-// my.add(&mobydick)
-// ----------------------------------------------------------------

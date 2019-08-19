@@ -20,8 +20,6 @@ func (l list) print() {
 		return
 	}
 
-	fmt.Printf("My Store:\n")
-	fmt.Printf("---------\n")
 	for _, it := range l {
 		it.print()
 	}
