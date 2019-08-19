@@ -1,5 +1,7 @@
 package main
 
+const fieldsLength = 4
+
 type result struct {
 	domain  string
 	page    string

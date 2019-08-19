@@ -2,6 +2,8 @@ package main
 
 import "strings"
 
+type filterFunc func(result) bool
+
 func noopFilter(r result) bool {
 	return true
 }

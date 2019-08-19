@@ -9,11 +9,6 @@ package main
 
 import "sort"
 
-type (
-	groupFunc  func(result) string
-	filterFunc func(result) bool
-)
-
 type analysis struct {
 	sum      map[string]result // metrics per domain
 	keys     []string          // unique keys
@@ -29,9 +24,19 @@ func newAnalysis() *analysis {
 	}
 }
 
-func (a *analysis) groupBy(g groupFunc)   { a.groupKey = g }
-func (a *analysis) filterBy(f filterFunc) { a.filter = f }
+func (a *analysis) groupBy(g groupFunc) {
+	if g != nil {
+		a.groupKey = g
+	}
+}
 
+func (a *analysis) filterBy(f filterFunc) {
+	if f != nil {
+		a.filter = f
+	}
+}
+
+// analyse the given result
 func (a *analysis) analyse(r result) {
 	if !a.filter(r) {
 		return
@@ -45,11 +50,11 @@ func (a *analysis) analyse(r result) {
 	a.sum[key] = r.add(a.sum[key])
 }
 
-// each analysed result will be sent by the given func
-func (a *analysis) each(f func(r result)) {
+// each sends an analysis result to `handle`
+func (a *analysis) each(handle resultFn) {
 	sort.Strings(a.keys)
 
 	for _, domain := range a.keys {
-		f(a.sum[domain])
+		handle(a.sum[domain])
 	}
 }

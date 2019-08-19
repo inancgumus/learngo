@@ -11,39 +11,19 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"os"
 	"strconv"
 	"strings"
 )
 
-const fieldsLength = 4
-
 type textParser struct {
-	r      io.Reader
-	update func(r result)
+	r io.Reader
 }
 
 func newTextParser(r io.Reader) *textParser {
-	return &textParser{
-		r:      r,
-		update: func(result) {},
-	}
+	return &textParser{r: r}
 }
 
-func parseTextFile(path string) (*textParser, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-
-	return newTextParser(f), nil
-}
-
-func (p *textParser) notify(f func(r result)) {
-	p.update = f
-}
-
-func (p *textParser) parse() error {
+func (p *textParser) parse(handle resultFn) error {
 	defer readClose(p.r)
 
 	var (
@@ -52,19 +32,19 @@ func (p *textParser) parse() error {
 	)
 
 	for in.Scan() {
-		r, err := p.parseFields(in.Text())
+		r, err := parseFields(in.Text())
 		if err != nil {
 			return fmt.Errorf("line %d: %v", l, err)
 		}
 
-		p.update(r)
+		handle(r)
 		l++
 	}
 
 	return in.Err()
 }
 
-func (p *textParser) parseFields(s string) (r result, err error) {
+func parseFields(s string) (r result, err error) {
 	fields := strings.Fields(s)
 	if len(fields) != fieldsLength {
 		return r, fmt.Errorf("wrong number of fields %q", fields)

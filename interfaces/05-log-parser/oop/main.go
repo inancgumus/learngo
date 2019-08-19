@@ -9,31 +9,29 @@ package main
 
 import (
 	"log"
+	// "fmt"
 	"os"
 )
 
 func main() {
-	an := newAnalysis()
-	an.filterBy(notUsing(domainExtFilter("io", "com")))
-	an.groupBy(domainGrouper)
+	a := newAnalysis()
+	// a.filterBy(notUsing(domainExtFilter("io", "com")))
+	// a.groupBy(domainGrouper)
 
-	// pars, err := parseTextFile("log.txt")
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
+	p := newTextParser(os.Stdin)
+	s := newTextSummary()
 
-	err := report(an, newTextParser(os.Stdin), summarizeFunc(textSummary))
-	// err := report(an, newJSONParser(os.Stdin), newTextSummary())
+	// s := &chartSummary{
+  	//  title:  "visits per domain",
+  	//  width:  1920,
+  	//  height: 800,
+  	// }
 
-	// chart := &chartSummary{
-	// 	title:  "visits per domain",
-	// 	width:  1920,
-	// 	height: 800,
-	// }
-
-	// err := report(an, newTextParser(os.Stdin), chart)
-
-	if err != nil {
+	if err := report(p, a, s); err != nil {
 		log.Fatalln(err)
 	}
+
+	// if err := reportFromFile(os.Args[1]); err != nil {
+	// 	log.Fatalln(err)
+	// }
 }

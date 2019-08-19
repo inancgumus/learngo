@@ -15,18 +15,14 @@ import (
 )
 
 type jsonParser struct {
-	r      io.Reader
-	update func(r result)
+	r io.Reader
 }
 
 func newJSONParser(r io.Reader) *jsonParser {
-	return &jsonParser{
-		r:      r,
-		update: func(result) {},
-	}
+	return &jsonParser{r: r}
 }
 
-func (p *jsonParser) parse() error {
+func (p *jsonParser) parse(handle resultFn) error {
 	defer readClose(p.r)
 
 	bytes, err := ioutil.ReadAll(p.r)
@@ -34,10 +30,10 @@ func (p *jsonParser) parse() error {
 		return err
 	}
 
-	return p.parseJSON(bytes)
+	return parseJSON(bytes, handle)
 }
 
-func (p *jsonParser) parseJSON(bytes []byte) error {
+func parseJSON(bytes []byte, handle resultFn) error {
 	var rs []struct {
 		Domain  string
 		Page    string
@@ -53,7 +49,7 @@ func (p *jsonParser) parseJSON(bytes []byte) error {
 	}
 
 	for _, r := range rs {
-		p.update(result{
+		handle(result{
 			domain:  r.Domain,
 			page:    r.Page,
 			visits:  r.Visits,
@@ -62,8 +58,4 @@ func (p *jsonParser) parseJSON(bytes []byte) error {
 	}
 
 	return nil
-}
-
-func (p *jsonParser) notify(f func(r result)) {
-	p.update = f
 }

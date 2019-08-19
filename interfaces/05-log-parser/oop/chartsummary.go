@@ -7,6 +7,9 @@ import (
 	c "github.com/wcharczuk/go-chart"
 )
 
+// You need to run:
+// go get -u github.com/wcharczuk/go-chart
+
 type chartSummary struct {
 	title         string
 	width, height int
