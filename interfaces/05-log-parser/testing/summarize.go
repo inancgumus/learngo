@@ -13,7 +13,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/inancgumus/learngo/interfaces/04-log-parser/testing/report"
+	"github.com/inancgumus/learngo/interfaces/05-log-parser/testing/report"
 )
 
 // summarize prints the parsing results.
