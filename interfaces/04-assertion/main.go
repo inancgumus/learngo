@@ -16,14 +16,13 @@ func main() {
 	)
 
 	var store list
-	store = append(store, &minecraft, &tetris, mobydick, rubik)
+	store = append(store, &minecraft, &tetris, mobydick, &rubik)
 
-	tetris.discount(.8)
-	// printer(tetris).discount(.8)
+	store.discount(.5)
 	store.print()
 
-	// p can store a value of any type that has a `print()` method
-	var p printer
-	p = puzzle{title: "sidewinder", price: 10}
-	p.print()
+	// minecraft.discount(.5)
+	// minecraft.print()
 }
+
+// store.discount()
