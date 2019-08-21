@@ -9,9 +9,9 @@ package main
 
 import "fmt"
 
-// + you can attach methods to any concrete type.
+// + you can attach methods to non-struct types.
 // + rule: you need to declare a new type in the same package.
-type list []game
+type list []*game
 
 func (l list) print() {
 	// `list` acts like a `[]game`

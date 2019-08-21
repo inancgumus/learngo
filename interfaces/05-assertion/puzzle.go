@@ -11,13 +11,13 @@ import "fmt"
 
 type puzzle struct {
 	title string
-	price float64
+	price money
 }
 
 func (p *puzzle) print() {
-	fmt.Printf("%-15s: $%.2f \n", p.title, p.price)
+	fmt.Printf("%-15s: %s\n", p.title, p.price.string())
 }
 
 func (p *puzzle) discount(ratio float64) {
-	p.price *= (1 - ratio)
+	p.price *= money(1 - ratio)
 }

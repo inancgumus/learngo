@@ -26,7 +26,7 @@ func (l list) print() {
 }
 
 // TODO: NEW
-func (l list) sum() (n float64) {
+func (l list) sum() (n money) {
 	for _, it := range l {
 		n += it.sum()
 	}

@@ -16,7 +16,7 @@ type book struct {
 
 func (b book) print() {
 	// b is a copy of the original `book` value here.
-	fmt.Printf("%-15s: $%.2f \n", b.title, b.price)
+	fmt.Printf("%-15s: $%.2f\n", b.title, b.price)
 }
 
 // ----------------------------------------------------------------------------
@@ -25,12 +25,12 @@ func (b book) print() {
 //
 // func (b book) printBook() {
 // 	// b is a copy of the original `book` value here.
-// 	fmt.Printf("%-15s: $%.2f \n", b.title, b.price)
+// 	fmt.Printf("%-15s: $%.2f\n", b.title, b.price)
 // }
 
 // ----------------------------------------------------------------------------
 // b is a copy of the original `book` value here.
 //
 // func printBook(b book) {
-// 	fmt.Printf("%-15s: $%.2f \n", b.title, b.price)
+// 	fmt.Printf("%-15s: $%.2f\n", b.title, b.price)
 // }

@@ -11,14 +11,14 @@ import "fmt"
 
 type puzzle struct {
 	title string
-	price float64
+	price money
 }
 
 func (p puzzle) print() {
-	fmt.Printf("%-15s: $%.2f \n", p.title, p.price)
+	fmt.Printf("%-15s: %s\n", p.title, p.price.string())
 }
 
 // TODO: NEW
-func (p puzzle) sum() float64 {
+func (p puzzle) sum() money {
 	return p.price
 }

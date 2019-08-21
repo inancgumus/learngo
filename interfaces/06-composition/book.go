@@ -11,15 +11,15 @@ import "fmt"
 
 type book struct {
 	title    string
-	price    float64
+	price    money
 	readTime int
 }
 
 func (b book) print() {
-	fmt.Printf("%-15s: $%.2f \n", b.title, b.price)
+	fmt.Printf("%-15s: %s\n", b.title, b.price.string())
 }
 
 // TODO: NEW
-func (b book) sum() float64 {
+func (b book) sum() money {
 	return b.price
 }

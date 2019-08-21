@@ -11,9 +11,9 @@ import "fmt"
 
 type book struct {
 	title string
-	price float64
+	price money
 }
 
 func (b book) print() {
-	fmt.Printf("%-15s: $%.2f \n", b.title, b.price)
+	fmt.Printf("%-15s: %s\n", b.title, b.price.string())
 }

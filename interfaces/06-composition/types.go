@@ -10,7 +10,7 @@ type printer interface {
 
 // TODO: NEW
 type summer interface {
-	sum() float64
+	sum() money
 }
 
 // TODO: NEW

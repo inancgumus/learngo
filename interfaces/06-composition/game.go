@@ -11,12 +11,12 @@ import "fmt"
 
 type game struct {
 	title    string
-	price    float64
+	price    money
 	playTime int
 }
 
 func (g *game) print() {
-	fmt.Printf("%-15s: $%.2f\n", g.title, g.price)
+	fmt.Printf("%-15s: %s\n", g.title, g.price.string())
 }
 
 // func (g *game) String() string {
@@ -24,10 +24,10 @@ func (g *game) print() {
 // }
 
 func (g *game) discount(ratio float64) {
-	g.price *= (1 - ratio)
+	g.price *= money(1 - ratio)
 }
 
 // TODO: NEW
-func (g *game) sum() float64 {
+func (g *game) sum() money {
 	return g.price
 }

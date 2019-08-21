@@ -14,14 +14,15 @@ func main() {
 		tetris    = game{title: "tetris", price: 5}
 	)
 
-	var items []game
-	items = append(items, minecraft, tetris)
+	var items []*game
+	items = append(items, &minecraft, &tetris)
 
 	// you can attach methods to a compatible type on the fly:
-	my := list([]game{minecraft, tetris})
-
-	// you can call methods even on a nil value
+	// items -> []*game
+	// list  -> []*game
+	my := list(items)
 	// my = nil
 
-	my.print() // or: list.print(items)
+	// you can call methods even on a nil value
+	my.print()
 }
