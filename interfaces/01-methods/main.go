@@ -7,8 +7,6 @@
 
 package main
 
-import "fmt"
-
 func main() {
 	mobydick := book{
 		title: "moby dick",
@@ -24,12 +22,6 @@ func main() {
 		title: "tetris",
 		price: 5,
 	}
-
-	// #4: method expressions
-	// methods are just functions that receive a value of a type.
-	game.print(minecraft) // sends `minecraft` value to `game.print`
-	game.print(tetris)    // sends `tetris` value to `game.print`
-	fmt.Println()
 
 	// #3
 	mobydick.print()  // sends `mobydick` value to `book.print`
