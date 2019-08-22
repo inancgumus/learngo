@@ -17,18 +17,23 @@ import (
 // EXERCISE: Limit the backing array sharing
 //
 //  In this exercise: API means the api package. It's in the
-//  api folder.
+//  api folder. You need to change the code in the `api/api.go`
+//  to solve this exercise.
 //
 //  `Read` function of the api package returns a portion of
-//  a slice. The main function [main()] below uses the
-//  Read function.
+//  its `temps` slice. Below, `main()` saves it to the
+//  `received` slice.
 //
-// `main()` appends to the slice but doing so changes the
-//  backing array of the api package's temps slice as well.
+// `main()` appends to the `received` slice but doing so
+//  also changes the backing array of the `temps` slice.
 //  We don't want that.
 //
-//  Only allow `main()` to change the part of the slice
-//  it receives from the Read function.
+//  Only allow `main()` to change the part of the `temps`
+//  slice that is returned from the `Read()`. It shouldn't
+//  change the rest of the `temps`.
+//
+//  Remember: `received` and `temps` share the same
+//  backing array.
 //
 //
 // NOTE
@@ -41,20 +46,20 @@ import (
 //                           | |
 //                           v v
 //   api.temps     : [5 10 3 1 3 80 90]
-//   main.temps    : [5 10 3 1 3]
-//                           ^ ^ append changes the api package's
-//                               temps slice's backing array.
+//   main.received : [5 10 3 1 3]
+//                           ^ ^ append changes the `temps`
+//                               slice's backing array.
 //
 //
 //
 // EXPECTED
 //
-//   The corrected api package does not allow the `main()` change
-//   the api package's temps slice's backing array.
+//   The corrected api package does not allow the `main()` to
+//   change unreturned portion of the temps slice's backing array.
 //                           |  |
 //                           v  v
 //   api.temps     : [5 10 3 25 45 80 90]
-//   main.temps    : [5 10 3 1 3]
+//   main.received : [5 10 3 1 3]
 //
 // ---------------------------------------------------------
 
@@ -62,12 +67,12 @@ func main() {
 	// DO NOT CHANGE ANYTHING IN THIS CODE.
 
 	// get the first three elements from api.temps
-	slice := api.Read(0, 3)
+	received := api.Read(0, 3)
 
 	// append changes the api package's temps slice's
 	// backing array as well.
-	slice = append(slice, []int{1, 3}...)
+	received = append(received, []int{1, 3}...)
 
 	fmt.Println("api.temps     :", api.All())
-	fmt.Println("main.slice    :", slice)
+	fmt.Println("main.received :", received)
 }

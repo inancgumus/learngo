@@ -9,10 +9,37 @@ import (
 // EXERCISE: Print daily requests
 //
 //  You've got request logs of a web server. The log data
-//  contains 8-hourly totals per each day. Find and print
-//  the total requests per day, as well as the grand total.
+//  contains 8-hourly totals per each day. It is stored
+//  in the `reqs` slice.
+//
+//  Find and print the total requests per day, as well as
+//  the grand total.
 //
 //  See the `reqs` slice and the steps in the code below.
+//
+//
+// RESTRICTION
+//
+//   Your code should work even if you add to or remove the
+//   existing elements from the `reqs` slice.
+//
+//   For example, after solving the exercise, try it with
+//   this new data:
+//
+//     reqs := []int{
+// 	     500, 600, 250,
+// 	     200, 400, 50,
+// 	     900, 800, 600,
+// 	     750, 250, 100,
+// 	     150, 654, 235,
+// 	     320, 534, 765,
+// 	     121, 876, 285,
+// 	     543, 642,
+// 	     // the last element is missing (your code should be able to handle this)
+// 	     // that is why you shouldn't calculate the `size` below manually.
+//     }
+//
+//     The grand total of the new data should be 10525.
 //
 //
 // EXPECTED OUTPUT
@@ -25,9 +52,6 @@ import (
 // ---------------------------------------------------------
 
 func main() {
-	// ================================================
-	// Don't touch this code.
-
 	// There are 3 request totals per day (8-hourly)
 	const N = 3
 
@@ -39,24 +63,19 @@ func main() {
 		750, 250, 100, // 4th day: 1100 requests
 		// grand total: 5400 requests
 	}
+
 	// ================================================
+	// #1: Make a new slice with the exact size needed.
 
 	_ = reqs // remove this when you start
 
-	// ================================================
-	// Allocate a slice efficiently with the exact size needed.
-	//
-	// Find the `size` automatically using the `reqs` slice.
-	// Do not type it manually.
-	//
-	// Change this code:
 	size := 0 // you need to find the size.
 	daily := make([][]int, 0, size)
-	//
+
 	// ================================================
 
 	// ================================================
-	// Group the `reqs` per day into the slice: `daily`.
+	// #2: Group the `reqs` per day into the slice: `daily`.
 	//
 	// So the daily will be:
 	// [
@@ -65,37 +84,19 @@ func main() {
 	//  [900, 800, 600]
 	//  [750, 250, 100]
 	// ]
-	//
-	// Change this code:
-	//
-	// for N < len(reqs) {
-	//   append the daily requests to `daily` per 8-hour groups
-	// }
-	// ================================================
+
+	_ = daily // remove this when you start
 
 	// ================================================
-	// Don't touch the following code:
+	// #3: Print the results
 
-	// Print the header
+	// Print a header
 	fmt.Printf("%-10s%-10s\n", "Day", "Requests")
 	fmt.Println(strings.Repeat("=", 20))
 
-	// Print the data per day along with the totals
-	var grand int
-
-	for i, day := range daily {
-		var sum int
-
-		for _, req := range day {
-			sum += req
-			fmt.Printf("%-10d%-10d\n", i+1, req)
-		}
-
-		fmt.Printf("%9s %-10d\n\n", "TOTAL:", sum)
-
-		grand += sum
-	}
-	fmt.Printf("%9s %-10d\n", "GRAND:", grand)
+	// Loop over the daily slice and its inner slices to find
+	// the daily totals and the grand total.
+	// ...
 
 	// ================================================
 }

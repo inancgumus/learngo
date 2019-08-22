@@ -37,50 +37,52 @@ import (
 //    memory usage.
 //
 //    After that, it calls `api.Read()`. `api.Read()` returns
-//    a slice with 10 million of elements. But you only need
+//    a slice with 10 millions of elements. But you only need
 //    the last 10 elements of the returned slice.
 //
 //
-// WHAT YOU NEED TO DO
+//  WHAT YOU NEED TO DO
 //
 //    You only need to change the code in `main()`. Please
 //    do not touch the code in `api/api.go`.
 //
-
-// CURRENT OUTPUT
 //
-//   > Memory Usage: 113 KB
+//  CURRENT OUTPUT
 //
-//   Last 10 elements: [...]
+//    > Memory Usage: 113 KB
 //
-//   > Memory Usage: 65651 KB
+//    Last 10 elements: [...]
 //
-//     + Before `api.Read()` call: It uses 113 KB of memory.
+//    > Memory Usage: 65651 KB
 //
-//     + After `api.Read()` call : It uses  65 MB of memory.
+//      + Before `api.Read()` call: It uses 113 KB of memory.
 //
-//     + This means that, `main()` never releases the memory.
-//       This is the leak.
+//      + After `api.Read()` call : It uses  65 MB of memory.
 //
-//     + Your goal is to release the unused memory.
+//      + This means that, `main()` never releases the memory.
+//        This is the leak.
 //
-//
-// EXPECTED OUTPUT
-//
-//   > Memory Usage: 116 KB
-//
-//   Last 10 elements: [...]
-//
-//   > Memory Usage: 118 KB
-//
-//     + In the expected output, `main()` releases the memory.
-//
-//       It no longer uses 65 MB of memory. Instead, it only
-//       uses 118 KB of memory. That's why the second
-//       `api.Report()` call reports only 118 KB.
+//      + Your goal is to release the unused memory. Remember,
+//        you only need 10 elements but in the current code
+//        below you have a slice with 10 millions of elements.
 //
 //
-// ADDITIONAL NOTE
+//  EXPECTED OUTPUT
+//
+//    > Memory Usage: 116 KB
+//
+//    Last 10 elements: [...]
+//
+//    > Memory Usage: 118 KB
+//
+//      + In the expected output, `main()` releases the memory.
+//
+//        It no longer uses 65 MB of memory. Instead, it only
+//        uses 118 KB of memory. That's why the second
+//        `api.Report()` call reports 118 KB.
+//
+//
+//  ADDITIONAL NOTE
 //
 //    Memory leak means: Your program is using unnecessary
 //    computer memory. It doesn't release memory that is
@@ -88,23 +90,23 @@ import (
 //    See this: https://en.wikipedia.org/wiki/Memory_leak
 //
 //
-// HINTS
+//  HINTS
 //
-//   Only read this if you get stuck.
+//    Only read this if you get stuck.
 //
-//   + `millions` slice's backing array uses 65 MB of memory.
+//    + `millions` slice's backing array uses 65 MB of memory.
 //
-//   + Make a new slice with 10 elements, and copy the last
-//     10 elements of the `millions` slice to it. This will
-//     create a new backing array for the new slice only
-//     with 10 elements.
+//    + Make a new slice with 10 elements, and copy the last
+//      10 elements of the `millions` slice to it. This will
+//      create a new backing array for the new slice only
+//      with 10 elements.
 //
-//     Then overwrite the `millions` slice by simply
-//     assigning `last10` slice to it.
+//      Then overwrite the `millions` slice by simply
+//      assigning `last10` slice to it.
 //
-//     Remember: slice = pointer to a backing array.
-//     If you overwrite the slice, it will lose that
-//     pointer. So Go can collect the unused memory.
+//      Remember: slice ~= pointer to a backing array.
+//      If you overwrite the slice, it will lose that
+//      pointer. So Go can collect the unused memory.
 //
 // ---------------------------------------------------------
 

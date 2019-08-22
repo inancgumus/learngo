@@ -18,11 +18,24 @@ func main() {
 
 	// DAILY REQUESTS DATA (PER 8-HOUR)
 	reqs := []int{
-		500, 600, 250, // 1st day
-		200, 400, 50, // 2nd day
-		900, 800, 600, // 3rd day
-		750, 250, 100, // 4th day
+		500, 600, 250, // 1st day: 1350 requests
+		200, 400, 50, // 2nd day: 650 requests
+		900, 800, 600, // 3rd day: 2300 requests
+		750, 250, 100, // 4th day: 1100 requests
+		// grand total: 5400 requests
 	}
+
+	// ALSO TRY IT WITH THIS DATA:
+	// reqs = []int{
+	// 	500, 600, 250,
+	// 	200, 400, 50,
+	// 	900, 800, 600,
+	// 	750, 250, 100,
+	// 	150, 654, 235,
+	// 	320, 534, 765,
+	// 	121, 876, 285,
+	// 	543, 642,
+	// }
 
 	// ================================================
 	// Allocate a slice efficiently with the exact size needed.
@@ -54,11 +67,15 @@ func main() {
 		daily = append(daily, reqs[:N]) // append the daily requests
 		reqs = reqs[N:]                 // move the slice pointer for the next day
 	}
+
+	// add the residual data
+	if len(reqs) > 0 {
+		daily = append(daily, reqs)
+	}
+
 	// ================================================
 
 	// ================================================
-	// Don't touch the following code:
-
 	// Print the header
 	fmt.Printf("%-10s%-10s\n", "Day", "Requests")
 	fmt.Println(strings.Repeat("=", 20))

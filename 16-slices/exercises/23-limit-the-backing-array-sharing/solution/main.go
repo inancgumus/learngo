@@ -14,10 +14,10 @@ import (
 )
 
 func main() {
-	slice := api.Read(0, 3)
+	received := api.Read(0, 3)
 
-	slice = append(slice, []int{1, 3}...)
+	received = append(received, []int{1, 3}...)
 
 	fmt.Println("api.temps     :", api.All())
-	fmt.Println("main.slice    :", slice)
+	fmt.Println("main.received :", received)
 }
