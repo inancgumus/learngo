@@ -6,9 +6,7 @@ import (
 	"runtime"
 )
 
-// DO NOT TOUCH THE FOLLOWING CODE
-// THIS IS THE IMAGINARY API CODE
-// YOU CANNOT CONTROL IT!
+// DO NOT TOUCH THIS FILE BUT YOU CAN READ IT
 
 // Read returns a huge slice (allocates ~65 MB of memory)
 func Read() []int {

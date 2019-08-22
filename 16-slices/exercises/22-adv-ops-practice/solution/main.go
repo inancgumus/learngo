@@ -12,10 +12,6 @@ import (
 )
 
 func main() {
-	s.PrintBacking = true
-	s.MaxPerLine = 10
-	s.Width = 60
-
 	// ########################################################
 	//
 	// #1: Create a string slice: `names` with a length and
@@ -114,4 +110,16 @@ func main() {
 	clone[2] = "elder"
 
 	s.Show("6th step", clone, sliced)
+}
+
+//
+// Don't mind about this function.
+//
+// For printing the slices: You can either use the
+// prettyslice package or `fmt.Printf`.
+//
+func init() {
+	s.PrintBacking = true // prints the backing array
+	s.MaxPerLine = 10     // prints 10 slice elements per line
+	s.Width = 60          // prints 60 character per line
 }

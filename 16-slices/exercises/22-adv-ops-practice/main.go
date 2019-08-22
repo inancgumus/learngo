@@ -16,18 +16,6 @@ import (
 // ---------------------------------------------------------
 
 func main() {
-	//
-	// Use the prettyslice package for printing the slices,
-	// or do it with your own Printf that matches the output
-	// of the prettyslice package.
-	//
-	// This allows you to see the backing array of the slices.
-	s.PrintBacking = true
-	// Shows 10 slice elements per line
-	s.MaxPerLine = 10
-	// Prints 60 character per line
-	s.Width = 60
-
 	// ########################################################
 	//
 	// #1: Create a string slice: `names` with a length and
@@ -126,4 +114,16 @@ func main() {
 	//
 	// ...
 	// s.Show("6th step", clone, sliced)
+}
+
+//
+// Don't mind about this function.
+//
+// For printing the slices: You can either use the
+// prettyslice package or `fmt.Printf`.
+//
+func init() {
+	s.PrintBacking = true // prints the backing array
+	s.MaxPerLine = 10     // prints 10 slice elements per line
+	s.Width = 60          // prints 60 character per line
 }

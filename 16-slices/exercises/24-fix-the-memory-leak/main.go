@@ -17,43 +17,94 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Fix the memory leak
 //
-//  WARNING! This is a very difficult exercise. You need to
-//  do some research on your own to solve it. Please don't
-//  get discouraged if you can't solve it yet.
+//  WARNING
 //
-//  Imagine that you receive millions of temperature data
-//  points but you only need the last 10 data points
-//  (temperatures).
-//
-//  Problem: There is a memory leak in your program.
-//  Please find the leak and fix it.
-//
-//  Memory leak means: Your program uses computer memory
-//  unnecessarily. See this: https://en.wikipedia.org/wiki/Memory_leak
+//    This is a very difficult exercise. You need to
+//    do some research on your own to solve it. Please don't
+//    get discouraged if you can't solve it yet.
 //
 //
+//  GOAL
+//
+//    In this exercise, your goal is to reduce the memory
+//    usage. To do that, you need to find and fix the memory
+//    leak within `main()`.
+//
+//
+//  PROBLEM
+//
+//    `main()` calls `api.Report()`. It reports the current
+//    memory usage.
+//
+//    After that, it calls `api.Read()`. `api.Read()` returns
+//    a slice with 10 million of elements. But you only need
+//    the last 10 elements of the returned slice.
+//
+//
+// WHAT YOU NEED TO DO
+//
+//    You only need to change the code in `main()`. Please
+//    do not touch the code in `api/api.go`.
+//
+
 // CURRENT OUTPUT
 //
 //   > Memory Usage: 113 KB
+//
+//   Last 10 elements: [...]
+//
 //   > Memory Usage: 65651 KB
+//
+//     + Before `api.Read()` call: It uses 113 KB of memory.
+//
+//     + After `api.Read()` call : It uses  65 MB of memory.
+//
+//     + This means that, `main()` never releases the memory.
+//       This is the leak.
+//
+//     + Your goal is to release the unused memory.
 //
 //
 // EXPECTED OUTPUT
 //
 //   > Memory Usage: 116 KB
+//
+//   Last 10 elements: [...]
+//
 //   > Memory Usage: 118 KB
 //
+//     + In the expected output, `main()` releases the memory.
 //
-// EXPECTED OUTPUT EXPLANATION
+//       It no longer uses 65 MB of memory. Instead, it only
+//       uses 118 KB of memory. That's why the second
+//       `api.Report()` call reports only 118 KB.
 //
-//   In the current program, because of the memory leak,
-//   the difference is huge: about ~60 MB. Run the program and,
-//   see it yourself.
 //
-//   Your goal is reducing the memory usage.
+// ADDITIONAL NOTE
 //
-//   See the code in api/api.go to see how it allocates
-//   a huge memory.
+//    Memory leak means: Your program is using unnecessary
+//    computer memory. It doesn't release memory that is
+//    no longer needed.
+//    See this: https://en.wikipedia.org/wiki/Memory_leak
+//
+//
+// HINTS
+//
+//   Only read this if you get stuck.
+//
+//   + `millions` slice's backing array uses 65 MB of memory.
+//
+//   + Make a new slice with 10 elements, and copy the last
+//     10 elements of the `millions` slice to it. This will
+//     create a new backing array for the new slice only
+//     with 10 elements.
+//
+//     Then overwrite the `millions` slice by simply
+//     assigning `last10` slice to it.
+//
+//     Remember: slice = pointer to a backing array.
+//     If you overwrite the slice, it will lose that
+//     pointer. So Go can collect the unused memory.
 //
 // ---------------------------------------------------------
 
@@ -61,20 +112,22 @@ func main() {
 	// reports the initial memory usage
 	api.Report()
 
-	// reads 65 MB of temperature data into memory!
-	temps := api.Read()
+	// returns a slice with 10 million elements.
+	// it allocates 65 MB of memory space.
+	millions := api.Read()
 
 	// -----------------------------------------------------
-	// ✪ ONLY ADD YOUR CODE INSIDE THIS BOX ✪
-	//
+	// ✪ ONLY CHANGE THE CODE IN THIS AREA ✪
 
-	//
-	// ✪ ONLY ADD YOUR CODE INSIDE THIS BOX ✪
+	last10 := millions[len(millions)-10:]
+
+	fmt.Printf("\nLast 10 elements: %d\n\n", last10)
+
+	// ✪ ONLY CHANGE THE CODE IN THIS AREA ✪
 	// -----------------------------------------------------
 
-	// dont touch this code.
 	api.Report()
 
-	// don't worry about this code yet.
-	fmt.Fprintln(ioutil.Discard, temps[0])
+	// don't worry about this code.
+	fmt.Fprintln(ioutil.Discard, millions[0])
 }
