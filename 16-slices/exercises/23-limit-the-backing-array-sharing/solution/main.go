@@ -14,9 +14,10 @@ import (
 )
 
 func main() {
-	temps := api.Read(0, 3)
-	temps = append(temps, []int{1, 3}...)
+	slice := api.Read(0, 3)
+
+	slice = append(slice, []int{1, 3}...)
 
 	fmt.Println("api.temps     :", api.All())
-	fmt.Println("main.temps    :", temps)
+	fmt.Println("main.slice    :", slice)
 }
