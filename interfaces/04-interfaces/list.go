@@ -22,6 +22,8 @@ func (l list) print() {
 	}
 
 	for _, it := range l {
+		// fmt.Printf("(%-10T) --> ", it)
+
 		it.print()
 
 		// you cannot access to the discount method of the game type.
@@ -29,3 +31,18 @@ func (l list) print() {
 		// it.discount(.5)
 	}
 }
+
+// PREVIOUS CODE:
+
+// type list []*game
+
+// func (l list) print() {
+// 	if len(l) == 0 {
+// 		fmt.Println("Sorry. Our store is closed. We're waiting for the delivery 🚚.")
+// 		return
+// 	}
+
+// 	for _, it := range l {
+// 		it.print()
+// 	}
+// }
