@@ -9,11 +9,15 @@ package main
 
 import "fmt"
 
-type puzzle struct {
+type toy struct {
 	title string
 	price money
 }
 
-func (p puzzle) print() {
-	fmt.Printf("%-15s: %s\n", p.title, p.price.string())
+func (t *toy) print() {
+	fmt.Printf("%-15s: %s\n", t.title, t.price.string())
+}
+
+func (t *toy) discount(ratio float64) {
+	t.price *= money(1 - ratio)
 }

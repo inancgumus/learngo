@@ -9,11 +9,8 @@ package main
 
 import "fmt"
 
-type puzzle struct {
-	title string
-	price money
-}
+type money float64
 
-func (p puzzle) print() {
-	fmt.Printf("%-15s: %s\n", p.title, p.price.string())
+func (m money) string() string {
+	return fmt.Sprintf("$%.2f", m)
 }
