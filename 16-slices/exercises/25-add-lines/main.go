@@ -16,11 +16,14 @@ import (
 //  So, create a new slice and copy every words into it. Lastly,
 //  after each sentence, add a newline character ('\n').
 //
-//  ORIGINAL SLICE:
-//  [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday]
 //
-//  EXPECTED SLICE (NEW):
-//  [yesterday all my troubles seemed so far \n away now it looks as though they are here to stay \n oh i believe in yesterday \n]
+// ORIGINAL SLICE:
+//
+//   [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday]
+//
+// EXPECTED SLICE (NEW):
+//
+//   [yesterday all my troubles seemed so far \n away now it looks as though they are here to stay \n oh i believe in yesterday \n]
 //
 //
 // CURRENT OUTPUT

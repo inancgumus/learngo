@@ -33,10 +33,10 @@ import (
 //
 //  PROBLEM
 //
-//    `main()` calls `api.Report()`. It reports the current
+//    `main()` calls `api.Report()` that reports the current
 //    memory usage.
 //
-//    After that, it calls `api.Read()`. `api.Read()` returns
+//    After that, `main()` calls `api.Read()` that returns
 //    a slice with 10 millions of elements. But you only need
 //    the last 10 elements of the returned slice.
 //
@@ -87,26 +87,14 @@ import (
 //    Memory leak means: Your program is using unnecessary
 //    computer memory. It doesn't release memory that is
 //    no longer needed.
-//    See this: https://en.wikipedia.org/wiki/Memory_leak
+//
+//    See this for more information:
+//    https://en.wikipedia.org/wiki/Memory_leak
 //
 //
 //  HINTS
 //
-//    Only read this if you get stuck.
-//
-//    + `millions` slice's backing array uses 65 MB of memory.
-//
-//    + Make a new slice with 10 elements, and copy the last
-//      10 elements of the `millions` slice to it. This will
-//      create a new backing array for the new slice only
-//      with 10 elements.
-//
-//      Then overwrite the `millions` slice by simply
-//      assigning `last10` slice to it.
-//
-//      Remember: slice ~= pointer to a backing array.
-//      If you overwrite the slice, it will lose that
-//      pointer. So Go can collect the unused memory.
+//    Check out `hints.md` file if you get stuck.
 //
 // ---------------------------------------------------------
 

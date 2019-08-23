@@ -18,28 +18,32 @@ import (
 //  See the `reqs` slice and the steps in the code below.
 //
 //
-// RESTRICTION
+// RESTRICTIONS
 //
-//   Your code should work even if you add to or remove the
-//   existing elements from the `reqs` slice.
+//   1. You need to produce the daily slice, don't just loop
+//      and print the element totals directly. The goal is
+//      gaining more experience in slice operations.
 //
-//   For example, after solving the exercise, try it with
-//   this new data:
+//   2. Your code should work even if you add to or remove the
+//      existing elements from the `reqs` slice.
 //
-//     reqs := []int{
-// 	     500, 600, 250,
-// 	     200, 400, 50,
-// 	     900, 800, 600,
-// 	     750, 250, 100,
-// 	     150, 654, 235,
-// 	     320, 534, 765,
-// 	     121, 876, 285,
-// 	     543, 642,
-// 	     // the last element is missing (your code should be able to handle this)
-// 	     // that is why you shouldn't calculate the `size` below manually.
-//     }
+//      For example, after solving the exercise, try it with
+//      this new data:
 //
-//     The grand total of the new data should be 10525.
+//      reqs := []int{
+// 	      500, 600, 250,
+// 	      200, 400, 50,
+// 	      900, 800, 600,
+// 	      750, 250, 100,
+// 	      150, 654, 235,
+// 	      320, 534, 765,
+// 	      121, 876, 285,
+// 	      543, 642,
+// 	      // the last element is missing (your code should be able to handle this)
+// 	      // that is why you shouldn't calculate the `size` below manually.
+//      }
+//
+//      The grand total of the new data should be 10525.
 //
 //
 // EXPECTED OUTPUT

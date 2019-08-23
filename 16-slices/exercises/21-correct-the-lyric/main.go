@@ -51,18 +51,7 @@ import (
 //
 // HINTS
 //
-//   Only look at this if you get stuck.
-//
-//   You can use the following slice operations to solve the exercise.
-//
-//   + Prepends "value" to the slice:
-//     slice = append([]string{"value"}, slice...)
-//
-//   + Appends some part (N to M) of the same slice to itself:
-//     slice = append(slice, slice[N:M]...)
-//
-//   + Copies the last part of the slice starting from M to the first part of the slice until N:
-//     slice = append(slice[:N], slice[M:]...)
+//   If you get stuck, check out the hints.md file.
 //
 // ---------------------------------------------------------
 

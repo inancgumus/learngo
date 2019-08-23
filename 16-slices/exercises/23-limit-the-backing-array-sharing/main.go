@@ -16,29 +16,42 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Limit the backing array sharing
 //
-//  In this exercise: API means the api package. It's in the
-//  api folder. You need to change the code in the `api/api.go`
-//  to solve this exercise.
+//  GOAL
 //
-//  `Read` function of the api package returns a portion of
-//  its `temps` slice. Below, `main()` saves it to the
-//  `received` slice.
-//
-// `main()` appends to the `received` slice but doing so
-//  also changes the backing array of the `temps` slice.
-//  We don't want that.
-//
-//  Only allow `main()` to change the part of the `temps`
-//  slice that is returned from the `Read()`. It shouldn't
-//  change the rest of the `temps`.
-//
-//  Remember: `received` and `temps` share the same
-//  backing array.
+//    Limit the capacity of the slice that is returned
+//    from the `Read` function. Read on for more details.
 //
 //
-// NOTE
+//  BEFORE YOU START
 //
-//   You need to import the api package.
+//    In this exercise: API means the api package. It's in the
+//    api folder. You need to change the code in the `api/api.go`
+//    to solve this exercise, and you need import the api
+//    package.
+//
+//
+//  WHAT IS THE PROBLEM?
+//
+//    `Read` function of the api package returns a portion of
+//    its `temps` slice. Below, `main()` saves it to the
+//    `received` slice.
+//
+//    `main()` appends to the `received` slice but doing so
+//    also changes the backing array of the `temps` slice.
+//    We don't want that.
+//
+//    `main()` can change the part of the `temps` slice
+//    that is returned from the `Read()`, but it shouldn't
+//    be able to change the elements in the rest of the
+//    `temps`.
+//
+//
+//  WHAT YOU NEED TO DO?
+//
+//    So you need to limit the capacity of the returned
+//    slice somehow. Remember: `received` and `temps`
+//    share the same backing array. So, appending to it
+//    can overwrite the same backing array.
 //
 //
 // CURRENT
