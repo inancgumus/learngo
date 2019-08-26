@@ -9,18 +9,11 @@ package main
 
 import (
 	"log"
-	// "fmt"
 	"os"
 )
 
 func main() {
-	an := newAnalysis()
-	// an.filterBy(notUsing(domainExtFilter("io", "com")))
-	// an.filterBy(domainFilter("org"))
-	// an.groupBy(domainGrouper)
-
-	src := newTextLog(os.Stdin)
-	dst := newTextReport()
+	// newGrouper(domainGrouper)
 
 	// s := &chartReport{
 	//  title:  "visits per domain",
@@ -28,7 +21,17 @@ func main() {
 	//  height: 800,
 	// }
 
-	pipe := newPipeline(src, dst, an)
+	// pipe, err := fromFile("../logs/log.jsonl")
+	// if err != nil {
+	// 	log.Fatalln(err)
+	// }
+
+	pipe := newPipeline(
+		newTextLog(os.Stdin),
+		newTextReport(),
+		filterBy(domainExtFilter("com", "io")),
+		groupBy(domainGrouper),
+	)
 
 	if err := pipe.run(); err != nil {
 		log.Fatalln(err)

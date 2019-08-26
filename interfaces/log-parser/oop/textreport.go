@@ -27,7 +27,7 @@ func newTextReport() *textReport {
 	return new(textReport)
 }
 
-func (s *textReport) report(results iterator) error {
+func (s *textReport) digest(results iterator) error {
 	w := tabwriter.NewWriter(os.Stdout, minWidth, tabWidth, padding, ' ', flags)
 
 	write := fmt.Fprintf

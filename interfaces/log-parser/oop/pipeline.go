@@ -8,61 +8,71 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"strings"
 )
 
 type resultFn func(result)
 
-type iterator interface {
-	each(resultFn) error
-}
+type iterator interface{ each(resultFn) error }
+type digester interface{ digest(iterator) error }
 
-type transformer interface {
-	transform(result)
+type transform interface {
+	digester
 	iterator
 }
 
-type reporter interface {
-	report(iterator) error
-}
-
 type pipeline struct {
-	src  iterator
-	dst  reporter
-	tran transformer
+	src   iterator
+	trans []transform
+	dst   digester
 }
 
-func newPipeline(source iterator, r reporter, t transformer) *pipeline {
+func (p *pipeline) run() error {
+	defer func() {
+		n := p.src.(*logCount).count()
+		fmt.Printf("%d records processed.\n", n)
+	}()
+
+	last := p.src
+
+	for _, t := range p.trans {
+		if err := t.digest(last); err != nil {
+			return err
+		}
+		last = t
+	}
+
+	return p.dst.digest(last)
+}
+
+func newPipeline(src iterator, dst digester, t ...transform) *pipeline {
 	return &pipeline{
-		src:  source,
-		dst:  r,
-		tran: t,
+		src:   &logCount{iterator: src},
+		dst:   dst,
+		trans: t,
 	}
 }
 
 // fromFile generates a default report
-func fromFile(path string) (err error) {
+func fromFile(path string) (*pipeline, error) {
 	f, err := os.Open(path)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	var src iterator
 	switch {
 	case strings.HasSuffix(path, ".txt"):
 		src = newTextLog(f)
-	case strings.HasSuffix(path, ".json"):
+	case strings.HasSuffix(path, ".jsonl"):
 		src = newJSONLog(f)
 	}
 
-	p := newPipeline(src, newTextReport(), newAnalysis())
-	return p.run()
-}
-
-func (p *pipeline) run() error {
-	if err := p.src.each(p.tran.transform); err != nil {
-		return err
-	}
-	return p.dst.report(p.tran)
+	return newPipeline(
+		src,
+		newTextReport(),
+		groupBy(domainGrouper),
+	), nil
 }

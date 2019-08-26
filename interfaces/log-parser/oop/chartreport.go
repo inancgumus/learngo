@@ -8,7 +8,7 @@ package main
 // 	width, height int
 // }
 
-// func (s *chartReport) report(results iterator) error {
+// func (s *chartReport) digest(results iterator) error {
 // 	w := os.Stdout
 
 // 	donut := chart.DonutChart{

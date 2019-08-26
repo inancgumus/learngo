@@ -8,10 +8,9 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
-	"fmt"
 	"io"
-	"io/ioutil"
 )
 
 type jsonLog struct {
@@ -25,37 +24,20 @@ func newJSONLog(r io.Reader) *jsonLog {
 func (j *jsonLog) each(yield resultFn) error {
 	defer readClose(j.reader)
 
-	bytes, err := ioutil.ReadAll(j.reader)
-	if err != nil {
-		return err
-	}
+	dec := json.NewDecoder(bufio.NewReader(j.reader))
 
-	return extractJSON(bytes, yield)
-}
+	for {
+		var r result
 
-func extractJSON(bytes []byte, yield resultFn) error {
-	var rs []struct {
-		Domain  string
-		Page    string
-		Visits  int
-		Uniques int
-	}
-
-	if err := json.Unmarshal(bytes, &rs); err != nil {
-		if serr, ok := err.(*json.SyntaxError); ok {
-			return fmt.Errorf("%v %q", serr, bytes[:serr.Offset])
+		err := dec.Decode(&r)
+		if err == io.EOF {
+			break
 		}
-		return err
-	}
+		if err != nil {
+			return err
+		}
 
-	for _, r := range rs {
-		yield(result{
-			domain:  r.Domain,
-			page:    r.Page,
-			visits:  r.Visits,
-			uniques: r.Uniques,
-		})
+		yield(r)
 	}
-
 	return nil
 }
