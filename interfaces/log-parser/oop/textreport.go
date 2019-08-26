@@ -21,13 +21,13 @@ const (
 	flags    = 0
 )
 
-type textSummary struct{}
+type textReport struct{}
 
-func newTextSummary() *textSummary {
-	return new(textSummary)
+func newTextReport() *textReport {
+	return new(textReport)
 }
 
-func (s *textSummary) summarize(results iterator) error {
+func (s *textReport) report(results iterator) error {
 	w := tabwriter.NewWriter(os.Stdout, minWidth, tabWidth, padding, ' ', flags)
 
 	write := fmt.Fprintf

@@ -14,20 +14,23 @@ import (
 )
 
 func main() {
-	a := newAnalysis()
-	// a.filterBy(notUsing(domainExtFilter("io", "com")))
-	// a.groupBy(domainGrouper)
+	an := newAnalysis()
+	// an.filterBy(notUsing(domainExtFilter("io", "com")))
+	// an.filterBy(domainFilter("org"))
+	// an.groupBy(domainGrouper)
 
-	p := newTextParser(os.Stdin)
-	s := newTextSummary()
+	src := newTextLog(os.Stdin)
+	dst := newTextReport()
 
-	// s := &chartSummary{
-  	//  title:  "visits per domain",
-  	//  width:  1920,
-  	//  height: 800,
-  	// }
+	// s := &chartReport{
+	//  title:  "visits per domain",
+	//  width:  1920,
+	//  height: 800,
+	// }
 
-	if err := report(p, a, s); err != nil {
+	pipe := newPipeline(src, dst, an)
+
+	if err := pipe.run(); err != nil {
 		log.Fatalln(err)
 	}
 

@@ -15,36 +15,36 @@ import (
 	"strings"
 )
 
-type textParser struct {
-	r io.Reader
+type textLog struct {
+	reader io.Reader
 }
 
-func newTextParser(r io.Reader) *textParser {
-	return &textParser{r: r}
+func newTextLog(r io.Reader) *textLog {
+	return &textLog{reader: r}
 }
 
-func (p *textParser) parse(handle resultFn) error {
-	defer readClose(p.r)
+func (p *textLog) each(yield resultFn) error {
+	defer readClose(p.reader)
 
 	var (
 		l  = 1
-		in = bufio.NewScanner(p.r)
+		in = bufio.NewScanner(p.reader)
 	)
 
 	for in.Scan() {
-		r, err := parseFields(in.Text())
+		r, err := extractFields(in.Text())
 		if err != nil {
 			return fmt.Errorf("line %d: %v", l, err)
 		}
 
-		handle(r)
+		yield(r)
 		l++
 	}
 
 	return in.Err()
 }
 
-func parseFields(s string) (r result, err error) {
+func extractFields(s string) (r result, err error) {
 	fields := strings.Fields(s)
 	if len(fields) != fieldsLength {
 		return r, fmt.Errorf("wrong number of fields %q", fields)

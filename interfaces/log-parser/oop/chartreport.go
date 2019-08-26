@@ -10,12 +10,12 @@ import (
 // You need to run:
 // go get -u github.com/wcharczuk/go-chart
 
-type chartSummary struct {
+type chartReport struct {
 	title         string
 	width, height int
 }
 
-func (s *chartSummary) summarize(results iterator) error {
+func (s *chartReport) report(results iterator) error {
 	w := os.Stdout
 
 	donut := c.DonutChart{

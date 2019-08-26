@@ -1,4 +1,4 @@
-// For more tutorials: https://bp.learngoprogramming.com
+// For more tutorials: https://bj.learngoprogramming.com
 //
 // Copyright © 2018 Inanc Gumus
 // Learn Go Programming Course
@@ -14,26 +14,26 @@ import (
 	"io/ioutil"
 )
 
-type jsonParser struct {
-	r io.Reader
+type jsonLog struct {
+	reader io.Reader
 }
 
-func newJSONParser(r io.Reader) *jsonParser {
-	return &jsonParser{r: r}
+func newJSONLog(r io.Reader) *jsonLog {
+	return &jsonLog{reader: r}
 }
 
-func (p *jsonParser) parse(handle resultFn) error {
-	defer readClose(p.r)
+func (j *jsonLog) each(yield resultFn) error {
+	defer readClose(j.reader)
 
-	bytes, err := ioutil.ReadAll(p.r)
+	bytes, err := ioutil.ReadAll(j.reader)
 	if err != nil {
 		return err
 	}
 
-	return parseJSON(bytes, handle)
+	return extractJSON(bytes, yield)
 }
 
-func parseJSON(bytes []byte, handle resultFn) error {
+func extractJSON(bytes []byte, yield resultFn) error {
 	var rs []struct {
 		Domain  string
 		Page    string
@@ -49,7 +49,7 @@ func parseJSON(bytes []byte, handle resultFn) error {
 	}
 
 	for _, r := range rs {
-		handle(result{
+		yield(result{
 			domain:  r.Domain,
 			page:    r.Page,
 			visits:  r.Visits,

@@ -10,8 +10,8 @@ package main
 import "sort"
 
 type analysis struct {
-	sum      map[string]result // metrics per domain
-	keys     []string          // unique keys
+	sum      map[string]result // metrics per group key
+	keys     []string          // unique group keys
 	groupKey groupFunc
 	filter   filterFunc
 }
@@ -24,20 +24,8 @@ func newAnalysis() *analysis {
 	}
 }
 
-func (a *analysis) groupBy(g groupFunc) {
-	if g != nil {
-		a.groupKey = g
-	}
-}
-
-func (a *analysis) filterBy(f filterFunc) {
-	if f != nil {
-		a.filter = f
-	}
-}
-
-// analyse the given result
-func (a *analysis) analyse(r result) {
+// transform the result
+func (a *analysis) transform(r result) {
 	if !a.filter(r) {
 		return
 	}
@@ -50,11 +38,25 @@ func (a *analysis) analyse(r result) {
 	a.sum[key] = r.add(a.sum[key])
 }
 
-// each sends an analysis result to `handle`
-func (a *analysis) each(handle resultFn) {
+// each yields an analysis result
+func (a *analysis) each(yield resultFn) error {
 	sort.Strings(a.keys)
 
-	for _, domain := range a.keys {
-		handle(a.sum[domain])
+	for _, key := range a.keys {
+		yield(a.sum[key])
+	}
+
+	return nil
+}
+
+func (a *analysis) groupBy(g groupFunc) {
+	if g != nil {
+		a.groupKey = g
+	}
+}
+
+func (a *analysis) filterBy(f filterFunc) {
+	if f != nil {
+		a.filter = f
 	}
 }
