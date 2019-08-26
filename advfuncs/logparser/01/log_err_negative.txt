@@ -1,0 +1,16 @@
+learngoprogramming.com 10
+learngoprogramming.com 15
+learngoprogramming.com 10
+learngoprogramming.com 20
+learngoprogramming.com 5
+golang.org 40
+golang.org 20
+golang.org -50
+golang.org 15
+blog.golang.org 60
+blog.golang.org 30
+blog.golang.org 20
+blog.golang.org 65
+blog.golang.org 15
+inanc.io 30
+inanc.io 70
