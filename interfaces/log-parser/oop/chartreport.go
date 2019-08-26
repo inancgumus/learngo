@@ -4,7 +4,7 @@ import (
 	"os"
 	"strconv"
 
-	c "github.com/wcharczuk/go-chart"
+	"github.com/wcharczuk/go-chart"
 )
 
 // You need to run:
@@ -18,22 +18,22 @@ type chartReport struct {
 func (s *chartReport) report(results iterator) error {
 	w := os.Stdout
 
-	donut := c.DonutChart{
+	donut := chart.DonutChart{
 		Title: s.title,
-		TitleStyle: c.Style{
+		TitleStyle: chart.Style{
 			FontSize:  35,
 			Show:      true,
-			FontColor: c.ColorAlternateGreen,
+			FontColor: chart.ColorAlternateGreen,
 		},
 		Width:  s.width,
 		Height: s.height,
 	}
 
 	results.each(func(r result) {
-		v := c.Value{
+		v := chart.Value{
 			Label: r.domain + r.page + ": " + strconv.Itoa(r.visits),
 			Value: float64(r.visits),
-			Style: c.Style{
+			Style: chart.Style{
 				FontSize: 14,
 			},
 		}
@@ -41,5 +41,5 @@ func (s *chartReport) report(results iterator) error {
 		donut.Values = append(donut.Values, v)
 	})
 
-	return donut.Render(c.SVG, w)
+	return donut.Render(chart.SVG, w)
 }
