@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/inancgumus/learngo/28-methods/logparser-testing/report"
+	"github.com/inancgumus/learngo/interfaces/log-parser/testing/report"
 )
 
 func newParser(lines string) *report.Parser {

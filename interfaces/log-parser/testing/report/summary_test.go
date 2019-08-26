@@ -3,7 +3,7 @@ package report_test
 import (
 	"testing"
 
-	"github.com/inancgumus/learngo/28-methods/logparser-testing/report"
+	"github.com/inancgumus/learngo/interfaces/log-parser/testing/report"
 )
 
 func TestSummaryTotal(t *testing.T) {
