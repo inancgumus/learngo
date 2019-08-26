@@ -1,46 +1,38 @@
 package main
 
-import (
-	"io"
-	"sort"
-	"strconv"
+// func chartWriter(w io.Writer) outputFn {
+// 	return func(res []result) error {
+// 		return chartWrite(w, res)
+// 	}
+// }
 
-	"github.com/wcharczuk/go-chart"
-)
+// func chartWrite(w io.Writer, res []result) error {
+// 	sort.Slice(res, func(i, j int) bool {
+// 		return res[i].domain > res[j].domain
+// 	})
 
-func chartWriter(w io.Writer) outputFn {
-	return func(res []result) error {
-		return chartWrite(w, res)
-	}
-}
+// 	donut := chart.DonutChart{
+// 		Title: "Total Visits Per Domain",
+// 		TitleStyle: chart.Style{
+// 			FontSize:  35,
+// 			Show:      true,
+// 			FontColor: chart.ColorAlternateGreen,
+// 		},
+// 		Width:  1920,
+// 		Height: 800,
+// 	}
 
-func chartWrite(w io.Writer, res []result) error {
-	sort.Slice(res, func(i, j int) bool {
-		return res[i].domain > res[j].domain
-	})
+// 	for _, r := range res {
+// 		v := chart.Value{
+// 			Label: r.domain + r.page + ": " + strconv.Itoa(r.visits),
+// 			Value: float64(r.visits),
+// 			Style: chart.Style{
+// 				FontSize: 14,
+// 			},
+// 		}
 
-	donut := chart.DonutChart{
-		Title: "Total Visits Per Domain",
-		TitleStyle: chart.Style{
-			FontSize:  35,
-			Show:      true,
-			FontColor: chart.ColorAlternateGreen,
-		},
-		Width:  1920,
-		Height: 800,
-	}
+// 		donut.Values = append(donut.Values, v)
+// 	}
 
-	for _, r := range res {
-		v := chart.Value{
-			Label: r.domain + r.page + ": " + strconv.Itoa(r.visits),
-			Value: float64(r.visits),
-			Style: chart.Style{
-				FontSize: 14,
-			},
-		}
-
-		donut.Values = append(donut.Values, v)
-	}
-
-	return donut.Render(chart.SVG, w)
-}
+// 	return donut.Render(chart.SVG, w)
+// }
