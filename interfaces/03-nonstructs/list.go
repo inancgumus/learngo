@@ -16,7 +16,7 @@ type list []*game
 func (l list) print() {
 	// `list` acts like a `[]game`
 	if len(l) == 0 {
-		fmt.Println("Sorry. Our store is closed. We're waiting for the delivery 🚚.")
+		fmt.Println("Sorry. We're waiting for delivery 🚚.")
 		return
 	}
 

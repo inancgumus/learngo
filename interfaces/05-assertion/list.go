@@ -20,7 +20,7 @@ type list []printer
 
 func (l list) print() {
 	if len(l) == 0 {
-		fmt.Println("Sorry. Our store is closed. We're waiting for the delivery 🚚.")
+		fmt.Println("Sorry. We're waiting for delivery 🚚.")
 		return
 	}
 
