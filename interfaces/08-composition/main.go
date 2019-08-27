@@ -7,37 +7,36 @@
 
 package main
 
-// import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	var (
-		mobydick  = book{title: "moby dick", price: 10, readTime: 10}
-		minecraft = game{title: "minecraft", price: 20, playTime: 5}
-		tetris    = game{title: "tetris", price: 5, playTime: 2}
-		rubik     = puzzle{title: "rubik's cube", price: 5}
-	)
+	store := list{
+		&book{&product{"moby dick", 10}, 118281600},
+		&book{&product{"odyssey", 15}, "733622400"},
+		&book{&product{"hobbit", 25}, nil},
+		&puzzle{&product{"rubik's cube", 5}},
+		&game{&product{"minecraft", 20}},
+		&game{&product{"tetris", 5}},
+		&toy{&product{"yoda", 150}},
+	}
 
-	var store list
-	store = append(store, &minecraft, &tetris, mobydick, rubik)
-	// tetris.discount(.8)
-	// store.print()
+	books := store[:3]
+	others := store[3:]
 
-	store.discount(.5)
-	store.print()
+	books.discount(.5)
+	fmt.Printf("%s\n", store)
 
-	// t := store.time()
-	// fmt.Printf("Total entertainment time: %d hours\n", t)
+	sort.Sort(byPrice(others))
+	fmt.Printf("\n%s\n", store)
 
-	// games := store[:2]
-	// other := store[2:]
-	// games.print()
-	// other.print()
-	// list{games, other}.print()
+	store = list{books, others}
+	fmt.Printf("\n%s\n", store)
 
-	// var b *book
-
-	// var np printer
-	// np = b
-	// // p := printer(puzzle{title: "sidewinder", price: 10})
-	// fmt.Println(np == nil)
+	// store.discount(.5)
+	// // sort.Sort(sort.Reverse(byPrice(store)))
+	// sort.Sort(byName(store))
+	// fmt.Println(store)
 }

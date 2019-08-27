@@ -7,19 +7,35 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"time"
+)
 
 type book struct {
-	title    string
-	price    money
-	readTime int
+	*product
+	published interface{}
 }
 
-func (b book) print() {
-	fmt.Printf("%-15s: %s\n", b.title, b.price.string())
+func (b *book) String() string {
+	p := format(b.published)
+	return fmt.Sprintf("%s - (%v)", b.product, p)
 }
 
-// TODO: NEW
-func (b book) sum() money {
-	return b.price
+func format(v interface{}) string {
+	var t int
+
+	switch v := v.(type) {
+	case int:
+		t = v
+	case string:
+		t, _ = strconv.Atoi(v)
+	default:
+		return "unknown"
+	}
+
+	const layout = "2006/01"
+	u := time.Unix(int64(t), 0)
+	return u.Format(layout)
 }

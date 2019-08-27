@@ -7,28 +7,51 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+type summer interface {
+	sum() money
+}
+
+type item interface {
+	summer       // same as: `sum() money`
+	fmt.Stringer // same as: `String() string`
+}
 
 type list []item
 
-func (l list) print() {
+func (l list) String() string {
 	if len(l) == 0 {
-		fmt.Println("Sorry. Our store is closed. We're waiting for the delivery 🚚.")
-		return
+		return "Sorry. We're waiting for delivery 🚚."
 	}
 
+	var str strings.Builder
 	for _, it := range l {
-		it.print()
+		fmt.Fprintf(&str, "%s\n", it)
 	}
+	fmt.Fprintf(&str, "\tTOTAL  : $%.2f", l.sum())
 
-	// TODO: NEW
-	fmt.Printf("\tTOTAL  : $%.2f\n", l.sum())
+	return str.String()
 }
 
-// TODO: NEW
-func (l list) sum() (n money) {
+func (l list) sum() (total money) {
 	for _, it := range l {
-		n += it.sum()
+		total += it.sum()
 	}
-	return n
+	return
+}
+
+func (l list) discount(ratio float64) {
+	type discounter interface {
+		discount(float64)
+	}
+
+	for _, it := range l {
+		if it, ok := it.(discounter); ok {
+			it.discount(ratio)
+		}
+	}
 }
