@@ -23,8 +23,8 @@ func By(fn ...Func) *Filter {
 	return &Filter{filters: fn}
 }
 
-// Digest saves the iterator for later processing.
-func (f *Filter) Digest(records pipe.Iterator) error {
+// Consume saves the iterator for later processing.
+func (f *Filter) Consume(records pipe.Iterator) error {
 	f.src = records
 	return nil
 }

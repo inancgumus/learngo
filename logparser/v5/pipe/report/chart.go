@@ -17,8 +17,8 @@ func AsChart(w io.Writer) *Chart {
 	return &Chart{w: w}
 }
 
-// Digest generates a chart report.
-func (c *Chart) Digest(records pipe.Iterator) error {
+// Consume generates a chart report.
+func (c *Chart) Consume(records pipe.Iterator) error {
 	w := os.Stdout
 
 	donut := chart.DonutChart{

@@ -32,8 +32,8 @@ func AsText(w io.Writer) *Text {
 	return &Text{w: w}
 }
 
-// Digest generates a text report.
-func (t *Text) Digest(records pipe.Iterator) error {
+// Consume generates a text report.
+func (t *Text) Consume(records pipe.Iterator) error {
 	w := tabwriter.NewWriter(t.w, minWidth, tabWidth, padding, ' ', flags)
 
 	write := fmt.Fprintf

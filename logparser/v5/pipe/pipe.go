@@ -12,15 +12,15 @@ type Iterator interface {
 	Each(func(Record)) error
 }
 
-// Digester represents a record consumer.
-type Digester interface {
-	Digest(Iterator) error
+// Consumer consumes records from an iterator.
+type Consumer interface {
+	Consume(Iterator) error
 }
 
 // Transform represents both a record consumer and producer.
 // It has an input and output.
 // It takes a single record and provides an iterator for all the records.
 type Transform interface {
-	Digester // consumer
+	Consumer
 	Iterator // producer
 }

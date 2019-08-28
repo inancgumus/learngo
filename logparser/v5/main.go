@@ -37,7 +37,7 @@ type logger struct {
 	src pipe.Iterator
 }
 
-func (l *logger) Digest(records pipe.Iterator) error {
+func (l *logger) Consume(records pipe.Iterator) error {
 	l.src = records
 	return nil
 }

@@ -33,8 +33,8 @@ func By(key Func) *Group {
 	}
 }
 
-// Digest records for grouping.
-func (g *Group) Digest(records pipe.Iterator) error {
+// Consume records for grouping.
+func (g *Group) Consume(records pipe.Iterator) error {
 	return records.Each(func(r pipe.Record) {
 		k := g.key(r)
 

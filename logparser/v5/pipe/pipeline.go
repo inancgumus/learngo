@@ -16,11 +16,11 @@ import (
 type Pipeline struct {
 	src   Iterator
 	trans []Transform
-	dst   Digester
+	dst   Consumer
 }
 
 // New creates a new pipeline.
-func New(src Iterator, dst Digester, t ...Transform) *Pipeline {
+func New(src Iterator, dst Consumer, t ...Transform) *Pipeline {
 	return &Pipeline{
 		src:   &logCount{Iterator: src},
 		dst:   dst,
@@ -38,11 +38,11 @@ func (p *Pipeline) Run() error {
 	last := p.src
 
 	for _, t := range p.trans {
-		if err := t.Digest(last); err != nil {
+		if err := t.Consume(last); err != nil {
 			return err
 		}
 		last = t
 	}
 
-	return p.dst.Digest(last)
+	return p.dst.Consume(last)
 }
