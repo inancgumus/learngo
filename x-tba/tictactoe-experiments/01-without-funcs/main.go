@@ -145,6 +145,6 @@ func main() {
 	}
 
 	if err := ioutil.WriteFile("replay.log", inputs, 0644); err != nil {
-		fmt.Fprintf(os.Stderr, "Cannot save replay: ", err)
+		fmt.Fprintf(os.Stderr, "Cannot save replay: %v", err)
 	}
 }
