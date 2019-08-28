@@ -5,11 +5,11 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package group
+package filter
 
-import "github.com/inancgumus/learngo/logparser/v5/pipe"
+import "github.com/inancgumus/learngo/logparser/v6/pipe"
 
-// Page groups records by page.
-func Page(r pipe.Record) string {
-	return r.Str("domain") + r.Str("page")
+// Noop filter that does nothing.
+func Noop(r pipe.Record) bool {
+	return true
 }

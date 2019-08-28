@@ -10,7 +10,7 @@ package group
 import (
 	"sort"
 
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
+	"github.com/inancgumus/learngo/logparser/v6/pipe"
 )
 
 // Func represents a grouping func that returns a grouping key.

@@ -11,7 +11,7 @@ import (
 	"bufio"
 	"io"
 
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
+	"github.com/inancgumus/learngo/logparser/v6/pipe"
 )
 
 // Text parses text based log lines.

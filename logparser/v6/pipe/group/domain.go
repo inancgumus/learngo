@@ -7,7 +7,7 @@
 
 package group
 
-import "github.com/inancgumus/learngo/logparser/v5/pipe"
+import "github.com/inancgumus/learngo/logparser/v6/pipe"
 
 // Domain groups the records by domain.
 // It keeps the other fields intact.

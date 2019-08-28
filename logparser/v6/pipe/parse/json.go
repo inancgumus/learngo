@@ -11,7 +11,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
+	"github.com/inancgumus/learngo/logparser/v6/pipe"
 )
 
 // JSON parses json records.

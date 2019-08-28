@@ -7,7 +7,7 @@
 
 package filter
 
-import "github.com/inancgumus/learngo/logparser/v5/pipe"
+import "github.com/inancgumus/learngo/logparser/v6/pipe"
 
 // Func represents a filtering pipeline func.
 type Func func(pipe.Record) (pass bool)

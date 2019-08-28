@@ -11,10 +11,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
-	"github.com/inancgumus/learngo/logparser/v5/pipe/group"
-	"github.com/inancgumus/learngo/logparser/v5/pipe/parse"
-	"github.com/inancgumus/learngo/logparser/v5/pipe/report"
+	"github.com/inancgumus/learngo/logparser/v6/pipe"
+	"github.com/inancgumus/learngo/logparser/v6/pipe/group"
+	"github.com/inancgumus/learngo/logparser/v6/pipe/parse"
+	"github.com/inancgumus/learngo/logparser/v6/pipe/report"
 )
 
 // fromFile generates a default pipeline.

@@ -12,7 +12,7 @@ import (
 	"io"
 	"text/tabwriter"
 
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
+	"github.com/inancgumus/learngo/logparser/v6/pipe"
 )
 
 const (

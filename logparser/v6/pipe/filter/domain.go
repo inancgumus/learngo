@@ -10,7 +10,7 @@ package filter
 import (
 	"strings"
 
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
+	"github.com/inancgumus/learngo/logparser/v6/pipe"
 )
 
 // DomainExt filters a set of domain extensions.

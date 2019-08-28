@@ -7,7 +7,7 @@
 
 package filter
 
-import "github.com/inancgumus/learngo/logparser/v5/pipe"
+import "github.com/inancgumus/learngo/logparser/v6/pipe"
 
 // Not reverses a filter. True becomes false, and vice versa.
 func Not(filter Func) Func {
