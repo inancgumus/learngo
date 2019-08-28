@@ -10,35 +10,40 @@ package main
 import (
 	"log"
 	"os"
+
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe"
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe/filter"
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe/group"
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe/parse"
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe/report"
 )
 
 func main() {
-	// newGrouper(domainGrouper)
-
-	// s := &chartReport{
-	//  title:  "visits per domain",
-	//  width:  1920,
-	//  height: 800,
-	// }
-
-	// pipe, err := fromFile("../logs/log.jsonl")
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
-
-	pipe := newPipeline(
-		newTextLog(os.Stdin),
-		// newJSONLog(os.Stdin),
-		newTextReport(),
-		filterBy(notUsing(domainExtFilter("com", "io"))),
-		groupBy(domainGrouper),
+	pipe := pipe.New(
+		parse.FromText(os.Stdin),
+		// parse.FromJSON(os.Stdin),
+		report.AsText(os.Stdout),
+		filter.By(filter.Not(filter.DomainExt("com", "io"))),
+		group.By(group.Domain),
+		new(logger),
 	)
 
-	if err := pipe.run(); err != nil {
+	if err := pipe.Run(); err != nil {
 		log.Fatalln(err)
 	}
+}
 
-	// if err := reportFromFile(os.Args[1]); err != nil {
-	// 	log.Fatalln(err)
-	// }
+type logger struct {
+	src pipe.Iterator
+}
+
+func (l *logger) Digest(records pipe.Iterator) error {
+	l.src = records
+	return nil
+}
+
+func (l *logger) Each(yield func(pipe.Record)) error {
+	return l.src.Each(func(r pipe.Record) {
+		yield(r)
+	})
 }

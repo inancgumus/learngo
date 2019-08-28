@@ -5,22 +5,27 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package main
+package parse
 
 import (
 	"bufio"
 	"io"
+
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe"
 )
 
-type textLog struct {
+// Text parses text based log lines.
+type Text struct {
 	reader io.Reader
 }
 
-func newTextLog(r io.Reader) *textLog {
-	return &textLog{reader: r}
+// FromText creates a text parser.
+func FromText(r io.Reader) *Text {
+	return &Text{reader: r}
 }
 
-func (p *textLog) each(yield recordFn) error {
+// Each yields records from a text log.
+func (p *Text) Each(yield func(pipe.Record)) error {
 	defer readClose(p.reader)
 
 	in := bufio.NewScanner(p.reader)
@@ -32,7 +37,7 @@ func (p *textLog) each(yield recordFn) error {
 			return err
 		}
 
-		yield(*r)
+		yield(r)
 	}
 
 	return in.Err()

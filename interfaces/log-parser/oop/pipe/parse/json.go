@@ -5,26 +5,30 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package main
+package parse
 
 import (
-	"bufio"
 	"encoding/json"
 	"io"
+
+	"github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe"
 )
 
-type jsonLog struct {
+// JSON parses json records.
+type JSON struct {
 	reader io.Reader
 }
 
-func newJSONLog(r io.Reader) *jsonLog {
-	return &jsonLog{reader: r}
+// FromJSON creates a json parser.
+func FromJSON(r io.Reader) *JSON {
+	return &JSON{reader: r}
 }
 
-func (j *jsonLog) each(yield recordFn) error {
+// Each yields records from a json reader.
+func (j *JSON) Each(yield func(pipe.Record)) error {
 	defer readClose(j.reader)
 
-	dec := json.NewDecoder(bufio.NewReader(j.reader))
+	dec := json.NewDecoder(j.reader)
 
 	for {
 		var r record

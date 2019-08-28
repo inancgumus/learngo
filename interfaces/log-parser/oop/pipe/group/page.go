@@ -5,14 +5,11 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package main
+package group
 
-import (
-	"io"
-)
+import "github.com/inancgumus/learngo/interfaces/log-parser/oop/pipe"
 
-func readClose(r io.Reader) {
-	if rc, ok := r.(io.Closer); ok {
-		rc.Close()
-	}
+// Page groups records by page.
+func Page(r pipe.Record) string {
+	return r.Str("domain") + r.Str("page")
 }
