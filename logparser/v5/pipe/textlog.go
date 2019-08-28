@@ -5,34 +5,39 @@
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
 
-package main
+package pipe
 
 import (
 	"bufio"
 	"io"
 )
 
-type textLog struct {
+// TextLog parses text based log lines.
+type TextLog struct {
 	reader io.Reader
 }
 
-func newTextLog(r io.Reader) *textLog {
-	return &textLog{reader: r}
+// NewTextLog creates a text parser.
+func NewTextLog(r io.Reader) *TextLog {
+	return &TextLog{reader: r}
 }
 
-func (p *textLog) each(yield recordFn) error {
+// Each yields records from a text log.
+func (p *TextLog) Each(yield func(Record) error) error {
 	defer readClose(p.reader)
 
 	in := bufio.NewScanner(p.reader)
 
 	for in.Scan() {
-		r := new(record)
+		r := new(Record)
 
 		if err := r.UnmarshalText(in.Bytes()); err != nil {
 			return err
 		}
 
-		yield(*r)
+		if err := yield(*r); err != nil {
+			return err
+		}
 	}
 
 	return in.Err()
