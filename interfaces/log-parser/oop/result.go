@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
@@ -37,16 +38,7 @@ func (r *result) UnmarshalText(p []byte) (err error) {
 	if r.uniques, err = parseStr("uniques", fields[3]); err != nil {
 		return err
 	}
-	return nil
-}
-
-// parseStr helps UnmarshalText for string to positive int parsing
-func parseStr(name, v string) (int, error) {
-	n, err := strconv.Atoi(v)
-	if err != nil || n < 0 {
-		return 0, fmt.Errorf("result.UnmarshalText %q: %v", name, err)
-	}
-	return n, nil
+	return validate(*r)
 }
 
 // UnmarshalJSON to a *result
@@ -63,6 +55,28 @@ func (r *result) UnmarshalJSON(data []byte) error {
 	}
 
 	*r = result{re.Domain, re.Page, re.Visits, re.Uniques}
+	return validate(*r)
+}
 
-	return nil
+// parseStr helps UnmarshalText for string to positive int parsing
+func parseStr(name, v string) (int, error) {
+	n, err := strconv.Atoi(v)
+	if err != nil {
+		return 0, fmt.Errorf("result.UnmarshalText %q: %v", name, err)
+	}
+	return n, nil
+}
+
+func validate(r result) (err error) {
+	switch {
+	case r.domain == "":
+		err = errors.New("result.domain cannot be empty")
+	case r.page == "":
+		err = errors.New("result.page cannot be empty")
+	case r.visits < 0:
+		err = errors.New("result.visits cannot be negative")
+	case r.uniques < 0:
+		err = errors.New("result.uniques cannot be negative")
+	}
+	return
 }

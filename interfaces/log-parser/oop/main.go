@@ -28,6 +28,7 @@ func main() {
 
 	pipe := newPipeline(
 		newTextLog(os.Stdin),
+		// newJSONLog(os.Stdin),
 		newTextReport(),
 		filterBy(notUsing(domainExtFilter("com", "io"))),
 		groupBy(domainGrouper),
