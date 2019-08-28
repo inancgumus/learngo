@@ -37,7 +37,7 @@ func (s *textReport) digest(results iterator) error {
 
 	var total result
 	results.each(func(r result) {
-		total = total.add(r)
+		total = total.sum(r)
 
 		write(w, "%s\t%s\t%d\t%d\n", r.domain, r.page, r.visits, r.uniques)
 	})

@@ -33,7 +33,7 @@ func (g *group) digest(results iterator) error {
 			g.keys = append(g.keys, k)
 		}
 
-		g.sum[k] = r.add(g.sum[k])
+		g.sum[k] = r.sum(g.sum[k])
 	})
 }
 

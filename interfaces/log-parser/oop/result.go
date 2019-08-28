@@ -16,7 +16,7 @@ type result struct {
 	uniques int
 }
 
-func (r result) add(other result) result {
+func (r result) sum(other result) result {
 	r.visits += other.visits
 	r.uniques += other.uniques
 	return r
@@ -31,16 +31,22 @@ func (r *result) UnmarshalText(p []byte) (err error) {
 
 	r.domain, r.page = fields[0], fields[1]
 
-	r.visits, err = strconv.Atoi(fields[2])
-	if err != nil || r.visits < 0 {
-		return fmt.Errorf("wrong input %q", fields[2])
+	if r.visits, err = parseStr("visits", fields[2]); err != nil {
+		return err
 	}
-
-	r.uniques, err = strconv.Atoi(fields[3])
-	if err != nil || r.uniques < 0 {
-		return fmt.Errorf("wrong input %q", fields[3])
+	if r.uniques, err = parseStr("uniques", fields[3]); err != nil {
+		return err
 	}
 	return nil
+}
+
+// parseStr helps UnmarshalText for string to positive int parsing
+func parseStr(name, v string) (int, error) {
+	n, err := strconv.Atoi(v)
+	if err != nil || n < 0 {
+		return 0, fmt.Errorf("result.UnmarshalText %q: %v", name, err)
+	}
+	return n, nil
 }
 
 // UnmarshalJSON to a *result

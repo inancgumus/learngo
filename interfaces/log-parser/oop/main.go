@@ -29,7 +29,7 @@ func main() {
 	pipe := newPipeline(
 		newTextLog(os.Stdin),
 		newTextReport(),
-		filterBy(domainExtFilter("com", "io")),
+		filterBy(notUsing(domainExtFilter("com", "io"))),
 		groupBy(domainGrouper),
 	)
 
