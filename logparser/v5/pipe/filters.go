@@ -20,7 +20,7 @@ func NotFilter(filter FilterFunc) FilterFunc {
 func DomainExtFilter(domains ...string) FilterFunc {
 	return func(r Record) bool {
 		for _, domain := range domains {
-			if strings.HasSuffix(r.Domain, "."+domain) {
+			if strings.HasSuffix(r.domain, "."+domain) {
 				return true
 			}
 		}
@@ -31,11 +31,11 @@ func DomainExtFilter(domains ...string) FilterFunc {
 // DomainFilter filters a domain if it contains the given text.
 func DomainFilter(text string) FilterFunc {
 	return func(r Record) bool {
-		return strings.Contains(r.Domain, text)
+		return strings.Contains(r.domain, text)
 	}
 }
 
 // DomainOrgFilter filters only the ".org" domains.
 func DomainOrgFilter(r Record) bool {
-	return strings.HasSuffix(r.Domain, ".org")
+	return strings.HasSuffix(r.domain, ".org")
 }

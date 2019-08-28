@@ -12,6 +12,7 @@ import (
 )
 
 // GroupFunc represents a grouping func that returns a grouping key.
+// The type alias frees us from binding to a named type.
 type GroupFunc = func(Record) (key string)
 
 // Group records by a key.

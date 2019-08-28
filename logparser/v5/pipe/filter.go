@@ -8,6 +8,7 @@
 package pipe
 
 // FilterFunc represents a filtering pipeline func.
+// The type alias frees us from binding to a named type.
 type FilterFunc = func(Record) (pass bool)
 
 // Filter the records.

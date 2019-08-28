@@ -10,18 +10,18 @@ import (
 
 const fieldsLength = 4
 
-// Record stores fields of a log line.
-type Record struct {
-	Domain  string
-	Page    string
-	Visits  int
-	Uniques int
+// record stores fields of a log line.
+type record struct {
+	domain  string
+	page    string
+	visits  int
+	uniques int
 }
 
 // Sum the numeric fields with another record.
 func (r Record) Sum(other Record) Record {
-	r.Visits += other.Visits
-	r.Uniques += other.Uniques
+	r.visits += other.visits
+	r.uniques += other.uniques
 	return r
 }
 
@@ -32,12 +32,12 @@ func (r *Record) UnmarshalText(p []byte) (err error) {
 		return fmt.Errorf("wrong number of fields %q", fields)
 	}
 
-	r.Domain, r.Page = fields[0], fields[1]
+	r.domain, r.page = fields[0], fields[1]
 
-	if r.Visits, err = parseStr("visits", fields[2]); err != nil {
+	if r.visits, err = parseStr("visits", fields[2]); err != nil {
 		return err
 	}
-	if r.Uniques, err = parseStr("uniques", fields[3]); err != nil {
+	if r.uniques, err = parseStr("uniques", fields[3]); err != nil {
 		return err
 	}
 	return validate(*r)
@@ -72,13 +72,13 @@ func parseStr(name, v string) (int, error) {
 // validate whether a parsed record is valid or not.
 func validate(r Record) (err error) {
 	switch {
-	case r.Domain == "":
+	case r.domain == "":
 		err = errors.New("record.domain cannot be empty")
-	case r.Page == "":
+	case r.page == "":
 		err = errors.New("record.page cannot be empty")
-	case r.Visits < 0:
+	case r.visits < 0:
 		err = errors.New("record.visits cannot be negative")
-	case r.Uniques < 0:
+	case r.uniques < 0:
 		err = errors.New("record.uniques cannot be negative")
 	}
 	return

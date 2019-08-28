@@ -27,6 +27,7 @@ func main() {
 		// pipe.NewJSONReport(os.Stdout),
 		pipe.FilterBy(pipe.DomainExtFilter("com", "io")),
 		pipe.GroupBy(pipe.DomainGrouper),
+		// new(passThrough),
 	)
 
 	if err := p.Run(); err != nil {

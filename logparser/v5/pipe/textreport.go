@@ -45,8 +45,8 @@ func (t *TextReport) Consume(records Iterator) error {
 		total = r.Sum(total)
 
 		write(w, "%s\t%s\t%d\t%d\n",
-			r.Domain, r.Page,
-			r.Visits, r.Uniques,
+			r.domain, r.page,
+			r.visits, r.uniques,
 		)
 
 		return nil
@@ -57,8 +57,8 @@ func (t *TextReport) Consume(records Iterator) error {
 
 	write(w, "\t\t\t\n")
 	write(w, "%s\t%s\t%d\t%d\n", "TOTAL", "",
-		total.Visits,
-		total.Uniques,
+		total.visits,
+		total.uniques,
 	)
 
 	return w.Flush()
