@@ -27,7 +27,7 @@ func newTextReport() *textReport {
 	return new(textReport)
 }
 
-func (s *textReport) digest(results iterator) error {
+func (s *textReport) digest(records iterator) error {
 	w := tabwriter.NewWriter(os.Stdout, minWidth, tabWidth, padding, ' ', flags)
 
 	write := fmt.Fprintf
@@ -35,8 +35,8 @@ func (s *textReport) digest(results iterator) error {
 	write(w, "DOMAINS\tPAGES\tVISITS\tUNIQUES\n")
 	write(w, "-------\t-----\t------\t-------\n")
 
-	var total result
-	results.each(func(r result) {
+	var total record
+	records.each(func(r record) {
 		total = total.sum(r)
 
 		write(w, "%s\t%s\t%d\t%d\n", r.domain, r.page, r.visits, r.uniques)

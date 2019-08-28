@@ -20,13 +20,13 @@ func newTextLog(r io.Reader) *textLog {
 	return &textLog{reader: r}
 }
 
-func (p *textLog) each(yield resultFn) error {
+func (p *textLog) each(yield recordFn) error {
 	defer readClose(p.reader)
 
 	in := bufio.NewScanner(p.reader)
 
 	for in.Scan() {
-		r := new(result)
+		r := new(record)
 
 		if err := r.UnmarshalText(in.Bytes()); err != nil {
 			return err

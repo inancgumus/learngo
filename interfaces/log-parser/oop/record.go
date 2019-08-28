@@ -10,21 +10,21 @@ import (
 
 const fieldsLength = 4
 
-type result struct {
+type record struct {
 	domain  string
 	page    string
 	visits  int
 	uniques int
 }
 
-func (r result) sum(other result) result {
+func (r record) sum(other record) record {
 	r.visits += other.visits
 	r.uniques += other.uniques
 	return r
 }
 
-// UnmarshalText to a *result
-func (r *result) UnmarshalText(p []byte) (err error) {
+// UnmarshalText to a *record
+func (r *record) UnmarshalText(p []byte) (err error) {
 	fields := strings.Fields(string(p))
 	if len(fields) != fieldsLength {
 		return fmt.Errorf("wrong number of fields %q", fields)
@@ -41,8 +41,8 @@ func (r *result) UnmarshalText(p []byte) (err error) {
 	return validate(*r)
 }
 
-// UnmarshalJSON to a *result
-func (r *result) UnmarshalJSON(data []byte) error {
+// UnmarshalJSON to a *record
+func (r *record) UnmarshalJSON(data []byte) error {
 	var re struct {
 		Domain  string
 		Page    string
@@ -54,7 +54,7 @@ func (r *result) UnmarshalJSON(data []byte) error {
 		return err
 	}
 
-	*r = result{re.Domain, re.Page, re.Visits, re.Uniques}
+	*r = record{re.Domain, re.Page, re.Visits, re.Uniques}
 	return validate(*r)
 }
 
@@ -62,21 +62,21 @@ func (r *result) UnmarshalJSON(data []byte) error {
 func parseStr(name, v string) (int, error) {
 	n, err := strconv.Atoi(v)
 	if err != nil {
-		return 0, fmt.Errorf("result.UnmarshalText %q: %v", name, err)
+		return 0, fmt.Errorf("record.UnmarshalText %q: %v", name, err)
 	}
 	return n, nil
 }
 
-func validate(r result) (err error) {
+func validate(r record) (err error) {
 	switch {
 	case r.domain == "":
-		err = errors.New("result.domain cannot be empty")
+		err = errors.New("record.domain cannot be empty")
 	case r.page == "":
-		err = errors.New("result.page cannot be empty")
+		err = errors.New("record.page cannot be empty")
 	case r.visits < 0:
-		err = errors.New("result.visits cannot be negative")
+		err = errors.New("record.visits cannot be negative")
 	case r.uniques < 0:
-		err = errors.New("result.uniques cannot be negative")
+		err = errors.New("record.uniques cannot be negative")
 	}
 	return
 }

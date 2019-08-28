@@ -16,15 +16,15 @@ func filterBy(fn ...filterFunc) *filter {
 	return &filter{filters: fn}
 }
 
-// transform the result
-func (f *filter) digest(results iterator) error {
-	f.src = results
+// transform the record
+func (f *filter) digest(records iterator) error {
+	f.src = records
 	return nil
 }
 
-// each yields an analysis result
-func (f *filter) each(yield resultFn) error {
-	return f.src.each(func(r result) {
+// each yields only the filtered records
+func (f *filter) each(yield recordFn) error {
+	return f.src.each(func(r record) {
 		if !f.check(r) {
 			return
 		}
@@ -32,8 +32,8 @@ func (f *filter) each(yield resultFn) error {
 	})
 }
 
-// check all the filters against the result
-func (f *filter) check(r result) bool {
+// check all the filters against the record
+func (f *filter) check(r record) bool {
 	for _, fi := range f.filters {
 		if !fi(r) {
 			return false

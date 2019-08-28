@@ -8,7 +8,7 @@ package main
 // 	width, height int
 // }
 
-// func (s *chartReport) digest(results iterator) error {
+// func (s *chartReport) digest(records iterator) error {
 // 	w := os.Stdout
 
 // 	donut := chart.DonutChart{
@@ -22,7 +22,7 @@ package main
 // 		Height: s.height,
 // 	}
 
-// 	results.each(func(r result) {
+// 	records.each(func(r record) {
 // 		v := chart.Value{
 // 			Label: r.domain + r.page + ": " + strconv.Itoa(r.visits),
 // 			Value: float64(r.visits),

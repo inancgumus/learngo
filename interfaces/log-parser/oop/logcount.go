@@ -15,8 +15,8 @@ type logCount struct {
 	n int
 }
 
-func (lc *logCount) each(yield resultFn) error {
-	err := lc.iterator.each(func(r result) {
+func (lc *logCount) each(yield recordFn) error {
+	err := lc.iterator.each(func(r record) {
 		lc.n++
 		yield(r)
 	})

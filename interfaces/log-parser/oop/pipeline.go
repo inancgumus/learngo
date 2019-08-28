@@ -13,9 +13,9 @@ import (
 	"strings"
 )
 
-type resultFn func(result)
+type recordFn func(record)
 
-type iterator interface{ each(resultFn) error }
+type iterator interface{ each(recordFn) error }
 type digester interface{ digest(iterator) error }
 
 type transform interface {

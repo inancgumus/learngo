@@ -12,21 +12,21 @@ import (
 )
 
 type group struct {
-	sum  map[string]result // metrics per group key
+	sum  map[string]record // metrics per group key
 	keys []string          // unique group keys
 	key  groupFunc
 }
 
 func groupBy(key groupFunc) *group {
 	return &group{
-		sum: make(map[string]result),
+		sum: make(map[string]record),
 		key: key,
 	}
 }
 
-// digest the results
-func (g *group) digest(results iterator) error {
-	return results.each(func(r result) {
+// digest the records
+func (g *group) digest(records iterator) error {
+	return records.each(func(r record) {
 		k := g.key(r)
 
 		if _, ok := g.sum[k]; !ok {
@@ -37,8 +37,8 @@ func (g *group) digest(results iterator) error {
 	})
 }
 
-// each yields the grouped results
-func (g *group) each(yield resultFn) error {
+// each yields the grouped records
+func (g *group) each(yield recordFn) error {
 	sort.Strings(g.keys)
 
 	for _, k := range g.keys {

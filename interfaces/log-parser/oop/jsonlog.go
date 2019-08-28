@@ -21,13 +21,13 @@ func newJSONLog(r io.Reader) *jsonLog {
 	return &jsonLog{reader: r}
 }
 
-func (j *jsonLog) each(yield resultFn) error {
+func (j *jsonLog) each(yield recordFn) error {
 	defer readClose(j.reader)
 
 	dec := json.NewDecoder(bufio.NewReader(j.reader))
 
 	for {
-		var r result
+		var r record
 
 		err := dec.Decode(&r)
 		if err == io.EOF {
