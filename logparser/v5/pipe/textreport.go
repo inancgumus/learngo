@@ -39,10 +39,10 @@ func (t *TextReport) Consume(records Iterator) error {
 	write(w, "DOMAINS\tPAGES\tVISITS\tUNIQUES\n")
 	write(w, "-------\t-----\t------\t-------\n")
 
-	var total Record
+	var total record
 
 	err := records.Each(func(r Record) error {
-		total = r.Sum(total)
+		total = r.sum(total)
 
 		write(w, "%s\t%s\t%d\t%d\n",
 			r.domain, r.page,

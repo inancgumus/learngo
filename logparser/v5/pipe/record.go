@@ -18,15 +18,23 @@ type record struct {
 	uniques int
 }
 
-// Sum the numeric fields with another record.
-func (r Record) Sum(other Record) Record {
+// recordJSON is used for marshaling and unmarshaling JSON.
+type recordJSON struct {
+	Domain  string
+	Page    string
+	Visits  int
+	Uniques int
+}
+
+// sum the numeric fields with another record.
+func (r record) sum(other record) record {
 	r.visits += other.visits
 	r.uniques += other.uniques
 	return r
 }
 
-// UnmarshalText to a *Record.
-func (r *Record) UnmarshalText(p []byte) (err error) {
+// UnmarshalText to a *record.
+func (r *record) UnmarshalText(p []byte) (err error) {
 	fields := strings.Fields(string(p))
 	if len(fields) != fieldsLength {
 		return fmt.Errorf("wrong number of fields %q", fields)
@@ -43,21 +51,21 @@ func (r *Record) UnmarshalText(p []byte) (err error) {
 	return validate(*r)
 }
 
-// UnmarshalJSON to a *Record.
-func (r *Record) UnmarshalJSON(data []byte) error {
-	// `methodless` doesn't have any methods including UnmarshalJSON.
-	// This trick prevents the stack-overflow (infinite loop).
-	type methodless Record
+// UnmarshalJSON to a *record.
+func (r *record) UnmarshalJSON(data []byte) error {
+	var rj recordJSON
 
-	var m methodless
-	if err := json.Unmarshal(data, &m); err != nil {
+	if err := json.Unmarshal(data, &rj); err != nil {
 		return err
 	}
 
-	// Cast back to the Record and save.
-	*r = Record(m)
-
+	*r = record{rj.Domain, rj.Page, rj.Visits, rj.Uniques}
 	return validate(*r)
+}
+
+// MarshalJSON of a *record.
+func (r *record) MarshalJSON() ([]byte, error) {
+	return json.Marshal(recordJSON{r.domain, r.page, r.visits, r.uniques})
 }
 
 // parseStr helps UnmarshalText for string to positive int parsing.
@@ -70,7 +78,7 @@ func parseStr(name, v string) (int, error) {
 }
 
 // validate whether a parsed record is valid or not.
-func validate(r Record) (err error) {
+func validate(r record) (err error) {
 	switch {
 	case r.domain == "":
 		err = errors.New("record.domain cannot be empty")

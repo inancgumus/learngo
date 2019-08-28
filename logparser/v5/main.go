@@ -23,10 +23,14 @@ func main() {
 
 	p := pipe.New(
 		pipe.NewTextLog(os.Stdin),
+		// pipe.NewJSONLog(os.Stdin),
+
 		pipe.NewTextReport(os.Stdout),
 		// pipe.NewJSONReport(os.Stdout),
-		pipe.FilterBy(pipe.DomainExtFilter("com", "io")),
-		pipe.GroupBy(pipe.DomainGrouper),
+
+		// pipe.FilterBy(pipe.DomainExtFilter("com", "io")),
+		// pipe.GroupBy(pipe.DomainGrouper),
+
 		// new(passThrough),
 	)
 

@@ -27,6 +27,6 @@ func (t *JSONReport) Consume(records Iterator) error {
 	enc := json.NewEncoder(t.w)
 
 	return records.Each(func(r Record) error {
-		return enc.Encode(r)
+		return enc.Encode(&r)
 	})
 }

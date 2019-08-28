@@ -17,7 +17,7 @@ type GroupFunc = func(Record) (key string)
 
 // Group records by a key.
 type Group struct {
-	sum  map[string]Record // metrics per group key
+	sum  map[string]record // metrics per group key
 	keys []string          // unique group keys
 	key  GroupFunc
 }
@@ -27,7 +27,7 @@ type Group struct {
 // The returned group will group the record using the key.
 func GroupBy(key GroupFunc) *Group {
 	return &Group{
-		sum: make(map[string]Record),
+		sum: make(map[string]record),
 		key: key,
 	}
 }
@@ -41,7 +41,7 @@ func (g *Group) Consume(records Iterator) error {
 			g.keys = append(g.keys, k)
 		}
 
-		g.sum[k] = r.Sum(g.sum[k])
+		g.sum[k] = r.sum(g.sum[k])
 
 		return nil
 	})
@@ -52,7 +52,7 @@ func (g *Group) Each(yield func(Record) error) error {
 	sort.Strings(g.keys)
 
 	for _, k := range g.keys {
-		if err := yield(g.sum[k]); err != nil {
+		if err := yield(Record{g.sum[k]}); err != nil {
 			return err
 		}
 	}
