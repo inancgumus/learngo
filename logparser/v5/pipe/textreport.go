@@ -34,29 +34,28 @@ func NewTextReport(w io.Writer) *TextReport {
 func (t *TextReport) Consume(records Iterator) error {
 	w := tabwriter.NewWriter(t.w, minWidth, tabWidth, padding, ' ', flags)
 
-	write := fmt.Fprintf
-
-	write(w, "DOMAINS\tPAGES\tVISITS\tUNIQUES\n")
-	write(w, "-------\t-----\t------\t-------\n")
+	fmt.Fprintf(w, "DOMAINS\tPAGES\tVISITS\tUNIQUES\n")
+	fmt.Fprintf(w, "-------\t-----\t------\t-------\n")
 
 	var total record
 
-	err := records.Each(func(r Record) error {
+	printLine := func(r Record) error {
 		total = r.sum(total)
 
-		write(w, "%s\t%s\t%d\t%d\n",
+		fmt.Fprintf(w, "%s\t%s\t%d\t%d\n",
 			r.domain, r.page,
 			r.visits, r.uniques,
 		)
 
 		return nil
-	})
-	if err != nil {
+	}
+
+	if err := records.Each(printLine); err != nil {
 		return err
 	}
 
-	write(w, "\t\t\t\n")
-	write(w, "%s\t%s\t%d\t%d\n", "TOTAL", "",
+	fmt.Fprintf(w, "\t\t\t\n")
+	fmt.Fprintf(w, "%s\t%s\t%d\t%d\n", "TOTAL", "",
 		total.visits,
 		total.uniques,
 	)

@@ -36,6 +36,7 @@ func (r record) sum(other record) record {
 // UnmarshalText to a *record.
 func (r *record) UnmarshalText(p []byte) (err error) {
 	fields := strings.Fields(string(p))
+
 	if len(fields) != fieldsLength {
 		return fmt.Errorf("wrong number of fields %q", fields)
 	}
@@ -48,6 +49,7 @@ func (r *record) UnmarshalText(p []byte) (err error) {
 	if r.uniques, err = parseStr("uniques", fields[3]); err != nil {
 		return err
 	}
+
 	return validate(*r)
 }
 
@@ -60,12 +62,14 @@ func (r *record) UnmarshalJSON(data []byte) error {
 	}
 
 	*r = record{rj.Domain, rj.Page, rj.Visits, rj.Uniques}
+
 	return validate(*r)
 }
 
 // MarshalJSON of a *record.
 func (r *record) MarshalJSON() ([]byte, error) {
-	return json.Marshal(recordJSON{r.domain, r.page, r.visits, r.uniques})
+	rj := recordJSON{r.domain, r.page, r.visits, r.uniques}
+	return json.Marshal(rj)
 }
 
 // parseStr helps UnmarshalText for string to positive int parsing.

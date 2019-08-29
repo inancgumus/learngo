@@ -32,9 +32,9 @@ func GroupBy(key GroupFunc) *Group {
 	}
 }
 
-// Consume records for grouping.
+// Consume the records for grouping.
 func (g *Group) Consume(records Iterator) error {
-	return records.Each(func(r Record) error {
+	group := func(r Record) error {
 		k := g.key(r)
 
 		if _, ok := g.sum[k]; !ok {
@@ -44,15 +44,19 @@ func (g *Group) Consume(records Iterator) error {
 		g.sum[k] = r.sum(g.sum[k])
 
 		return nil
-	})
+	}
+
+	return records.Each(group)
 }
 
-// Each sorts and yields the grouped records.
+// Each sends the grouped and sorted records to upstream.
 func (g *Group) Each(yield func(Record) error) error {
 	sort.Strings(g.keys)
 
 	for _, k := range g.keys {
-		if err := yield(Record{g.sum[k]}); err != nil {
+		err := yield(Record{g.sum[k]})
+
+		if err != nil {
 			return err
 		}
 	}

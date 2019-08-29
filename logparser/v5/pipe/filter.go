@@ -22,24 +22,26 @@ func FilterBy(fn ...FilterFunc) *Filter {
 	return &Filter{filters: fn}
 }
 
-// Consume saves the iterator for later processing.
+// Consume the records for lazy filtering.
 func (f *Filter) Consume(records Iterator) error {
 	f.src = records
 	return nil
 }
 
-// Each yields only the filtered records.
+// Each filtered records.
 func (f *Filter) Each(yield func(Record) error) error {
-	return f.src.Each(func(r Record) error {
-		if !f.check(r) {
+	records := func(r Record) error {
+		if !f.checkAll(r) {
 			return nil
 		}
 		return yield(r)
-	})
+	}
+
+	return f.src.Each(records)
 }
 
-// check all the filters against the record.
-func (f *Filter) check(r Record) bool {
+// checkAll the filters against the record.
+func (f *Filter) checkAll(r Record) bool {
 	for _, fi := range f.filters {
 		if !fi(r) {
 			return false

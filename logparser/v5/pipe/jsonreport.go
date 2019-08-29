@@ -22,11 +22,13 @@ func NewJSONReport(w io.Writer) *JSONReport {
 	return &JSONReport{w: w}
 }
 
-// Consume generates a JSON report.
+// Consume the records and generate a JSON report.
 func (t *JSONReport) Consume(records Iterator) error {
 	enc := json.NewEncoder(t.w)
 
-	return records.Each(func(r Record) error {
+	encode := func(r Record) error {
 		return enc.Encode(&r)
-	})
+	}
+
+	return records.Each(encode)
 }

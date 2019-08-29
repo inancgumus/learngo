@@ -7,12 +7,9 @@
 
 package pipe
 
-// YieldFunc yields a record from an Iterator to up-stream (Consumer).
-type YieldFunc = func(Record) error
-
 // Iterator yields a record.
 type Iterator interface {
-	Each(YieldFunc) error
+	Each(func(Record) error) error
 }
 
 // Consumer consumes records from an iterator.

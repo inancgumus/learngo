@@ -10,8 +10,6 @@ package main
 import (
 	"log"
 	"os"
-
-	"github.com/inancgumus/learngo/logparser/v5/pipe"
 )
 
 func main() {
@@ -20,21 +18,9 @@ func main() {
 	// 	pipe.FilterBy(pipe.DomainExtFilter("com", "io")),
 	// 	pipe.GroupBy(pipe.DomainGrouper),
 	// )
+	p, err := fromFile(os.Args[1])
 
-	p := pipe.New(
-		pipe.NewTextLog(os.Stdin),
-		// pipe.NewJSONLog(os.Stdin),
-
-		pipe.NewTextReport(os.Stdout),
-		// pipe.NewJSONReport(os.Stdout),
-
-		// pipe.FilterBy(pipe.DomainExtFilter("com", "io")),
-		// pipe.GroupBy(pipe.DomainGrouper),
-
-		// new(passThrough),
-	)
-
-	if err := p.Run(); err != nil {
+	if err = p.Run(); err != nil {
 		log.Fatalln(err)
 	}
 }

@@ -21,11 +21,11 @@ func (t *passThrough) Consume(results pipe.Iterator) error {
 }
 
 func (t *passThrough) Each(yield func(pipe.Record) error) error {
-
-	return t.Iterator.Each(func(r pipe.Record) error {
+	pass := func(r pipe.Record) error {
 		// fmt.Println(r.Fields())
 		// fmt.Println(r.Int("visits"))
 		return yield(r)
-	})
+	}
 
+	return t.Iterator.Each(pass)
 }

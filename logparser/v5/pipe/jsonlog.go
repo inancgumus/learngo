@@ -22,7 +22,7 @@ func NewJSONLog(r io.Reader) *JSON {
 	return &JSON{reader: r}
 }
 
-// Each yields records from a json reader.
+// Each sends the records from a reader to upstream.
 func (j *JSON) Each(yield func(Record) error) error {
 	defer readClose(j.reader)
 
