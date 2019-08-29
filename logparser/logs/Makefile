@@ -16,7 +16,7 @@ load: restore
 
 restore:
 	@echo "restoring the file..."
-	# @git checkout log.txt
+	@git checkout log.txt
 	@$(ECHO_LINES)
 
 multiply: remove
