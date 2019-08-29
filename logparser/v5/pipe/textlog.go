@@ -26,16 +26,17 @@ func NewTextLog(r io.Reader) *TextLog {
 func (p *TextLog) Each(yield func(Record) error) error {
 	defer readClose(p.reader)
 
+	// Use the same record for unmarshaling.
+	var r Record
+
 	in := bufio.NewScanner(p.reader)
 
 	for in.Scan() {
-		r := new(Record)
-
 		if err := r.UnmarshalText(in.Bytes()); err != nil {
 			return err
 		}
 
-		if err := yield(*r); err != nil {
+		if err := yield(r); err != nil {
 			return err
 		}
 	}

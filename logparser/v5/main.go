@@ -18,9 +18,13 @@ func main() {
 	// 	pipe.FilterBy(pipe.DomainExtFilter("com", "io")),
 	// 	pipe.GroupBy(pipe.DomainGrouper),
 	// )
-	p, err := fromFile(os.Args[1])
 
-	if err = p.Run(); err != nil {
+	p, err := fromFile(os.Args[1])
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	if err := p.Run(); err != nil {
 		log.Fatalln(err)
 	}
 }

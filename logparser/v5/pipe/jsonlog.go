@@ -26,11 +26,12 @@ func NewJSONLog(r io.Reader) *JSON {
 func (j *JSON) Each(yield func(Record) error) error {
 	defer readClose(j.reader)
 
+	// Use the same record for unmarshaling.
+	var r Record
+
 	dec := json.NewDecoder(j.reader)
 
 	for {
-		var r Record
-
 		err := dec.Decode(&r)
 		if err == io.EOF {
 			break

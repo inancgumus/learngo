@@ -20,8 +20,8 @@ type Record struct {
 	record
 }
 
-// String returns a string field. Panics when the field doesn't exist.
-func (r Record) String(field string) string {
+// Str returns a string field. Panics when the field doesn't exist.
+func (r Record) Str(field string) string {
 	return r.mustGet(field, reflect.String).String()
 }
 
