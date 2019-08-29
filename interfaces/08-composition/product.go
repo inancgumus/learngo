@@ -10,18 +10,18 @@ package main
 import "fmt"
 
 type product struct {
-	title string
-	price money
+	Title string
+	Price money
 }
 
 func (p *product) discount(ratio float64) {
-	p.price *= money(1 - ratio)
+	p.Price *= money(1 - ratio)
 }
 
 func (p *product) sum() money {
-	return p.price
+	return p.Price
 }
 
 func (p *product) String() string {
-	return fmt.Sprintf("%-15s: %s", p.title, p.price)
+	return fmt.Sprintf("%-15s: %s", p.Title, p.Price)
 }

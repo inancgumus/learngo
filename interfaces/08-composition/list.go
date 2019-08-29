@@ -12,12 +12,9 @@ import (
 	"strings"
 )
 
-type summer interface {
-	sum() money
-}
-
 type item interface {
-	summer       // same as: `sum() money`
+	sum() money
+	discount(float64)
 	fmt.Stringer // same as: `String() string`
 }
 
@@ -45,13 +42,7 @@ func (l list) sum() (total money) {
 }
 
 func (l list) discount(ratio float64) {
-	type discounter interface {
-		discount(float64)
-	}
-
 	for _, it := range l {
-		if it, ok := it.(discounter); ok {
-			it.discount(ratio)
-		}
+		it.discount(ratio)
 	}
 }

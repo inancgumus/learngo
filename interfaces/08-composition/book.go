@@ -8,19 +8,29 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"strconv"
 	"time"
 )
 
 type book struct {
-	*product
-	published interface{}
+	product
+	Published interface{}
 }
 
 func (b *book) String() string {
-	p := format(b.published)
-	return fmt.Sprintf("%s - (%v)", b.product, p)
+	p := format(b.Published)
+	return fmt.Sprintf("%s - (%v)", &b.product, p)
+}
+
+func (b *book) MarshalJSON() ([]byte, error) {
+	type jbook book
+
+	jb := (*jbook)(b)
+	jb.Published = format(b.Published)
+
+	return json.Marshal(jb)
 }
 
 func format(v interface{}) string {
