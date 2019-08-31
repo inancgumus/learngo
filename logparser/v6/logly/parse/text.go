@@ -10,35 +10,41 @@ package parse
 import (
 	"bufio"
 	"io"
+
+	"github.com/inancgumus/learngo/logparser/v6/logly/record"
 )
 
 // TextParser parses text based log lines.
 type TextParser struct {
 	in   *bufio.Scanner
-	err  error   // last error
-	last *Record // last parsed record
+	err  error          // last error
+	last *record.Record // last parsed record
 }
 
 // Text creates a text parser.
 func Text(r io.Reader) *TextParser {
 	return &TextParser{
 		in:   bufio.NewScanner(r),
-		last: new(Record),
+		last: new(record.Record),
 	}
 }
 
 // Parse the next line.
 func (p *TextParser) Parse() bool {
-	if p.err != nil || !p.in.Scan() {
+	if p.err != nil {
+		return false
+	}
+	if !p.in.Scan() {
 		return false
 	}
 
 	p.err = p.last.FromText(p.in.Bytes())
+
 	return true
 }
 
 // Value returns the most recent record parsed by a call to Parse.
-func (p *TextParser) Value() Record {
+func (p *TextParser) Value() record.Record {
 	return *p.last
 }
 

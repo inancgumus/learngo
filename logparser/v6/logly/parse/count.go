@@ -21,11 +21,6 @@ func CountRecords(p Parser) *Count {
 	return &Count{Parser: p}
 }
 
-// Last counted record number.
-func (c *Count) Last() int {
-	return c.count - 1
-}
-
 // Parse increments the counter.
 func (c *Count) Parse() bool {
 	c.count++
@@ -34,8 +29,9 @@ func (c *Count) Parse() bool {
 
 // Err returns the first error that was encountered by the Log.
 func (c *Count) Err() (err error) {
-	if err = c.Parser.Err(); err != nil {
-		err = fmt.Errorf("record #%d: %v", c.Last()+1, err)
+	err = c.Parser.Err()
+	if err != nil {
+		err = fmt.Errorf("record #%d: %v", c.count, err)
 	}
 	return
 }

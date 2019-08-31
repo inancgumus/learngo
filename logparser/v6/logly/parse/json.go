@@ -10,20 +10,22 @@ package parse
 import (
 	"encoding/json"
 	"io"
+
+	"github.com/inancgumus/learngo/logparser/v6/logly/record"
 )
 
 // JSONParser parses json records.
 type JSONParser struct {
 	in   *json.Decoder
-	err  error   // last error
-	last *Record // last parsed record
+	err  error          // last error
+	last *record.Record // last parsed record
 }
 
 // JSON creates a json parser.
 func JSON(r io.Reader) *JSONParser {
 	return &JSONParser{
 		in:   json.NewDecoder(r),
-		last: new(Record),
+		last: new(record.Record),
 	}
 }
 
@@ -34,6 +36,7 @@ func (p *JSONParser) Parse() bool {
 	}
 
 	p.last.Reset()
+
 	err := p.in.Decode(&p.last)
 	if err == io.EOF {
 		return false
@@ -45,7 +48,7 @@ func (p *JSONParser) Parse() bool {
 }
 
 // Value returns the most recent record parsed by a call to Parse.
-func (p *JSONParser) Value() Record {
+func (p *JSONParser) Value() record.Record {
 	return *p.last
 }
 
