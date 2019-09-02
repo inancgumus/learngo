@@ -12,7 +12,18 @@ import (
 	"strings"
 )
 
-type list []fmt.Stringer
+type item interface {
+	discount(float64)
+
+	// item interface embeds the fmt.Stringer interface.
+	//
+	// Go adds all the methods of the fmt.Stringer
+	// to the item interface.
+	fmt.Stringer // same (see below): String() string
+	// String() string
+}
+
+type list []item
 
 // list satisfies the fmt.Stringer
 func (l list) String() string {
@@ -35,13 +46,7 @@ func (l list) String() string {
 }
 
 func (l list) discount(ratio float64) {
-	type discounter interface {
-		discount(float64)
-	}
-
 	for _, it := range l {
-		if it, ok := it.(discounter); ok {
-			it.discount(ratio)
-		}
+		it.discount(ratio)
 	}
 }

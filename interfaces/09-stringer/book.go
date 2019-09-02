@@ -22,11 +22,12 @@ type book struct {
 func (b *book) String() string {
 	p := format(b.published)
 
-	// product.String has a pointer receiver.
-	// that's why we need to take its address here.
+	// product.String() has a pointer receiver.
+	// That's why you need to manually take the product's address here.
 	//
-	// when you put a value in an interface, the interface
-	// cannot run that value's type's value-receiver methods.
+	// If you pass: "b.product", Go would pass it as a copy to Sprintf.
+	// In that case, Go can't deference b.product automatically.
+	// It's because: b.product would be different value—a copy.
 	return fmt.Sprintf("%s - (%v)", &b.product, p)
 }
 
