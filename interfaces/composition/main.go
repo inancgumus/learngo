@@ -10,7 +10,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"sort"
 )
 
 func main() {
@@ -24,34 +23,35 @@ func main() {
 		&toy{product{"yoda", 150}},
 	}
 
-	out, _ := json.Marshal(store)
+	out, _ := json.MarshalIndent(store, "", "\t")
 	fmt.Println(string(out))
 
-	var (
-		nilItem item
-		nilBook *book
-	)
+	// store.discount(.5)
+	// fmt.Print(store)
 
-	fmt.Println("nilBook     ?", nilBook == nil)
-	fmt.Println("nilItem?", nilItem == nil)
+	// var (
+	// 	nilItem item
+	// 	nilBook *book
+	// )
 
-	nilItem = nilBook
-	fmt.Println("nilItem?", nilItem == nil)
+	// fmt.Println("nilBook     ?", nilBook == nil)
+	// fmt.Println("nilItem?", nilItem == nil)
 
-	books := store[:3]
+	// nilItem = nilBook
+	// fmt.Println("nilItem?", nilItem == nil)
 
-	books.discount(.5)
-	fmt.Printf("%s\n", store)
+	// books := store[:3]
 
-	others := store[3:]
-	sort.Sort(byPrice(others))
-	fmt.Printf("\n%s\n", store)
+	// books.discount(.5)
+	// fmt.Printf("%s\n", store)
 
-	store = list{books, others}
-	fmt.Printf("\n%s\n", store)
+	// others := store[3:]
+	// sort.Sort(byPrice(others))
+	// fmt.Printf("\n%s\n", store)
 
-	store.discount(.5)
-	// sort.Sort(sort.Reverse(byPrice(store)))
-	sort.Sort(byName(store))
-	fmt.Println(store)
+	// store = list{books, others}
+	// fmt.Printf("\n%s\n", store)
+
+	// // sort.Sort(sort.Reverse(byPrice(store)))
+	// sort.Sort(byName(store))
 }

@@ -29,7 +29,7 @@ func (l list) String() string {
 	for _, it := range l {
 		fmt.Fprintf(&str, "%s\n", it)
 	}
-	fmt.Fprintf(&str, "\tTOTAL  : $%.2f", l.sum())
+	fmt.Fprintf(&str, "\tTOTAL  : $%.2f\n", l.sum())
 
 	return str.String()
 }
