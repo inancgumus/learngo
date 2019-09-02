@@ -9,11 +9,12 @@ package main
 
 import "fmt"
 
-type printer interface {
+type item interface {
 	print()
+	discount(float64)
 }
 
-type list []printer
+type list []item
 
 func (l list) print() {
 	if len(l) == 0 {
@@ -27,13 +28,7 @@ func (l list) print() {
 }
 
 func (l list) discount(ratio float64) {
-	type discounter interface {
-		discount(float64)
-	}
-
 	for _, it := range l {
-		if it, ok := it.(discounter); ok {
-			it.discount(ratio)
-		}
+		it.discount(ratio)
 	}
 }
