@@ -19,9 +19,15 @@ type item interface {
 	fmt.Stringer
 }
 
+// schema adds an additional category field
+// to the product types.
 type schema struct {
+	// Category is the product category field.
 	Category string
-	Item     item
+
+	// Item is an interface value.
+	// Here, we are embedding an interface value.
+	Item item
 }
 
 type list []item
@@ -30,6 +36,9 @@ func (l list) MarshalJSON() ([]byte, error) {
 	var schemas []schema
 
 	for _, it := range l {
+		// TypeOf -> finds the dynamic type of "it"
+		// Elem   -> returns the element type of the pointer
+		// Name   -> returns the type name as string
 		cat := reflect.TypeOf(it).Elem().Name()
 		schemas = append(schemas, schema{cat, it})
 	}

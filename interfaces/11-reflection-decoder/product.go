@@ -7,9 +7,7 @@
 
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type product struct {
 	Title string

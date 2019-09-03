@@ -9,13 +9,22 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 )
 
-type book struct {
-	product
-	Published timestamp
-}
+func main() {
+	dec := decoder{
+		"book":   book{},
+		"game":   game{},
+		"puzzle": puzzle{},
+		"toy":    toy{},
+	}
 
-func (b *book) String() string {
-	return fmt.Sprintf("%s - (%s)", &b.product, b.Published)
+	store, err := dec.read(os.Stdin)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	fmt.Print(store)
 }

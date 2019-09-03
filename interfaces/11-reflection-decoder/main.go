@@ -14,6 +14,23 @@ import (
 )
 
 func main() {
+	// store := list{
+	// 	&book{product{"moby dick", 10}, toTimestamp(118281600)},
+	// 	&book{product{"odyssey", 15}, toTimestamp("733622400")},
+	// 	&book{product{"hobbit", 25}, unknown},
+	// 	&puzzle{product{"rubik's cube", 5}},
+	// 	&game{product{"minecraft", 20}},
+	// 	&game{product{"tetris", 5}},
+	// 	&toy{product{"yoda", 150}},
+	// }
+
+	// out, err := json.MarshalIndent(store, "", "\t")
+	// if err != nil {
+	// 	log.Fatalln(err)
+	// }
+
+	// fmt.Println(string(out))
+
 	data, err := ioutil.ReadFile("database.json")
 	if err != nil {
 		log.Fatalln(err)
@@ -25,6 +42,7 @@ func main() {
 	}
 
 	fmt.Print(store)
+
 	// for _, p := range store {
 	// 	fmt.Printf("%#v\n", p)
 	// }

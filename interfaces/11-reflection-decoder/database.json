@@ -4,7 +4,7 @@
 		"Item": {
 			"Title": "moby dick",
 			"Price": 10,
-			"Published": "1973/10"
+			"Published": 118281600
 		}
 	},
 	{
@@ -12,7 +12,7 @@
 		"Item": {
 			"Title": "odyssey",
 			"Price": 15,
-			"Published": "1993/04"
+			"Published": 733622400
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 		"Item": {
 			"Title": "hobbit",
 			"Price": 25,
-			"Published": "unknown"
+			"Published": -62135596800
 		}
 	},
 	{

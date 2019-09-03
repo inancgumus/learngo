@@ -61,3 +61,17 @@ func newProduct(category string) item {
 	}
 	return nil
 }
+
+// func (d decoder) newProduct(category string) item {
+// 	t := reflect.TypeOf(d[category])
+// 	v := reflect.New(t)
+// 	return v.Interface().(item)
+// }
+
+// func toProduct(kind string, data []byte) (item, error) {
+// 	p := newProduct(kind)
+
+// 	err := json.Unmarshal(data, p)
+
+// 	return p, err
+// }
