@@ -13,7 +13,10 @@ import (
 
 type huge struct {
 	// about ~200mb
-	games [10000000]game
+	games [10_000_000]game
+
+	// if this syntax doesn't work on your system, type it as:
+	// games [10000000]game
 }
 
 // only copies a single pointer.
