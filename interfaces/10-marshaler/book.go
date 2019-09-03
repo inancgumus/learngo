@@ -13,9 +13,11 @@ import (
 
 type book struct {
 	product
+
+	// Published (timestamp) knows how to print, encode and decode itself.
 	Published timestamp
 }
 
-func (b book) String() string {
+func (b *book) String() string {
 	return fmt.Sprintf("%s - (%s)", &b.product, b.Published)
 }
