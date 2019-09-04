@@ -8,6 +8,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -30,14 +31,14 @@ func main() {
 	// }
 
 	// fmt.Println(string(out))
-
+	//---
 	data, err := ioutil.ReadFile("database.json")
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	store, err := decode(data)
-	if err != nil {
+	var store list
+	if err = json.Unmarshal(data, &store); err != nil {
 		log.Fatalln(err)
 	}
 

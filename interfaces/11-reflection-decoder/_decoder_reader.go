@@ -13,24 +13,21 @@ import (
 	"os"
 )
 
-func (d decoder) fromFile(path string) (list, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-
-	return d.readFile(f)
+func fromFile(f *os.File) (list, error) {
+	return fromReader(f)
 }
 
-func (d decoder) readFile(f *os.File) (list, error) {
-	return d.read(f)
-}
-
-func (d decoder) read(r io.Reader) (list, error) {
+func fromReader(r io.Reader) (list, error) {	
 	data, err := ioutil.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}
 
-	return d.decode(data)
+	var store list
+
+	if err := json.Unmarshal(data, &store); err != nil {
+		return nil, err
+	}
+
+	return store, nil
 }

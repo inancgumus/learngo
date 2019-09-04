@@ -21,7 +21,7 @@ func main() {
 		"toy":    toy{},
 	}
 
-	store, err := dec.read(os.Stdin)
+	store, err := fromReader(os.Stdin)
 	if err != nil {
 		log.Fatalln(err)
 	}
