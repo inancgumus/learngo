@@ -15,36 +15,49 @@ import (
 )
 
 func main() {
-	// store := list{
-	// 	&book{product{"moby dick", 10}, toTimestamp(118281600)},
-	// 	&book{product{"odyssey", 15}, toTimestamp("733622400")},
-	// 	&book{product{"hobbit", 25}, unknown},
-	// 	&puzzle{product{"rubik's cube", 5}},
-	// 	&game{product{"minecraft", 20}},
-	// 	&game{product{"tetris", 5}},
-	// 	&toy{product{"yoda", 150}},
-	// }
+	var store list
 
-	// out, err := json.MarshalIndent(store, "", "\t")
-	// if err != nil {
+	// db := database{list: &store}
+	// db.register("book", new(book))
+	// db.register("game", new(game))
+	// db.register("puzzle", new(puzzle))
+	// db.register("toy", new(toy))
+
+	// if err := db.load(); err != nil {
 	// 	log.Fatalln(err)
 	// }
 
-	// fmt.Println(string(out))
-	//---
 	data, err := ioutil.ReadFile("database.json")
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	var store list
 	if err = json.Unmarshal(data, &store); err != nil {
 		log.Fatalln(err)
 	}
 
 	fmt.Print(store)
 
-	// for _, p := range store {
-	// 	fmt.Printf("%#v\n", p)
-	// }
+	/*
+		store := list{
+			&book{product{"moby dick", 10}, toTimestamp(118281600)},
+			&book{product{"odyssey", 15}, toTimestamp("733622400")},
+			&book{product{"hobbit", 25}, unknown},
+			&puzzle{product{"rubik's cube", 5}},
+			&game{product{"minecraft", 20}},
+			&game{product{"tetris", 5}},
+			&toy{product{"yoda", 150}},
+		}
+
+		db := &database{list: &store}
+		if err := db.save(); err != nil {
+			log.Fatalln(err)
+		}
+
+		// out, err := json.MarshalIndent(db, "", "\t")
+		// if err != nil {
+		// 	log.Fatalln(err)
+		// }
+		// fmt.Println(string(out))
+	*/
 }
