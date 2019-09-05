@@ -13,20 +13,26 @@ import (
 	"log"
 )
 
+// database is responsible for encoding and decoding a list.
 type database struct {
 	list *list
 }
 
 func (db *database) UnmarshalJSON(data []byte) error {
+	// Provides a concrete data structure that we can use to decode.
+	// It is a slice of structs.
 	var decodables []struct {
-		Type string
-		Item json.RawMessage
+		Type string          // The product type.
+		Item json.RawMessage // The raw item data (from database.json)
 	}
 
+	// First, decode the "Type" part.
+	// Leave the "Item" as raw json data.
 	if err := json.Unmarshal(data, &decodables); err != nil {
 		log.Fatalln(err)
 	}
 
+	// Decode the "Item" part for each json object.
 	for _, d := range decodables {
 		it, err := db.newItem(d.Item, d.Type)
 		if err != nil {
@@ -39,7 +45,8 @@ func (db *database) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (db *database) newItem(data []byte, itemType string) (it item, _ error) {
+// newItem decodes and returns a product type wrapped in an item iface value.
+func (*database) newItem(data []byte, itemType string) (it item, _ error) {
 	switch itemType {
 	default:
 		return nil, fmt.Errorf("newItem: type (%q) does not exist", itemType)
