@@ -29,7 +29,7 @@ func (db *database) UnmarshalJSON(data []byte) error {
 	// First, decode the "Type" part.
 	// Leave the "Item" as raw json data.
 	if err := json.Unmarshal(data, &decodables); err != nil {
-		log.Fatalln(err)
+		return err
 	}
 
 	// Decode the "Item" part for each json object.
