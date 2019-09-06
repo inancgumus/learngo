@@ -10,7 +10,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 )
 
 // database is responsible for encoding and decoding a list.
