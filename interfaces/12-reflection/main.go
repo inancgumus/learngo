@@ -23,11 +23,6 @@ func main() {
 		var store list
 
 		db := database{list: &store}
-		db.register("book", new(book))
-		db.register("book", new(book))
-		db.register("game", new(game))
-		db.register("puzzle", new(puzzle))
-		db.register("toy", new(toy))
 
 		if err := json.Unmarshal(data, &db); err != nil {
 			log.Fatalln(err)
