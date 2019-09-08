@@ -8,18 +8,10 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"log"
 )
 
 func main() {
-	data, err := ioutil.ReadFile("database.json")
-	if err != nil {
-		log.Fatalln(err)
-	}
-
 	var store list
 
 	db := database{list: &store}
@@ -29,9 +21,7 @@ func main() {
 	db.register("puzzle", new(puzzle))
 	db.register("toy", new(toy))
 
-	if err := json.Unmarshal(data, &db); err != nil {
-		log.Fatalln(err)
-	}
+	db.load("database.json")
 
 	fmt.Print(store)
 

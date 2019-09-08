@@ -28,6 +28,15 @@ func (db *database) load(path string) error { // #v1
 	return json.Unmarshal(data, db)
 }
 
+// save the list by encoding the data to a json file.
+func (db *database) save(path string) error { // #v1
+	out, err := json.MarshalIndent(db, "", "\t")
+	if err != nil {
+		return err
+	}
+	return ioutil.WriteFile(path, out, 0644)
+}
+
 // #v2
 // func (db *database) load(r io.Reader) error {
 //  data, err := ioutil.ReadAll(r)
@@ -39,6 +48,20 @@ func (db *database) load(path string) error { // #v1
 
 // #v3
 // TODO: use decoder
+
+// #v2
+// func (db *database) save(w io.Writer) error {
+// 	data, err := json.MarshalIndent(db, "", "\t")
+// 	if err != nil {
+// 		return err
+// 	}
+
+// 	_, err = io.Copy(w, bytes.NewReader(data))
+// 	return err
+// }
+
+// #v3
+// TODO: use encoder
 
 func (db *database) MarshalJSON() ([]byte, error) {
 	type encodable struct {
