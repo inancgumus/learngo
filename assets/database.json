@@ -1,0 +1,54 @@
+[
+	{
+		"Type": "book",
+		"Item": {
+			"Title": "moby dick",
+			"Price": 10,
+			"Published": 118281600
+		}
+	},
+	{
+		"Type": "book",
+		"Item": {
+			"Title": "odyssey",
+			"Price": 15,
+			"Published": 733622400
+		}
+	},
+	{
+		"Type": "book",
+		"Item": {
+			"Title": "hobbit",
+			"Price": 25,
+			"Published": -62135596800
+		}
+	},
+	{
+		"Type": "puzzle",
+		"Item": {
+			"Title": "rubik's cube",
+			"Price": 5
+		}
+	},
+	{
+		"Type": "game",
+		"Item": {
+			"Title": "minecraft",
+			"Price": 20
+		}
+	},
+	{
+		"Type": "game",
+		"Item": {
+			"Title": "tetris",
+			"Price": 5
+		}
+	},
+	{
+		"Type": "toy",
+		"Item": {
+			"Title": "yoda",
+			"Price": 150
+		}
+	}
+]
