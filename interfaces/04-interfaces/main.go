@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 func main() {
 	var (
 		mobydick  = book{title: "moby dick", price: 10}
@@ -24,4 +26,8 @@ func main() {
 	var store list
 	store = append(store, &minecraft, &tetris, mobydick, rubik)
 	store.print()
+
+	// interface values are comparable
+	fmt.Println(store[0] == &minecraft)
+	fmt.Println(store[3] == rubik)
 }
