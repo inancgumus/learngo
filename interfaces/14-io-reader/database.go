@@ -10,6 +10,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"reflect"
 )
@@ -19,26 +20,16 @@ type database struct {
 	types map[string]item // the registry of the types
 }
 
-// load the list by decoding the data from a json file.
-func (db *database) load(path string) error { // #v1
-	data, err := ioutil.ReadFile(path)
+// load the list by decoding the data from any data source.
+func (db *database) load(r io.Reader) error {
+	// ReadAll reads from `r` entirely into memory.
+	// `data` contains the entire data in memory.
+	data, err := ioutil.ReadAll(r)
 	if err != nil {
 		return err
 	}
 	return json.Unmarshal(data, db)
 }
-
-// #v2
-// func (db *database) load(r io.Reader) error {
-//  data, err := ioutil.ReadAll(r)
-// 	if err != nil {
-// 		return err
-// 	}
-// 	return json.Unmarshal(data, db)
-// }
-
-// #v3
-// TODO: use decoder
 
 func (db *database) MarshalJSON() ([]byte, error) {
 	type encodable struct {
@@ -49,9 +40,6 @@ func (db *database) MarshalJSON() ([]byte, error) {
 	var e []encodable
 
 	for _, it := range *db.list {
-		// TypeOf -> finds the dynamic type of "it"
-		// Elem   -> returns the element type of the pointer
-		// Name   -> returns the type name as string
 		t := reflect.TypeOf(it).Elem().Name()
 		e = append(e, encodable{t, it})
 	}
@@ -87,16 +75,9 @@ func (db *database) newItem(data []byte, typ string) (item, error) {
 		return nil, fmt.Errorf("newItem: type (%q) does not exist", typ)
 	}
 
-	// get the dynamic type inside "it" like *book, *game, etc..
 	t := reflect.TypeOf(it)
-
-	// get the pointer type's element type like book, game, etc...
 	e := t.Elem()
-
-	// create a new pointer value of the type like new(book), new(game), etc...
 	v := reflect.New(e)
-
-	// get the interface value and cast it to the item type
 	it = v.Interface().(item)
 
 	return it, json.Unmarshal(data, &it)

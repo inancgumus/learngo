@@ -9,22 +9,10 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 )
 
 func main() {
-	var store list
-
-	db := database{list: &store}
-	db.register("book", new(book))
-	db.register("book", new(book))
-	db.register("game", new(game))
-	db.register("puzzle", new(puzzle))
-	db.register("toy", new(toy))
-
-	db.load("database.json")
-
-	fmt.Print(store)
-
 	/*
 		store := list{
 			&book{product{"moby dick", 10}, toTimestamp(118281600)},
@@ -48,4 +36,32 @@ func main() {
 		// store.discount(.5)
 		// fmt.Print(store)
 	*/
+
+	var store list
+
+	db := database{list: &store}
+	db.register("book", new(book))
+	db.register("book", new(book))
+	db.register("game", new(game))
+	db.register("puzzle", new(puzzle))
+	db.register("toy", new(toy))
+
+	// load from a file
+	// f, _ := os.Open("database.json")
+	// db.load(f)
+	// f.Close()
+
+	// load from a string
+	// const data = `[
+	// { "Type": "book", "Item": { "Title": "1984", "Price": 8, "Published": -649641600 } },
+	// { "Type": "game", "Item": { "Title": "paperboy", "Price": 20 } }]`
+	// r := strings.NewReader(data)
+	// db.load(r)
+
+	// load from a web server
+	res, _ := http.Get("https://inancgumus.github.io/x/database.json")
+	db.load(res.Body)
+	res.Body.Close()
+
+	fmt.Print(store)
 }
