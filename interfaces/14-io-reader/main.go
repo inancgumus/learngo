@@ -41,7 +41,6 @@ func main() {
 
 	db := database{list: &store}
 	db.register("book", new(book))
-	db.register("book", new(book))
 	db.register("game", new(game))
 	db.register("puzzle", new(puzzle))
 	db.register("toy", new(toy))
