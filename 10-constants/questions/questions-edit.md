@@ -105,10 +105,10 @@ const (
     Both
 )
 ```
-(A) `Yes`=0; `No`=1; `Both`=2 <br>
-(B) `Yes`=2; `No`=3; `Both`=4 <br>
-(C) `Yes`=7; `No`=12; `Both`=17 <br>
-(D) `Yes`=2; `No`=7; `Both`=12 <br>
+(A) `Yes=0`; `No=1`; `Both=2 `<br>
+(B) `Yes=2`; `No=3`; `Both=4 `<br>
+(C) `Yes=7`; `No=12`; `Both=17` <br>
+(D) `Yes=2`; `No=7`; `Both=12` <br>
 
 ---
 **Solution**: (C) <br>
