@@ -27,7 +27,7 @@ type Socket struct {
 func (s *Socket) Plug(device PowerDrawer) error {
 	n := rand.Intn(50) + 1
 
-	if s.power-n <= 0 {
+	if s.power-n < 0 {
 		return fmt.Errorf("socket is out of power for %dkW", n)
 	}
 
