@@ -14,7 +14,7 @@ import (
 
 type item interface {
 	sum() money
-	discount(float64)
+	discount(ratio float64)
 	fmt.Stringer // same as: `String() string`
 }
 

@@ -13,7 +13,7 @@ import (
 )
 
 type item interface {
-	discount(float64)
+	discount(ratio float64)
 
 	// item interface embeds the fmt.Stringer interface.
 	//

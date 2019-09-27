@@ -11,7 +11,7 @@ import "fmt"
 
 type item interface {
 	print()
-	discount(float64)
+	discount(ratio float64)
 }
 
 type list []item
