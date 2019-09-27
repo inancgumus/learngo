@@ -1,147 +1,230 @@
-## Which one below is not one of the logical operators of Go?
-1. `||`
-2. `!=` *CORRECT*
-3. `!`
-4. `&&`
+# Questions: Logical Operators #
 
-> **2:** That's the "not equal" operator. It's a comparison operator, not a logical operator.
+---
 
+## 1. Which of the following choices is not a logical operator in Go? ##
 
-## Which one of these types is returned by a logical operator?
-1. int
-2. byte
-3. bool *CORRECT*
-4. float64
+(A) `||`
 
-> **3:** That's right. All the logical operators return an untyped bool value (true or false).
+(B) `!=`
 
+(C) `!`
 
-## Which one of these can be used as an operand to a logical operator?
-1. int
-2. byte
-3. bool *CORRECT*
-4. float64
+(D) `&&`
 
-> **3:** That's right. All the logical operators expect a bool value (or a bool expression that yields a bool value).
+---
 
+**Solution**: (B)
 
-## Which expression below equals to the sentence below?
-"age is equal or above 15 and hair color is yellow"
+`!=` is the "not equals" operator. It is a comparison operator, not a logical operator.
 
-1. `age > 15 || hairColor == "yellow"`
-2. `age < 15 || hairColor != "yellow"`
-3. `age >= 15 && hairColor == "yellow"` *CORRECT*
-4. `age > 15 && hairColor == "yellow"`
+---
 
+## 2. Which of the following types is returned by logical operators? ##
 
-## What does this program print?
+(A) `int`
+
+(B) `byte`
+
+(C) `bool` 
+
+(D) `float64`
+
+---
+
+**Solution**: (C)
+
+That's right. Logical operators return an untyped `bool` value (either `true` or `false`).
+
+---
+
+## 3. Which fo the following types can be used with logical operators?  ##
+
+(A) `int`
+
+(B) `byte`
+
+(C) `bool`
+
+(D) `float64` 
+
+---
+
+**Solution**: (C)
+
+All logical operators expect a `bool` values (or an expression the yields a `bool` value).
+
+---
+
+## 4. Which of the following choices translates the sentence below into Go code? ##
+
+`"age is greater than or equal to than 15 and hair color is yellow`
+
+(A) `age > 15 || hairColor == "yellow"`
+
+(B) `age < 15 || hairColor != "yellow"`
+
+(C) `age >= 15 && hairColor == "yellow"`
+
+(D) `age > 15 && hairColor == "yellow"`
+
+--- 
+
+**Solution**: (C)
+
+`"greater than"` is expressed as `>=`.
+
+`"and"` is expressed as `&&`.
+
+`"is"` translates to `"equals to"`, which is expressed as `==`.
+
+---
+
+## 5. What does the following program print to the console? ##
+
 ```go
 package main
 import "fmt"
 
 func main() {
-    var (
-        on  = true
-        off = !on
-    )
-
-    fmt.Println(!on && !off)
-    fmt.Println(!on || !off)
+	on = true
+	off = !on
+	
+	fmt.Println(!on && !off)
+	fmt.Println(!on || !off)
 }
+
 ```
 
-1. true true
-2. true false
-3. false true *CORRECT*
-4. false false
-5. error
+(A) true true
 
-> **3:** `!on` is false. `!off` is true. So, `!on && !off` is false. And, `!on || !off` is true.
+(B) true false
 
+(C) false true
 
-## What does this program print?
+(D) false false 
+
+(E) The compiler will produce an error.
+
+---
+
+**Solution**: (C)
+
+Because `!on` is `false` and `!off` is true, `!on && !off` evaluates to `false` and `!on || !off` evaluates to `true`
+
+---
+
+## 6. What does the following program print to the console? ##
+
 ```go
 package main
 import "fmt"
 
 func main() {
-    on := 1
-    fmt.Println(on == true)
+	on := 1
+	fmt.Println(on == true)
 }
 ```
 
-1. true
-2. false
-3. error *CORRECT*
+(A) true
 
-> **3:** `on` is int, while `true` is a bool. So, there's a type mismatch error here. Go is not like other C based languages where `1` equals to `true`.
+(B) false
 
+(C) The compiler will produce an error.
 
-## What does this code print?
+---
+
+**Solution**: (C)
+
+The compiler will produce a type mismatch error because `on` is an `int` while `true` is a `bool`. 
+
+Unlike other C-based languages, Go does not interpret `0` as `false` and `1` as `true`.
+
+---
+
+## 7. What will the following print to the console? ##
 ```go
-// Note: "a" comes before "b"
 a := "a" > "b"
 b := "b" <= "c"
 fmt.Println(a || b)
 ```
+**Note**: `"a"` comes before `"b"`.
 
-1. "a"
-2. "b"
-3. true *CORRECT*
-4. false
-5. error
+(A) `"a"`
 
-> **1-2:** Logical operators return a bool value only.
+(B) `"b"`
 
-> **3:** Order is like so: "a", "b", "c". So, `"a" > "b"` is false. `"b" <= "c"` is true. So, `a || b` is true.
+(C) `true`
 
-> **5:** There isn't an error. Strings are actually numbers, so, they're ordered and can be compared using the ordering operators.
+(D) `false`
 
+(E) The compiler will produce and error.
 
-## What does the following program print?
+---
+
+**Solution**: (C)
+
+The order is as follows: `"a", "b", "c"`. 
+
+`"a" > "b"` evaluates to `false` and `"b" <= "c"` evaluates to `true`, so `fmt.Println(a || b)` will print true.
+
+Logical operators only return `bool` values "a" and "b" (`string` values) are not valid options.
+
+---
+
+## What will the following program print the console? ##
+
+**Note**: Make to read the comments!
+
 ```go
-// Let's say that there are two functions like this:
-//
-//   isOn() which returns true and prints "on ".
-//   isOff() which returns false and prints "off ".
-//
-// Remember: Logical operators short-circuit.
+/*
+   There are two functions 
+*/
+```
 
+## What will the following program print? ##
+**Note**: Read the comments and focus on the `main()` function to solve the problem.
+
+```go
 package main
 import "fmt"
-
+/*
+   There are two functions defined below:
+   1. `isOn()`: returns `true` and prints "on "
+   2. `isOff()`: returns `false` and prints "off "
+*/
 func main() {
-    _ = isOff() && isOn()
-    _ = isOn() || isOff()
+	_ = isOff() && isOn()
+	_ = isOn() || isOff()
 }
 
-// Don't mind about these functions.
-// Just focus on the problem.
-// They are here just for you to understand what's going on better.
 func isOn() bool {
-    fmt.Print("on ")
-    return true
+	fmt.Println("on ")
+	return true
 }
 
 func isOff() bool {
-    fmt.Print("off ")
-    return false
+	fmt.Println("off ")
+	return false
 }
 ```
 
-1. "on off on off "
-2. "off on " *CORRECT*
-3. "off on on off "
-4. "on off "
+(A) `on off on off `
 
-> **1, 3:** Remember: Logical operators short-circuit.
+(B) `off on `
 
-> **2:** That's right.
-> 
-> In: `isOff() && isOn()`, `isOff()` returns false, so, logical AND operator short-circuits and doesn't call `isOn()`; so it prints: `"off "`.
-> 
-> Then, in: `isOn() || isOff()`, `isOn()` returns true, so, logical OR operator short circuits and doesn't call `isOff()`; so it prints `"on "`.
+(C) `off on on off `
 
-> **4:** Think again.
+(D) `on off `
 
-Example program is [here](https://play.golang.org/p/6z3afaOf7yT).
+---
+
+**Solution**: (B)
+
+**`_ = isOff() and isOn()`**: `isOff()` returns `false` so `&&` (the logical AND operator) will short-circuit the function, meaning `isOn()` never gets called, meaning `of ` prints to the screen.
+
+**`_ = isOn() || isOff()`**: `isOn()` returns `true` so `||` (the logical OR operator) short circuits and `isOff()` is never called, printing `on ` to screen.
+
+When `main()` finishes executing, the final printed result is `off on`.
+
+You can view an example of the program [here](https://play.golang.org/p/6z3afaOf7yT)
