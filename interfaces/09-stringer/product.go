@@ -14,7 +14,7 @@ type product struct {
 	price money
 }
 
-// product satisfies the fmt.Stringer
+// String makes the product an fmt.Stringer
 func (p *product) String() string {
 	return fmt.Sprintf("%-15s: %s", p.title, p.price)
 }

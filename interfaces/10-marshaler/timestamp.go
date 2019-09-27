@@ -12,9 +12,6 @@ import (
 	"time"
 )
 
-// Mon Jan 2 15:04:05 -0700 MST 2006
-const layout = "2006/01"
-
 // unknown is the zero value of a timestamp.
 var unknown = timestamp(time.Time{})
 
@@ -57,6 +54,9 @@ func (ts timestamp) String() string {
 	if t.IsZero() {
 		return "unknown"
 	}
+
+	// Mon Jan 2 15:04:05 -0700 MST 2006
+	const layout = "2006/01"
 
 	return t.Format(layout)
 }

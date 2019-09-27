@@ -15,31 +15,38 @@ import (
 type item interface {
 	discount(ratio float64)
 
+	// ~~ interface embedding ~~
+	//
 	// item interface embeds the fmt.Stringer interface.
 	//
-	// Go adds all the methods of the fmt.Stringer
-	// to the item interface.
-	fmt.Stringer // same (see below): String() string
+	// Go adds the methods of the fmt.Stringer
+	// to this item interface.
+	//
+	// same as this:
 	// String() string
+	fmt.Stringer
 }
-
 type list []item
 
-// list satisfies the fmt.Stringer
+// String method makes the list an fmt.Stringer.
 func (l list) String() string {
 	if len(l) == 0 {
 		return "Sorry. We're waiting for delivery 🚚."
 	}
 
-	// use strings.Builder when you're combining unknown
-	// list of strings together.
+	// use the strings.Builder when you're combining
+	// a long list of strings together.
 	var str strings.Builder
 
 	for _, it := range l {
-		// the builder doesn't know about the stringer interface.
-		// that's why you need to call String method here.
+		// the builder.WriteString doesn't know about the stringer interface.
+		// because it takes a string argument.
+		// so, you need to call the String method yourself.
 		str.WriteString(it.String())
 		str.WriteRune('\n')
+
+		// or slower way:
+		// fmt.Fprintln(&str, it)
 	}
 
 	return str.String()

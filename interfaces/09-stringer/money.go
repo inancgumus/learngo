@@ -11,7 +11,7 @@ import "fmt"
 
 type money float64
 
-// money satisfies the fmt.Stringer
+// String makes the money an fmt.Stringer
 func (m money) String() string {
 	return fmt.Sprintf("$%.2f", m)
 }

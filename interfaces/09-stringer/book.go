@@ -16,13 +16,15 @@ type book struct {
 	published timestamp
 }
 
-// book satisfies the fmt.Stringer
+// String method makes the book an fmt.Stringer.
+// The list was calling the embedded product type's String(),
+// now it calls the book.String().
 func (b *book) String() string {
 	// product.String() has a pointer receiver.
-	// That's why you need to manually take the product's address here.
+	// Therefore, you need to manually take the product's address.
 	//
-	// If you pass: "b.product", Go would pass it as a copy to Sprintf.
+	// If you pass: "b.product", Go would pass it as a copy to `Sprintf`.
 	// In that case, Go can't deference b.product automatically.
-	// It's because: b.product would be different value—a copy.
+	// It's because: b.product would be a different value, a copy.
 	return fmt.Sprintf("%s - (%s)", &b.product, b.published)
 }

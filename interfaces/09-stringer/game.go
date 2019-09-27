@@ -8,7 +8,8 @@
 package main
 
 type game struct {
-	// game satisfies the fmt.Stringer
-	// because the product satisfies the fmt.Stringer
+	// game is an fmt.Stringer
+	// because the product is an fmt.Stringer
+	// and the game embeds the product
 	product
 }

@@ -12,40 +12,42 @@ import (
 	"time"
 )
 
-// Mon Jan 2 15:04:05 -0700 MST 2006
-const layout = "2006/01"
+// timestamp stores, formats and automatically prints a timestamp: it's a stringer.
+type timestamp struct {
+	// timestamp embeds a time, therefore it can be used as a time value.
+	// there is no need to convert a time value to a timestamp value.
+	time.Time
+}
 
-// unknown is the zero value of a timestamp.
-var unknown = timestamp(time.Time{})
-
-// Timestamp prints timestamps, it's a stringer.
-// Timestamp is useful even if it's zero.
-type timestamp time.Time
-
-// String makes the timestamp a stringer.
+// String method makes the timestamp an fmt.stringer.
 func (ts timestamp) String() string {
-	t := time.Time(ts)
-
-	if t.IsZero() {
+	if ts.IsZero() {
 		return "unknown"
 	}
 
-	return t.Format(layout)
+	// Mon Jan 2 15:04:05 -0700 MST 2006
+	const layout = "2006/01"
+	return ts.Format(layout)
 }
 
-// toTimestamp was "book.format" before.
-// Now it returns a timestamp value depending on the type of `v`.
+// toTimestamp returns a timestamp value depending on the type of `v`.
+// toTimestamp was "book.format()" before.
 func toTimestamp(v interface{}) timestamp {
 	var t int
 
 	switch v := v.(type) {
 	case int:
+		// book{title: "moby dick", price: 10, published: 118281600},
 		t = v
 	case string:
+		// book{title: "odyssey", price: 15, published: "733622400"},
 		t, _ = strconv.Atoi(v)
 	default:
-		return unknown
+		// book{title: "hobbit", price: 25},
+		return timestamp{}
 	}
 
-	return timestamp(time.Unix(int64(t), 0))
+	return timestamp{
+		Time: time.Unix(int64(t), 0),
+	}
 }
