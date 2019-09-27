@@ -1,4 +1,5 @@
 # Questions: Statements #
+
 ---
 
 ## 1. Which of the following best describes a statement? ##
@@ -9,14 +10,13 @@
 
 (C) A statement can't change the execution flow of a program.
 
-
 ---
 
 **Solution**: (A) 
 
-That's right. A statement like `fmt.Println("hi")` tells go to print something to the console
+That's right. A statement like `fmt.Println("hi")` tells go to print something to the console.
 
-Statements themselves can't produce values and statements like `if` may change the execution flow of a program.
+Statements like `if` may change the execution flow of a program.
 
 ---
 
@@ -90,7 +90,6 @@ func main() {
 
 (C) Because "Hello" must be removed out of the `main()` function.
 
-
 ---
 
 **Solution**: (A)
@@ -109,11 +108,9 @@ import (
 )
 
 func main() {
-    fmt.Println(
-        fmt.Println(runtime.NumCPU());
-        fmt.Println("cpus");
-        fmt.Println("on the machine");
-    )
+    fmt.Println(runtime.NumCPU());
+    fmt.Println("cpus");
+    fmt.Println("on the machine");
 }
 ```
 
@@ -121,13 +118,13 @@ func main() {
 
 (B) It won't work: You can only use a single statement on a single line of code.
 
-(C) It will run: Go automatically adds a semicolons at the end of every statement behind the scenes.
+(C) It will run: Go automatically adds a semicolon at the end of every statement behind the scenes.
 
 ---
 
 **Solution**: (C)
 
-Whether a semicolon is explicitly used or not, Go adds them automatically. To the compiler, each statement is on it's own line.
+Whether a semicolon is explicitly used or not, Go adds them automatically. To the compiler, each statement is on its own line.
 
 ---
 
@@ -157,8 +154,6 @@ func main() {
 
 That's right. The `+` operator combines `10` and `runtime.NumCPU()`.
 
-Statements can't be used with operators. For example: `import "fmt" + 3` will produce an error. However, this doesn't mean that they can be combined using expressions.
+Statements can't be used with operators. For example, `import "fmt" + 3` will produce an error. However, this doesn't mean that they can be combined using expressions.
 
-Expressions can return multiple values, but is not the reason why the program will run, since the expression inside `fmt.Println()` only produces a single value.
-
----
+Expressions can return multiple values. However, that is not the reason why the program will run, since the expression inside `fmt.Println()` only produces a single value.

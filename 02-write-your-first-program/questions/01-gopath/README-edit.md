@@ -1,57 +1,49 @@
-# Questions: Run Your First Program
----
-
-## 1. What is the difference between `go build` and `go run`?
-(A) `go run` compiles the program; `go build` compiles and runs it. <br>
-(B) `go run` compiles and runs the program; `go build` only compiles it. <br>
-
----
-**Solution**: (B) <br>
-
-`go run` compiles and then runs the program, which allows the program to print output to the command-line directly after calling it. <br>
-
-`go build` compiles the program into an executable binary file that must be called by the main.go directory name. <br>
+# Questions: Go PATH #
 
 ---
 
-## 2. What directory does Go compile code into? ##
-(A) The same directory where `go build` was called. <br>
-(B) The `$GOPATH/src` directory. <br>
-(C) The `$GOPATH/pkg` <br>
-(D) Into a temporary directory. <br>
+## 1. Where should you save your Go source code files? ##
 
----
-**Solution**: (A) <br>
-Running the command to build a `main.go` file will result in a executable file which was placed there after go compiled the code. <br>
+(A) Anywhere on my computer
 
-(B) Only Go source code files exist in the `$GOPATH/usr` directory <br>
-(C) Go will only put code there when `go install` is called. <br>
+(B) In the `$GOPATH` directory
+
+(C) In the `$GOPATH`/src directory
 
 ---
 
-## 2. Which of the following statements is true about runtime? ##
-(A) Runtime refers to when the program being running on a computer. <br>
-(B) Runtime refers to the during which Go is compiling the code.  <br>
+**Solution**: (C)
 
 ---
+
+## 2. What is the `$GOPATH`? ##
+
+(A) It's the file Go uses to run your programs.
+
+(B) It is the place where Go stores all source code files and compiled packages.
+
+(C) It's a path for all gophers to follow.
+
+---
+
 **Solution**: (B)
-The key work is `run`; runtime occurs only after the compiler has successfully built the program. <br>
 
 ---
-## 3. Which of the following statements is true about compile-time? ##
-(A) Compile-time refers to when the program being running on a computer. <br>
-(B) Compile-time refers to the time during which Go is compile the code. <br>
+
+## 3. How can you print your `$GOPATH` in the terminal? ##
+
+(A) Using the `ls` command.
+
+(B) Using the `go env GOPATH` command
+
+(C) Using the `go environment` command
 
 ---
-## When can a Go program print messages to the console? ##
-(A) While the program is being compiled. <br>
-(B) During runtime (after compile-time) <br>
-(C) During runtime (before compile-time) <br>
 
----
-**Solution**: (B) <br>
-Go can only print messages during runtime. <br>
-While the compiler is building the program, is "dead" and cannot run. <br>
-Runtime can only happen after compile-time.
+**Solution**: (B)
+
+That's right! By running the command `go env GOPATH` your Go PATH variable should print to the console screen.
+
+To view all of your Go environment variables, run the command `go env`.
 
 ---
