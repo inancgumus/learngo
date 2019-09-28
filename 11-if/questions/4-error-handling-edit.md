@@ -1,4 +1,5 @@
 # Questions: Packages and Scopes #
+
 ---
 
 ## 1. Where should a package's source code files be stored? ##
@@ -14,6 +15,7 @@
 A packages source should be in the same directory so that features/functionality can be shared between the various source files.
 
 ---
+
 ## 2. How are package clauses used in a `.go` files? ##
 
 (A) They are used to import packages.
@@ -50,10 +52,9 @@ The `package clause` must always be the first line of readable code interpreted 
 
 ## 4. Which of the following is true? ##
 
-(A) All files belonging to the same package cannot call each other's function. 
+(A) All files belonging to the same package cannot call each other's functions. 
 
-(B) All files belonging to the same package can call each other's functions. 
-
+(B) All files belonging to the same package can call each other's functions.
 
 ---
 
@@ -74,6 +75,7 @@ Functions that are defined in a Go package are exportable and readable by other 
 (D) `go run *.go`
 
 ---
+
 **Solution**: (D)
 
 The `*` represents a wild-card that will execute any file that ends in `.go`. 

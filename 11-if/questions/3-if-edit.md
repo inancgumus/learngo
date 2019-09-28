@@ -16,7 +16,7 @@
 
 Go will always execute code from top-to-bottom going left-to-right on each line. 
 
-Control flow allows us decide which parts of a program will run depending on conditional values like `true` and `false`.
+Control flow allows us to decide which parts of a program will run depending on conditional values like `true` and `false`.
 
 ---
 
@@ -24,7 +24,7 @@ Control flow allows us decide which parts of a program will run depending on con
 
 ```go
 if (mood == "perfect") {
-	// ...
+    // ...
 }
 ```
 
@@ -56,14 +56,14 @@ package main
 import "fmt"
 
 func main() {
-	// this program prints "cool"
-	// when the mood is "happy"
+    // this program prints "cool"
+    // when the mood is "happy"
 
-	mood := "happy"
+    mood := "happy"
 
-	if "happy" {
-		fmt.Println("cool")
-	}
+    if "happy" {
+        fmt.Println("cool")
+    }
 }
 ```
 
@@ -93,11 +93,11 @@ package main
 import "fmt"
 
 func main() {
-	happy := true
+    happy := true
 
-	if happy == true {
-		fmt.Println("cool!")
-	}
+    if happy == true {
+        fmt.Println("cool!")
+    }
 }
 ```
 
@@ -128,11 +128,11 @@ package main
 import "fmt"
 
 func main() {
-	happy := false
-	
-	if happy == !true {
-		fmt.Println("why not?")
-	}
+    happy := false
+    
+    if happy == !true {
+        fmt.Println("why not?")
+    }
 }
 ```
 (A) Changing `happy != false` to `happy == !true`
@@ -158,17 +158,17 @@ package main
 import "fmt"
 
 func main() {
-	happy := false
+    happy := false
 
-	if happy {
-		fmt.Println("cool!")
-	} else if !happy {
-		fmt.Println("why not?")
-	} else {
-		fmt.Println("why not?")
-	} else {
-		fmt.Println("why not?")
-	}
+    if happy {
+        fmt.Println("cool!")
+    } else if !happy {
+        fmt.Println("why not?")
+    } else {
+        fmt.Println("why not?")
+    } else {
+        fmt.Println("why not?")
+    }
 }
 ```
 
@@ -199,20 +199,20 @@ package main
 import "fmt"
 
 func main() {
-	happy := true
-	energic := happy
+    happy := true
+    energic := happy
 
-	if happy {
-		fmt.Println("cool!")
-	} else if !happy {
-		fmt.Println("why not?")
-	} else if energic {
-		fmt.Println("working out?")
-	}
+    if happy {
+        fmt.Println("cool!")
+    } else if !happy {
+        fmt.Println("why not?")
+    } else if energic {
+        fmt.Println("working out?")
+    }
 }
 ```
 
-(A) The variable `energic` is declared but enver used.
+(A) The variable `energic` is declared but never used.
 
 (B) More than one `else if` branch is used.
 
@@ -238,19 +238,19 @@ package main
 import "fmt"
 
 func main() {
-	happy := false
-	
-	if happy {
-		fmt.Println("cool!")
-	} else if happy != true {
-		fmt.Println("why not?")
-	} else {
-		fmt.Println("why not?") 
-	}
+    happy := false
+    
+    if happy {
+        fmt.Println("cool!")
+    } else if happy != true {
+        fmt.Println("why not?")
+    } else {
+        fmt.Println("why not?") 
+    }
 }
 ```
 
-(A) Changing `else if`'s condition to `!happy`.
+(A) Changing the `else if`'s condition to `!happy`.
 
 (B) Moving the `else` branch before the `else if`
 
