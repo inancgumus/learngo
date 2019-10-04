@@ -14,35 +14,47 @@ import (
 )
 
 func main() {
+	out := encode()
+	decode(out)
+}
+
+func decode(data []byte) {
+	// data := []byte(`[
+	//     { "Title": "moby dick", "Price": 5, "Published": 118281600 },
+	//     { "Title": "odyssey", "Price": 7.5, "Published": 733622400 },
+	//     { "Title": "hobbit", "Price": 12.5, "Published": -62135596800 }
+	// ]`)
+
+	var books []*book
+
+	if err := json.Unmarshal(data, &books); err != nil {
+		log.Fatalln(err)
+	}
+
+	for _, b := range books {
+		fmt.Println(b)
+	}
+}
+
+func encode() []byte {
 	store := list{
 		&book{product{"moby dick", 10}, toTimestamp(118281600)},
 		&book{product{"odyssey", 15}, toTimestamp("733622400")},
-		&book{product{"hobbit", 25}, unknown},
+		&book{product{"hobbit", 25}, toTimestamp(nil)},
 		&puzzle{product{"rubik's cube", 5}},
 		&game{product{"minecraft", 20}},
 		&game{product{"tetris", 5}},
 		&toy{product{"yoda", 150}},
 	}
 
-	out, err := json.MarshalIndent(store, "", "\t")
+	store.discount(.5)
+	// fmt.Print(store)
+
+	out, err := json.MarshalIndent(store[:3], "", "\t")
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(string(out))
-
-	// store.discount(.5)
-	// fmt.Print(store)
-
-	// ----
-
-	// var ts timestamp
-	// json.Unmarshal([]byte(`118281600`), &ts)
-	// fmt.Println(ts)
-
-	// json.Unmarshal([]byte(`"18281600"`), &ts)
-	// fmt.Println(ts)
-
-	// json.Unmarshal([]byte(`"incorrect"`), &ts)
-	// fmt.Println(ts)
+	return out
+	// fmt.Println(string(out))
 }

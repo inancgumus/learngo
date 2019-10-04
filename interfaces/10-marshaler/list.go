@@ -29,7 +29,6 @@ func (l list) String() string {
 		str.WriteString(it.String())
 		str.WriteRune('\n')
 	}
-
 	return str.String()
 }
 

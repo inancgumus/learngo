@@ -12,53 +12,35 @@ import (
 	"time"
 )
 
-// unknown is the zero value of a timestamp.
-var unknown = timestamp(time.Time{})
-
-// timestamp prints timestamps, it's a stringer.
-// It is useful even if it's zero.
-type timestamp time.Time
-
-// MarshalJSON is an implementation of the json.Marshaler interface.
-// json.Marshal and json.Encode call this method.
-func (ts timestamp) MarshalJSON() (out []byte, err error) {
-	u := time.Time(ts).Unix()
-	return strconv.AppendInt(out, u, 10), nil
+type timestamp struct {
+	time.Time
 }
 
+// timestamp knows how to decode itself from json.
+//
 // UnmarshalJSON is an implementation of the json.Unmarshaler interface.
 // json.Unmarshal and json.Decode call this method.
 func (ts *timestamp) UnmarshalJSON(data []byte) error {
-	s := string(data)
-
-	// Let the ParseInt parse quoted strings.
-	us, err := strconv.Unquote(s)
-	if err == nil {
-		s = us
-	}
-
-	// Always overwrite the timestamp when decoding.
-	*ts = unknown
-
-	// Handle the numeric case.
-	if n, err := strconv.ParseInt(s, 10, 64); err == nil {
-		*ts = timestamp(time.Unix(n, 0))
-	}
-
+	*ts = toTimestamp(string(data))
 	return nil
 }
 
-func (ts timestamp) String() string {
-	t := time.Time(ts)
+// timestamp knows how to encode itself to json.
+//
+// MarshalJSON is an implementation of the json.Marshaler interface.
+// json.Marshal and json.Encode call this method.
+func (ts timestamp) MarshalJSON() (out []byte, err error) {
+	return strconv.AppendInt(out, ts.Unix(), 10), nil
+}
 
-	if t.IsZero() {
+func (ts timestamp) String() string {
+	if ts.IsZero() {
 		return "unknown"
 	}
 
 	// Mon Jan 2 15:04:05 -0700 MST 2006
 	const layout = "2006/01"
-
-	return t.Format(layout)
+	return ts.Format(layout)
 }
 
 func toTimestamp(v interface{}) timestamp {
@@ -66,12 +48,17 @@ func toTimestamp(v interface{}) timestamp {
 
 	switch v := v.(type) {
 	case int:
+		// book{title: "moby dick", price: 10, published: 118281600},
 		t = v
 	case string:
+		// book{title: "odyssey", price: 15, published: "733622400"},
 		t, _ = strconv.Atoi(v)
 	default:
-		return unknown
+		// book{title: "hobbit", price: 25},
+		return timestamp{}
 	}
 
-	return timestamp(time.Unix(int64(t), 0))
+	return timestamp{
+		Time: time.Unix(int64(t), 0),
+	}
 }
