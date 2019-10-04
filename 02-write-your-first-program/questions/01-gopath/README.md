@@ -1,19 +1,41 @@
-## Where should you save your Go source code?
-* Anywhere on my computer
-* Under $GOPATH
-* Under $GOPATH/src *CORRECT*
+# Questions: Go PATH #
 
-## What does $GOPATH mean?
-* It's a file for Go runtime
-* Stores Go source code files and compiled packages
-* It's a path for gophers to follow
+---
 
-## Do you need to set $GOPATH?
-* Yes
-* No: It's stored on my desktop
-* No: It's stored under my user path *CORRECT*
+## (1) Where should you save your Go source code files? ##
 
-## How can you print $GOPATH?
-* Using `ls` command
-* Using `go env GOPATH` command *CORRECT*
-* Using `go environment` command
+1. Anywhere on my computer
+2. In the `$GOPATH` directory
+3. In the `$GOPATH`/src directory
+
+---
+
+**Solution: 3**
+
+---
+
+## (2) What is the `$GOPATH`? ##
+
+1. It's the file Go uses to run your programs.
+2. It is the place where Go stores all source code files and compiled packages.
+3. It's a path for all gophers to follow.
+
+---
+
+**Solution: 2**
+
+---
+
+## (3) How can you print your `$GOPATH` in the terminal? ##
+
+1. Using the `ls` command.
+2. Using the `go env GOPATH` command
+3. Using the `go environment` command
+
+---
+
+**Solution: 3**
+
+That's right! By running the command `go env GOPATH` your Go PATH variable should print to the console screen.
+
+*Note*: To view all of your Go environment variables, run the command `go env`.
