@@ -24,7 +24,7 @@ type item interface {
 	//
 	// same as this:
 	// String() string
-	fmt.Stringer
+	// fmt.Stringer
 }
 type list []item
 
@@ -42,11 +42,12 @@ func (l list) String() string {
 		// the builder.WriteString doesn't know about the stringer interface.
 		// because it takes a string argument.
 		// so, you need to call the String method yourself.
-		str.WriteString(it.String())
-		str.WriteRune('\n')
+		// str.WriteString(it.String())
+		// str.WriteRune('\n')
 
 		// or slower way:
-		// fmt.Fprintln(&str, it)
+		// Print funcs can detect fmt.Stringer automatically.
+		fmt.Fprintln(&str, it)
 	}
 
 	return str.String()

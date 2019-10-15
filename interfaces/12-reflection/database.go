@@ -31,6 +31,12 @@ func (db *database) MarshalJSON() ([]byte, error) {
 		// Name   -> returns the type name as string
 		t := reflect.TypeOf(it).Elem().Name()
 		e = append(e, encodable{t, it})
+
+		// Another way:
+		//
+		// t := fmt.Sprintf("%T", it)
+		//
+		// Uses: reflect.TypeOf(arg).String()
 	}
 
 	return json.Marshal(e)
