@@ -12,22 +12,26 @@ import (
 	"time"
 )
 
-// timestamp stores, formats and automatically prints a timestamp: it's a stringer.
+// timestamp stores, formats and automatically prints a timestamp.
 type timestamp struct {
+	// timestamp anonymously embeds a time.
+	// no need to convert a time value to a timestamp value to use the methods of the time type.
 	time.Time
 }
 
-// String method makes the timestamp an fmt.stringer.
+// String() returns a string representation of timestamp.
+// timestamp is an fmt.Stringer.
 func (ts timestamp) String() string {
-	if ts.IsZero() {
+	if ts.IsZero() { // same as: ts.Time.IsZero()
 		return "unknown"
 	}
 
 	// Mon Jan 2 15:04:05 -0700 MST 2006
 	const layout = "2006/01"
-	return ts.Format(layout)
+	return ts.Format(layout) // same as: ts.Time.Format(layout)
 }
 
+// toTimestamp returns a timestamp value depending on the type of `v`.
 func toTimestamp(v interface{}) (ts timestamp) {
 	var t int
 

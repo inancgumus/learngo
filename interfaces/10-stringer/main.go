@@ -10,16 +10,13 @@ package main
 import "fmt"
 
 func main() {
-	// The money type is a stringer.
-	// You don't need to call the String method when printing a value of it.
-	// var pocket money = 10
-	// fmt.Println(pocket)
-
 	l := list{
 		{title: "moby dick", price: 10, released: toTimestamp(118281600)},
 		{title: "odyssey", price: 15, released: toTimestamp("733622400")},
 		{title: "hobbit", price: 25},
 	}
+
+	l.discount(.5)
 
 	// The list is a stringer.
 	// The `fmt.Print` function can print the `l`
@@ -29,4 +26,9 @@ func main() {
 	// detect whether a type is a Stringer:
 	// https://golang.org/src/fmt/print.go#L627
 	fmt.Print(l)
+
+	// The money type is a stringer.
+	// You don't need to call the String method when printing a value of it.
+	// var pocket money = 10
+	// fmt.Println("I have", pocket)
 }

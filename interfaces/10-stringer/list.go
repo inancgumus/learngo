@@ -8,7 +8,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -21,7 +20,10 @@ func (l list) String() string {
 
 	var str strings.Builder
 	for _, p := range l {
-		fmt.Fprintf(&str, "* %s\n", p)
+		// fmt.Printf("* %s\n", p)
+		str.WriteString("* ")
+		str.WriteString(p.String())
+		str.WriteRune('\n')
 	}
 	return str.String()
 }
