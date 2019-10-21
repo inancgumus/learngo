@@ -8,7 +8,6 @@
 package main
 
 import (
-	"sort"
 	"strings"
 )
 
@@ -18,8 +17,6 @@ func (l list) String() string {
 	if len(l) == 0 {
 		return "Sorry. We're waiting for delivery 🚚.\n"
 	}
-
-	sort.Sort(l)
 
 	var str strings.Builder
 	for _, p := range l {

@@ -9,7 +9,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
@@ -21,8 +20,27 @@ func main() {
 
 	// sort.Sort(l)
 	// sort.Sort(sort.Reverse(l))
-	// sort.Sort(byRelease{l})
-	sort.Sort(sort.Reverse(byRelease{l}))
+	// sort.Sort(byReleaseDate(l))
+	// sort.Sort(sort.Reverse(byReleaseDate(l)))
 
 	fmt.Print(l)
 }
+
+/*
+Summary:
+
+- sort.Sort() can sort any type that implements the sort.Interface
+
+- sort.Interface has three methods: Len(), Less(), Swap()
+  - Len() returns the length of a collection.
+  - Less() should return true when an element comes before another one.
+  - Swap()s the elements when Less() returns true.
+
+- sort.Reverse() sorts a sort.Interface value.
+
+- You can customize the sorting:
+  - by anonymously embedding the sort.Interface type
+  - and adding a Less() method.
+
+- Anonymous embedding means auto-forwarding method calls to an embedded value.
+*/
