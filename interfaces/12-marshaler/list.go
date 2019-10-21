@@ -8,6 +8,7 @@
 package main
 
 import (
+	"sort"
 	"strings"
 )
 
@@ -34,16 +35,20 @@ func (l list) discount(ratio float64) {
 	}
 }
 
+// implementation of the sort.Interface:
+
 // by default `list` sorts by `Title`.
 func (l list) Len() int           { return len(l) }
-func (l list) Swap(i, j int)      { l[i], l[j] = l[j], l[i] }
 func (l list) Less(i, j int) bool { return l[i].Title < l[j].Title }
+func (l list) Swap(i, j int)      { l[i], l[j] = l[j], l[i] }
 
 // byRelease sorts by product release dates.
-type byRelease struct {
-	list
-}
+type byRelease struct{ list }
 
 func (bp byRelease) Less(i, j int) bool {
 	return bp.list[i].Released.Before(bp.list[j].Released.Time)
+}
+
+func byReleaseDate(l list) sort.Interface {
+	return &byRelease{l}
 }

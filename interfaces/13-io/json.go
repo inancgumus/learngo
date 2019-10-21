@@ -24,11 +24,11 @@ func encode() ([]byte, error) {
 	return json.MarshalIndent(l, "", "\t")
 }
 
-func decode(data []byte) (l list, err error) {
+func decode(data []byte) (l list, _ error) {
 	if err := json.Unmarshal(data, &l); err != nil {
 		return nil, err
 	}
-	return l, nil
+	return
 }
 
 func decodeFile(path string) (list, error) {

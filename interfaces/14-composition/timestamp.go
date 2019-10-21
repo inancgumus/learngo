@@ -31,7 +31,7 @@ func (ts *timestamp) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (ts timestamp) MarshalJSON() (out []byte, err error) {
+func (ts timestamp) MarshalJSON() (out []byte, _ error) {
 	return strconv.AppendInt(out, ts.Unix(), 10), nil
 }
 

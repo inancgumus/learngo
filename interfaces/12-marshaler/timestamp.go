@@ -16,6 +16,8 @@ type timestamp struct {
 	time.Time
 }
 
+// implementation of the fmt.Stringer interface:
+
 func (ts timestamp) String() string {
 	if ts.IsZero() {
 		return "unknown"
@@ -26,8 +28,9 @@ func (ts timestamp) String() string {
 	return ts.Format(layout)
 }
 
+// implementation of the json.Marshaler and json.Unmarshaler interfaces:
+
 // timestamp knows how to decode itself from json.
-// UnmarshalJSON is an implementation of the json.Unmarshaler interface.
 // json.Unmarshal and json.Decode call this method.
 func (ts *timestamp) UnmarshalJSON(data []byte) error {
 	*ts = toTimestamp(string(data))
@@ -35,11 +38,9 @@ func (ts *timestamp) UnmarshalJSON(data []byte) error {
 }
 
 // timestamp knows how to encode itself to json.
-// MarshalJSON is an implementation of the json.Marshaler interface.
 // json.Marshal and json.Encode call this method.
-func (ts timestamp) MarshalJSON() (out []byte, err error) {
-	// return ts.Time.MarshalJSON()
-	return strconv.AppendInt(out, ts.Unix(), 10), nil
+func (ts timestamp) MarshalJSON() (data []byte, _ error) {
+	return strconv.AppendInt(data, ts.Unix(), 10), nil
 }
 
 func toTimestamp(v interface{}) (ts timestamp) {

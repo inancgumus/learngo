@@ -14,7 +14,7 @@ import (
 type product struct {
 	Title    string    `json:"title"`
 	Price    money     `json:"price"`
-	Released timestamp `json:"released,omitempty"`
+	Released timestamp `json:"released"`
 }
 
 func (p *product) String() string {
