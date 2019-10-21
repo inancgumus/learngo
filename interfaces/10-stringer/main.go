@@ -32,3 +32,17 @@ func main() {
 	// var pocket money = 10
 	// fmt.Println("I have", pocket)
 }
+
+/*
+Summary:
+
+- fmt.Stringer has one method: String()
+  - That returns a string.
+  - It is better to be an fmt.Stringer instead of printing directly.
+
+- Implement the String() on a type and the type can represent itself as a string.
+  - Bonus: The functions in the fmt package can print your type.
+  - They use type assertion to detect if a type implements a String() method.
+
+- strings.Builder can efficiently combine multiple string values.
+*/
