@@ -65,5 +65,5 @@ func (bp byRelease) Swap(i, j int) { bp.list.Swap(i, j)   }
 */
 
 func byReleaseDate(l list) sort.Interface {
-	return &byRelease{l}
+	return byRelease{l}
 }

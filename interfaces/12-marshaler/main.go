@@ -34,14 +34,12 @@ func main() {
 Summary:
 
 - json.Marshal() and json.MarshalIndent() can only encode primitive types.
-  - It cannot encode custom types.
-  - Implement the json.Marshaler interface and teach it how to encode your custom types.
-  - See time.Time code: It satisfies the json.Marshaler interface.
+  - Custom types can tell the encoder how to encode.
+  - To do that satisfy the json.Marshaler interface.
 
 - json.Unmarshal() can only decode primitive types.
-  - It cannot decode custom types.
-  - Implement the json.Unmarshaler interface and teach it how to decode your custom types.
-  - See time.Time code: It satisfies the json.Unmarshaler interface as well.
+  - Custom types can tell the decoder how to decode.
+  - To do that satisfy the json.Unmarshaler interface.
 
 - strconv.AppendInt() can append an int value to a []byte.
   - There are several other functions in the strconv package for other primitive types as well.
