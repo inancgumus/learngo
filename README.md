@@ -1,12 +1,12 @@
 # A Huge Number of Go Examples, Exercises and Quizzes
 
-This repository contains the examples, exercises, and quizzes for my [Go course: Learn Go Programming: Complete Bootcamp Course](https://www.udemy.com/learn-go-the-complete-bootcamp-course-golang/?couponCode=FROM-GITHUB). However, even without the course, using this repository, you can learn a great deal of information about Go. Inside, there are thousands of examples, exercises and quizzes. 
+This repository contains the examples, exercises, and quizzes for my [Go course: Learn Go Programming: Complete Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37). However, even without the course, using this repository, you can learn a great deal of information about Go. Inside, there are thousands of examples, exercises and quizzes. 
 
 You're welcome to contribute your own exercises, quizzes and wiki.
 
 Enjoy!
 
-**Get the course now for 80% off with this [link](https://www.udemy.com/learn-go-the-complete-bootcamp-course-golang/?couponCode=FROM-GITHUB).**
+**Enroll in the course now with this [link](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37).**
 
 ---
 
