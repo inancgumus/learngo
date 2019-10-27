@@ -1,54 +1,73 @@
-## Which one is the correct description for a statement?
-1. A statement instructs Go to do something *CORRECT*
-2. A statement produces a value
-3. A statement can't change the execution flow
+# Questions: Statements #
 
-> **2:** A statement can't produce a value. However, it can indirectly help to produce a value.
->
->
-> **3:** It surely can.
->
->
+---
 
+## (1) Which of the following best describes a statement? ##
 
-## What's the direction of execution in a Go code?
-1. From left to right
-2. From top to bottom *CORRECT*
-3. From right to left
-4. From bottom to top
+1. A statement instructs Go to do something.
+2. A statement produces a value.
+3. A statement can't change the execution flow of a program.
 
-> **2:** That's right. Go executes the code from top-to-bottom, one statement at a time.
->
->
+---
 
+**Solution: 1**
 
-## Which one is the correct description for an expression?
-1. An expression instructs Go to do something
-2. An expression produces a value *CORRECT*
-3. An expression can change the execution flow
+That's right. A statement like `fmt.Println("hi")` tells go to print something to the console.
 
-> **1:** It can't. Only a statement can do that.
->
->
-> **3:** It can't. Only a statement can do that.
->
->
+> 2. A statement can't produce a value. However, it can indirectly help produce a value.
+> 3. Statements like `if` may change the execution flow of a program.
 
+---
 
-## Which one is the correct description for an operator?
-1. An operator instructs Go to do something
-2. An operator can change the execution flow
-3. An operator can combine expressions *CORRECT*
+## (2) In what direction does Go execute code? ##
 
-> **1:** It can't. Only a statement can do that.
->
->
-> **2:** It can't. Only a statement can do that.
->
->
+1. From left to right.
+2. From top to bottom.
+3. From right to left.
+4. From bottom to top.
 
+---
 
-## Why doesn't the following program work?
+**Solution: 2**
+
+That's right. Go executes code from top to bottom, executing one statement at a time.
+
+---
+
+## (3) Which of the following best describes an expression? ##
+
+1. An expression instructs Go to do something.
+2. An expression produces a value.
+3. An expression can change the execution flow of a program.
+
+---
+
+**Solution: 2**
+
+1. Only statements can instruct Go to do something and3. change the execution flow of a pr
+gram.
+
+---
+
+## (4) Which one of the following best describes an operator? ##
+
+1. An operator instructs Go to do something.
+2. An operator can change the execution flow of a program.
+3. An operator can combine expressions.
+
+---
+
+**Solution: 3**
+
+If you combine string values with the operator `+` between them, the resulting value is a string literal.
+
+> 1. Only statements can instruct tell Go to do something
+> 2. Only statements can change the execution flow of a program.
+
+---
+
+## (5) Please review the following program and determine why it will not run. ##
+
 ```go
 package main
 import "fmt"
@@ -56,14 +75,23 @@ import "fmt"
 func main() {
     "Hello"
 }
+
 ```
 
-1. "Hello" is an expression and it can't be on its own on a single line of code without a statement. *CORRECT*
-2. By removing the double-quotes surrounding the "Hello". Like this: Hello
-3. By moving "Hello" out of the func main.
+1. Because "Hello" is an expression and cannot exist on a single line of code without a statement.
+2. Because the double-quotes surrounding "Hello" must be removed.
+3. Because "Hello" must be removed out of the `main()` function.
 
+---
 
-## Does the following program work?
+**Solution: 1**
+
+> 3. `"Hello"` is just a string literal value and without being used within a statement, the Go compiler will produce an error.
+
+---
+
+## (6) Please review the following program and determine if the program will run. ##
+
 ```go
 package main
 import (
@@ -72,26 +100,26 @@ import (
 )
 
 func main() {
-    fmt.Println(runtime.NumCPU()); fmt.Println("cpus"); fmt.Println("the machine")
+    fmt.Println(runtime.NumCPU());
+    fmt.Println("cpus");
+    fmt.Println("on the machine");
 }
 ```
 
-1. It works: Expressions can be typed by separating them using semicolons
-2. It doesn't work: Statements should be on their own on a single line of code
-3. It works: Go adds semicolons behind the scenes for every statement already *CORRECT*
+1. It will run: You can type expressions by separating them using semicolons.
+2. It won't work: You can only use a single statement on a single line of code.
+3. It will run: Go automatically adds a semicolon at the end of every statement behind the scenes.
 
-> **1:** It works but that's not the reason. And, expressions can't be typed like that.
->
->
-> **2:** Are you sure?
->
->
-> **3:** That's right. Whether there's a semicolon or not; Go adds them automatically. Those statements are still assumed as they're on a different code line of their own.
->
->
+---
 
+**Solution: 3**
 
-## Why does this program work?
+Whether a semicolon is explicitly used or not, Go adds them automatically. To the compiler, each statement is on its own line.
+
+---
+
+## (7) Please review the following program and determine why it will run. ##
+
 ```go
 package main
 import (
@@ -104,16 +132,14 @@ func main() {
 }
 ```
 
-1. Operators can combine expressions *CORRECT*
-2. Statements can be used with operators
-3. Expressions can return multiple values
+1. Operators can combine expressions.
+2. Statements can be used with operators.
+3. Expressions can return multiple values.
 
-> **1:** That's right. + operator combines `runtime.NumCPU()` and `10` expressions.
->
->
-> **2:** No, they can't be. For example, you can't do this: `import "fmt" + 3`. Some statement can allow expressions. However, this doesn't mean that they can be combined using expressions.
->
->
-> **3:** That's right however it's irrelevant to why this code works.
->
->
+---
+
+**Solution: 1**
+
+That's right. The `+` operator combines `10` and `runtime.NumCPU()`.
+
+> 3. Expressions can return multiple values. However, that is not the reason why the program will not run, since the expression inside `fmt.Println()` only produces a single value.

@@ -1,163 +1,191 @@
-## Which keyword below that you need use to define a package?
-```go
-package main
+# Questions: Code Your Own Program
 
-func main() {
-}
-```
-1. func
-2. package *CORRECT*
-3. fmt.Println
-4. import
+---
 
-> **1:** func keyword is used to declare a new function.
->
->
-> **2:** That's right! package keyword allows you to define a package for a Go file.
->
->
-> **3:** It's not a keyword, it's a function of the fmt package.
->
->
-> **4:** import keyword is used to import a package.
->
->
+## (1) Which of the following keywords is used to define a package?
 
-
-## What is the purpose of using package main in the following program?
-```go
-package main
-
-func main() {
-}
-```
-* To create a library package
-* To properly exit from the program
-* To create an executable Go program *CORRECT*
-
-
-## What is the purpose of func main in the following program?
-```go
-package main
-
-func main() {
-}
-```
-1. It defines a package called main
-2. It allows Go to start executing the program *CORRECT*
-3. It prints a message to the console
-
-> **1:** main function doesn't create a package.
->
->
-> **2:** That's right. Go automatically calls the main function to execute a program.
->
->
-> **3:** It doesn't print anything (at least directly).
->
->
-
-
-## What is the purpose of import "fmt" in the following program?
 ```go
 package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hi!")
+    fmt.Println("Hello, World!")
 }
 ```
-1. It prints "fmt" to the console
-2. It defines a new package called "fmt"
-3. It imports the `fmt` package; so you can use its functionalities *CORRECT*
 
-> **1:** `fmt.Println` prints a message not the `import "fmt"`.
->
->
-> **2:** `package` keyword does that, not the `import` keyword.
->
->
-> **3:** Yes. For example, after you import the fmt package you can call its Println function to print a message to the console.
->
->
+1. `func`
+2. `package`
+3. `Println()`
+4. `import`
 
+---
 
-## Which keyword is used to declare a new function?
-* func *CORRECT*
-* package
-* Println
-* import
+**Solution: 2**
 
+That's right. The keyword `package`, placed at the top of the program code, allows you to define a new Go package.
 
-## What is a function?
-1. It's like a mini-program. It's a reusable and executable block of code. *CORRECT*
-2. It allows Go to execute a program.
-3. It allows Go to import a package called function.
-4. It prints a message to the console.
+> 1: The keyword `func` is used to declare a new function.
+> 3: `Println()` is a function from the `"fmt"` package.
+> 4: The keyword `import` is used to import a package.
 
-> **2:** Go looks for package main and func main to do that. A function doesn't do that on its own.
->
->
-> **3:** `import` keyword does that.
->
->
-> **4:** For example: `fmt.Println` does that.
->
->
+---
 
+## (2) What is the meaning of `package main` in the following program?
 
-## Do you have to call the main function yourself?
-1. Yes, so that, I can execute my program.
-2. No, Go calls the main function automatically. *CORRECT*
-
-> **1:** No, you don't need to call the main function. Go automatically executes it.
->
->
-
-
-## Do you have to call a function to execute it?
-_(except the main func)_
-1. Yes, so that, Go can execute that function. *CORRECT*
-2. Yes, so that, Go can execute my program.
-3. No, Go calls the functions automatically.
-
-> **1:** That's right. You need to call a function yourself. Go won't execute it automatically. Go only calls the main function automatically (and some other functions which you didn't learn about yet).
->
->
-
-> **2:** That's only the job of the `func main`. There's only one `func main`.
->
->
-
-> **3:** Go doesn't call any function automatically except the main func (and some other functions which you didn't learn about yet). So, except the main func, you need to call the functions yourself.
->
-
-
-## What does the following program print?
 ```go
 package main
 
 func main() {
+    // ...code goes here
 }
 ```
-1. It prints a message to the console
-2. It's a correct program but it doesn't print anything *CORRECT*
-3. It's an incorrect program
 
-> **1:** It doesn't print a message. To do that you can use fmt.Println function.
->
->
+1. It creates a library package.
+2. It tells Go to exit the program.
+3. It creates an executable Go program.
 
-> **2:** Yes, it's a correct program, however since it doesn't contain fmt.Println it doesn't print anything.
->
->
+---
 
-> **3:** It's a correct program. It uses the package keyword and it has a main function. So, this is a valid and an executable Go program.
->
->
+**Solution: 3**
 
+That's right. When the Go compiler reads the `package main` declaration, it creates an executable program from the code within that file.
 
-## What does this program print?
+---
+
+## (3) What does `func main()` do in the following program?
+
+```go
+package main
+
+func main() {
+    // ...
+}
+```
+
+1. It defines a package named `main`.
+2. It tells Go where to begin executing the program.
+3. It prints the message written inside `{}` to the console.
+
+---
+
+**Solution: 2**
+
+Correct! The `func main()` is a special function that tells Go where to start executing a program after it compiles successfully.
+
+> 1: The `main()` function doesn't create a package.
+> 3: It doesn't print an
+
+---
+
+## (4) What does `import "fmt"` do in the following program?
+
+```go
+package main
+import "fmt"
+
+func main() {
+	fmt.Println("Hi!")
+}
+```
+
+1. It prints `"fmt"` to the console.
+2. It defines a new package called `"fmt"`
+3. It imports the `"fmt"` package, allowing the file to use its functionalities.
+
+---
+
+**Solution: 3**
+
+The package `"fmt"` is part of the standard Go library that conatins functions that allow Go programs to print output to the console.
+
+---
+
+## (5) Which keyword is used to declare a new function?
+
+1. `func`
+2. `package`
+3. `Println()`
+4. `import`
+
+---
+
+**Solution: 1**
+
+The keyword `func` declares a new function in Go.
+
+---
+
+## (6) What is a function?
+
+1. It's like a mini-program that is reusable and executable.
+2. It tells Go to execute a program.
+3. It allows Go to import a package called `function`.
+4. It prints a message to the console.
+
+---
+
+**Solution: 1**
+
+A function containing blocks of code can be re-used within the program to execute the same logic as many times as needed.
+
+> 2: Go looks for `package main` and `func main()` to begin executing the program code.
+> 3: The `import` keyword is reserved for importing packages into the program. 
+> 4: functions from the `fmt` package can print text to the console.
+
+---
+
+## (7) Are you required to call the `main()` function yourself?
+
+1. Yes, the program cannot execute without it.
+2. No, Go automatically calls `main()`.
+
+---
+
+**Solution: 1**
+
+That's right. As long as the `main()` function is defined, Go will automatically find and execute it.
+
+---
+
+## (6) Except for the `main()` function, do you have to call a function to execute it?
+
+1. Yes; otherwise go will not execute the code.
+2. Yes; Go will execute any program in the program.
+3. No; Go calls all functions automatically.
+
+---
+
+**Solution: 1**
+
+That's right. You need to call all functions besides the `main()` function if you want Go to execute them.
+
+---
+
+## (7) What will the following program do when executed?
+
+```go
+package main
+
+func main() {}
+```
+
+1. It prints a message to the console.
+2. It's a won't print anything to the console.
+3. The program won't run because there is an error.
+
+---
+
+**Solution: 2**
+
+It won't print anything because the `main()` function doesn't contain the `fmt.Println()` function.
+
+> 1: It doesn't print a message to the console. To do that, you can use the function `fmt.Println()`.
+> 3: There program doesn't contain any errors because uses the `package` keyword and has a `main()` function.
+
+---
+
+## (8) What does the following program print?
+
 ```go
 package main
 
@@ -165,35 +193,41 @@ func main() {
     fmt.Println(Hi! I want to be a Gopher!)
 }
 ```
-* Hi! I want to be a Gopher!
-* It doesn't print anything
-* This program is incorrect *CORRECT*
 
-> **1:** It doesn't pass the message to Println wrapped between double-quotes. It should be like: fmt.Println("Hi! I want to be a Gopher")
->
->
+1. `"Hi, I want to be a Gopher!"`
+2. The program won't print anything to the console.
+3. The program won't compile successfully.
 
-> **3:** It doesn't import "fmt" package. Also see #1.
->
->
+---
 
+**Solution: 3**
 
-## What does this program print?
+That's right! The program requires a few more things before it can print something to the console.
+
+The value inside `fmt.Println()` is not a valid string literal and should be wrapped in double-quotes like this: `"Hi! I want to be a Gopher!"`
+
+The `import` statement is also missing, which is needed to used `Println()` from the package `"fmt"`.
+
+---
+
+## (9) What does the following program print? ##
+
 ```go
 package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hi there!")
+	fmt.Println("Hi there!")
 }
 ```
-* Hi there! *CORRECT*
-* fmt
-* This program is incorrect; it imports the wrong package or there isn't a function called `Println`
 
-> **2:** import "fmt" imports the `fmt` package; so you can use its functionalities.
->
->
-> **3:** Actually, this program is correct.
->
->
+1. `Hi there!` 
+2. `fmt` 
+3. This program contains an error; `Println()` is not a part of the `fmt` package.
+
+---
+
+**Solution: 1**
+
+> 2: `import "fmt"` imports the `fmt` package, so you can use its functionalities.
+> 3: The program does not contain any errors.

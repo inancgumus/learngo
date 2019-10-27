@@ -1,10 +1,24 @@
-## Why do you need to use comments sometimes?
-1. To combine different expressions together
-2. To provide explanations or generating automatic documentation for your code *CORRECT*
-3. To make the code look nice and beautiful
+# Questions: Comments #
 
+---
 
-## Which of the following code is correct?
+## (1) Why are comments used in source code files? ##
+
+1. To combine different expressions together.
+2. To provide explanations or generate automatic documentation for your code.
+
+3. To make the code look nice and beautiful.
+
+---
+
+**Solution: (B)** 
+
+That's right! Leaving comments throughout your code will make it easier for others (and yourself) to understand what the code does. Commenting on your code can also automatically generate documentation. 
+
+---
+
+## (2) Which of the following examples shows the correct usage of comments? #
+
 1.
 ```go
 package main
@@ -15,7 +29,7 @@ func main() {
 }
 ```
 
-2. *CORRECT*
+2.
 ```go
 package main
 
@@ -39,42 +53,11 @@ func main() {
 }
 ```
 
-> **1:** `/` is not a comment. It should be `//`.
->
->
-> **2:** Multiline comments can be put almost anywhere. However, when a comment starts with `/*`, it also needs to end with `*/`. Here, Go doesn't interpret `/* ... */`, it just skips it. And, when Go sees `//` as the first two characters in a code, it skips the whole line.
->
->
-> **3:** `//` prevents Go to interpret the rest of the code line. That's why this code doesn't work. Go can't interpret this part because of the comment: `"this will print Hi!")`
->
->
+---
 
-## How should you name your code so that Go can generate documentation from your code automatically?
-1. By commenting each line of the code; then it will generate the documentation from whatever it sees
-2. By starting the comments using the name of the declared names *CORRECT*
-3. By using multi-line comments
+**Solution: (B)** 
 
-> **1:** This won't help. Sorry.
->
->
-> **3:** It doesn't matter whether you type your comments using single-line comments or multi-line comments.
->
->
+Multiline comments can be put almost anywhere as long as the begin with `/*` and end with `*/`. Anything between `/* ... */` is ignored by Go. Whenever go sees `//` as the first two characters on a line of code, Go skips the entire line.
 
-
-## Which tool do you need to use from the command-line to print the documentation?
-1. go build
-2. go run
-3. go doctor
-4. go doc
-
-
-## What's the difference between `godoc` and `go doc`?
-1. `go doc` is the real tool behind `godoc`
-2. `godoc` is the real tool behind `go doc` *CORRECT*
-3. `go` tool is the real tool behind `go doc`
-4. `go` tool is the real tool behind `godoc`
-
-> **2:** That's right. go doc tool uses godoc tool behind the scenes. go doc is just a simplified version of the godoc tool.
->
->
+> 1. This example attempts to place a single-line comment between `/ ... /`. Single-line comments must begin with `//` and the comment must be placed after.
+> 3. This example attempts to place a single-comment inside `fmt.Println()`, and by doing so, tells Go to ignore everything after.
