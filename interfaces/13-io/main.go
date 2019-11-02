@@ -50,18 +50,25 @@ func main() {
 }
 
 func ioCopy(dst, src *os.File) error {
+	// Use a fixed-length buffer to efficiently read from src stream in chunks.
 	buf := make([]byte, 32768)
+
+	// read over and over again to read all the data.
 	for {
+		// read can read only up to the buffer length.
 		nr, er := src.Read(buf)
+		// only write data if there is something to write.
 		if nr > 0 {
 			_, ew := dst.Write(buf[:nr])
 			if ew != nil {
 				return ew
 			}
 		}
+		// io.EOF = there is nothing left to read—close the loop.
 		if er == io.EOF {
 			return nil
 		}
+		// Only return an error if the reading really fails.
 		if er != nil {
 			return er
 		}
@@ -76,30 +83,4 @@ func write(dst *os.File, buf []byte) error {
 	fmt.Printf("write err: %v\n", ew)
 
 	return ew
-}
-
-func read(src *os.File) error {
-	// Use a fixed-length buffer to efficiently read from src stream in chunks.
-	buf := make([]byte, 32768)
-
-	// #1b: read over and over again to read all the data.
-	for {
-		// #1a: read can read only up to the buffer length.
-		nr, er := src.Read(buf)
-
-		fmt.Printf("\n")
-		// fmt.Printf("buf      : %q\n", buf[0:nr])
-		fmt.Printf("read     : %d bytes\n", nr)
-		fmt.Printf("read err : %v\n", er)
-
-		// #1c: io.EOF = there is nothing left to read—close the loop.
-		if er == io.EOF {
-			return nil
-		}
-		// Only return an error if the reading really fails.
-		if er != nil {
-			return er
-		}
-	}
-	return nil
 }
