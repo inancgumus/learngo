@@ -22,10 +22,10 @@ func main() {
 
 	p, err := fromFile(os.Args[1])
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 
 	if err := p.Run(); err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 }

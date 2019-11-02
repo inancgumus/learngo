@@ -21,31 +21,31 @@ func main() {
 	// #1: reads from the standard input
 	// ------------------------------------------------
 	// if err := read(os.Stdin); err != nil {
-	// 	log.Fatalln(err)
+	// 	log.Fatal(err)
 	// }
 
 	// #2: writes to the standard output
 	// ------------------------------------------------
 	// buf := []byte("hi!\n")
 	// if err := write(os.Stdout, buf); err != nil {
-	// 	log.Fatalln(err)
+	// 	log.Fatal(err)
 	// }
 
 	// #2b: reads the entire file content into memory.
 	// ------------------------------------------------
 	// buf, err := ioutil.ReadFile("alice.txt")
 	// if err != nil {
-	// 	log.Fatalln(err)
+	// 	log.Fatal(err)
 	// }
 	// if err := write(os.Stdout, buf); err != nil {
-	// 	log.Fatalln(err)
+	// 	log.Fatal(err)
 	// }
 
 	// #3: reads and writes with 32KB of memory
 	//     no matter how large the source data is.
 	// ------------------------------------------------
 	if err := ioCopy(os.Stdout, os.Stdin); err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 }
 

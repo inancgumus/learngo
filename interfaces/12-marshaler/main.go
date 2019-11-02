@@ -17,14 +17,14 @@ func main() {
 	// First encode products as JSON:
 	data, err := encode()
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 	fmt.Println(string(data))
 
 	// Then decode them back from JSON:
 	l, err := decode(data)
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 
 	// Let the list value print itself:
@@ -46,7 +46,7 @@ Summary:
   - There are several other functions in the strconv package for other primitive types as well.
   - Do not make unnecessary string <-> []byte conversions.
 
-- log.Fatalln() can print the given error message and terminate the program.
+- log.Fatal() can print the given error message and terminate the program.
   - Use it only from the main(). Do not use it in other functions.
   - main() is should be the main driver of a program.
 */

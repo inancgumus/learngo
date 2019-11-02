@@ -27,10 +27,10 @@ func main() {
 		g.Group(p.Value())
 	}
 	if err := p.Err(); err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 
 	if err := report.Text(os.Stdout, g.Records()); err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 }
