@@ -16,12 +16,15 @@ import (
 	"os"
 )
 
-func main() {
-	// you can download the rosie.unknown image in the link:
-	// https://inancgumus.github.com/x/rosie.unknown
+// you can download the rosie.unknown image in the link:
+// https://inancgumus.github.com/x/rosie.unknown
 
-	// then feed the file to the standard input of this program:
-	// go run . < rosie.unknown
+// then feed the file to the standard input of this program:
+// go run . < rosie.unknown
+
+func main() {
+	const pngSign = "\x89PNG\r\n\x1a\n"
+	const pngSignLen = 8
 
 	// create an in-memory buffer (bytes.Buffer is an io.Reader and an io.Writer).
 	memory := bytes.Buffer{}
@@ -36,9 +39,8 @@ func main() {
 	buf := memory.Bytes()
 
 	// print the first eight bytes.
-	fmt.Printf("% x\n", buf[:8])
+	fmt.Printf("% x\n", buf[:pngSignLen])
 
 	// compare it with the png signature.
-	const pngSign = "\x89PNG\r\n\x1a\n"
 	fmt.Printf("% x\n", pngSign)
 }
