@@ -9,38 +9,44 @@
 package main
 
 import (
-	"bytes"
-	"fmt"
 	"io"
 	"log"
 	"os"
 )
 
-// you can download the rosie.unknown image in the link:
-// https://inancgumus.github.com/x/rosie.unknown
-
-// then feed the file to the standard input of this program:
-// go run . < rosie.unknown
-
 func main() {
-	const pngSign = "\x89PNG\r\n\x1a\n"
-	const pngSignLen = 8
-
-	// create an in-memory buffer (bytes.Buffer is an io.Reader and an io.Writer).
-	memory := bytes.Buffer{}
-
 	// stream from the standard input to the in-memory buffer in 32KB data chunks.
-	// os.Stdin.Read(...) -> memory.Write(...)
-	if _, err := io.Copy(&memory, os.Stdin); err != nil {
+	// os.Stdin.Read(...) -> os.Stdout.Write(...)
+	if _, err := io.Copy(os.Stdout, os.Stdin); err != nil {
 		log.Fatal(err)
 	}
+}
 
-	// get the accumulated bytes from the in-memory buffer.
-	buf := memory.Bytes()
+// ioCopy streams from a file to another file.
+// we use it to stream from the standard input to ouput.
+func ioCopy(dst, src *os.File) error {
+	// Use a fixed-length buffer to efficiently read from src stream in chunks.
+	buf := make([]byte, 32768)
 
-	// print the first eight bytes.
-	fmt.Printf("% x\n", buf[:pngSignLen])
-
-	// compare it with the png signature.
-	fmt.Printf("% x\n", pngSign)
+	// read over and over again to read all the data.
+	for {
+		// read can read only up to the buffer length.
+		nr, er := src.Read(buf)
+		// only write data if there is something to write.
+		if nr > 0 {
+			_, ew := dst.Write(buf[:nr])
+			if ew != nil {
+				return ew
+			}
+		}
+		// io.EOF = there is nothing left to read—close the loop.
+		if er == io.EOF {
+			return nil
+		}
+		// Only return an error if the reading really fails.
+		if er != nil {
+			return er
+		}
+	}
+	return nil
 }
