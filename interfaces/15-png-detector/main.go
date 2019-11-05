@@ -36,8 +36,8 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	// stream from the standard input to the in-memory buffer in 32KB data chunks.
-	// os.Stdin.Read(...) -> memory.Write(...)
+	// stream from the web server to the in-memory buffer in 32KB data chunks.
+	// resp.Body.Read(...) -> memory.Write(...)
 	if _, err := io.Copy(&memory, resp.Body); err != nil {
 		log.Fatal(err)
 	}
