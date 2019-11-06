@@ -23,12 +23,6 @@ import (
 // go run . < rosie.unknown
 
 func main() {
-	const pngSign = "\x89PNG\r\n\x1a\n"
-	const pngSignLen = 8
-
-	// create an in-memory buffer (bytes.Buffer is an io.Reader and an io.Writer).
-	memory := bytes.Buffer{}
-
 	// get it from the web server
 	resp, err := http.Get("https://inancgumus.github.com/x/rosie.unknown")
 	if err != nil {
@@ -36,10 +30,22 @@ func main() {
 	}
 	defer resp.Body.Close()
 
+	if err := transfer(resp.Body); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func transfer(r io.Reader) error {
+	const pngSign = "\x89PNG\r\n\x1a\n"
+	const pngSignLen = 8
+
+	// create an in-memory buffer (bytes.Buffer is an io.Reader and an io.Writer).
+	memory := bytes.Buffer{}
+
 	// stream from the web server to the in-memory buffer in 32KB data chunks.
 	// resp.Body.Read(...) -> memory.Write(...)
-	if _, err := io.Copy(&memory, resp.Body); err != nil {
-		log.Fatal(err)
+	if _, err := io.Copy(&memory, r); err != nil {
+		return err
 	}
 
 	// get the accumulated bytes from the in-memory buffer.
@@ -50,4 +56,6 @@ func main() {
 
 	// compare it with the png signature.
 	fmt.Printf("% x\n", pngSign)
+
+	return nil
 }
