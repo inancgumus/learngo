@@ -9,17 +9,27 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"os"
 )
 
 func main() {
-	// stream from the standard input to the in-memory buffer in 32KB data chunks.
-	// os.Stdin.Read(...) -> os.Stdout.Write(...)
-	if _, err := io.Copy(os.Stdout, os.Stdin); err != nil {
+	n, err := transfer()
+	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Printf("%d bytes transferred.\n", n)
+}
+
+func transfer() (n int64, err error) {
+	// stream from the standard input to the in-memory buffer in 32KB data chunks.
+	// os.Stdin.Read(...) -> os.Stdout.Write(...)
+	if n, err = io.Copy(os.Stdout, os.Stdin); err != nil {
+		return n, err
+	}
+	return n, err
 }
 
 // ioCopy streams from a file to another file.
