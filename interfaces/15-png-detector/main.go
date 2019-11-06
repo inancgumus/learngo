@@ -16,46 +16,44 @@ import (
 	"net/http"
 )
 
-// you can download the rosie.unknown image in the link:
-// https://inancgumus.github.com/x/rosie.unknown
-
-// then feed the file to the standard input of this program:
-// go run . < rosie.unknown
-
 func main() {
-	// get it from the web server
+	// initiate the transmission channel (http connection) to the webserver.
 	resp, err := http.Get("https://inancgumus.github.com/x/rosie.unknown")
 	if err != nil {
 		log.Fatal(err)
 	}
+	// close it for keep-alive header.
+	// so the http package can reuse the connection.
 	defer resp.Body.Close()
 
-	if err := transfer(resp.Body); err != nil {
+	// resp.Body here is an io.ReadCloser: Read() + Close() methods.
+	// but in the transfer function it's an io.Reader: Only the Read() method.
+	n, err := transfer(resp.Body)
+	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Printf("%d bytes transferred.\n", n)
+
+	// resp.Body.Close() runs here (because of the defer above)
 }
 
-func transfer(r io.Reader) error {
+func transfer(r io.Reader) (n int64, err error) {
 	const pngSign = "\x89PNG\r\n\x1a\n"
 	const pngSignLen = 8
 
 	// create an in-memory buffer (bytes.Buffer is an io.Reader and an io.Writer).
-	memory := bytes.Buffer{}
+	var memory bytes.Buffer
 
-	// stream from the web server to the in-memory buffer in 32KB data chunks.
-	// resp.Body.Read(...) -> memory.Write(...)
-	if _, err := io.Copy(&memory, r); err != nil {
-		return err
+	// stream from the standard input to the in-memory buffer in 32KB data chunks.
+	// r.Read(...) -> memory.Write(...)
+	if n, err = io.Copy(&memory, r); err != nil {
+		return n, err
 	}
 
-	// get the accumulated bytes from the in-memory buffer.
+	// check the png signature.
 	buf := memory.Bytes()
-
-	// print the first eight bytes.
 	fmt.Printf("% x\n", buf[:pngSignLen])
-
-	// compare it with the png signature.
 	fmt.Printf("% x\n", pngSign)
 
-	return nil
+	return n, err
 }
