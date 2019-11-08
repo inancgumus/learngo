@@ -12,25 +12,26 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
 	// initiate the transmission channel (http connection) to the webserver.
 	resp, err := http.Get("https://inancgumus.github.com/x/rosie.unknown")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
-	// close it for keep-alive header.
-	// so the http package can reuse the connection.
+	// close it so the http package can reuse the connection.
 	defer resp.Body.Close()
 
 	// resp.Body here is an io.ReadCloser: Read() + Close() methods.
 	// but in the transfer function it's an io.Reader: Only the Read() method.
 	n, err := transfer(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 	fmt.Printf("%d bytes transferred.\n", n)
 
