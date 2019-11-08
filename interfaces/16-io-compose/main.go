@@ -40,7 +40,7 @@ func main() {
 	}
 	fmt.Printf("%d bytes transferred.\n", n)
 
-	// multiple deferred funcs are run in reverse order:
+	// main() runs the deferred funcs in reverse order:
 	// file.Close()
 	// resp.Body.Close()
 }
