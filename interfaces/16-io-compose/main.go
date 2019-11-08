@@ -13,7 +13,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 )
@@ -21,25 +20,23 @@ import (
 func main() {
 	resp, err := http.Get("https://inancgumus.github.com/x/rosie.unknown")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 	defer resp.Body.Close()
 
 	// creates a file (or truncates if the file exists)
 	file, err := os.Create("rosie.png")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 	defer file.Close()
 
 	n, err := transfer(resp.Body, file)
-
-	// check whether the error was due to the PNG signature.
-	if errors.Is(err, errNotPNG) {
-		log.Fatalln("Please provide a PNG image:", err)
-	}
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 	fmt.Printf("%d bytes transferred.\n", n)
 
@@ -47,10 +44,6 @@ func main() {
 	// file.Close()
 	// resp.Body.Close()
 }
-
-// create an error at the package-level.
-// so the other funcs in the package can check.
-var errNotPNG = errors.New("not a png image")
 
 // transfer streams data from a reader to a writer.
 // if the reader doesn't contain a PNG signature, transfer returns errNotPNG.
@@ -74,7 +67,7 @@ func transfer(r io.Reader, w io.Writer) (n int64, err error) {
 
 	// check the png signature.
 	if !bytes.HasPrefix(memory.Bytes(), []byte(pngSign)) {
-		return n, errNotPNG
+		return n, errors.New("not png")
 	}
 
 	// stitch the PNG signature (memory) and the response body reader together.
