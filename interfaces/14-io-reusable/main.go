@@ -11,14 +11,14 @@ package main
 import (
 	"fmt"
 	"io"
-	"log"
 	"os"
 )
 
 func main() {
 	n, err := transfer()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 	fmt.Printf("%d bytes transferred.\n", n)
 }
