@@ -11,7 +11,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"log"
 	"os"
 )
 
@@ -21,31 +20,36 @@ func main() {
 	// #1: reads from the standard input
 	// ------------------------------------------------
 	// if err := read(os.Stdin); err != nil {
-	// 	log.Fatal(err)
+	// 	fmt.Fprintln(os.Stderr, err)
+	// 	return
 	// }
 
 	// #2: writes to the standard output
 	// ------------------------------------------------
 	// buf := []byte("hi!\n")
 	// if err := write(os.Stdout, buf); err != nil {
-	// 	log.Fatal(err)
+	// 	fmt.Fprintln(os.Stderr, err)
+	// 	return
 	// }
 
 	// #2b: reads the entire file content into memory.
 	// ------------------------------------------------
 	// buf, err := ioutil.ReadFile("alice.txt")
 	// if err != nil {
-	// 	log.Fatal(err)
+	// 	fmt.Fprintln(os.Stderr, err)
+	// 	return
 	// }
 	// if err := write(os.Stdout, buf); err != nil {
-	// 	log.Fatal(err)
+	// 	fmt.Fprintln(os.Stderr, err)
+	// 	return
 	// }
 
 	// #3: reads and writes with 32KB of memory
 	//     no matter how large the source data is.
 	// ------------------------------------------------
 	if err := ioCopy(os.Stdout, os.Stdin); err != nil {
-		log.Fatal(err)
+		fmt.Fprintln(os.Stderr, err)
+		return
 	}
 }
 
@@ -78,7 +82,7 @@ func ioCopy(dst, src *os.File) error {
 	return nil
 }
 
-// write method example.
+// write example.
 func write(dst *os.File, buf []byte) error {
 	nw, ew := dst.Write(buf)
 
@@ -86,4 +90,26 @@ func write(dst *os.File, buf []byte) error {
 	fmt.Printf("write err: %v\n", ew)
 
 	return ew
+}
+
+// read example.
+func read(src *os.File) error {
+	buf := make([]byte, 1024*32) // in the middle.
+	// buf := make([]byte, 148157) // defies the purpose of streaming.
+	// buf := make([]byte, 8) // too many chunking.
+
+	for {
+		nr, er := src.Read(buf)
+		// fmt.Printf("buf      : %q\n", buf[0:nr])
+		fmt.Printf("read     : %d bytes\n", nr)
+		fmt.Printf("read err : %v\n", er)
+
+		if er == io.EOF {
+			return nil
+		}
+		if er != nil {
+			return er
+		}
+	}
+	return nil
 }
