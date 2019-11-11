@@ -16,6 +16,7 @@ import (
 )
 
 func main() {
+	// resp, err := http.Get("https://inancgumus.github.com/x/rosie.jpg")
 	resp, err := http.Get("https://inancgumus.github.com/x/rosie.unknown")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -30,8 +31,6 @@ func main() {
 	}
 	defer file.Close()
 
-	// io.Copy reads from pngReader first
-	// pngReader reads from the resp.Body
 	n, err := io.Copy(file, pngReader(resp.Body))
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
