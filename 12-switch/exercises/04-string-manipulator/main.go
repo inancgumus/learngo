@@ -10,8 +10,8 @@ package main
 
 // ---------------------------------------------------------
 // STORY
-//  You want to write a program that will manipulate the
-//  given strings to uppercase, lowercase, and title case.
+//  You want to write a program that will manipulate a
+//  given string to uppercase, lowercase, and title case.
 //
 // EXERCISE: String Manipulator
 //
