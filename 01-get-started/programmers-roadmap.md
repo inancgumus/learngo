@@ -15,16 +15,9 @@ Enjoy!
 * **Write Your First Go Program**
   * Please watch all the lectures.
 
-* **Learn Go Fundamentals - Packages, Scopes, and Importing**
-  * Please watch all the lectures.
-
-* **Learn Go Fundamentals: Statements and Expressions**
+* **Master the Type System of Go**
   * What is Go Doc?
-
-* **Write a Library Package**
-  * Please watch all the lectures.
-
-* **Variables, Basic Data Types, and Type Inference**
+  * The lectures under "Write a Library Package".
   * Every Go type has a zero value
   * What is a blank identifier?
   * Let's declare a couple of variables!
@@ -36,50 +29,34 @@ Enjoy!
   * Get input from command-line and learn about slices
   * Learn the basics of os.Args
   * Greet people using os.Args
-
-* **Print Formatted Output Using Printf**
-  * Please watch all the lectures.
-
-* **Learn Numbers and Strings**
+  * The lectures under "Print Formatted Output Using Printf".
   * Convert Celsius to Fahrenheit
   * Convert Feet to Meters
   * What is a Raw String Literal?
   * How to get the length of a string?
+  * The lectures after "What is a Predeclared Type?" and to the end of the section.
+  * The following lectures under "Understand Untyped Constants"
+    * Learn the rules of constants
+    * Recap: Constants
+    * How untyped constants work under the hood?
+    * What is a Default Type?
+    * Example: time.Duration
+    * What is iota?
+    * Naming Things: Recommendations
 
-* **Learn Go's Type System Mechanics**
-  * Please watch all the lectures (except the ones marked with: [For Beginners])
-
-* **Understand Untyped Constants**
-  * Learn the rules of constants
-  * Recap: Constants
-  * How untyped constants work under the hood?
-  * What is a Default Type?
-  * Example: time.Duration
-  * What is iota?
-  * Naming Things: Recommendations
-
-* **Pass Me: Create a Password-Protected Program**
-  * Please watch all the lectures.
-
-* **Understand Go's Error Handling**
-  * Please watch all the lectures.
-
-* **Learn Go's Switch Statement**
+* **Control Flow and Error Handling**
+  * Watch all the lectures under "Pass Me: Create a Password-Protected Program"
+  * Watch all the lectures under "Understand Go's Error Handling"
   * Use multiple values in case conditions
   * How does the fallthrough statement work?
   * Solution: Parts of a Day
   * Recap: Switch Statement
-
-* **Learn Go's Loops**
   * How to continue a loop? (+BONUS: Debugging)
   * Create a multiplication table
   * How to loop over a slice?
   * For Range: Learn the easy way!
 
-* **Randomization in Go**
-  * Please watch all the lectures.
-
-* **Mini Project: Word Finder**
+* **Projects: For Beginners**
   * Please watch all the lectures.
 
 * **Remaining Sections**
