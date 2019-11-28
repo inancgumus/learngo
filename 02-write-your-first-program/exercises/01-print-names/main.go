@@ -7,6 +7,7 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
+import "fmt"
 
 // ---------------------------------------------------------
 // EXERCISE: Print names
@@ -24,6 +25,6 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// ?
-	// ?
+	
+	fmt.Println("Hello Shanmuga Rajan Chelliah!@@!!!")
 }
