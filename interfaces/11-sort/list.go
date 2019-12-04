@@ -53,18 +53,18 @@ type byRelease struct {
 
 // Less takes priority over the Less method of the `list`.
 // `sort.Sort` will first call this method instead of the `list`'s Less method.
-func (bp byRelease) Less(i, j int) bool {
+func (br byRelease) Less(i, j int) bool {
 	// `Before()` accepts a `time.Time` but `released` is not `time.Time`.
-	return bp.list[i].released.Before(bp.list[j].released.Time)
+	return br.list[i].released.Before(br.list[j].released.Time)
 }
 
 /*
 Anonymous embedding means auto-forwarding method calls to the embedded value:
 
-func (bp byRelease) Len() int      { return bp.list.Len() }
-func (bp byRelease) Swap(i, j int) { bp.list.Swap(i, j)   }
+func (br byRelease) Len() int      { return br.list.Len() }
+func (br byRelease) Swap(i, j int) { br.list.Swap(i, j)   }
 */
 
 func byReleaseDate(l list) sort.Interface {
-	return byRelease{l}
+	return &byRelease{l}
 }

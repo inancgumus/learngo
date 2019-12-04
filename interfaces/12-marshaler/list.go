@@ -46,10 +46,10 @@ func (l list) Swap(i, j int)      { l[i], l[j] = l[j], l[i] }
 // byRelease sorts by product release dates.
 type byRelease struct{ list }
 
-func (bp byRelease) Less(i, j int) bool {
-	return bp.list[i].Released.Before(bp.list[j].Released.Time)
+func (br byRelease) Less(i, j int) bool {
+	return br.list[i].Released.Before(br.list[j].Released.Time)
 }
 
 func byReleaseDate(l list) sort.Interface {
-	return byRelease{l}
+	return &byRelease{l}
 }
