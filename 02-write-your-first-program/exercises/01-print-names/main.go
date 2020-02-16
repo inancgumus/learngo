@@ -26,6 +26,6 @@ import "fmt"
 // ---------------------------------------------------------
 
 func main() {
-	fmt.Println("Forrest Smietanski")
-	fmt.Println("Yvonne Ramirez")
+	fmt.Println("Forrest")
+	fmt.Println("Yvonne")
 }
