@@ -4,4 +4,4 @@
 
 ## SOURCE CODE:
 
-  godoc -src runtime NumCPU
+  go doc -src runtime NumCPU
