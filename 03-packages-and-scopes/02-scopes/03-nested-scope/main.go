@@ -23,7 +23,7 @@ func nested() { // block scope starts
 	// this one only belongs to this scope
 	// package's variable is still intact
 	var declareMeAgain = 5
-	fmt.Println("inside nope:", declareMeAgain)
+	fmt.Println("inside nested:", declareMeAgain)
 
 } // block scope ends
 
