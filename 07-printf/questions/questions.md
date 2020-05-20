@@ -55,7 +55,7 @@
 * c:\\secret\\directory
 * c:\secret\directory *CORRECT*
 
-## What does "\"heisenberg\"" print?
+## What does `"\"heisenberg\""` print?
 * ERROR
 * heisenberg
 * "heisenberg" *CORRECT*
