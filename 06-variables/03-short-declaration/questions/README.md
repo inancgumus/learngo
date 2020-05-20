@@ -98,4 +98,4 @@ x, z := 10, "hi"
 
 * x := 10
 * y, x := 10, 5
-* var x, y = 5, 10
+* var x, y = 5, 10 *CORRECT*
