@@ -4,7 +4,7 @@
 ```
 
 1. "Hello" "World"
-2. "Hello" \"World\" *CORRECT*
+2. "Hello" `\"World\"` *CORRECT*
 3. "Hello" `"World"`
 4. "\"Hello\" `\"World\"`"
 
