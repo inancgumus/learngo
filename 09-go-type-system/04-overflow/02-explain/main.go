@@ -38,7 +38,7 @@ func main() {
 
 	// wrap around to its minimum
 	un = math.MaxUint8
-	fmt.Println("max uint8 + 1:", un+1) // 255
+	fmt.Println("max uint8 + 1:", un+1) // 0
 
 	// floats goes to infinity when overflowed
 	f := float32(math.MaxFloat32)
