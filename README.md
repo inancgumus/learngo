@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/inancgumus/learngo) 
+
 # A Huge Number of Go Examples, Exercises and Quizzes
 
 This repository contains the examples, exercises, and quizzes for my [Go course: Learn Go Programming: Complete Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37). However, even without the course, using this repository, you can learn a great deal of information about Go. Inside, there are thousands of examples, exercises and quizzes. 
