@@ -29,7 +29,7 @@ func main() {
 	fmt.Println("a month in 2 digits: 1 to 12:", month)
 
 	// the speed of the light
-	var lightSpeed int64 = 670616629 // miles
+	var lightSpeed uint32 = 670616629 // miles
 	fmt.Println("the speed of the light:", lightSpeed)
 
 	// angle of a circle
