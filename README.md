@@ -16,15 +16,15 @@ I initially created this repository for my [Learn Go Programming: Complete Bootc
 
   [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
 
-* **[Subscribe to the Emailing List](https://eepurl.com/c4DMNX)**
+* **[Subscribe to my newsletter](https://eepurl.com/c4DMNX)**
 
   _Get updates from me._
 
-* **[Learn Go Programming Blog](https://blog.learngoprogramming.com)**
+* **[Read my blog](https://blog.learngoprogramming.com)**
 
-  _Followed by 5K+ developers._
+  _Followed by 5K+ developers, and contains dozens of illustrated articles about Go._
 
-* **[Learn Go Programming Youtube Channel](https://www.youtube.com/channel/UCYxepZhtnFIVRh8t5H_QAdg?view_as=subscriber)**
+* **[Watch my Youtube channel](https://www.youtube.com/channel/UCYxepZhtnFIVRh8t5H_QAdg?view_as=subscriber)**
 
 ---
 
