@@ -1,12 +1,10 @@
 # A Huge Number of Go Examples, Exercises and Quizzes
 
-This repository contains the examples, exercises, and quizzes for my [Go course: Learn Go Programming: Complete Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37). However, even without the course, using this repository, you can learn a great deal of information about Go. Inside, there are thousands of examples, exercises and quizzes. 
+Best way of learning is doing. Inside this repository, you will find thousands of Go examples, exercises and quizzes.
 
-You're welcome to contribute your own exercises, quizzes and wiki.
+I initially created this repository for my [Learn Go Programming: Complete Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37). Later on, I added a lot of exercises, and I wanted every programmer who are not yet enrolled in the course to learn for free as well. So here it is. Enjoy.
 
-Enjoy!
-
-**Enroll in the course now with this [link](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37).**
+**👉 Enroll in the course with this [link](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37).**
 
 ---
 
@@ -18,27 +16,15 @@ Enjoy!
 
   [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
 
-* **[Learn Go Programming Blog](https://blog.learngoprogramming.com)**
-
-  _Learn Go Programming blog contains ebook sized, visual, and easy to understand articles for beginner and experienced Go programmers._
-  
-  _Followed by 3K+ developers._
-
 * **[Subscribe to the Emailing List](https://eepurl.com/c4DMNX)**
 
-  _Get new course announcements and other updates about the course._
+  _Get updates from me._
 
-  _5K+ developers already subscribed!_
+* **[Learn Go Programming Blog](https://blog.learngoprogramming.com)**
 
-* **[Join us on Slack](http://bit.ly/LEARNGOSLACK)**
-
-  _A place for Go programmers to talk in real-time: Q&A and general Go discussion._
+  _Followed by 5K+ developers._
 
 * **[Learn Go Programming Youtube Channel](https://www.youtube.com/channel/UCYxepZhtnFIVRh8t5H_QAdg?view_as=subscriber)**
-
-  _4K Videos — The channel is very young right now._
-
-* **[Learn Go Programming Facebook Group](https://www.facebook.com/groups/learngoprogramming/)**
 
 ---
 
