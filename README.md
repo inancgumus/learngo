@@ -8,6 +8,12 @@ I initially created this repository for my [Learn Go Programming: Complete Bootc
 
 ---
 
+# Share this resource
+
+**🤜 Share and let others learn, [click here to tweet](https://twitter.com/intent/tweet?text=I%27m%20learning%20%23golang%20with%201000%2B%20hand-crafted%20examples%2C%20exercises%2C%20and%20quizzes.&url=https://github.com/inancgumus/learngo&via=inancgumus) this repository.**
+
+---
+
 # Stay in touch
 
 * **[Follow me on Twitter](https://twitter.com/inancgumus)**
