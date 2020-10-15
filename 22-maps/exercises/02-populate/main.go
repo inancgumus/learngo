@@ -65,7 +65,7 @@ package main
 //      dulin's phone number: N/A
 //      Product ID #879401371 is not available
 //      greco's 2nd phone number: N/A
-//      Customer #101 is going to buy 0 from Product ID #576872813.
+//      Customer #101 is going to buy 5 from Product ID #576872813.
 //
 // ---------------------------------------------------------
 
