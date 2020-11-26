@@ -18,41 +18,25 @@ import (
 // ---------------------------------------------------------
 // EXERCISE: Adjust the width and height automatically
 //
-//  In this exercise, your goal is simple:
-//
 //    Instead of setting the width and height manually,
 //    you need to get the width and height of the terminal
 //    screen from your operating system.
 //
-//    Don't worry, it is easier than it sounds. You just
-//    need to read a few documentation and install a
-//    Go package.
-//
-//  1. Go here: https://godoc.org/golang.org/x/crypto/ssh/terminal
-//
-//     Download the package:
-//     go get -u golang.org/x/crypto/ssh/terminal
-//
-//  2. Find the function that gives you the width and height
-//     of the terminal.
-//
-//  3. Call that function from your program and get the
-//     width and height.
-//
-//  4. When an error occurs while retrieving the width
-//     and height, report it.
-//
-//  5. Set the width and height of the board.
-//
-//  6. After solving the above steps, update your program
-//     to use my screen package instead. It offers an
-//     easier way to get the width and height of a
-//     terminal.
+//  1. Update your program to use my screen package.
+//     It offers an easy way to get the width and height.
 //
 //     go get -u https://github.com/inancgumus/screen
 //
+//  2. Read the package's documentation and find a way to
+//     get the screen size: width and height.
 //
-// BONUS
+//     The documentation is here:
+//     https://godoc.org/github.com/inancgumus/screen
+//
+//  3. Use it to set the board's dimensions.
+//
+//
+// OPTIONAL EXERCISE
 //
 //  1. When you set the width, you may see that the ball
 //     goes beyond the left and right borders. This happens
@@ -82,19 +66,6 @@ import (
 //  Currently you set width and height manually, so it
 //  wasn't matter whether your terminal was bigger or
 //  smaller, but now it will be!
-//
-//
-// HINT
-//
-//  Please take a look at this if you get stuck.
-//
-//  You need to pass the Standard Out file handler
-//  to the function that returns you the dimensions.
-//
-//  Check out my screen package to find out how I'm
-//  passing the Standard Out file handler.
-//
-//     https://github.com/inancgumus/screen/blob/master/dimensions.go
 //
 // ---------------------------------------------------------
 

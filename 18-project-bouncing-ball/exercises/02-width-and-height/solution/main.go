@@ -10,13 +10,11 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/mattn/go-runewidth"
 
 	"github.com/inancgumus/screen"
-	"golang.org/x/crypto/ssh/terminal"
 )
 
 func main() {
@@ -35,15 +33,8 @@ func main() {
 		cell rune // current cell (for caching)
 	)
 
-	// get the width and height
-	width, height, err := terminal.GetSize(int(os.Stdout.Fd()))
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
 	// you can get the width and height using the screen package easily:
-	// width, height := screen.Size()
+	width, height := screen.Size()
 
 	// get the rune width of the ball emoji
 	ballWidth := runewidth.RuneWidth(cellBall)
