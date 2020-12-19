@@ -24,7 +24,7 @@ import "fmt"
 // ---------------------------------------------------------
 
 func main() {
-	// DO NOT TOUCH THIS VARIABLES
+	// DO NOT TOUCH THESE VARIABLES
 	min := int8(127)
 	max := int16(1000)
 
