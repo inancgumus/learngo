@@ -45,7 +45,7 @@ func main() {
 		return
 	}
 
-	if guess < 0 {
+	if guess <= 0 {
 		fmt.Println("Please pick a positive number.")
 		return
 	}
@@ -56,7 +56,7 @@ func main() {
 	}
 
 	for turn := 0; turn < maxTurns; turn++ {
-		n := rand.Intn(min + 1)
+		n := rand.Intn(min) + 1
 
 		if n == guess {
 			fmt.Println("🎉  YOU WIN!")
