@@ -17,7 +17,7 @@ import (
 func main() {
 	houses := map[string][]string{
 		"gryffindor": {"weasley", "hagrid", "dumbledore", "lupin"},
-		"hufflepuf":  {"wenlock", "scamander", "helga", "diggory", "bobo"},
+		"hufflepuf":  {"wenlock", "scamander", "helga", "diggory"},
 		"ravenclaw":  {"flitwick", "bagnold", "wildsmith", "montmorency"},
 		"slytherin":  {"horace", "nigellus", "higgs", "bobo", "scorpius"},
 		"bobo":       {"wizardry", "unwanted"},
