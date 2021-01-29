@@ -66,7 +66,7 @@ func main() {
 1. go build
 2. go run
 3. go doctor
-4. go doc
+4. go doc *CORRECT*
 
 
 ## What's the difference between `godoc` and `go doc`?
