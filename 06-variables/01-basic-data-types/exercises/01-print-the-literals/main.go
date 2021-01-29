@@ -15,7 +15,7 @@ package main
 //
 //  2. Print a few float literals
 //
-//  3. Print true and false bool literals
+//  3. Print true and false bool constants
 //
 //  4. Print your name using a string literal
 //
