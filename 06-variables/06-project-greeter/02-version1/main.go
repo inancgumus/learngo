@@ -25,7 +25,7 @@ func main() {
 
 	// assign a new value to the string variable below
 	name = os.Args[1]
-	fmt.Println("Hello great", name, "!")
+	fmt.Println("Hello great", name+"!")
 
 	// changes the name, declares the age with 85
 	name, age := "gandalf", 85
