@@ -34,7 +34,7 @@ area := 10.5
 fmt.Print(area/2)
 ```
 * 5.25 *CORRECT*
-* 5 
+* 5
 * 0
 * Error
 
