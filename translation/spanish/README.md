@@ -1,6 +1,6 @@
 # Aprendiendo A Usar Go Con Ejemplos, Ejercicios y Puzzles
 
-La mejor forma de aprender es haciendo. En este repositorio encontraras miles de ejemplos, ejerciciosy puzzles hechos con Go. Inicialmente crée este repositorio para mi **[Go: Bootcamp Course](https://udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37)**. Tiempo despues añadi un monton de ejercicios y quise que todo programador no inscrito a mi curso tambien pudiese aprender de forma gratuita. Asi que aqui esta. Disfrutad.
+La mejor forma de aprender es haciendo. En este repositorio encontraras miles de ejemplos, ejercicios y puzzles hechos con Go. Inicialmente cree este repositorio para mi **[Go: Bootcamp Course](https://udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37)**. Tiempo despues segui añadiendo ejercicios y quise que todo programador no inscrito a mi curso tambien pudiese aprender de forma gratuita. Asi que aqui esta. Disfrutad.
 
 ## ❤️ Ayuda a otros desarrolladores
 
