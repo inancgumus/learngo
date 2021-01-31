@@ -1,6 +1,6 @@
 ## What's the result of this expression?
 ```go
-"\"Hello\\"" + ` \"World\"`
+"\"Hello\"" + ` \"World\"`
 ```
 
 1. "Hello" "World"
