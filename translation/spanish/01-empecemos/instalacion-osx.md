@@ -4,7 +4,7 @@
 
 Si tienes [homebrew](https://brew.sh) instalado, puedes instalar Go facilmente de la siguiente forma:
 
-```
+```bash
 # si no tienes git instalado instalalo asi
 brew install git
 

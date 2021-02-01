@@ -4,7 +4,7 @@
 
 Si tienes el administrador de paquetes [chocolatey.org](https://chocolatey.org/) puedes instalar Go facilmente con este comando:
 
-```
+```bash
 choco install golang
 ```
 
@@ -23,7 +23,7 @@ choco install golang
 4. Elige: "Utilizar Git desde la Consola de Comandos de Windows"
 5. Codificaciones: Elige la opción: _"Dejar como esta..."
 
-# 3. Instala Go
+## 3. Instala Go
 
 1. Ves a: [https://golang.org/dl](https://golang.org/dl)
 2. Elige Windows y descargalo
@@ -58,8 +58,8 @@ choco install golang
             1. Escribe: `terminal`
             2. Elige: _"Terminal: Terminal por Defecto"_
             3. Y elige: _"Git Bash"_
-        4. **NOTA:** Normalmente, puedes encontrar tus archivos en `c:\`, pero, cuando estas usando git bash los encontraras en `/c/`, que es el mismo directorio pero mas abreviado
-    
+        3. **NOTA:** Normalmente, puedes encontrar tus archivos en `c:\`, pero, cuando estas usando git bash los encontraras en `/c/`, que es el mismo directorio pero mas abreviada
+
 ## Eso es todo! Disfrutad! 🤩
 
 <div style="page-break-after: always;"></div>

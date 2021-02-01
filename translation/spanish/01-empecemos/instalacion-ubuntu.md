@@ -2,23 +2,23 @@
 
 Si quieres usar snap puedes instalar Go facilmente con este comando:
 
-    ```bash
-    sudo snap install go --classic
-    ```
+```bash
+sudo snap install go --classic
+```
 
 Sino, puedes seguir los siguientes pasos
 
 ## 1. Actualiza los paquetes locales
 
-    ```bash
-    sudo apt-get update
-    ```
+```bash
+sudo apt-get update
+```
 
 ## 2. Instala Git
 
-    ```bash
-    sudo apt-get install git
-    ```
+```bash
+sudo apt-get install git
+```
 
 ## 3. Instala Go
 
@@ -69,8 +69,7 @@ Hay dos formas:
 
 * Esto creara un directorio llamado `~/go` donde se descargaran las herramientas
 
-    * Este directorio tambien es el lugar donde deberias poner tu codigo.
-    (Si no vas a usar los modulos de Go)
+* Este directorio tambien es el lugar donde deberias poner tu codigo. (Si no vas a usar los modulos de Go)
 
     ```bash
     go get -v -u golang.org/x/tools/...
