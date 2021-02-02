@@ -56,5 +56,4 @@ func main() {
 
 	fmt.Println("hello  :", len("hello")+8, "bytes")
 	fmt.Println("hi     :", len("hi")+8, "bytes")
-	fmt.Println("hi     :", len("hi")+8, "bytes")
 }
