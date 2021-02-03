@@ -35,14 +35,14 @@
 5. 64
 
 
-## What's the output of following code?
+## What's the output of the following code?
 ```go
 fmt.Printf("%08b = %d", 2, 2)
 ```
-1. 00000001
-2. 00000010 *CORRECT*
-3. 00000100
-4. 00001000
+1. 00000001 = 2
+2. 00000010 = 2 *CORRECT*
+3. 00000100 = 2
+4. 00001000 = 2
 
 > EXPLANATION = From right to left, each bit goes from 2^0 to 2^(n - 1).
 
