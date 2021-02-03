@@ -2,9 +2,9 @@
 
 Best way of learning is doing. Inside this repository, you will find thousands of Go examples, exercises and quizzes. I initially created this repository for my **[Go: Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37)**. Later on, I added a lot of exercises, and I wanted every programmer who are not yet enrolled in the course to learn for free as well. So here it is. Enjoy.
 
-Available in the following languages
+**Available in the following languages:**
 * **[English](https://github.com/inancgumus/learngo)**
-* **[Spanish](translation/spanish)**
+* **[Spanish](translation/spanish)** _(WIP: Please Contribute)_
 
 ## ❤️ Help other fellow developers
 
