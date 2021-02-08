@@ -61,13 +61,13 @@ func Reset()
 
 
 ## Let's say a function returns a nil error value. So, what does that mean?
-1. The function call is failed.
+1. The function call failed.
 2. The function call is successful. *CORRECT*
 3. The function call is in an indeterministic state. We can't know.
 
 
 ## Let's say a function returns a non-nil error value. So, what does that mean?
-1. The function call is failed. *CORRECT*
+1. The function call failed. *CORRECT*
 2. The function call is successful.
 3. The function call is in an indeterministic state. We can't know.
 
