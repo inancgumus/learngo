@@ -9,13 +9,17 @@ Compartir es gratis pero cuidar no tiene precio [Asi, que porfavor haz click aqu
 ## Mantente en contacto
 
 * **[Sigueme en Twitter](https://twitter.com/inancgumus)**
+
   _Usualmente twiteo trucos y consejos sobre Go._
+
   [![@inancgumus](https://img.shields.io/twitter/follow/inancgumus.svg?style=social&label=@inancgumus)](https://twitter.com/inancgumus)
 
 * **[Suscribete a mi Newsletter](https://eepurl.com/c4DMNX)**
+
   _Recibe actualizaciones de mi parte._
 
 * **[Lee mi Blog](https://blog.learngoprogramming.com)**
+
   _Seguido por mas de 5mil desarrolladores y con decenas de articulos ilustrados sobre Go._
 
 * **[Mira mi canal de Youtube](https://www.youtube.com/channel/UCYxepZhtnFIVRh8t5H_QAdg?view_as=subscriber)**
