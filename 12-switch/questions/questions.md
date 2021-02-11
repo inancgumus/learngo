@@ -1,14 +1,14 @@
 ## What's the difference between if and switch statements?
-1. If statement controls the execution flow but the switch statement does not
-2. If statement is much more readable alternative to a switch statement
-3. Switch statement is much more readable alternative to a if statement *CORRECT*
+1. If statements control the execution flow but switch statements do not
+2. If statements are much more readable alternatives to switch statements
+3. Switch statements are much more readable alternatives to if statements *CORRECT*
 
 > **1:** They both control the execution flow.
 > 
 > **2:** Sometimes true, but, for complex if statements, switch statement can make them much more readable.
 
 
-## What type of values you can use as a switch condition?
+## What type of values can you use as a switch condition?
 ```go
 switch condition {
     // ....
@@ -22,7 +22,7 @@ switch condition {
 > **4:** Unlike most other C based languages, in Go, a switch statement is actually a syntactic-sugar for a if statement. This means that, Go converts a switch statement into an if statement behind the scenes. So, any type of values can be used as a condition.
 
 
-## What type of values you can use as the case conditions for the following switch statement?
+## What type of values can you use as the case conditions for the following switch statement?
 ```go
 switch false {
 case condition:
@@ -37,7 +37,7 @@ case condition:
 > **2:** Yes, you can only use bool values because in the example, the switch's condition is a bool.
 
 
-## What type of values you can use as the case conditions for the following switch statement?
+## What type of values can you use as the case conditions for the following switch statement?
 ```go
 switch "go" {
 case condition:
