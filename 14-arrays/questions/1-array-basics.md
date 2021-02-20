@@ -8,7 +8,7 @@
 
 ## Where is the 2nd variable below stored in memory?
 ```go
-// Let's say that first variable below is stored in this memory location: 20th
+// Let's say that the first variable below is stored in this memory location: 20th
 var (
     first  int32 = 100
     second int32 = 150
@@ -139,7 +139,7 @@ func main() {
 	    if i == len(sum) - 1 {
 	        break
 	    }
-	    
+
 	    sum[i+1] = 10
 	    fmt.Print(v, " ")
 	}
