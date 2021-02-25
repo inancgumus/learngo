@@ -24,7 +24,7 @@ func main() {
 	}
 	books = newBooks
 
-	games := []string{"kokemon", "sims"}
+	games := []string{"pokemon", "sims"}
 	newGames := []string{"pacman", "doom", "pong"}
 	newGames = games
 	games = nil
