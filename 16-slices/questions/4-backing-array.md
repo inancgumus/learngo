@@ -19,7 +19,7 @@
 ## When you slice a slice, what value does it return?
 ```go
 // example:
-s := []string{"i'm", "a", "slice"}
+s := []string{"I'm", "a", "slice"}
 s[2:] // <-- slicing
 ```
 1. It returns a new slice value with a new backing array
