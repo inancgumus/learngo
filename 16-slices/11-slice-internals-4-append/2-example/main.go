@@ -34,11 +34,11 @@ func main() {
 	// GOAL: append new odd numbers in the middle
 	// [1 3 2 4] -> [1 3 7 9 2 4]
 
-	// #6: [1 3 2 4] -> [1 3 2 4 2 4]
+	// #5: [1 3 2 4] -> [1 3 2 4 2 4]
 	nums = append(nums, nums[2:]...)
 	s.Show("nums <- nums[2:]", nums)
 
-	// #5: overwrites: [1 3 2 4 2 4] -> [1 3 7 9]
+	// #6: overwrites: [1 3 2 4 2 4] -> [1 3 7 9]
 	nums = append(nums[:2], 7, 9)
 	s.Show("nums[:2] <- 7, 9", nums)
 
