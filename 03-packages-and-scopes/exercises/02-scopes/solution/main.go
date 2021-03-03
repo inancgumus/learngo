@@ -15,10 +15,10 @@ func main() {
 	// and I can call `hello` function here.
 	//
 	// this is because, package-scoped names
-	//   are shared in the same package
+	// are shared in the same package
 	hello()
 
-	// but here, i can't access the fmt package without
+	// but here, I can't access the fmt package without
 	// importing it.
 	//
 	// this is because, it's in the printer.go's file scope.

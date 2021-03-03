@@ -29,7 +29,7 @@ package main
 //     wrong id
 //
 //     id 10
-//     sorry. i don't have the game
+//     sorry. I don't have the game
 //
 //     id 1
 //     #1: "god of war" (action adventure) $50

@@ -25,7 +25,7 @@ package main
 //  go run main.go hi there
 //    There are two: "hi there"
 //
-//  go run main.go i wanna be a gopher
+//  go run main.go I wanna be a gopher
 //    There are 5 arguments
 // ---------------------------------------------------------
 

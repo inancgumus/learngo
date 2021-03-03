@@ -13,7 +13,7 @@ import "fmt"
 func main() {
 	const min = 42
 
-	// i've removed int from the below declaration
+	// I've removed int from the below declaration
 	// since, min's default type is int (you'll learn)
 	var i = min
 

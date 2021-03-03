@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	lyric := strings.Fields(`yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday`)
+	lyric := strings.Fields(`yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday`)
 
 	// `+3` because we're going to add 3 newline characters to the fix slice.
 	fix := make([]string, len(lyric)+3)
@@ -34,7 +34,7 @@ func main() {
 	//
 	// + The second sentence has 10 words so its cutting index is 10.
 	//
-	//   now it looks as though they are here to stay oh i believe in yesterday
+	//   now it looks as though they are here to stay oh I believe in yesterday
 	//                                               |
 	//                                               v
 	//                                cutting index: 10
@@ -42,7 +42,7 @@ func main() {
 	//
 	// + The last sentence has 5 words so its cutting index is 5.
 	//
-	//   oh i believe in yesterday
+	//   oh I believe in yesterday
 	//                            |
 	//                            v
 	//             cutting index: 5
