@@ -37,7 +37,7 @@ func main() {
 	//
 	// #2: Append the following names to the names slice:
 	//
-	//     "einstein", "tesla", "aristo"
+	//     "einstein", "tesla", "aristotle"
 	//
 	//     Print the names slice.
 	//
@@ -52,12 +52,12 @@ func main() {
 	// #3: The previous code appends at the end of the names
 	//     slice:
 	//
-	//     ["" "" "" "" "" "einstein", "tesla", "aristo"]
+	//     ["" "" "" "" "" "einstein", "tesla", "aristotle"]
 	//
 	//     Append the new elements to the beginning of the names
 	//     slice instead:
 	//
-	//     ["einstein", "tesla", "aristo" "" ""]
+	//     ["einstein", "tesla", "aristotle" "" ""]
 	//
 	//     So: Overwrite and print the names slice.
 	//
