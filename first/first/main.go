@@ -34,7 +34,7 @@ func main() {
 	// Println function of "fmt" package becomes available
 
 	// Look at what it looks like by typing in the console:
-	//   godoc -src fmt Println
+	//   go doc -src fmt Println
 
 	// Println is just an exported function from
 	//   "fmt" package

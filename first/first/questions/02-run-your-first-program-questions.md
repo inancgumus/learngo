@@ -9,28 +9,6 @@
 >
 >
 
-
-## Which directory `go build` puts the compiled code into?
-1. The same directory where you call `go build` *CORRECT*
-2. $GOPATH/src directory
-3. $GOPATH/pkg directory
-4. Into a temporary directory.
-
-> **2:** There only lives Go source-code files
->
->
-> **3:** Go only puts your code there when you call `go install`.
->
->
-
-
-## Which directory `go run` puts the compiled code into?
-1. The same directory where you call `go run`
-2. $GOPATH/src directory
-3. $GOPATH/pkg directory
-4. Into a temporary directory. *CORRECT*
-
-
 ## Which one below is true for runtime?
 1. It happens when your program starts running on a computer *CORRECT*
 2. It happens while your program is being compiled
