@@ -49,17 +49,20 @@ func main() {
 
 	// ########################################################
 	//
-	// #3: The previous code appends at the end of the names
-	//     slice:
+	// #3: Overwrite the name slice by creating a new slice
+	//     using make().
 	//
-	//     ["" "" "" "" "" "einstein", "tesla", "aristo"]
+	//     Adjust the make() function so that it creates a
+	//     slice with capacity of 5, and puts the slice pointer
+	//     to the first index.
 	//
-	//     Append the new elements to the beginning of the names
-	//     slice instead:
+	//     Then append the following names to the slice:
 	//
+	//     "einstein", "tesla", "aristo"
+	//
+	//     Expected output:
 	//     ["einstein", "tesla", "aristo" "" ""]
 	//
-	//     So: Overwrite and print the names slice.
 	//
 	// ...
 	// s.Show("3rd step", names)
