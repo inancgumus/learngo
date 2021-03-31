@@ -1,8 +1,6 @@
 1. **Print your name and your best friend's name** using Println twice. [Check out this exercise here](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/exercises/01-print-names).
 
-2. **Print your GOPATH** using `go env` tool. [Check out this exercise here](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/exercises/02-print-gopath).
-
-3. **Say hello to yourself.**
+2. **Say hello to yourself.**
 
     1. Build your program using `go build`
 
@@ -31,15 +29,15 @@
        **NOTE:** If you're using the command prompt or the PowerShell, you may need to use it like this:
        `cmd /c "set GOOS=darwin GOARCH=386 && go build"`
 
-4. **Call [Print](https://golang.org/pkg/fmt/#Print) instead of [Println](https://golang.org/pkg/fmt/#Println)** to see what happens.
+3. **Call [Print](https://golang.org/pkg/fmt/#Print) instead of [Println](https://golang.org/pkg/fmt/#Println)** to see what happens.
 
-5. **Call [Println](https://golang.org/pkg/fmt/#Println) or [Print](https://golang.org/pkg/fmt/#Print) with multiple values** by separating them using commas.
+4. **Call [Println](https://golang.org/pkg/fmt/#Println) or [Print](https://golang.org/pkg/fmt/#Print) with multiple values** by separating them using commas.
 
-6. **Remove the double quotes from a string literal** and see what happens.
+5. **Remove the double quotes from a string literal** and see what happens.
 
-7. **Move the package and import statement** to the bottom of the file and see what happens.
+6. **Move the package and import statement** to the bottom of the file and see what happens.
 
-8. **[Read Go online documentation](https://golang.org/pkg)**.
+7. **[Read Go online documentation](https://golang.org/pkg)**.
 
     1. Take a quick look at the packages and read what they do.
 
@@ -47,8 +45,10 @@
 
     3. You don't have to understand everything, just do it. This will warm you up for the upcoming lectures.
 
-9. Also, **take a tour on**: https://tour.golang.org/
+8. Also, **take a tour on**: https://tour.golang.org/
 
     1. Have a quick look. Check out the language features.
 
     2. We're going to talk all about them soon.
+
+9. [Follow me on twitter to learn more](https://twitter.com/inancgumus).

@@ -47,7 +47,7 @@ export PATH=${HOME}/go/bin:$PATH
 4. Una vez acabado abre la **Paleta de Comandos** de nuevo
     1. Escribe: `shell`
     2. Elige: "Install 'code' command in PATH"
-        1. **NOTE:** No tienes que hacer esto si estas en Windows.
+        1. **NOTA:** No tienes que hacer esto si estas en Windows.
 
 ## Eso es todo! Disfrutad! 🤩
 
