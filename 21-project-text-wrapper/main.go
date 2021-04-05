@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	const text = `Galaksinin Batı Sarmal Kolu'nun bir ucunda,haritası bile çıkarılmamış ücra bir köşede,gözlerden uzak, küçük ve sarı bir güneş vardır.
+	const text = `Galaksinin Batı Sarmal Kolu'nun bir ucunda, haritası bile çıkarılmamış ücra bir köşede, gözlerden uzak, küçük ve sarı bir güneş vardır.
 
 Bu güneşin yörüngesinde, kabaca yüz kırksekiz milyon kilometre uzağında, tamamıyla önemsiz ve mavi-yeşil renkli, küçük bir gezegen döner.
 
@@ -25,10 +25,19 @@ Gezegenin maymun soyundan gelen canlıları öyle ilkeldir ki dijital kol saatin
 	var lw int // line width
 
 	for _, r := range text {
-		fmt.Printf("%c", r)
+		if lw==0 && unicode.IsSpace(r){
+			continue;
+		}else{
+			if r=='\n'{
+				fmt.Println()
+				fmt.Printf("%c",r)
+			}else{
+				fmt.Printf("%c",r)
+			}
+		}
 
 		switch lw++; {
-		case lw > maxWidth && r != '\n' && (unicode.IsSpace(r) || unicode.IsPunct(r)):
+		case lw > maxWidth && r != '\n' && unicode.IsSpace(r):
 			fmt.Println()
 			fallthrough
 		case r == '\n':
