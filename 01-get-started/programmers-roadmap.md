@@ -14,10 +14,10 @@ Enjoy!
 
 * **Write Your First Go Program**
   * Please watch all the lectures.
-
-* **Master the Type System of Go**
   * What is Go Doc?
   * The lectures under "Write a Library Package".
+
+* **Master the Type System of Go**
   * Every Go type has a zero value
   * What is a blank identifier?
   * Let's declare a couple of variables!
