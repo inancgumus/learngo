@@ -17,7 +17,7 @@ func main() {
 	)
 
 	// loop 10 million times
-	for len(nums) < 10e6 {
+	for len(nums) < 1e7 {
 		// get the capacity
 		c := float64(cap(nums))
 
