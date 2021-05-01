@@ -112,7 +112,7 @@ if colors == tones {
 
 ## What is the length of this slice?
 ```go
-[]string{"i'm", "going", "to", "stay", "\"here\""}
+[]string{"I'm", "going", "to", "stay", "\"here\""}
 ```
 
 1. 0
