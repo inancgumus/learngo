@@ -18,4 +18,4 @@ These exercises will reinforce your knowledge of manipulating arrays. You will p
 
 4. **[Ticker](https://github.com/inancgumus/learngo/tree/master/15-project-retro-led-clock/exercises/04-ticker)**
 
-  This is an HARD EXERCISE. You will slide the clock animation from right-to-left. After this exercise, you will truly feel that you've mastered everything you've learned so far.
+  This is a HARD EXERCISE. You will slide the clock animation from right-to-left. After this exercise, you will truly feel that you've mastered everything you've learned so far.
