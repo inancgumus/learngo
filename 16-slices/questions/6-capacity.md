@@ -22,7 +22,7 @@
 
 ## What are the length and capacity of the slice value?
 ```go
-[]string{"i", "have", "a", "great", "capacity"}
+[]string{"I", "have", "a", "great", "capacity"}
 ```
 1. Length: 5 - Capacity: 5 *CORRECT*
 2. Length: 0 - Capacity: 5
