@@ -34,5 +34,5 @@ func main() {
 	// not to the if statement above
 
 	// UNCOMMENT ALSO LINES BELOW TO SEE IT IN ACTION:
-	// fmt.Printf("n is %d. 👻 👻 👻 - you've been shadowed ;-)", n)
+	// fmt.Printf("n is %d. 👻 👻 👻 - you've been shadowed ;-)\n", n)
 }
