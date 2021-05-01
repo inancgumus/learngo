@@ -30,7 +30,7 @@ func main() {
 	s.Show("grades", grades)
 
 	// let's create a new scope
-	// 'cause i'm going to use variables with the same name
+	// 'cause I'm going to use variables with the same name
 	{
 		// ages and agesArray have the same backing arrays
 		agesArray := [3]int{35, 15, 25}
