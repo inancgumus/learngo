@@ -21,7 +21,7 @@ package main
 //
 // RESTRICTION
 //   + Maximum 5 numbers can be provided
-//   + If one of the arguments are not a valid number, skip it
+//   + If one of the arguments is not a valid number, skip it
 //
 // HINTS
 //  + You can use the bubble-sort algorithm to sort the numbers.
