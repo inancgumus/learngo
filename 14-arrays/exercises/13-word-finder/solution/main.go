@@ -27,7 +27,7 @@ func main() {
 		"and", "or", "was", "the", "since", "very",
 	}
 
-	words := strings.Fields(strings.ToLower(corpus))
+	words := strings.Fields(corpus)
 
 queries:
 	for _, q := range query {
