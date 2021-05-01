@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	strings := []string{
+	words := []string{
 		"cool",
 		"güzel",
 		"jīntiān",
@@ -22,7 +22,7 @@ func main() {
 		"read 🤓",
 	}
 
-	for _, s := range strings {
+	for _, s := range words {
 		fmt.Printf("%q\n", s)
 
 		// Print the byte and rune length of the strings
