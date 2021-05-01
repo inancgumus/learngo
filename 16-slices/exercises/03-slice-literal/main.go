@@ -16,7 +16,7 @@ import "fmt"
 //   1. Assign the following data using slice literals to the slices that
 //      you've declared in the first exercise.
 //
-//    1. The names of your best three friends (to the names slice)
+//    1. The names of your three best friends (to the names slice)
 //
 //    2. The distances to five different locations (to the distances slice)
 //

@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	// The names of your best three friends
+	// The names of your three best friends
 	names := [...]string{
 		"Einstein",
 		"Tesla",
