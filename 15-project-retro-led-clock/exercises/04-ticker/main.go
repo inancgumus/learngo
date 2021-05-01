@@ -14,7 +14,7 @@
 //
 //
 //  THIS IS A HARD EXERCISE:
-//  + It will take you days but it will worth it.
+//  + It will take you days but it will be worth it.
 //  + For experienced developers, this can take an hour or so.
 //
 //
