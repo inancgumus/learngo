@@ -23,7 +23,7 @@ func main() {
 	// you need to find the starting and ending position of the first rune
 
 	// 1st way: `for range`
-	// you can't get the runes by range overing a byte slice
+	// you can't get the runes by ranging over a byte slice
 	// first, you need to convert it to a string
 	var size int
 	for i := range string(word) {
