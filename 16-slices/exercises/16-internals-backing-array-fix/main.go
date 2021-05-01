@@ -51,6 +51,6 @@ func main() {
 	//
 	mine[0], mine[1], mine[2] = -50, -100, -150
 
-	fmt.Println("Mine         :", mine[:3])
+	fmt.Println("Mine         :", mine)
 	fmt.Println("Original nums:", nums[:3])
 }
