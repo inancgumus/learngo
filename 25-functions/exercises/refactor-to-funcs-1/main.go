@@ -139,7 +139,7 @@ func main() {
 
 			g, ok := byID[id]
 			if !ok {
-				fmt.Println("sorry. i don't have the game")
+				fmt.Println("sorry. I don't have the game")
 				continue
 			}
 

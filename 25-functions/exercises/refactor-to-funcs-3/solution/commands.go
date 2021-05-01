@@ -65,7 +65,7 @@ func cmdByID(cmd []string, games []game, byID map[int]game) bool {
 
 	g, ok := byID[id]
 	if !ok {
-		fmt.Println("sorry. i don't have the game")
+		fmt.Println("sorry. I don't have the game")
 		return true
 	}
 

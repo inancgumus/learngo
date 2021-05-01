@@ -17,8 +17,8 @@ func main() {
 	// --- Correct Lyric ---
 	// yesterday all my troubles seemed so far away
 	// now it looks as though they are here to stay
-	// oh i believe in yesterday
-	lyric := strings.Fields(`all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay`)
+	// oh I believe in yesterday
+	lyric := strings.Fields(`all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay`)
 
 	// ------------------------------------------------------------------------
 	// #1: Prepend "yesterday" to `lyric`
@@ -26,10 +26,10 @@ func main() {
 
 	//
 	// --- BEFORE ---
-	// all my troubles seemed so far away oh i believe in yesterday
+	// all my troubles seemed so far away oh I believe in yesterday
 	//
 	// --- AFTER ---
-	// yesterday all my troubles seemed so far away oh i believe in yesterday
+	// yesterday all my troubles seemed so far away oh I believe in yesterday
 	//
 	// (warning: allocates a new backing array)
 	//
@@ -40,7 +40,7 @@ func main() {
 	// ------------------------------------------------------------------------
 
 	//
-	// yesterday all my troubles seemed so far away oh i believe in yesterday
+	// yesterday all my troubles seemed so far away oh I believe in yesterday
 	//                                              |               |
 	//                                              v               v
 	//                                       index: 8          pos: 13
@@ -49,10 +49,10 @@ func main() {
 
 	// --- BEFORE ---
 	//
-	// yesterday all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay
+	// yesterday all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay
 	//
 	// --- AFTER ---
-	// yesterday all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay oh i believe in yesterday
+	// yesterday all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay oh I believe in yesterday
 	//                                              ^
 	//
 	//                                              |
@@ -63,10 +63,10 @@ func main() {
 
 	//
 	// --- BEFORE ---
-	// yesterday all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay oh i believe in yesterday
+	// yesterday all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay oh I believe in yesterday
 	//
 	// --- AFTER ---
-	// yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday
+	// yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday
 	//
 	// (does not allocate a new backing array because cap(lyric[:N]) > M)
 	//
