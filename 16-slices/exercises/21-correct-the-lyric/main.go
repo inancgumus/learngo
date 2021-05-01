@@ -22,29 +22,29 @@ import (
 //
 // CURRENT OUTPUT
 //
-//  [all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay]
+//  [all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay]
 //
 // EXPECTED OUTPUT
 //
-//  [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday]
+//  [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday]
 //
 //
 // STEPS
 //
 //  INITIAL SLICE:
-//    [all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay]
+//    [all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay]
 //
 //
 //  1. Prepend "yesterday" to the `lyric` slice.
 //
 //     RESULT SHOULD BE:
-//     [yesterday all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay]
+//     [yesterday all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay]
 //
 //
 //  2. Put the words to the correct positions in the `lyric` slice.
 //
 //     RESULT SHOULD BE:
-//     [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday]
+//     [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday]
 //
 //
 //  3. Print the `lyric` slice.
@@ -65,7 +65,7 @@ import (
 
 func main() {
 	// DON'T TOUCH THIS:
-	lyric := strings.Fields(`all my troubles seemed so far away oh i believe in yesterday now it looks as though they are here to stay`)
+	lyric := strings.Fields(`all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay`)
 
 	// ADD YOUR CODE BELOW:
 	// ...

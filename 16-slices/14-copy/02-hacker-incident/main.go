@@ -41,7 +41,7 @@ func main() {
 	// saved := make([]float64, len(data))
 	// copy(saved, data)
 
-	// #9: clone a slice using append nil (i prefer this)
+	// #9: clone a slice using append nil (I prefer this)
 	// saved := append([]float64(nil), data...)
 
 	// data[0] = 0 // #8

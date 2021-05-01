@@ -27,22 +27,22 @@ import (
 //
 // ORIGINAL SLICE:
 //
-//   [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday]
+//   [yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday]
 //
 // EXPECTED SLICE (NEW):
 //
-//   [yesterday all my troubles seemed so far \n away now it looks as though they are here to stay \n oh i believe in yesterday \n]
+//   [yesterday all my troubles seemed so far \n away now it looks as though they are here to stay \n oh I believe in yesterday \n]
 //
 //
 // CURRENT OUTPUT
 //
-//  yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday
+//  yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday
 //
 // EXPECTED OUTPUT
 //
 //  yesterday all my troubles seemed so far away
 //  now it looks as though they are here to stay
-//  oh i believe in yesterday
+//  oh I believe in yesterday
 //
 //
 // RESTRICTIONS
@@ -72,7 +72,7 @@ import (
 func main() {
 	// You need to add a newline after each sentence in another slice.
 	// Don't touch the following code.
-	lyric := strings.Fields(`yesterday all my troubles seemed so far away now it looks as though they are here to stay oh i believe in yesterday`)
+	lyric := strings.Fields(`yesterday all my troubles seemed so far away now it looks as though they are here to stay oh I believe in yesterday`)
 
 	// ===================================
 	//
