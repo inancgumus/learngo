@@ -18,7 +18,7 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	strings := []string{
+	words := []string{
 		"cool",
 		"güzel",
 		"jīntiān",
@@ -26,7 +26,7 @@ func main() {
 		"read 🤓",
 	}
 
-	_ = strings
+	_ = words
 
 	// Print the byte and rune length of the strings
 	// Hint: Use len and utf8.RuneCountInString
