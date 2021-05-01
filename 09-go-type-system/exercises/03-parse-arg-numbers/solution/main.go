@@ -35,8 +35,9 @@ func main() {
 	fmt.Println("int32 value is:", int32(val))
 
 	// 4th argument is an int64
+	// Remember ParseInt returns an int64
 	val, _ = strconv.ParseInt(os.Args[4], 10, 64)
-	fmt.Println("int64 value is:", int64(val))
+	fmt.Println("int64 value is:", val)
 
 	// 5th argument is a number in bits. And its int8.
 	// ParseInt(.., 2, ...) -> 2 means binary base
