@@ -13,7 +13,7 @@ package main
 //
 //  1. Declare and print the following arrays with their types:
 //
-//    1. The names of your best three friends (names array)
+//    1. The names of your three best friends (names array)
 //
 //    2. The distances to five different locations (distances array)
 //
