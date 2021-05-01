@@ -20,7 +20,7 @@ package main
 //
 //  1. Create a nil slice
 //
-//  2. Loop 10e6 times
+//  2. Loop 1e7 times
 //
 //  3. On each iteration: Append an element to the slice
 //
