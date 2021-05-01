@@ -37,7 +37,7 @@ func main() {
 	//
 	// #2: Append the following names to the names slice:
 	//
-	//     "einstein", "tesla", "aristo"
+	//     "einstein", "tesla", "aristotle"
 	//
 	//     Print the names slice.
 	//
@@ -58,10 +58,10 @@ func main() {
 	//
 	//     Then append the following names to the slice:
 	//
-	//     "einstein", "tesla", "aristo"
+	//     "einstein", "tesla", "aristotle"
 	//
 	//     Expected output:
-	//     ["einstein", "tesla", "aristo" "" ""]
+	//     ["einstein", "tesla", "aristotle" "" ""]
 	//
 	//
 	// ...
