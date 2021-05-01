@@ -11,7 +11,7 @@ package main
 import "fmt"
 
 func main() {
-	// ellipsis (...) below calculates the length of the
+	// below ellipsis (...) calculates the length of the
 	// array automatically
 	rates := [...]float64{
 		// index 0 empty
