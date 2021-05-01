@@ -25,16 +25,16 @@ func main() {
 	//
 	// #2: Append the following names to the names slice:
 	//
-	//     "einstein", "tesla", "aristo"
+	//     "einstein", "tesla", "aristotle"
 	//
 	//     Print the names slice.
 	//
 	//     Observe how the slice and its backing array change.
 	//
 	//     Expected output:
-	//     ["" "" "" "" "" "einstein", "tesla", "aristo"]
+	//     ["" "" "" "" "" "einstein", "tesla", "aristotle"]
 	//
-	names = append(names, "einstein", "tesla", "aristo")
+	names = append(names, "einstein", "tesla", "aristotle")
 	s.Show("2nd step", names)
 
 	// ########################################################
@@ -48,15 +48,15 @@ func main() {
 	//
 	//     Then append the following names to the slice:
 	//
-	//     "einstein", "tesla", "aristo"
+	//     "einstein", "tesla", "aristotle"
 	//
 	//     Expected output:
-	//     ["einstein", "tesla", "aristo" "" ""]
+	//     ["einstein", "tesla", "aristotle" "" ""]
 	//
 	//     So: Overwrite and print the names slice.
 	//
 	names = make([]string, 0, 5)
-	names = append(names, "einstein", "tesla", "aristo")
+	names = append(names, "einstein", "tesla", "aristotle")
 	s.Show("3rd step", names)
 
 	// ########################################################
