@@ -26,6 +26,8 @@ package main
 //  Use strings.IndexAny function to detect the vowels.
 //  Search on Google for: golang pkg strings IndexAny
 //
+// Furthermore, you can also use strings.ContainsAny. Check out: https://golang.org/pkg/strings/#ContainsAny
+//
 // EXPECTED OUTPUT
 //  go run main.go
 //    Give me a letter
