@@ -11,7 +11,7 @@ package main
 // ---------------------------------------------------------
 // EXERCISE: Print Your Age
 //
-//  Print your age using Prinft
+//  Print your age using Printf
 //
 // EXPECTED OUTPUT
 //  I'm 30 years old.
