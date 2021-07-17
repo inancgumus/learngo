@@ -27,7 +27,7 @@ Enjoy!
 * **Build a Go program:**
 
     * While inside a program directory, type:
-        * `go build`
+        * `go build main.go`
 
 * **Run a Go program:**
 
