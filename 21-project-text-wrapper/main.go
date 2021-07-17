@@ -25,7 +25,16 @@ Gezegenin maymun soyundan gelen canlıları öyle ilkeldir ki dijital kol saatin
 	var lw int // line width
 
 	for _, r := range text {
-		fmt.Printf("%c", r)
+		if lw==0 && unicode.IsSpace(r){
+			continue;
+		}else{
+			if r=='\n'{
+				fmt.Println()
+				fmt.Printf("%c",r)
+			}else{
+				fmt.Printf("%c",r)
+			}
+		}
 
 		switch lw++; {
 		case lw > maxWidth && r != '\n' && unicode.IsSpace(r):
