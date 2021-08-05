@@ -25,6 +25,8 @@ Your mission is to guess one of those numbers.
 
 The greater your number is, harder it gets.
 
+You can guess up to 2 numbers.
+
 Wanna play?
 `
 )
@@ -45,8 +47,13 @@ func main() {
 		return
 	}
 
-	var guess2 int
+	var (
+		guess2      int
+		secondGuess bool
+	)
+
 	if len(args) == 2 {
+		secondGuess = true
 		guess2, err = strconv.Atoi(args[1])
 		if err != nil {
 			fmt.Println("Not a number.")
@@ -54,7 +61,7 @@ func main() {
 		}
 	}
 
-	if guess <= 0 || guess2 <= 0 {
+	if guess <= 0 || (guess2 <= 0 && secondGuess) {
 		fmt.Println("Please pick positive numbers.")
 		return
 	}
