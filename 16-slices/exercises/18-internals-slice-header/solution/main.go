@@ -31,7 +31,7 @@ func main() {
 	passArray(array)
 
 	slice1 := array[:]
-	slice2 := array[1e3:]
+	slice2 := array[:1e3]
 	slice3 := array[1e3:1e4]
 	report("after slicings")
 
