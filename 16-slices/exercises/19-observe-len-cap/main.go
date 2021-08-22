@@ -36,7 +36,7 @@ func main() {
 	// 7. comment out everything
 	//
 	// 8. declare the games slice again using a slice literal
-	//    (use the same elements from step 3)
+	//    (use the same elements from step 5)
 
 	// --- #2 ---
 	// 1. use a loop from 0 to 4 to slice the games slice, element by element.
