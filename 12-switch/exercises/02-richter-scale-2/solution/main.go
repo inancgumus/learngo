@@ -40,7 +40,7 @@ func main() {
 	case "major":
 		richter = "7 - 7.9"
 	case "great":
-		richter = "8 - 8.9"
+		richter = "8 - 9.9"
 	case "massive":
 		richter = "10+"
 	default:
