@@ -49,8 +49,13 @@ func main() {
 		fmt.Println("Please pick a positive number.")
 		return
 	}
+	
+	var balancer int
+	if guess > 10 {
+		balancer = guess / 4
+	}
 
-	for turn := maxTurns + guess/4; turn > 0; turn-- {
+	for turn := maxTurns + balancer; turn > 0; turn-- {
 		n := rand.Intn(guess) + 1
 
 		if n == guess {
