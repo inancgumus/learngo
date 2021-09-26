@@ -17,7 +17,7 @@ package main
 //  depending on the guess number.
 //
 // RESTRICTION
-//  Do not make the game to easy. Only adjust the
+//  Do not make the game too easy. Only adjust the
 //  difficulty if the guess is above 10.
 //
 // EXPECTED OUTPUT
