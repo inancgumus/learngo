@@ -14,27 +14,25 @@ Sino, puedes seguir los siguientes pasos
 sudo apt-get update
 ```
 
-## 2. Instala Git
+## 2. Instala [Git](https://git-scm.com/)
 
 ```bash
 sudo apt-get install git
 ```
 
-## 3. Instala Go
+## 3. Instala [Go](https://golang.org/)
 
 Hay dos formas:
 
-1. Desde la pagina web: selecciona linux y empezara la descarga.
+1. Ve a [https://golang.org/dl](https://golang.go/dl)
+2. Elige la versión Linux
+3. Ejecuta el instalador
 
-    ```bash
-    firefox https://golang.org/dl
-    ```
+4. Si estas usando snap: avanza hasta el paso 5.
 
-2. Si estas usando snap: avanza hasta el paso 5.
-
-    ```bash
-    sudo snap install go --classic
-    ```
+   ```bash
+   sudo snap install go --classic
+   ```
 
 ## 4. Copia Go en el directorio apropiado
 
@@ -42,38 +40,38 @@ Hay dos formas:
 
 2. Usa el nombre de ese archivo para descomprimirlo
 
-    ```bash
-    gofile="BORRA_ESTO_Y_ESCRIBE_EL_NOMBRE_DEL_ARCHIVO_DESCARGADO (sin la extension)"
-    tar -C /usr/local -xzf ~/Downloads/$gofile 
-    ```
+   ```bash
+   gofile="BORRA_ESTO_Y_ESCRIBE_EL_NOMBRE_DEL_ARCHIVO_DESCARGADO (sin la extension)"
+   tar -C /usr/local -xzf ~/Downloads/$gofile
+   ```
 
 ## 5. Añade los executables de Go a tu PATH
 
 1. Añade el directorio `go/bin` al `$PATH` para poder ejecutar los comandos principales de Go.
 
-    ```bash
-    echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
-    ```
+   ```bash
+   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
+   ```
 
 2. Añade el directorio `$HOME/go/bin` a tu `$PATH`
 
-    ```bash
-    echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.profile
-    ```
+   ```bash
+   echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.profile
+   ```
 
 ## Instala Las Herramientas de Go
 
-* Estas son utiles herramientas que ayudan a facilitar el desarrollo (como goimports)
+- Estas son utiles herramientas que ayudan a facilitar el desarrollo (como goimports)
 
-* `go get` no puede ser usado sin haber instalado un programa de control de versiones como Git.
+- `go get` no puede ser usado sin haber instalado un programa de control de versiones como Git.
 
-* Esto creara un directorio llamado `~/go` donde se descargaran las herramientas
+- Esto creara un directorio llamado `~/go` donde se descargaran las herramientas
 
-* Este directorio tambien es el lugar donde deberias poner tu codigo. (Si no vas a usar los modulos de Go)
+- Este directorio tambien es el lugar donde deberias poner tu codigo. (Si no vas a usar los modulos de Go)
 
-    ```bash
-    go get -v -u golang.org/x/tools/...
-    ```
+  ```bash
+  go get -v -u golang.org/x/tools/...
+  ```
 
 ## Instala El Editor Visual Studio Code
 
@@ -86,33 +84,33 @@ Nota: Puedes usar otro editor de codigo si quieres. Igualmente, el curso usa Vis
 
 1. Crea un archivo llamado `hola.go` en un nuevo directorio alejado de `$GOPATH`
 
-    ```bash
-    cat <<EOF > hola.go
-    package main
+   ```bash
+   cat <<EOF > hola.go
+   package main
 
-    import "fmt"
+   import "fmt"
 
-    func main() {
-        fmt.Println("hola gopher!")
-    }
-    EOF
-    ```
+   func main() {
+       fmt.Println("hola gopher!")
+   }
+   EOF
+   ```
 
 2. Ejecuta el programa
 
-    ```bash
-    go run hola.go
-    Deberia imprimir: hola gopher!
-    ```
+   ```bash
+   go run hola.go
+   Deberia imprimir: hola gopher!
+   ```
 
 ## Eso es todo! Disfrutad! 🤩
 
 <div style="page-break-after: always;"></div>
 
 > Para mas tutoriales: [https://blog.learngoprogramming.com](https://blog.learngoprogramming.com)
-> 
+>
 > Copyright © 2021 Inanc Gumus
-> 
+>
 > Learn Go Programming Course
-> 
+>
 > [Click aqui para leer la licencia.](https://creativecommons.org/licenses/by-nc-sa/4.0/)
