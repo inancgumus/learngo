@@ -1,35 +1,35 @@
-1. **Imprime tu nombre y el nombre de tu mejor amigo** usando Println dos veces. [Echale un vistazo a este ejercicio](https://github.com/inancgumus/learngo/tree/master/translation/spanish/02-tu-primer-programa/ejericios/01-imprimir-nombres).
+1. **Imprime tu nombre y el nombre de tu mejor amigo** usando Println dos veces. [Échale un vistazo a este ejercicio](https://github.com/inancgumus/learngo/tree/master/translation/spanish/02-tu-primer-programa/ejericios/01-imprimir-nombres).
 
-2. **Imprime tu GOPATH** usando la herramienta `go env` [Echale un vistazo a este ejercicio](https://github.com/inancgumus/learngo/tree/master/translation/spanish/02-tu-primer-programa/ejercicios/02-imprimir-gopath).
+2. **Imprime tu GOPATH** usando la herramienta `go env` [Échale un vistazo a este ejercicio](https://github.com/inancgumus/learngo/tree/master/translation/spanish/02-tu-primer-programa/ejercicios/02-imprimir-gopath).
 
 3. **Saludate a ti mismo.**
 
-    1. Complila tu programa usando `go build`
+   1. Complila tu programa usando `go build`
 
-    2. **Enviaselo a tu amigo**
+   2. **Envíaselo a tu amigo**
 
-       Deberia tener el mismo sistema operativo.
+      Debería tener el mismo sistema operativo.
 
-       Por ejemplo si estas usando Windows enviaselo a un amigo que tambien tenga Windows.
+      Por ejemplo si estás usando Windows envíaselo a un amigo que también tenga Windows.
 
-    3. **Enviaselo a un amigo con un sistema operativo diferente**
+   3. **Envíaselo a un amigo con un sistema operativo diferente**
 
-       Deberias compilar el programa especificamente para su sistema operativo.
+      Deberías compilar el programa especificamente para su sistema operativo.
 
-       **Crea un ejecutable para OS X:**
-       `GOOS=darwin GOARCH=386 go build`
+      **Crea un ejecutable para OS X:**
+      `GOOS=darwin GOARCH=386 go build`
 
-       **Crea un ejecutable para Windows:**
-       `GOOS=windows GOARCH=386 go build`
+      **Crea un ejecutable para Windows:**
+      `GOOS=windows GOARCH=386 go build`
 
-       **Crea un ejecutable para Linux:**
-       `GOOS=linux GOARCH=arm GOARM=7 go build`
+      **Crea un ejecutable para Linux:**
+      `GOOS=linux GOARCH=arm GOARM=7 go build`
 
-       **Puedes encontrar una lista completa aqui:**
-       https://golang.org/doc/install/source#environment
+      **Puedes encontrar una lista completa aquí:**
+      https://golang.org/doc/install/source#environment
 
-       **NOTA:** Si estas usando la consola de comandos o PowerShell, quizas necesites usarlo de la siguiente forma:
-       `cmd /c "set GOOS=darwin GOARCH=386 && go build"`
+      **NOTA:** Si estás usando la consola de comandos o PowerShell, quizás necesites usarlo de la siguiente forma:
+      `cmd /c "set GOOS=darwin GOARCH=386 && go build"`
 
 4. **Llama a [Print](https://golang.org/pkg/fmt/#Print) en vez de a [Println](https://golang.org/pkg/fmt/#Println)** y observa que pasa.
 
@@ -37,18 +37,18 @@
 
 6. **Elimina las comillas dobles de una cadena de texto literal** y observa que pasa.
 
-7. **Mueve tanto package como import** al final del archivo y observa que pasa.
+7. **Mueve tanto el package como import** al final del archivo y observa que pasa.
 
-8. **[Lee la documentación en linea](https://golang.org/pkg)**.
+8. **[Lee la documentación en línea](https://golang.org/pkg)**.
 
-    1. Echale un vistazo a que son los packages y que es lo que hacen.
+   1. Échale un vistazo a qué son los packages y qué es lo que hacen.
 
-    2. Mira su codigo fuente dandole click a su titulo.
+   2. Mira su codigo fuente clickeando sobre su titulo.
 
-    3. No tienes porque entenderlo todo, simplemente hazlo. Esto te dara un empujon de cara a las siguientes clases.
+   3. No tienes porque entenderlo todo, simplemente hazlo. Esto te dará un empujón de cara a las siguientes clases.
 
-9. Tambien, puedes tomar **un tour con Go**: https://tour.golang.org/
+9. También, puedes tomar **un tour con Go**: https://tour.golang.org/
 
-    1. Echale un vistazo rapido. Mira las caracteristicas del lenguaje.
+   1. Échale un vistazo rápido. Mira las caracteristicas del lenguaje.
 
-    2. Hablaremos de ellas proximamente.
+   2. Hablaremos de ellas proximamente.
