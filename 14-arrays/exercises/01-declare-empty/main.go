@@ -36,7 +36,7 @@ package main
 //     When printing a string array, you can use "%q" verb as usual.
 //
 // EXPECTED OUTPUT
-//  names    : [3]string{"", "", "", ""}
+//  names    : [3]string{"", "", ""}
 //  distances: [5]int{0, 0, 0, 0, 0}
 //  data     : [5]uint8{0x0, 0x0, 0x0, 0x0, 0x0}
 //  ratios   : [1]float64{0}
