@@ -30,24 +30,24 @@ func main() {
 	var desc string
 
 	switch r := richter; {
-	case r < 2:
-		desc = "micro"
-	case r >= 2 && r < 3:
-		desc = "very minor"
-	case r >= 3 && r < 4:
-		desc = "minor"
-	case r >= 4 && r < 5:
-		desc = "light"
-	case r >= 5 && r < 6:
-		desc = "moderate"
-	case r >= 6 && r < 7:
-		desc = "strong"
-	case r >= 7 && r < 8:
-		desc = "major"
-	case r >= 8 && r < 10:
-		desc = "great"
-	default:
+	case r >= 10:
 		desc = "massive"
+	case r >= 8:
+		desc = "great"
+	case r >= 7:
+		desc = "major"
+	case r >= 6:
+		desc = "strong"
+	case r >= 5:
+		desc = "moderate"
+	case r >= 4:
+		desc = "light"
+	case r >= 3:
+		desc = "minor"
+	case r >= 2:
+		desc = "very minor"
+	default:
+		desc = "micro"
 	}
 
 	fmt.Printf("%.2f is %s\n", richter, desc)
