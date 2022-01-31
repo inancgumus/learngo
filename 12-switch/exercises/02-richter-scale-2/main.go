@@ -35,7 +35,7 @@ package main
 //  go run main.go
 //   Tell me the magnitude of the earthquake in human terms.
 //
-//  go run main.go aliens
+//  go run main.go alien
 //   alien's richter scale is unknown
 //
 //  go run main.go micro
