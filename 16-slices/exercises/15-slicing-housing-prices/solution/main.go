@@ -46,8 +46,8 @@ Istanbul,500,10,5,1000000`
 		}
 	}
 
-	// from cannot be greater than to: reset invalid arg to 0
-	if from > to {
+	// "from" cannot be greater than or equal to "to": reset invalid arg to 0
+	if from >= to {
 		from = 0
 	}
 
