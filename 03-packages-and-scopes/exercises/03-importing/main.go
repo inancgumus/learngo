@@ -21,12 +21,12 @@ package main
 //  hi
 // ---------------------------------------------------------
 
-// ?
-// ?
-// ?
+import "fmt"
+import format "fmt"
+import f "fmt"
 
 func main() {
-	// ?
-	// ?
-	// ?
+	fmt.Println("Hi there")
+	format.Println("yes sir")
+	f.Println("cash lord")
 }

@@ -8,6 +8,7 @@
 
 package main
 
+
 // ---------------------------------------------------------
 // EXERCISE: Use your own package
 //
@@ -29,4 +30,6 @@ package main
 
 func main() {
 	// call functions of the other files here
+	Greet()
+	Bye()
 }
