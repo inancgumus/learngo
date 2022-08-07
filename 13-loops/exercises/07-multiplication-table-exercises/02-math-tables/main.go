@@ -8,6 +8,13 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Math Tables
 //
@@ -105,4 +112,68 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	const (
+		sizeMissing     = "Size is missing"
+		validOps        = "*/+-"
+		usage           = "Usage: " + validOps + " [size]"
+		invalidOperator = `Invalid operator.
+Valid ops one of: */+-`
+	)
+	switch l := len(os.Args); {
+	case l == 1:
+		fmt.Println(sizeMissing)
+		fallthrough
+	case l < 1:
+		fmt.Println(usage)
+		return
+	}
+
+	if strings.IndexAny(os.Args[1], validOps) == -1 {
+		fmt.Println(invalidOperator)
+		return
+	}
+
+	size, err := strconv.Atoi(os.Args[2])
+
+	if err != nil || size <= 0 {
+		fmt.Println("Wrong size")
+		return
+	}
+	sign := os.Args[1]
+	//horitzontal
+	fmt.Printf("%5s", sign)
+	for i := 0; i <= size; i++ {
+		fmt.Printf("%5d", i)
+	}
+	fmt.Println()
+	// vertical
+
+	for i := 0; i <= size; i++ {
+		fmt.Printf("%5d", i)
+
+		for j := 0; j <= size; j++ {
+
+			var res int
+
+			switch sign {
+			case "*":
+				res = i * j
+			case "%":
+				if j != 0 {
+					res = i % j
+				}
+			case "/":
+				if j != 0 {
+					res = i / j
+				}
+			case "+":
+				res = i + j
+			case "-":
+				res = i - j
+			}
+			fmt.Printf("%5d", res)
+		}
+		fmt.Println()
+	}
+	fmt.Println()
 }
