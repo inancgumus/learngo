@@ -8,6 +8,14 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"strconv"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: First Turn Winner
 //
@@ -26,4 +34,29 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args[1:]
+	const (
+		maxAtempts = 6
+	)
+	rand.Seed(time.Now().UnixNano())
+	guess, err := strconv.Atoi(args[0])
+
+	if err != nil {
+		fmt.Printf(`Not a number`)
+		return
+	}
+
+	if guess < 0 {
+		fmt.Printf(`Please choose a positive number`)
+		return
+	}
+	for i := 0; i < maxAtempts; i++ {
+		r := rand.Intn(10)
+		fmt.Printf("%d guess number, %d pc number\n", guess, r)
+		if guess == r && i == 0 {
+			fmt.Println("Winner!")
+			break
+		}
+
+	}
 }

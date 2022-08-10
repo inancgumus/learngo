@@ -8,6 +8,14 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"strconv"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Random Messages
 //
@@ -35,4 +43,37 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	const (
+		maxAttempts = 6
+	)
+	rand.Seed(time.Now().UnixNano())
+	args := os.Args[1:]
+	guess, err := strconv.Atoi(args[0])
+	if err != nil {
+		fmt.Printf("Wrong number!")
+	}
+	for i := 0; i <= maxAttempts; i++ {
+		r := rand.Intn(10)
+		fmt.Printf("%d guess nunberm %d pc number\n", guess, r)
+		var (
+			looser   string
+			greeting string
+		)
+		switch {
+		case r <= 5:
+			greeting = "YOU WON"
+			looser = "LOSER!"
+		case r > 5:
+			greeting = "YOU AWESOME"
+			looser = "YOU LOST. TRY AGAIN?"
+
+		}
+		if guess == r {
+			fmt.Printf(greeting + "\n")
+			return
+		} else {
+			fmt.Printf(looser + "\n")
+		}
+	}
+
 }

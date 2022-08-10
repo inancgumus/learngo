@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Only Evens
 //
@@ -28,4 +34,31 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args
+	min, minErr := strconv.Atoi(args[1])
+	max, maxErr := strconv.Atoi(args[2])
+
+	if minErr != nil || maxErr != nil {
+		fmt.Printf("%s min or %s max is not a number", args[1], args[2])
+		return
+	}
+
+	if len(args) <= 2 {
+		fmt.Println("More arguments needed. cmd min max")
+		return
+	}
+	if len(args) == 3 {
+		var sum int
+		for i := min; i <= max; i++ {
+			if i%2 == 0 {
+				sum += i
+				fmt.Printf("%1d", i)
+				if i != max {
+					fmt.Printf("+")
+				}
+			}
+
+		}
+		fmt.Printf("=%d", sum)
+	}
 }
