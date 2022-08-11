@@ -8,6 +8,14 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"strconv"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Dynamic Difficulty
 //
@@ -49,4 +57,31 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
+	var (
+		maxTurns = 5
+		delta    = 0
+	)
+	args := os.Args[1:]
+	if len(args) != 1 {
+		fmt.Println("Incorrect number of args")
+	}
+	guess, err := strconv.Atoi(args[0])
+	if err != nil {
+		fmt.Printf("Not a number")
+		return
+	}
+	if guess > 10 {
+		delta = guess / 4
+	}
+
+	for turn := maxTurns + delta; turn > 0; turn-- {
+		n := rand.Intn(guess) + 1
+		fmt.Printf("%d ", n)
+		if n == guess {
+			fmt.Println("🎉  YOU WIN!")
+			return
+		}
+	}
+	fmt.Println("☠️  YOU LOST... Try again?")
 }
