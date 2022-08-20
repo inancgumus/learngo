@@ -1,12 +1,6 @@
-// Copyright © 2018 Inanc Gumus
-// Learn Go Programming Course
-// License: https://creativecommons.org/licenses/by-nc-sa/4.0/
-//
-// For more tutorials  : https://learngoprogramming.com
-// In-person training  : https://www.linkedin.com/in/inancgumus/
-// Follow me on twitter: https://twitter.com/inancgumus
-
 package main
+
+import "fmt"
 
 // ---------------------------------------------------------
 // EXERCISE: Multi Assign #2
@@ -21,18 +15,25 @@ package main
 //
 // EXPECTED OUTPUT
 //  Air is good on Mars
-//  It's true
+//  Its true
 //  It is 19.5 degrees
 // ---------------------------------------------------------
 
 func main() {
 	// UNCOMMENT THE CODE BELOW:
 
-	// var (
-	// 	planet string
-	// 	isTrue bool
-	// 	temp   float64
-	// )
+	var (
+		planet string
+		isTrue bool
+		temp   float64
+	)
 
 	// ADD YOUR CODE BELOW
+
+	planet, isTrue, temp = "Mars", true, 19.5
+
+	fmt.Println("Air is good on", planet)
+	fmt.Println("Its", isTrue)
+	fmt.Println("It is", temp, "degrees")
+
 }
