@@ -39,27 +39,24 @@ import (
 //    2 3 5 7
 // ---------------------------------------------------------
 
-func isprime(num int) bool {
-	if num == 2 {
+func isprime(n int) bool {
+
+	switch {
+	// prime
+	case n == 2 || n == 3:
 		return true
-	}
-	if num == 3 {
-		return true
-	}
-	if num%2 == 0 {
-		return false
-	}
-	if num%3 == 0 {
+
+	// not a prime
+	case n <= 1 || n%2 == 0 || n%3 == 0:
 		return false
 	}
 
-	i := 5
-	w := 2
-
-	for i*i <= num {
-		if num%i == 0 {
+	for i, w := 5, 2; i*i <= n; {
+		// not a prime
+		if n%i == 0 {
 			return false
 		}
+
 		i += w
 		w = 6 - w
 	}
