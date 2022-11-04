@@ -123,4 +123,12 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var (
+		names    [3]string
+		distance [5]int
+		data     [5]uint8
+		ratios   [1]float64
+		alives   [4]bool
+		zero     [0]uint8
+	)
 }
