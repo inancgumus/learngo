@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Get and Set Array Elements
 //
@@ -129,7 +131,7 @@ func main() {
 		data      [5]uint8
 		ratios    [1]float64
 		alives    [4]bool
-		zero      [0]uint8
+		//zero      [0]uint8
 	)
 	names[0] = "Nikita"
 	names[1] = "El"
@@ -154,4 +156,26 @@ func main() {
 	alives[2] = true
 	alives[3] = false
 
+	//  9. Now use ordinary loop statements for each array and print them
+	//      (do not use for range)
+
+	for i := 0; i < len(names); i++ {
+		fmt.Printf("names[%d]: %q\n", i, names[i])
+	}
+
+	for i := 0; i < len(distances); i++ {
+		fmt.Printf("distances[%d]: %d\n", i, distances[i])
+	}
+
+	for i := 0; i < len(data); i++ {
+		fmt.Printf("data[%d]: %d\n", i, data[i])
+	}
+
+	for i := 0; i < len(ratios); i++ {
+		fmt.Printf("ratios[%d]: %v\n", i, ratios[i])
+	}
+
+	for i := 0; i < len(alives); i++ {
+		fmt.Printf("alives[%d]: %v\n", i, alives[i])
+	}
 }
