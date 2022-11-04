@@ -124,11 +124,34 @@ package main
 
 func main() {
 	var (
-		names    [3]string
-		distance [5]int
-		data     [5]uint8
-		ratios   [1]float64
-		alives   [4]bool
-		zero     [0]uint8
+		names     [3]string
+		distances [5]int
+		data      [5]uint8
+		ratios    [1]float64
+		alives    [4]bool
+		zero      [0]uint8
 	)
+	names[0] = "Nikita"
+	names[1] = "El"
+	names[2] = "Vlad"
+
+	distances[0] = 50
+	distances[1] = 40
+	distances[2] = 75
+	distances[3] = 30
+	distances[4] = 125
+
+	data[0] = 12
+	data[1] = 15
+	data[2] = 11
+	data[3] = 55
+	data[4] = 22
+
+	ratios[0] = 3.14
+
+	alives[0] = true
+	alives[1] = false
+	alives[2] = true
+	alives[3] = false
+
 }
