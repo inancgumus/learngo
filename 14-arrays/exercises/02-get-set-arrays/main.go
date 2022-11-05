@@ -178,4 +178,28 @@ func main() {
 	for i := 0; i < len(alives); i++ {
 		fmt.Printf("alives[%d]: %v\n", i, alives[i])
 	}
+
+	//  10. Now use for range loop statements for each array and print them
+
+	fmt.Println("10. Now use for range loop statements for each array and print them")
+
+	for i, v := range names {
+		fmt.Printf("names[%d]: %q\n", i, v)
+	}
+
+	for i, v := range distances {
+		fmt.Printf("distances[%d]: %v\n", i, v)
+	}
+
+	for i, v := range data {
+		fmt.Printf("data[%d]: %v\n", i, v)
+	}
+
+	for i, v := range ratios {
+		fmt.Printf("ratios[%d]: %v\n", i, v)
+	}
+
+	for i, v := range alives {
+		fmt.Printf("alives[%d]: %v\n", i, v)
+	}
 }
