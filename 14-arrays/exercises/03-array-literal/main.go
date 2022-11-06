@@ -27,13 +27,6 @@ import "fmt"
 // ---------------------------------------------------------
 
 func main() {
-	var (
-	//distances [5]int
-	//data      [5]uint8
-	//ratios    [1]float64
-	//alives    [4]bool
-	//zero      [0]uint8
-	)
 	names := [3]string{"Nikita", "El", "Vlad"}
 	distances := [5]int{50, 40, 75, 30, 125}
 	data := [5]uint8{12, 15, 11, 55, 22}
