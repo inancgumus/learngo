@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Word Finder
 //
@@ -53,5 +59,42 @@ package main
 
 const corpus = "lazy cat jumps again and again and again since the beginning this was very important"
 
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
+
 func main() {
+
+	filter := []string{
+		"and",
+		"or",
+		"was",
+		"the",
+		"since",
+		"very",
+	}
+	search_string := strings.Fields(corpus)
+
+	args := os.Args[1:]
+
+	var query []string
+	for _, w := range args {
+		if contains(filter, w) == false {
+			query = append(query, w)
+		}
+	}
+	for _, v := range args {
+		for i, w := range search_string {
+			if strings.ToLower(v) == w {
+				fmt.Printf("#%d: %v\n", i, w)
+			}
+		}
+	}
+	//fmt.Printf("%v ", query)
+
 }
