@@ -106,13 +106,13 @@ func main() {
 		" ░ ",
 		"   ",
 	}
-
-	for line := range digits[0] {
-		for digit := range digits {
-			fmt.Print(digits[digit][line], "  ")
-		}
-		fmt.Println()
-	}
+	//Print all digits
+	//for line := range digits[0] {
+	//	for digit := range digits {
+	//		fmt.Print(digits[digit][line], "  ")
+	//	}
+	//	fmt.Println()
+	//}
 	now := time.Now()
 	hour, min, sec := now.Hour(), now.Minute(), now.Second()
 	clock := [...]placeholder{
@@ -125,7 +125,7 @@ func main() {
 
 	for line := range clock[0] {
 		for digit := range clock {
-			fmt.Print(clock[digit][line], "  ")
+			fmt.Print(clock[digit][line], " ")
 		}
 		fmt.Println()
 	}
