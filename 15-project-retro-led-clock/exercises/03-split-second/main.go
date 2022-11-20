@@ -121,7 +121,7 @@ func main() {
 		screen.MoveTopLeft()
 
 		now := time.Now()
-		hour, min, sec := now.Hour(), now.Minute(), now.Second()
+		hour, min, sec, nano := now.Hour(), now.Minute(), now.Second(), now.Nanosecond()
 
 		clock := [...]placeholder{
 			digits[hour/10], digits[hour%10],
@@ -129,13 +129,15 @@ func main() {
 			digits[min/10], digits[min%10],
 			colon,
 			digits[sec/10], digits[sec%10],
+			dot,
+			digits[nano/1e8],
 		}
 
 		for line := range clock[0] {
 			for index, digit := range clock {
 				// colon blink
 				next := clock[index][line]
-				if digit == colon && sec%2 == 0 {
+				if (digit == colon || digit == dot) && sec%2 == 0 {
 					next = "   "
 				}
 				fmt.Print(next, "  ")
@@ -143,6 +145,6 @@ func main() {
 			fmt.Println()
 		}
 
-		time.Sleep(time.Second)
+		time.Sleep(time.Second / 10)
 	}
 }
