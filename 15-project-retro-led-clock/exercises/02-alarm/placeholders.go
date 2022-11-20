@@ -90,11 +90,49 @@ var nine = placeholder{
 	"███",
 }
 
+var a = placeholder{
+	"███",
+	"█ █",
+	"███",
+	"█ █",
+	"█ █",
+}
+
+var l = placeholder{
+	"█  ",
+	"█  ",
+	"█  ",
+	"█  ",
+	"███",
+}
+
+var r = placeholder{
+	"██ ",
+	"█ █",
+	"██ ",
+	"█ █",
+	"█ █",
+}
+var m = placeholder{
+	"█ █",
+	"███",
+	"█ █",
+	"█ █",
+	"█ █",
+}
+var warn = placeholder{
+	" █ ",
+	" █ ",
+	" █ ",
+	"   ",
+	" █ ",
+}
+
 var colon = placeholder{
 	"   ",
-	" ░ ",
+	" █ ",
 	"   ",
-	" ░ ",
+	" █ ",
 	"   ",
 }
 
