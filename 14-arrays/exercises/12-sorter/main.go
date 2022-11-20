@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Number Sorter
 //
@@ -47,4 +53,29 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var numbers [5]int
+	args := os.Args[1:]
+	if l := len(args); l > 5 || l == 0 {
+		fmt.Println("Please give me up to 5 numbers.")
+		return
+	}
+	for i, v := range args {
+		n, err := strconv.Atoi(v)
+		if err != nil {
+			numbers[i] += 0
+			continue
+		}
+		numbers[i] += n
+	}
+	fmt.Printf("Unsorted: %v\n", numbers)
+
+	for i := 0; i < len(numbers)-1; i++ {
+		for j := 0; j < len(numbers)-i-1; j++ {
+			if numbers[j] > numbers[j+1] {
+				//swap
+				numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+			}
+		}
+	}
+	fmt.Printf("Sorted: %v", numbers)
 }

@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Wizard Printer
 //
@@ -30,4 +32,41 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	first_name := [...]string{
+		"Albert",
+		"Isaac",
+		"Stephen",
+		"Marie",
+		"Charles",
+	}
+	last_name := [...]string{
+		"Einstein",
+		"Newton",
+		"Hawking",
+		"Curie",
+		"Darwin",
+	}
+
+	nickname := [...]string{
+		"time",
+		"apple",
+		"blackhole",
+		"radium",
+		"fittest",
+	}
+	scientists := [3][5]string{
+		first_name,
+		last_name,
+		nickname,
+	}
+	fmt.Printf("| %-15s | %-15s | %-15s |\n", "name", "surname", "nickname")
+	for i := range scientists[0] {
+		for j := range scientists {
+			fmt.Printf("| %-15s ", scientists[j][i])
+			if j == len(scientists)-1 {
+				fmt.Println("|\r")
+			}
+		}
+	}
+
 }

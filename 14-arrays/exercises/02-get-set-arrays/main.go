@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Get and Set Array Elements
 //
@@ -124,11 +126,80 @@ package main
 
 func main() {
 	var (
-		names    [3]string
-		distance [5]int
-		data     [5]uint8
-		ratios   [1]float64
-		alives   [4]bool
-		zero     [0]uint8
+		names     [3]string
+		distances [5]int
+		data      [5]uint8
+		ratios    [1]float64
+		alives    [4]bool
+		//zero      [0]uint8
 	)
+	names[0] = "Nikita"
+	names[1] = "El"
+	names[2] = "Vlad"
+
+	distances[0] = 50
+	distances[1] = 40
+	distances[2] = 75
+	distances[3] = 30
+	distances[4] = 125
+
+	data[0] = 12
+	data[1] = 15
+	data[2] = 11
+	data[3] = 55
+	data[4] = 22
+
+	ratios[0] = 3.14
+
+	alives[0] = true
+	alives[1] = false
+	alives[2] = true
+	alives[3] = false
+
+	//  9. Now use ordinary loop statements for each array and print them
+	//      (do not use for range)
+
+	for i := 0; i < len(names); i++ {
+		fmt.Printf("names[%d]: %q\n", i, names[i])
+	}
+
+	for i := 0; i < len(distances); i++ {
+		fmt.Printf("distances[%d]: %d\n", i, distances[i])
+	}
+
+	for i := 0; i < len(data); i++ {
+		fmt.Printf("data[%d]: %d\n", i, data[i])
+	}
+
+	for i := 0; i < len(ratios); i++ {
+		fmt.Printf("ratios[%d]: %v\n", i, ratios[i])
+	}
+
+	for i := 0; i < len(alives); i++ {
+		fmt.Printf("alives[%d]: %v\n", i, alives[i])
+	}
+
+	//  10. Now use for range loop statements for each array and print them
+
+	fmt.Println("10. Now use for range loop statements for each array and print them")
+
+	for i, v := range names {
+		fmt.Printf("names[%d]: %q\n", i, v)
+	}
+
+	for i, v := range distances {
+		fmt.Printf("distances[%d]: %v\n", i, v)
+	}
+
+	for i, v := range data {
+		fmt.Printf("data[%d]: %v\n", i, v)
+	}
+
+	for i, v := range ratios {
+		fmt.Printf("ratios[%d]: %v\n", i, v)
+	}
+
+	for i, v := range alives {
+		fmt.Printf("alives[%d]: %v\n", i, v)
+	}
 }

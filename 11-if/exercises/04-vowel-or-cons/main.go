@@ -15,7 +15,8 @@ package main
 //
 // NOTE
 //  y or w is called a semi-vowel.
-//  Check out: https://en.oxforddictionaries.com/explore/is-the-letter-y-a-vowel-or-a-consonant/
+//  Check out: https://www.merriam-webster.com/words-at-play/why-y-is-sometimes-a-vowel-usage
+//  Check out: https://www.dictionary.com/e/w-vowel/
 //
 // HINT
 //  + You can find the length of an argument using the len function.
