@@ -72,6 +72,9 @@ func main() {
 		}
 
 		for line := range clock[0] {
+			if sec%10 == 0 {
+				clock = [...]placeholder{a, l, a, r, m, warn, warn, warn}
+			}
 			for index, digit := range clock {
 				// colon blink
 				next := clock[index][line]
@@ -79,6 +82,7 @@ func main() {
 					next = "   "
 				}
 				fmt.Print(next, "  ")
+
 			}
 			fmt.Println()
 		}
