@@ -1,90 +1,90 @@
-## Which code is correct?
+## 哪个代码是正确的?
 * `fmt.Printf("Hi %s")`
 * `fmt.Printf("Hi %s", "how", "are you")`
-* `fmt.Printf("Hi %s", "hello")` *CORRECT*
+* `fmt.Printf("Hi %s", "hello")` *正确*
 * `fmt.Printf("Hi %s", true)`
 
-## Which code is correct?
+## 哪个代码是正确的?
 * `fmt.Printf("Hi %s %s", "there")`
 * `fmt.Printf("Hi %s %s", "5", true)`
-* `fmt.Printf("Hi %s %s", "there", ".")` *CORRECT*
+* `fmt.Printf("Hi %s %s", "there", ".")` *正确*
 * `fmt.Printf("Hi %s %s", "true", false)`
 
-## Which verb is used for an int value?
+## 哪个动词用于 int 值?
 * %f
-* %d *CORRECT*
+* %d *正确*
 * %s
 * %t
 
-## Which verb is used for a float value?
-* %f *CORRECT*
+## 哪个动词用于 float 值?
+* %f *正确*
 * %d
 * %s
 * %t
 
-## Which verb is used for a string value?
+## 哪个动词用于 string 值?
 * %f
 * %d
-* %s *CORRECT*
+* %s *正确*
 * %t
 
-## Which verb is used for a bool value?
+## 哪个动词用于 bool 值?
 * %f
 * %d
 * %s
-* %t *CORRECT*
+* %t *正确*
 
-## Which verb you can use for any type of value?
+## 你可以用哪个动词来形容任何类型的值?
 * %f
 * %d
-* %v *CORRECT*
+* %v *正确*
 * %t
 
-## What does `"\n"` print?
+## 哪个是 `"\n"` 正确打印?
 * \n
-* Prints a newline *CORRECT*
+* Prints a newline *正确*
 * Prints an empty string
 
-## What does `"\\n"` print?
-* \n *CORRECT*
+## 哪个是 `"\\n"` 正确打印?
+* \n *正确*
 * Prints a newline
 * Prints an empty string
 
-## What does "c:\\secret\\directory" print?
+## 哪个是 "c:\\secret\\directory" 正确打印?
 * "c:\\secret\\directory"
 * c:\\secret\\directory
-* c:\secret\directory *CORRECT*
+* c:\secret\directory *正确*
 
-## What does `"\"heisenberg\""` print?
+## 哪个是 `"\"heisenberg\""` 正确打印?
 * ERROR
 * heisenberg
-* "heisenberg" *CORRECT*
+* "heisenberg" *正确*
 * 'heisenberg'
 
-## What does `fmt.Printf("%T", 3.14)` print?
+## 哪个是 `fmt.Printf("%T", 3.14)` 正确输出?
 * ERROR
 * int
-* float64 *CORRECT*
+* float64 *正确*
 * string
 * bool
 
-## What does `fmt.Printf("%T", true)` print?
+## 哪个是 `fmt.Printf("%T", true)` 正确输出?
 * ERROR
 * int
 * float64
 * string
-* bool *CORRECT*
+* bool *正确*
 
-## What does `fmt.Printf("%T", 42)` print?
+## 哪个是 `fmt.Printf("%T", 42)` 正确输出?
 * ERROR
-* int *CORRECT*
+* int *正确*
 * float64
 * string
 * bool
 
-## What does `fmt.Printf("%T", "hi")` print?
+## 哪个是 `fmt.Printf("%T", "hi")` 正确输出?
 * ERROR
 * int
 * float64
-* string *CORRECT*
+* string *正确*
 * bool

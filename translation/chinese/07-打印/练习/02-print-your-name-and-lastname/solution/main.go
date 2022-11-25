@@ -13,7 +13,7 @@ import "fmt"
 func main() {
 	fmt.Printf("My name is %s and my lastname is %s.\n", "Inanc", "Gumus")
 
-	// BONUS
+	// 额外
 	msg := "My name is %s and my lastname is %s.\n"
 	fmt.Printf(msg, "Inanc", "Gumus")
 }
