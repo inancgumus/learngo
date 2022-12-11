@@ -82,9 +82,9 @@ import (
 )
 
 func main() {
-	screen.Clear()
 
-	for {
+	for offset := 0; ; offset++ {
+		screen.Clear()
 		screen.MoveTopLeft()
 
 		now := time.Now()
@@ -97,11 +97,21 @@ func main() {
 			colon,
 			digits[sec/10], digits[sec%10],
 		}
-
+		l := len(clock)
 		for line := range clock[0] {
-			for index, digit := range clock {
-				next := clock[index][line]
-				if digit == colon && sec%2 == 0 {
+			s, e := offset%l, l
+
+			if offset%(l*2) >= l {
+				s, e = 0, s
+			}
+
+			for j := 0; j < l-e; j++ {
+				fmt.Print("     ")
+			}
+
+			for i := s; i < e; i++ {
+				next := clock[i][line]
+				if clock[i] == colon && sec%2 == 0 {
 					next = "   "
 				}
 				fmt.Print(next, "  ")
@@ -112,3 +122,5 @@ func main() {
 		time.Sleep(time.Second)
 	}
 }
+
+//01234567
