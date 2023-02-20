@@ -16,4 +16,4 @@
 ## How can you print $GOPATH?
 * Using `ls` command
 * Using `go env GOPATH` command *CORRECT*
-* Using `go environment` command
+* Using `go env` command
