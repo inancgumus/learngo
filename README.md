@@ -10,7 +10,10 @@ Let's install Go on your favorite operating system.
 
 
 
-
+**Available in the following languages:**
+* **[English](https://github.com/inancgumus/learngo)**
+* **[Spanish](translation/spanish)** _(WIP: Please Contribute)_
+* **[Chinese](translation/chinese)** _(WIP: Please Contribute)_
 
 **Available in the following languages:**
 * **[English](https://github.com/inancgumus/learngo)**
