@@ -7,6 +7,17 @@ Best way of learning is doing. Inside this repository, you will find thousands o
 Let's install Go on your favorite operating system.
 * [OS X](https://github.com/inancgumus/learngo/blob/master/01-get-started/osx-installation.md)
 * [Windows](https://github.com/inancgumus/learngo/blob/master/01-get-started/windows-installation.md)
+* [Linux (Ubuntu)](https://github.com/inancgumus/learngo/blob/master/01-get-started/ubuntu-installation.md)
+
+## Write Your First Program
+* [Let's get started.](https://github.com/inancgumus/learngo/blob/master/01-get-started/README.md)
+* [Exercise 1: Print names](https://github.com/inancgumus/learngo/blob/master/02-write-your-first-program/exercises/01-print-names/main.go) -- [Solution](https://github.com/inancgumus/learngo/blob/master/02-write-your-first-program/exercises/01-print-names/solution/main.go)
+* [Question 1: Gopath.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/01-gopath)
+* [Question 2: Code your first program.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/02-code-your-first-program)
+* [Question 3: Run your first program.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/03-run-your-first-program)
+
+## Packages and Scopes
+
 
 
 
