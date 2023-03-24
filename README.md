@@ -20,7 +20,7 @@ Let's install Go on your favorite operating system.
 * [Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)
 *
 |scopes|
---
+:--:
 |[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|
 |[Block Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/02-block-scope/main.go)|
 
