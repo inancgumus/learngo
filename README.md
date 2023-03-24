@@ -17,6 +17,11 @@ Let's install Go on your favorite operating system.
 * [Question 3: Run your first program.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/03-run-your-first-program)
 
 ## Packages and Scopes
+* [Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)
+* |scopes|
+--
+|[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|
+|[Block Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/02-block-scope/main.go)|
 
 
 
