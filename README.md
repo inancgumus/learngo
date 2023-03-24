@@ -30,7 +30,17 @@ Let's install Go on your favorite operating system.
 |[Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/02-scopes/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/02-scopes/solution/main.go)|
 |[Importing](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/03-importing/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/03-importing/solution/main.go)|
 
-## Statements, Expressions, Comments
+|Question|
+:--:
+|[Packages-A](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes/questions/01-packages-A)|
+|[Packages-B](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes/questions/02-packages-B)|
+|[Scopes](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes/questions/03-scopes)|
+
+## Statements, Expressions and Comments
+|Statements| Expressions | Comments|
+:--:|:--:|:--:
+|[Execution Flow](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/01-statements/01-execution-flow/main.go)|[Expressions](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/01-statements/02-semicolons/main.go)|[Comments](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/03-comments/main.go)|
+|[Semicolons](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/01-statements/02-semicolons/main.go)| | |
 
 
 
