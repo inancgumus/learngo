@@ -17,20 +17,14 @@ Let's install Go on your favorite operating system.
 * [Question 3: Run your first program.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/03-run-your-first-program)
 
 ## Packages and Scopes
-* [Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)
-* 
-|scopes|
-:--:
-|[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|
-|[Block Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/02-block-scope/main.go)|
-|[Nested Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/03-nested-scope/main.go)|
-|[Package Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/04-package-scope/main.go)|
+|Packages|Scopes|Importing
+:--:|:--:|:--:
+|[Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)|[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|[File Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/01-file-scope/main.go)|
+| |[Block Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/02-block-scope/main.go)|[Renaming](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/02-renaming/main.go)|
+| |[Nested Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/03-nested-scope/main.go)| |
+| |[Package Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/04-package-scope/main.go)||
 
-*
-|Importing|
-:--:
-|[File Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/01-file-scope/main.go)|
-|[Renaming](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/02-renaming/main.go)|
+
 
 
 **Available in the following languages:**
