@@ -5,8 +5,8 @@ Best way of learning is doing. Inside this repository, you will find thousands o
 ## Get Started with Go
 
 Let's install Go on your favorite operating system.
-* **[OS X](https://github.com/inancgumus/learngo/blob/master/01-get-started/osx-installation.md)**
-* **[Windows](https://github.com/inancgumus/learngo/blob/master/01-get-started/windows-installation.md)**
+* *[OS X](https://github.com/inancgumus/learngo/blob/master/01-get-started/osx-installation.md)*
+* *[Windows](https://github.com/inancgumus/learngo/blob/master/01-get-started/windows-installation.md)*
 
 
 
