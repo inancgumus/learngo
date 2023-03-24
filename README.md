@@ -24,6 +24,13 @@ Let's install Go on your favorite operating system.
 | |[Nested Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/03-nested-scope/main.go)| |
 | |[Package Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/04-package-scope/main.go)||
 
+|Exercises|Solution|
+:--:|:--:
+|[Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/01-packages/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/01-packages/solution/main.go)|
+|[Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/02-scopes/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/02-scopes/solution/main.go)|
+|[Importing](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/03-importing/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/03-importing/solution/main.go)|
+
+## Statements, Expressions, Comments
 
 
 
