@@ -18,7 +18,7 @@ Let's install Go on your favorite operating system.
 
 ## Packages and Scopes
 * [Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)
-* *Scope*
+* 
 |scopes|
 :--:
 |[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|
@@ -26,7 +26,11 @@ Let's install Go on your favorite operating system.
 |[Nested Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/03-nested-scope/main.go)|
 |[Package Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/04-package-scope/main.go)|
 
-
+*
+|Importing|
+:--:
+|[File Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/01-file-scope/main.go)|
+|[Renaming](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/02-renaming/main.go)|
 
 
 **Available in the following languages:**
