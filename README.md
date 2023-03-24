@@ -18,10 +18,13 @@ Let's install Go on your favorite operating system.
 
 ## Packages and Scopes
 * [Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)
-*|scopes|
+* *Scope*
+|scopes|
 :--:
 |[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|
 |[Block Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/02-block-scope/main.go)|
+|[Nested Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/03-nested-scope/main.go)|
+|[Package Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/04-package-scope/main.go)|
 
 
 
