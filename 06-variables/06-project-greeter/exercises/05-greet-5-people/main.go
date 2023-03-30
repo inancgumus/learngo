@@ -37,7 +37,7 @@ import (
 // ---------------------------------------------------------
 
 func main() {
-	fmt.Println("There are 5 people!")
+	fmt.Println("There are", len(os.Args)-1, "people!")
 	fmt.Println("Hello great", os.Args[1])
 	fmt.Println("Hello great", os.Args[2])
 	fmt.Println("Hello great", os.Args[3])
