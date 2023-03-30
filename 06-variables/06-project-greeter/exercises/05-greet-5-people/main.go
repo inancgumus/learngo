@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Greet 5 People
 //
@@ -32,5 +37,11 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// TYPE YOUR CODE HERE
+	fmt.Println("There are 5 people!")
+	fmt.Println("Hello great", os.Args[1])
+	fmt.Println("Hello great", os.Args[2])
+	fmt.Println("Hello great", os.Args[3])
+	fmt.Println("Hello great", os.Args[4])
+	fmt.Println("Hello great", os.Args[5])
+	fmt.Print("Nice to meet you all.")
 }
