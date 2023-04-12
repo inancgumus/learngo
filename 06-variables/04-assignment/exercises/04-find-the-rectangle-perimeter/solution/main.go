@@ -13,7 +13,7 @@ import "fmt"
 func main() {
 	var (
 		perimeter     int
-		width, height = 5, 6
+		width, height := 5, 6
 	)
 
 	// first calculates: (width + height)
