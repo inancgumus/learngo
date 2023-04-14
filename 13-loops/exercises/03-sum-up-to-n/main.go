@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Sum up to N
 //
@@ -36,4 +42,35 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args
+
+	switch len(args) {
+	case 1:
+		fmt.Println("Please enter [min]")
+		fallthrough
+	case 2:
+		fmt.Println("Please enter [max]")
+		return
+	}
+
+	start, err1 := strconv.Atoi(args[1])
+
+	end, err2 := strconv.Atoi(args[2])
+
+	if err1 != nil || err2 != nil || start >= end {
+		fmt.Println("Please integer and [start] < [end]]")
+		return
+
+	}
+	var total int
+	for i := start; i <= end; i++ {
+		total += i
+		fmt.Print(i)
+		if i < end {
+			fmt.Printf(" + ")
+		}
+	}
+
+	fmt.Printf(" = %d\n", total)
+
 }
