@@ -10,14 +10,14 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
 func main() {
 	args := os.Args[1:]
 	if len(args) == 0 {
-		fmt.Println("Provide a directory")
-		return
+		log.Fatal("Provide a directory")
 	}
 
 	files, err := os.ReadDir(args[0])
@@ -36,14 +36,12 @@ func main() {
 			fmt.Println(cap(names))
 			names = append(names, name...)
 			names = append(names, '\n')
-			fmt.Println(names)
 		}
 	}
 
 	err = os.WriteFile("out.txt", names, 0644)
 	if err != nil {
-		fmt.Println(err)
-		return
+		log.Fatal(err)
 	}
 
 	fmt.Printf("%s", names)
