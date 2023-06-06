@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Rune Manipulator
 //
@@ -26,30 +31,45 @@ func main() {
 		"read 🤓",
 	}
 
-	_ = words
+	for _, word := range words {
+		fmt.Printf("%q\n", word)
+		fmt.Printf("\t has %d bytes and %d runes\n",
+			len(word), utf8.RuneCountInString(word))
+		fmt.Printf("\t bytes   :% x \n",
+			word)
+		fmt.Print("\t runes   :")
 
-	// Print the byte and rune length of the strings
-	// Hint: Use len and utf8.RuneCountInString
+		for _, r := range word {
+			fmt.Printf(" %x", r)
+		}
+		fmt.Println()
 
-	// Print the bytes of the strings in hexadecimal
-	// Hint: Use % x verb
+		fmt.Print("\trunes   :")
+		for _, r := range word {
+			fmt.Printf("%q", r)
+		}
+		fmt.Println()
 
-	// Print the runes of the strings in hexadecimal
-	// Hint: Use % x verb
+		r1, size := utf8.DecodeRuneInString(word)
 
-	// Print the runes of the strings as rune literals
-	// Hint: Use for range
+		fmt.Printf("\tfirst   : %q (%d bytes)\n", r1, size)
 
-	// Print the first rune and its byte size of the strings
-	// Hint: Use utf8.DecodeRuneInString
+		r2, size := utf8.DecodeLastRuneInString(word)
 
-	// Print the last rune of the strings
-	// Hint: Use utf8.DecodeLastRuneInString
+		fmt.Printf("\tlast   : %q (%d bytes)\n", r2, size)
 
-	// Slice and print the first two runes of the strings
+		_, first := utf8.DecodeRuneInString(word)
+		_, second := utf8.DecodeRuneInString(word[first:])
+		fmt.Printf("\tfirst 2 : %q\n", word[:first+second])
 
-	// Slice and print the last two runes of the strings
+		_, last1 := utf8.DecodeLastRuneInString(word)
+		_, last2 := utf8.DecodeLastRuneInString(word[:len(word)-last1])
+		fmt.Printf("\tlast 2  : %q\n", word[len(word)-last2-last1:])
 
-	// Convert the string to []rune
-	// Print the first and last two runes
+		r_slice := []rune(word)
+
+		fmt.Printf("\t first2   :%q \n", string(r_slice[:2]))
+		fmt.Printf("\t last 2   :%q \n", string(r_slice[len(r_slice)-2:]))
+
+	}
 }
