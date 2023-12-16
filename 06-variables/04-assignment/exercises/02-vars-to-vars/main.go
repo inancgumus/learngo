@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Variables To Variables
 //
@@ -38,13 +40,13 @@ package main
 func main() {
 	// UNCOMMENT THE CODE BELOW:
 
-	// color := "green"
+	color := "green"
 
 	// ADD YOUR CODE BELOW
 
-	// ?
+	color = "dark " + color
 
 	// UNCOMMENT THE CODE BELOW TO PRINT THE VARIABLE
 
-	// fmt.Println(color)
+	fmt.Println(color)
 }
