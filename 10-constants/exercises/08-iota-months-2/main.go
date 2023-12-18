@@ -21,15 +21,9 @@ import "fmt"
 // ---------------------------------------------------------
 
 func main() {
-	// HINT: This is a valid constant declaration
-	//       Blank-Identifier can be used in place of a name
-	const _ = iota
-	//    ^- this is just a name
-
-	// Now, use iota and initialize the following constants
-	// "automatically" to 1, 2, and 3 respectively.
 	const (
-		Jan = iota
+		_ = iota
+		Jan
 		Feb
 		Mar
 	)
