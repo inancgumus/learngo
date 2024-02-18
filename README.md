@@ -1,3 +1,15 @@
+# Get my book!
+
+Go by Example: Programmer's guide to idiomatic and testable code.
+
+👉 https://github.com/inancgumus/gobyexample
+
+_This book is what you need once you wrap up the exercises in this repository._
+
+![gobyexamplecover](https://github.com/inancgumus/learngo/assets/621232/14dd4bff-f6e1-489f-9aa5-1452b8219a11)
+
+---
+
 # A Huge Number of Go Examples, Exercises and Quizzes
 
 Best way of learning is doing. Inside this repository, you will find thousands of Go examples, exercises and quizzes. I initially created this repository for my **[Go: Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37)**. Later on, I added a lot of exercises, and I wanted every programmer who is not yet enrolled in the course to learn for free as well. So here it is. Enjoy.
