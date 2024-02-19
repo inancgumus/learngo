@@ -7,6 +7,10 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
+import (
+        "fmt"
+	"os"
+)
 
 // ---------------------------------------------------------
 // EXERCISE: Greet 5 People
@@ -32,5 +36,9 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	fmt.Printf("There are %d people!\n",len(os.Args))
+	for _, arg :=range os.Args[1:]{
+		fmt.Printf("Hello great %s !\n",arg)
+	}
 	// TYPE YOUR CODE HERE
 }
