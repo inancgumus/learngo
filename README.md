@@ -14,6 +14,48 @@ _This book is what you need once you wrap up the exercises in this repository._
 
 Best way of learning is doing. Inside this repository, you will find thousands of Go examples, exercises and quizzes. I initially created this repository for my **[Go: Bootcamp Course](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/?referralCode=5CE6EB34E2B1EF4A7D37)**. Later on, I added a lot of exercises, and I wanted every programmer who is not yet enrolled in the course to learn for free as well. So here it is. Enjoy.
 
+## Get Started with Go
+
+Let's install Go on your favorite operating system.
+* [OS X](https://github.com/inancgumus/learngo/blob/master/01-get-started/osx-installation.md)
+* [Windows](https://github.com/inancgumus/learngo/blob/master/01-get-started/windows-installation.md)
+* [Linux (Ubuntu)](https://github.com/inancgumus/learngo/blob/master/01-get-started/ubuntu-installation.md)
+
+## Write Your First Program
+* [Let's get started.](https://github.com/inancgumus/learngo/blob/master/01-get-started/README.md)
+* [Exercise 1: Print names](https://github.com/inancgumus/learngo/blob/master/02-write-your-first-program/exercises/01-print-names/main.go) -- [Solution](https://github.com/inancgumus/learngo/blob/master/02-write-your-first-program/exercises/01-print-names/solution/main.go)
+* [Question 1: Gopath.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/01-gopath)
+* [Question 2: Code your first program.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/02-code-your-first-program)
+* [Question 3: Run your first program.](https://github.com/inancgumus/learngo/tree/master/02-write-your-first-program/questions/03-run-your-first-program)
+
+## Packages and Scopes
+|Packages|Scopes|Importing
+:--:|:--:|:--:
+|[Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/01-packages/main.go)|[Scopes](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/01-scopes/main.go)|[File Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/01-file-scope/main.go)|
+| |[Block Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/02-block-scope/main.go)|[Renaming](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/03-importing/02-renaming/main.go)|
+| |[Nested Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/03-nested-scope/main.go)| |
+| |[Package Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/02-scopes/04-package-scope/main.go)||
+
+|Exercises|Solution|
+:--:|:--:
+|[Packages](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/01-packages/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/01-packages/solution/main.go)|
+|[Scope](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/02-scopes/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/02-scopes/solution/main.go)|
+|[Importing](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/03-importing/main.go)|[Solution](https://github.com/inancgumus/learngo/blob/master/03-packages-and-scopes/exercises/03-importing/solution/main.go)|
+
+|Question|
+:--:
+|[Packages-A](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes/questions/01-packages-A)|
+|[Packages-B](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes/questions/02-packages-B)|
+|[Scopes](https://github.com/inancgumus/learngo/tree/master/03-packages-and-scopes/questions/03-scopes)|
+
+## Statements, Expressions and Comments
+|Statements| Expressions | Comments|
+:--:|:--:|:--:
+|[Execution Flow](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/01-statements/01-execution-flow/main.go)|[Expressions](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/01-statements/02-semicolons/main.go)|[Comments](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/03-comments/main.go)|
+|[Semicolons](https://github.com/inancgumus/learngo/blob/master/04-statements-expressions-comments/01-statements/02-semicolons/main.go)| | |
+
+
+
 **Available in the following languages:**
 * **[English](https://github.com/inancgumus/learngo)**
 * **[Spanish](translation/spanish)** _(WIP: Please Contribute)_
