@@ -33,6 +33,11 @@ func main() {
 		ratios    []float64 // Currency exchange ratios
 		alives    []bool    // Up/Down status of web servers
 	)
+	names = []string{}
+	distances = []int{}
+	data = []byte{}
+	ratios = []float64{}
+	alives = []bool{}
 
 	fmt.Printf("names    : %T %d %t\n", names, len(names), names == nil)
 	fmt.Printf("distances: %T %d %t\n", distances, len(distances), distances == nil)

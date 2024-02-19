@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Wizard Printer
 //
@@ -20,7 +25,7 @@ package main
 //   3. Print their information in a pretty table using a loop.
 //
 // EXPECTED OUTPUT
-//   First Name      Last Name       Nickname
+//   First Name	     Last Name       Nickname
 //   ==================================================
 //   Albert          Einstein        time
 //   Isaac           Newton          apple
@@ -30,4 +35,22 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	famous_scientists := [...][3]string{
+		{"Albert", "Einstein", "time"},
+		{"Isaac", "Newton", "apple"},
+		{"Stephen", "Hawking", "blackhole"},
+		{"Marie", "Curie", "radum"},
+		{"Charles", "Darwin", "fittest"},
+	}
+
+	fmt.Printf("%-15s %-15s %-15s\n", "First Name", "Last Name", "Nickname")
+	fmt.Println(strings.Repeat("=", 50))
+	for _, name_info := range famous_scientists {
+		for _, info := range name_info {
+			fmt.Printf("%-15s", info)
+
+		}
+		fmt.Println()
+	}
+	fmt.Println(strings.Repeat("-", 50))
 }

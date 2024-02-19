@@ -8,6 +8,14 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"strconv"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Dynamic Difficulty
 //
@@ -48,5 +56,66 @@ package main
 //  guess number.
 // ---------------------------------------------------------
 
+const (
+	usage = `Welcome to the Lucky Number Game! 🍀
+
+The program will pick %d random numbers between 1
+and 150.
+Your mission is to guess one of those numbers.
+
+The greater your number is, harder it gets.
+
+The game's difficulty will be adjusted based
+upon the guess number. The program will pick
+more randomly numbers.
+
+Wanna play?
+`
+)
+
 func main() {
+	rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	args := os.Args[1:]
+
+	maxTurns := 5
+
+	if len(args) != 1 {
+		fmt.Printf(usage, maxTurns)
+		return
+	}
+
+	guess, err := strconv.Atoi(args[0])
+	if err != nil {
+		fmt.Println("Not a number.")
+		return
+	}
+
+	if guess <= 0 {
+		fmt.Println("Please pick a positive number.")
+		return
+	}
+	switch {
+	case guess >= 100:
+		maxTurns = 40
+	case guess >= 50:
+		maxTurns = 30
+	case guess >= 10:
+		maxTurns = 20
+	}
+
+	for turn := 1; turn <= maxTurns; turn++ {
+		n := rand.Intn(guess) + 1
+
+		if n == guess {
+			if turn == 1 {
+				fmt.Println("🥇 FIRST TIME WINNER!!!")
+			} else {
+				fmt.Println("🎉  YOU WON!")
+			}
+			return
+		}
+	}
+
+	fmt.Println("☠️  YOU LOST... Try again?")
 }

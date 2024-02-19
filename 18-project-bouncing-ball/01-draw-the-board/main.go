@@ -12,39 +12,31 @@ import (
 	"fmt"
 )
 
+const (
+	width  int = 50
+	height int = 10
+
+	empty rune = ' '
+	ball       = '⚾'
+)
+
 func main() {
-	const (
-		width  = 50
-		height = 10
+	var cell rune
 
-		cellEmpty = ' '
-		cellBall  = '⚾'
-	)
+	board := make([][]bool, height)
 
-	var cell rune // current cell (for caching)
-
-	// create the board
-	board := make([][]bool, width)
-	for column := range board {
-		board[column] = make([]bool, height)
+	for row := range board {
+		board[row] = make([]bool, width)
 	}
 
-	// draw a smiley
-	board[12][2] = true
-	board[16][2] = true
-	board[14][4] = true
-	board[10][6] = true
-	board[18][6] = true
-	board[12][7] = true
-	board[14][7] = true
-	board[16][7] = true
+	board[9][49] = true
 
-	// print the board directly to the console
-	for y := range board[0] {
-		for x := range board {
-			cell = cellEmpty
-			if board[x][y] {
-				cell = cellBall
+	for _, row := range board {
+		for y := range row {
+			if row[y] == true {
+				cell = ball
+			} else {
+				cell = empty
 			}
 			fmt.Print(string(cell), " ")
 		}

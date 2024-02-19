@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Convert and Fix #3
 //
@@ -18,5 +20,5 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// fmt.Println(int(5.5))
+	fmt.Println(5.5)
 }

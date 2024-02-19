@@ -143,6 +143,6 @@ func main() {
 			fmt.Println()
 		}
 
-		time.Sleep(time.Second)
+		time.Sleep(time.Second / 10)
 	}
 }

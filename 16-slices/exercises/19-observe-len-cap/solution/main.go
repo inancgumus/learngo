@@ -71,7 +71,7 @@ func main() {
 
 	// --- #7 ---
 	// uncomment and see the error.
-	// _ = games[:cap(games)+1]
+	_ = games[:cap(games)+1]
 	// or:
 	// _ = games[:5]
 }

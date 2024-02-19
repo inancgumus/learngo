@@ -10,21 +10,19 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"log"
 	"os"
 )
 
 func main() {
 	args := os.Args[1:]
 	if len(args) == 0 {
-		fmt.Println("Provide a directory")
-		return
+		log.Fatal("Provide a directory")
 	}
 
-	files, err := ioutil.ReadDir(args[0])
+	files, err := os.ReadDir(args[0])
 	if err != nil {
-		fmt.Println(err)
-		return
+		log.Fatal(err)
 	}
 
 	// 1st: You can also take the average of the total file length
@@ -47,7 +45,8 @@ func main() {
 	// 1st B: To be exact, find the total size of all the empty files
 	var total int
 	for _, file := range files {
-		if file.Size() == 0 {
+		file_info, _ := file.Info()
+		if file_info.Size() == 0 {
 			// +1 for the newline character
 			// when printing the filename afterward
 			total += len(file.Name()) + 1
@@ -59,7 +58,8 @@ func main() {
 	names := make([]byte, 0, total)
 
 	for _, file := range files {
-		if file.Size() == 0 {
+		file_info, _ := file.Info()
+		if file_info.Size() == 0 {
 			name := file.Name()
 
 			names = append(names, name...)
@@ -67,10 +67,9 @@ func main() {
 		}
 	}
 
-	err = ioutil.WriteFile("out.txt", names, 0644)
+	err = os.WriteFile("out.txt", names, 0644)
 	if err != nil {
-		fmt.Println(err)
-		return
+		log.Fatal(err)
 	}
 
 	fmt.Printf("%s", names)

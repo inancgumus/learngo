@@ -8,6 +8,14 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"strconv"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: First Turn Winner
 //
@@ -26,4 +34,30 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	if len(os.Args) != 2 {
+		fmt.Println("Guess a number")
+		return
+	}
+	const guess_num = 10
+
+	guess, err := strconv.Atoi(os.Args[1])
+
+	if err != nil {
+		fmt.Println("Enter a number.")
+		return
+	}
+	for i := 0; i < guess_num; i++ {
+		ans := r.Intn(guess_num + 1)
+		fmt.Println(ans)
+		if ans == guess {
+			if i == 0 {
+				fmt.Println("You won at the first try!")
+			}
+			fmt.Println("You won!")
+			return
+		}
+	}
+	fmt.Println("You lost :(.")
 }

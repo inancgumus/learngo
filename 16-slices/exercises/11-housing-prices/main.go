@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Housing Prices
 //
@@ -76,4 +81,20 @@ Istanbul,500,10,5,1000000`
 
 		separator = ","
 	)
+	var table [][]string
+	column_names := strings.Split(header, ",")
+	table = append(table, column_names)
+	data_info := strings.Split(data, "\n")
+	for _, row := range data_info {
+		table = append(table, strings.Split(row, ","))
+	}
+	for ind, row := range table {
+		for _, col := range row {
+			fmt.Printf("%-15s", col)
+		}
+		fmt.Println()
+		if ind == 0 {
+			fmt.Println(strings.Repeat("=", 72))
+		}
+	}
 }

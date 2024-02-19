@@ -8,6 +8,13 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Math Tables
 //
@@ -105,4 +112,57 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args
+	if len(args) == 1 {
+		fmt.Println("Usage: [op=*/+-] [size]")
+		return
+	}
+	if len(args) == 2 {
+		fmt.Println("Size is missing")
+		fmt.Println("Usage: [op=*/+-] [size]")
+		return
+	}
+	command := args[1]
+	if strings.IndexAny(command, "*/+-%") == -1 {
+		fmt.Println("Invalid operator.")
+		fmt.Println("Valid ops one of: */+-")
+		return
+	}
+	size, error := strconv.Atoi(args[2])
+	if error != nil || size < 0 {
+		fmt.Println("Invalid inputs.")
+		return
+	}
+	fmt.Printf("%5s", "X")
+	for i := 0; i <= size; i++ {
+		fmt.Printf("%5d", i)
+	}
+	fmt.Println()
+
+	for i := 0; i <= size; i++ {
+		fmt.Printf("%5d", i)
+		for j := 0; j <= size; j++ {
+			switch command {
+			case "*":
+				fmt.Printf("%5d", i*j)
+			case "/":
+				if j != 0 {
+					fmt.Printf("%5d", i/j)
+				} else {
+					fmt.Printf("%5d", 0)
+				}
+			case "-":
+				fmt.Printf("%5d", i-j)
+			case "+":
+				fmt.Printf("%5d", i+j)
+			case "%":
+				if j != 0 {
+					fmt.Printf("%5d", i/j)
+				} else {
+					fmt.Printf("%5d", 0)
+				}
+			}
+		}
+		fmt.Println()
+	}
 }

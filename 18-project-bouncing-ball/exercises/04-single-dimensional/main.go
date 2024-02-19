@@ -67,10 +67,7 @@ func main() {
 	height-- // there is a 1 pixel border in my terminal
 
 	// create the board
-	board := make([][]bool, width)
-	for column := range board {
-		board[column] = make([]bool, height)
-	}
+	board := make([]bool, width*height)
 
 	// drawing buffer length
 	// *2 for extra spaces
@@ -97,7 +94,7 @@ func main() {
 		}
 
 		// remove the previous ball and put the new ball
-		board[px][py], board[ppx][ppy] = true, false
+		board[width*py+px], board[ppy*width+ppx] = true, false
 
 		// save the previous positions
 		ppx, ppy = px, py
@@ -106,15 +103,15 @@ func main() {
 		buf = buf[:0]
 
 		// draw the board into the buffer
-		for y := range board[0] {
-			for x := range board {
-				cell = cellEmpty
-				if board[x][y] {
-					cell = cellBall
-				}
-				buf = append(buf, cell, ' ')
+		for ind := range board {
+			cell = cellEmpty
+			if board[ind] {
+				cell = cellBall
 			}
-			buf = append(buf, '\n')
+			buf = append(buf, cell, ' ')
+			if (ind+1)%width == 0 {
+				buf = append(buf, '\n')
+			}
 		}
 
 		// print the buffer

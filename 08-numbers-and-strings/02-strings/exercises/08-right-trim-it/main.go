@@ -10,6 +10,8 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"unicode/utf8"
 )
 
 // ---------------------------------------------------------
@@ -33,5 +35,6 @@ func main() {
 	// it should print 5
 
 	name := "inanç           "
-	fmt.Println(len(name))
+	fmt.Println(utf8.RuneCountInString(strings.TrimRight(name, " ")))
+
 }

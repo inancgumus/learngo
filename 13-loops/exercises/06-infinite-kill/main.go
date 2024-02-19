@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Infinite Kill
 //
@@ -18,7 +24,9 @@ package main
 //     then kill it using CTRL+C keys
 //
 // RESTRICTIONS
+//
 //  1. Print one of those characters randomly: \ / | -
+//
 //  2. Before printing a character print also this
 //     escape sequence: \r
 //
@@ -35,22 +43,40 @@ package main
 //     Use Print or Printf instead.
 //
 // NOTE
-//  If this exercise is hard for you now, wait until the
-//  lucky number lecture. Even then so, then just skip it.
 //
-//  You can return back to it afterwards.
+//	If this exercise is hard for you now, wait until the
+//	lucky number lecture. Even then so, then just skip it.
+//
+//	You can return back to it afterwards.
 //
 // EXPECTED OUTPUT
-//  - The program should display the following messages in any order.
-//  - And, the first character (\, -, /, or |) should be randomly
-//    displayed.
-//  - \r or \f sequence will clear the line.
 //
-//  \ Please Wait. Processing....
-//  - Please Wait. Processing....
-//  / Please Wait. Processing....
-//  | Please Wait. Processing....
+//   - The program should display the following messages in any order.
+//
+//   - And, the first character (\, -, /, or |) should be randomly
+//     displayed.
+//
+//   - \r or \f sequence will clear the line.
+//
+//     \ Please Wait. Processing....
+//
+//   - Please Wait. Processing....
+//     / Please Wait. Processing....
+//     | Please Wait. Processing....
+//
 // ---------------------------------------------------------
+const message = `The program should display the following messages in any order.
+And, the first character (\, -, /, or |) should be randomly
+displayed.
+\r or \f sequence will clear the line.
+`
 
 func main() {
+	available_chars := [4]string{"\\", "-", "/", "|"}
+	fmt.Print(message)
+	for {
+		answer := rand.Intn(4)
+		fmt.Printf("%s Please Wait. Processing ....\n", available_chars[answer])
+		time.Sleep(250 * time.Millisecond)
+	}
 }

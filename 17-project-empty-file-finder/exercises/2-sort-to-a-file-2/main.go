@@ -13,6 +13,7 @@ import (
 	"io/ioutil"
 	"os"
 	"sort"
+	"strconv"
 )
 
 // ---------------------------------------------------------
@@ -65,7 +66,9 @@ func main() {
 	sort.Strings(items)
 
 	var data []byte
-	for _, s := range items {
+	for ind, s := range items {
+		data = strconv.AppendInt(data, int64(ind+1), 16)
+		data = append(data, '.', ' ')
 		data = append(data, s...)
 		data = append(data, '\n')
 	}

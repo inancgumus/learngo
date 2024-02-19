@@ -24,7 +24,7 @@ func main() {
 
 	name, mood := args[0], args[1]
 
-	moods := [...][3]string{
+	moods := [2][3]string{
 		{"happy 😀", "good 👍", "awesome 😎"},
 		{"sad 😞", "bad 👎", "terrible 😩"},
 	}

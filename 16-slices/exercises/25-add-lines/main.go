@@ -78,8 +78,15 @@ func main() {
 	//
 	// ~~~ CHANGE THIS CODE ~~~
 	//
-	fix := lyric
-	//
+	first, second, last := 8, 18, len(lyric)
+	fix := make([]string, last+3)
+	copy(fix, lyric[:first])
+	fix[first] = "\n"
+	copy(fix[first+1:second+1], lyric[first:second])
+	fix[second+1] = "\n"
+	copy(fix[second+2:last+2], lyric[second:last])
+	fix[last+2] = "\n"
+
 	// ===================================
 
 	// Currently, it prints every sentence on the same line.
@@ -106,6 +113,6 @@ func init() {
 	// s.Colors(false)     // if your editor is light background color then enable this
 	//
 	s.PrintBacking = true  // prints the backing arrays
-	s.MaxPerLine = 5       // prints max 15 elements per line
+	s.MaxPerLine = 15      // prints max 15 elements per line
 	s.SpaceCharacter = '⏎' // print this instead of printing a newline (for debugging)
 }

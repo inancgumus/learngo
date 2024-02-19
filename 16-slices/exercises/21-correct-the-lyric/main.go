@@ -67,7 +67,17 @@ func main() {
 	// DON'T TOUCH THIS:
 	lyric := strings.Fields(`all my troubles seemed so far away oh I believe in yesterday now it looks as though they are here to stay`)
 
-	// ADD YOUR CODE BELOW:
-	// ...
+	// new backing array
+	lyric = append([]string{"yesterday"}, lyric...)
+
+	middle := lyric[13:]
+	third := lyric[8:13]
+	lyric = lyric[:8]
+
+	// new backing array
+	last_part := append(middle, third...)
+
+	lyric = append(lyric, last_part...)
+
 	fmt.Printf("%s\n", lyric)
 }
