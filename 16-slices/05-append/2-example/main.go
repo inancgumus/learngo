@@ -15,7 +15,7 @@ import (
 func main() {
 	var todo []string
 
-	todo = append(todo, "sing")
+	todo = append(todo, "sling")
 
 	// you can only append elements with the same element type of the slice
 	// todo = append(todo, 42)
