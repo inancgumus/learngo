@@ -7,6 +7,13 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
+import (
+"fmt"
+"time"
+"strconv"
+"os"
+"rand"
+)
 
 // ---------------------------------------------------------
 // EXERCISE: First Turn Winner
@@ -26,4 +33,28 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+  if len(os.Args)==1{
+    fmt.Println("enter the guess number:")
+    return
 }
+  b:=os.Args[1]
+guess:=strconv.Atoi(b)
+  rand.Seed(time.Now().UnixNano())
+  n:=0
+  for i:=0;i<5;i++{
+    n=rand.Intn(guess+1)
+    if n==guess{
+      if i==0{
+        fmt.Println("XXXXX---A special bonus message---XXXXXX")
+       }else{
+         fmt.Println(" XXXXX---LUCKY GAME WINNER---XXXXX")
+       }
+}
+}
+if n!=guess{
+fmt.Println("BETTER LUCK NEXT TIME")
+}
+
+
+
+    
