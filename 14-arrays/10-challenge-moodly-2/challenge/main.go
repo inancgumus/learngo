@@ -65,15 +65,23 @@ func main() {
 		return
 	}
 
-	name := args[0]
+	name := args[1]
+	mood:=args[2]
+	if mood=="positive"{
+		mood=0
+		}else{
+		mood=1
+		}
+	
 
-	moods := [...]string{
-		"happy 😀", "good 👍", "awesome 😎",
-		"sad 😞", "bad 👎", "terrible 😩",
+	moods := [2][3]string{
+		
+		[3]string{"feels happy 😀", "feels good 👍", "feels awesome 😎"}
+		[3]string{"feels sad 😞", "feels bad 👎", "feels terrible 😩"}
 	}
 
 	rand.Seed(time.Now().UnixNano())
-	n := rand.Intn(len(moods))
+	n := rand.Intn(3)
 
-	fmt.Printf("%s feels %s\n", name, moods[n])
+	fmt.Printf("%s %s\n", name, moods[mood][n])
 }
