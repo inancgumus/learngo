@@ -7,7 +7,11 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
-
+import(
+  "fmt"
+  "os"
+  "sort"
+  )
 // ---------------------------------------------------------
 // EXERCISE: Sort and write items to a file
 //
@@ -48,4 +52,21 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+  inputslice:=os.Args[1:]
+  
+
+  
+  sort.Strings(inputslice)
+  var total int
+  for _,value:=range inputslice{
+    total+=len(value)
+    }
+  
+    
+  names:=make([]byte,0,total)
+  for _,value:=range inputslice{
+    names:=append(names,name...)
+    }
+  os.WriteFile("filename",names,0333)
+  return
 }
