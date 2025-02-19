@@ -71,17 +71,26 @@ func main() {
 			digits[sec/10], digits[sec%10],
 		}
 
-		for line := range clock[0] {
-			for index, digit := range clock {
-				// colon blink
-				next := clock[index][line]
-				if digit == colon && sec%2 == 0 {
-					next = "   "
-				}
-				fmt.Print(next, "  ")
+	if second%10 == 0 {
+		for i := 0; i < 5; i++ {
+			for j := 0; j < 8; j++ {
+				fmt.Print(alarm[j][i], " ")
 			}
 			fmt.Println()
 		}
+	} else {
+
+		for i := 0; i <= 4; i++ {
+			for _, digit := range clock {
+				if digit == 10 {
+					fmt.Print(seperator[i])
+				} else {
+					fmt.Print(digits[digit][i], " ")
+				}
+			}
+			fmt.Println()
+		}
+	}
 
 		time.Sleep(time.Second)
 	}
