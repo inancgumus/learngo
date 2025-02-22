@@ -1,10 +1,8 @@
-# Get my book!
+# Want to go beyond the basics? Get my book! ✨
 
 Go by Example: Programmer's guide to idiomatic and testable code.
 
 👉 https://github.com/inancgumus/gobyexample
-
-_This book is what you need once you wrap up the exercises in this repository._
 
 [![gobyexamplecover](https://github.com/inancgumus/learngo/assets/621232/14dd4bff-f6e1-489f-9aa5-1452b8219a11)](https://github.com/inancgumus/gobyexample)
 
