@@ -7,6 +7,9 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
+import (
+	"fmt"
+)
 
 // ---------------------------------------------------------
 // EXERCISE: Warm-up
@@ -43,4 +46,38 @@ func main() {
 	// Key        : Customer ID
 	// Element Key:
 	//   Key: Product ID Element: Quantity
+
+	phonenumber:=map[string]int{
+		"gupta":9412366123,
+		"aggarwal":9458840400,
+		"tayal":9412580180,
+		"mittal":9412200220,
+		}
+	product:=map[string]int{
+		"pen":1,
+		"ball":2,
+		"pencil":3,
+		"eraser":4
+		}
+	list:=map[string][]int{
+		"gupta":[]int{9412366123,9412104321,9412580180},
+		"mittal":[]int{9412200220,9458840400},
+		}
+	basket:=map[int]map[int]int{
+	345:map[int]int{
+		1:12,
+		2:4,
+		3:1,
+		4:1,
+		       },
+	567:map[int]int{
+		56:1,
+		45:3,
+		},
+	32:map[int]int{
+		44:12,
+		},
+  }
+	
+		
 }
