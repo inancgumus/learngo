@@ -61,7 +61,7 @@ func report() {
 	r()
 
 	runtime.GC()
-	fmt.Print(" > After Garbage Colletion  : ")
+	fmt.Print(" > After Garbage Collection  : ")
 	r()
 }
 
