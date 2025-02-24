@@ -7,7 +7,10 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
-
+import(
+	"fmt"
+	"os"
+	)
 // ---------------------------------------------------------
 // EXERCISE: Students
 //
@@ -73,4 +76,47 @@ func main() {
 	// slytherin    scorpius
 	// bobo         wizardry
 	// bobo         unwanted
+	args := os.Args
+	if len(args) <= 1 {
+		fmt.Println("Please type a Hogwarts house name.")
+		return
+	}
+	query := args[1]
+	gryffindor := []string{"weasly", "hagrid", "dumbledore", "lupin"}
+	hufflepuf := []string{"wemlock", "scamander", "helga", "diggory"}
+	ravenclaw := []string{"flitwick", "bagnold", "wildsmith", "montmorency"}
+	slytherin := []string{"horace", "nigellus", "higgs", "scorpius"}
+	bebo := []string{"wizardry", "unwanted"}
+
+	House := map[string][]string{
+		"gryffindor": gryffindor,
+		"hufflepuf":  hufflepuf,
+		"ravenclaw":  ravenclaw,
+		"slytherin":  slytherin,
+		"bebo":       bebo,
+	}
+	delete(House, "bebo")
+	slice, ok := House[query]
+	if !ok {
+
+		fmt.Println("Sorry. I don't know anything about bebo .")
+		return
+
+	} else {
+		fmt.Println()
+		fmt.Println()
+		fmt.Printf("~~~ %s students ~~~\n", query)
+
+		fmt.Println()
+		fmt.Println()
+		fmt.Println()
+
+		for _, value := range slice {
+
+			fmt.Printf("+ %s\n", value)
+		}
+	}
+		
+		
+			    
 }
