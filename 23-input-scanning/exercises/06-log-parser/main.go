@@ -46,4 +46,65 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+var lines int
+	var total int
+	slice := make([]string, 0)
+	sum := make(map[string]int)
+
+	in := bufio.NewScanner(os.Stdin)
+	for in.Scan() {
+		lines++
+		fields := strings.Fields(in.Text())
+		if len(fields) < 2 {
+			fmt.Println("ERROR")
+			return
+		}
+		domain := fields[0]
+		visits, err := strconv.Atoi(fields[1])
+		if visits < 0 || err != nil {
+			fmt.Printf("ERROR in %d", lines)
+			return
+		}
+		total += visits
+		if _, ok := sum[domain]; !ok {
+			slice = append(slice, domain)
+		}
+		sum[domain] = sum[domain] + visits
+
+	}
+	fmt.Printf("%-30s%10s", "DOMAIN", "VISITS")
+	fmt.Print(strings.Repeat("-", 45))
+
+	for value := range slice {
+		visits := sum[value]
+		fmt.Printf("%-20s%5d", value, visits)
+		fmt.Println()
+	}
+	if err := in.Err(); err != nil {
+		fmt.Println("ERROR")
+		return
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }
