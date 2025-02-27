@@ -7,7 +7,12 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
-
+import (
+  "fmt"
+  "bufio"
+  "os"
+  "strings"
+  )
 // ---------------------------------------------------------
 // EXERCISE: Grep Clone
 //
@@ -34,4 +39,16 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+  var pattern int
+  input:=bufio.NewScanner(os.Stdin)
+  if args:=os.Args[1:];len(args)==1{
+    pattern =args[0]
+    }else{
+    pattern=args[1]
+    }
+  for input.Scan(){
+    if strings.Contains(input.Text(),pattern){
+      fmt.Println(input.Text())
+      }
+    }
 }
