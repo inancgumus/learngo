@@ -7,7 +7,11 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
-
+import (
+  "fmt"
+  "bufio"
+  "os"
+  )
 // ---------------------------------------------------------
 // EXERCISE: Unique Words
 //
@@ -32,4 +36,14 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+  total,words:=0,make(map[string]int)
+  input:=bufio.NewScanner(os.Stdin)
+  input.Split(bufio.ScanWords)
+  for input.Scan(){
+    total++
+    words[input.Text()]++
+    }
+  unique:=len(words)
+  fmt.Printf("There are %d , %d are them unique",total,unique)
+    
 }
