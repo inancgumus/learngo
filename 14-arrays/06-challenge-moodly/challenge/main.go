@@ -7,6 +7,11 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
+import (
+	"fmt"
+	"math/rand"
+	"os"
+)
 
 // ---------------------------------------------------------
 // EXERCISE: Moodly
@@ -46,4 +51,14 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	name := os.Args
+	if len(os.Args) == 1 {
+		fmt.Print("[Your Name]")
+		return
+	}
+	moodly := [5]string{" feels happy 😀", " feels awesome 😎", " feels good 👍", " feels sad 😞", " feels terrible 😩","feels bad 👎"}
+	r := rand.Intn(5)
+	fmt.Printf("%s%s", name, moodly[r])
 }
+
+
