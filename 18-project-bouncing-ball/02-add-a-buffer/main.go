@@ -8,60 +8,42 @@
 
 package main
 
-import (
-	"fmt"
+import "fmt"
+
+const (
+	width  int = 50
+	height int = 10
+
+	empty rune = ' '
+	ball       = '⚾'
 )
 
 func main() {
-	const (
-		width  = 50
-		height = 10
+	var cell rune
 
-		cellEmpty = ' '
-		cellBall  = '⚾'
-	)
+	board := make([][]bool, height)
 
-	var cell rune // current cell (for caching)
-
-	// create the board
-	board := make([][]bool, width)
-	for column := range board {
-		board[column] = make([]bool, height)
+	for row := range board {
+		board[row] = make([]bool, width)
 	}
 
-	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	board[0][0] = true
+	board[9][0] = true
+	board[9][49] = true
+	board[0][49] = true
 
-	// draw a smiley
-	board[12][2] = true
-	board[16][2] = true
-	board[14][4] = true
-	board[10][6] = true
-	board[18][6] = true
-	board[12][7] = true
-	board[14][7] = true
-	board[16][7] = true
+	buffer := make([]rune, 0, (width*2+1)*height)
 
-	// use the loop for measuring the performance difference
-	for i := 0; i < 1000; i++ {
-		// rewind the buffer so that the program reuses it
-		buf = buf[:0]
-
-		// draw the board into the buffer
-		for y := range board[0] {
-			for x := range board {
-				cell = cellEmpty
-				if board[x][y] {
-					cell = cellBall
-				}
-				// fmt.Print(string(cell), " ")
-				buf = append(buf, cell, ' ')
+	for _, row := range board {
+		for y := range row {
+			if row[y] == true {
+				cell = ball
+			} else {
+				cell = empty
 			}
-			// fmt.Println()
-			buf = append(buf, '\n')
+			buffer = append(buffer, cell, ' ')
 		}
-
-		// print the buffer
-		fmt.Print(string(buf))
+		buffer = append(buffer, '\n')
 	}
+	fmt.Println(string(buffer))
 }

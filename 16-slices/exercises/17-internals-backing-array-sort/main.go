@@ -10,6 +10,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 // ---------------------------------------------------------
@@ -48,7 +49,7 @@ func main() {
 	}
 
 	fmt.Println("Original:", items)
-	// ADD YOUR CODE HERE
-	fmt.Println()
+	middle := items[5:8]
+	sort.Strings(middle)
 	fmt.Println("Sorted  :", items)
 }

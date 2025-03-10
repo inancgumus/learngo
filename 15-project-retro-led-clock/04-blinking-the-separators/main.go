@@ -98,12 +98,23 @@ func main() {
 		"███",
 	}
 
-	colon := placeholder{
+	colon1 := placeholder{
 		"   ",
 		" ░ ",
 		"   ",
 		" ░ ",
 		"   ",
+	}
+	colon2 := placeholder{
+		"   ",
+		" █ ",
+		"   ",
+		" █ ",
+		"   ",
+	}
+	colons := [...][5]string{
+		colon1,
+		colon2,
 	}
 
 	digits := [...]placeholder{
@@ -111,18 +122,18 @@ func main() {
 	}
 
 	screen.Clear()
-
+	colon_ind := 1
 	for {
 		screen.MoveTopLeft()
 
 		now := time.Now()
 		hour, min, sec := now.Hour(), now.Minute(), now.Second()
-
+		colon_ind = 1 - colon_ind
 		clock := [...]placeholder{
 			digits[hour/10], digits[hour%10],
-			colon,
+			colons[colon_ind],
 			digits[min/10], digits[min%10],
-			colon,
+			colons[colon_ind],
 			digits[sec/10], digits[sec%10],
 		}
 

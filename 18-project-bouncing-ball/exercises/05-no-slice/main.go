@@ -47,9 +47,8 @@ func main() {
 	)
 
 	var (
-		px, py   int        // ball position
-		ppx, ppy int        // previous ball position
-		vx, vy   = ivx, ivy // velocities
+		px, py int        // ball position
+		vx, vy = ivx, ivy // velocities
 
 		cell rune // current cell (for caching)
 	)
@@ -57,9 +56,6 @@ func main() {
 	width, height := screen.Size()
 	width /= runewidth.RuneWidth(cellBall)
 	height-- // there is a 1 pixel border in my terminal
-
-	// REMOVE THIS: create a single-dimensional board
-	board := make([]bool, width*height)
 
 	// create a drawing buffer
 	// *2 for extra spaces
@@ -81,20 +77,12 @@ func main() {
 			vy *= -1
 		}
 
-		// remove the previous ball and put the new ball
-		pos := py*width + px
-		ppos := ppy*width + ppx
-		ppx, ppy = px, py
-
-		board[pos], board[ppos] = true, false
-
 		buf = buf[:0]
 
 		for y := 0; y < height; y++ {
 			for x := 0; x < width; x++ {
 				cell = cellEmpty
-
-				if board[y*width+x] {
+				if (y*width + x) == py*width+px {
 					cell = cellBall
 				}
 

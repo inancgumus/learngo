@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Append #2
 //
@@ -46,4 +51,12 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	pizza_toppings := []string{}
+	Departure_times := []time.Time{}
+	now := time.Now()
+	pizza_toppings = append(pizza_toppings, "mushroom", "spinach")
+	Departure_times = append(Departure_times, now.Add(time.Hour*12), now.AddDate(1, 1, 2))
+
+	fmt.Printf("Pizza: %+v\n", pizza_toppings)
+	fmt.Printf("Department_times: %+v\n", Departure_times)
 }
