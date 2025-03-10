@@ -31,7 +31,7 @@ import (
 //
 // EXPECTED SLICE (NEW):
 //
-//   [yesterday all my troubles seemed so far \n away now it looks as though they are here to stay \n oh I believe in yesterday \n]
+//   [yesterday all my troubles seemed so far away \n now it looks as though they are here to stay \n oh I believe in yesterday \n]
 //
 //
 // CURRENT OUTPUT
