@@ -54,7 +54,7 @@ func main() {
 }
 
 // ioCopy streams from a file to another file.
-// we use it to stream from the standard input to ouput.
+// we use it to stream from the standard input to output.
 func ioCopy(dst, src *os.File) error {
 	// Use a fixed-length buffer to efficiently read from src stream in chunks.
 	buf := make([]byte, 32768)
