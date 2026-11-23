@@ -9,6 +9,16 @@
 package main
 
 type placeholder [5]string
+alarm := [8]placeholder{
+		[5]string{" ", " ", " ", " ", " "},
+		[5]string{"███", "█ █", "███", "█ █", "█ █"},
+		[5]string{"█  ", "█  ", "█  ", "█  ", "███"},
+		[5]string{"███", "█ █", "███", "█ █", "█ █"},
+		[5]string{"███", "█ █", "██ ", "█ █", "█ █"},
+		[5]string{"█ █", "███", "█ █", "█ █", "█ █"},
+		[5]string{"█  ", "█  ", "█  ", " ", "█  "},
+		[5]string{" ", " ", " ", " ", " "},
+	}
 
 var zero = placeholder{
 	"███",
