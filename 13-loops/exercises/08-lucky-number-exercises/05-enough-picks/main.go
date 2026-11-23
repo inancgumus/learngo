@@ -7,6 +7,13 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
+import(
+  "fmt"
+  "os"
+  "math/rand"
+  "strconv"
+  "time"
+  )
 
 // ---------------------------------------------------------
 // EXERCISE: Enough Picks
@@ -46,4 +53,34 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+  fmt.Println("-------GAME-----------GAME-------------GAME-------")
+	if len(os.Args) == 1 {
+		fmt.Println("Enter the guess number please:")
+		return
+	}
+	a := os.Args[1]
+  if a<10{
+    a=10
+    }
+	guess, err := strconv.Atoi(a)
+	if err != nil {
+		fmt.Println("xxx---ERROR---XXX")
+		return
+	}
+	i := 0
+	rand.Seed(time.Now().UnixNano())
+	for n := 0; n < 5; n++ {
+		i = rand.Intn(guess + 1)
+		if i == guess {
+			fmt.Println(guess)
+			fmt.Println("XXXXXXXX---LUCKY NUMBER GENERATOR---XXXXXXXXX")
+			break
+		}
+		fmt.Printf("%d ", i)
+	}
+	if i != guess {
+		fmt.Println()
+		fmt.Println("XXXXXXX---BETTER LUCK NEXT TIME---XXXXXXX")
+	}
+	fmt.Println()
 }
