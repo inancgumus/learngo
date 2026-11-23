@@ -6,8 +6,16 @@
 // In-person training  : https://www.linkedin.com/in/inancgumus/
 // Follow me on twitter: https://twitter.com/inancgumus
 
+
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
+const corpus = "The lazy cat watched the lazy dog sleep all afternoon in the warm, lazy sun."
 // ---------------------------------------------------------
 // EXERCISE: Case Insensitive Search
 //
@@ -24,5 +32,30 @@ package main
 //  the "lazy" keyword.
 // ---------------------------------------------------------
 
+
+
 func main() {
+	if len(os.Args) == 1 {
+		fmt.Println("Please enter the command line arguements:")
+		return
+	}
+	words := strings.Fields(corpus)
+	query := os.Args[1:]
+queries:
+	for _, q := range query {
+	// jumpto:
+		for i, w := range words {
+			b := strings.ToLower(q)
+			// switch q {
+			// case "and", "or", "it":
+			// 	break jumpto
+			// }
+			if w == b {
+				fmt.Printf("#%-2d : %q\n", i+1, b)
+				// break queries
+				break queries
+			}
+		}
+	}
+
 }
