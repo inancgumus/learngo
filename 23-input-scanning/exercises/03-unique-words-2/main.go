@@ -37,4 +37,18 @@ func main() {
 	// [^A-Za-z]+
 	//
 	// Matches to any character but upper case and lower case letters
+	total, words := 0, make(map[string]int)
+	input := bufio.NewScanner(os.Stdin)
+	input.Split(bufio.ScanWords)
+	re:=regexp.MustCompile('[^a-zA-Z\\s]+')
+	for input.Scan() {
+		text:=input.Text()
+		text=strings.ToLower(text)
+		text=re.ReplaceAllString(text,"")
+		total++
+		words[text]++
+	}
+	unique := len(words)
+	fmt.Printf("There are %d , %d are them unique", total, unique)
+
 }
