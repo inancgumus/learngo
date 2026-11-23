@@ -48,7 +48,7 @@ Enjoy!
 
 ### Add the source code files
 * Create a new `code main.go` file.
-  * This is going to the create the file in the folder, and open up it in the Visual Studio Code.
+  * This is going to create the file in the folder, and open it in Visual Studio Code.
 * And add the following code to it and save it.
 
 ```go
