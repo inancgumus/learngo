@@ -7,7 +7,11 @@
 // Follow me on twitter: https://twitter.com/inancgumus
 
 package main
-
+import (
+  "fmt"
+  "strings"
+  "os"
+  )
 // ---------------------------------------------------------
 // EXERCISE: Quit
 //
@@ -37,4 +41,20 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+  args:=os.Args[1:]
+  
+  if len(args)<2{
+    fmt.Println("Errror")
+    return
+    }
+  words:=make(map[string]int)
+  for index,_:=range args{
+    fmt.Println(args[index])
+    key:=strings.ToLower(args[index])
+    
+    if _,ok:=words[key];ok{
+      fmt.Println("TWICE!")
+      return
+      }
+    }
 }
