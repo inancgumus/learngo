@@ -62,6 +62,9 @@ func main() {
 ```
 
 ### Run the program
+
+Note: You may need to install Gopls if you're using Visual Studio Code in orde to run your program.
+
 * Finally, return back to the command-line.
   * Run it like this: `go run main.go`
 * If you create other files and run them all, you can use this command:
