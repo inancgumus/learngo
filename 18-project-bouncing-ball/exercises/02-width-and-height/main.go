@@ -12,6 +12,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/mattn/go-runewidth"
+
 	"github.com/inancgumus/screen"
 )
 
@@ -71,28 +73,23 @@ import (
 
 func main() {
 	const (
-		width  = 50
-		height = 10
-
 		cellEmpty = ' '
 		cellBall  = '⚾'
 
 		maxFrames = 1200
 		speed     = time.Second / 20
-
-		// drawing buffer length
-		//
-		// *2 for extra spaces
-		// +1 for newlines
-		bufLen = (width*2 + 1) * height
 	)
 
 	var (
-		px, py int    // ball position
-		vx, vy = 1, 1 // velocities
+		width, height = screen.Size()
+		px, py        int    // ball position
+		vx, vy        = 1, 1 // velocities
 
-		cell rune // current cell (for caching)
+		cell      rune // current cell (for caching)
+		ballWidth = runewidth.RuneWidth(cellBall)
 	)
+	width /= ballWidth
+	bufLen := (width*2 + 1) * height
 
 	// create the board
 	board := make([][]bool, width)

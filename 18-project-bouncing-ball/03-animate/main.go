@@ -15,80 +15,63 @@ import (
 	"github.com/inancgumus/screen"
 )
 
+const (
+	width  int = 50
+	height int = 10
+
+	empty rune = ' '
+	ball       = '⚾'
+
+	maxFrames = 1000
+	speed     = time.Second / 20
+)
+
 func main() {
-	const (
-		width  = 50
-		height = 10
-
-		cellEmpty = ' '
-		cellBall  = '⚾'
-
-		maxFrames = 1200
-		speed     = time.Second / 20
-	)
-
 	var (
-		px, py int    // ball position
-		vx, vy = 1, 1 // velocities
-
-		cell rune // current cell (for caching)
+		cell   rune
+		px, py int
+		vx, vy = 1, 1
 	)
 
-	// create the board
-	board := make([][]bool, width)
-	for column := range board {
-		board[column] = make([]bool, height)
+	board := make([][]bool, height)
+
+	for row := range board {
+		board[row] = make([]bool, width)
 	}
 
-	// create a drawing buffer
-	buf := make([]rune, 0, width*height)
+	buffer := make([]rune, 0, (width*2+1)*height)
 
-	// clear the screen once
 	screen.Clear()
 
 	for i := 0; i < maxFrames; i++ {
-		// calculate the next ball position
 		px += vx
 		py += vy
 
-		// when the ball hits a border reverse its direction
-		if px <= 0 || px >= width-1 {
+		if px == 0 || px == height-1 {
 			vx *= -1
 		}
-		if py <= 0 || py >= height-1 {
+
+		if py == 0 || py == width-1 {
 			vy *= -1
 		}
 
-		// remove the previous ball
-		for y := range board[0] {
-			for x := range board {
-				board[x][y] = false
-			}
-		}
-
-		// put the new ball
 		board[px][py] = true
-
-		// rewind the buffer (allow appending from the beginning)
-		buf = buf[:0]
-
-		// draw the board into the buffer
-		for y := range board[0] {
-			for x := range board {
-				cell = cellEmpty
-				if board[x][y] {
-					cell = cellBall
+		buffer = buffer[:0]
+		for _, row := range board {
+			for y := range row {
+				if row[y] == true {
+					cell = ball
+				} else {
+					cell = empty
 				}
-				buf = append(buf, cell, ' ')
+				buffer = append(buffer, cell, ' ')
 			}
-			buf = append(buf, '\n')
+			buffer = append(buffer, '\n')
 		}
-
-		// print the buffer
 		screen.MoveTopLeft()
-		fmt.Print(string(buf))
+		fmt.Println(string(buffer))
+		board[px][py] = false
 
-		// slow down the animation
 		time.Sleep(speed)
 	}
 }

@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Find the Average
 //
@@ -40,4 +46,31 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	input_args := os.Args[1:]
+	switch n := len(input_args); {
+	case n == 0:
+		fmt.Println("Please tell me numbers (maximum 5 numbers).")
+		return
+	case n > 5:
+		fmt.Print("Only 5 numbers can be provided.")
+		return
+	}
+	numbers := [5]int{}
+	sum := 0
+	cnt := 0
+	for ind, num := range input_args {
+		val, err := strconv.Atoi(num)
+		if err != nil {
+			continue
+		}
+		numbers[ind] = val
+		sum += val
+		cnt += 1
+	}
+	fmt.Printf("Your numbers: %v\n", numbers)
+	if cnt == 0 {
+		fmt.Println("Average: 0")
+		return
+	}
+	fmt.Printf("Average: %d\n", sum/cnt)
 }

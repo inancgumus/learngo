@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Find the Rectangle's Perimeter
 //
@@ -33,12 +35,15 @@ package main
 func main() {
 	// UNCOMMENT THE CODE BELOW:
 
-	// var (
-	// 	perimeter        int
-	// 	width, height = 5, 6
-	// )
+	var (
+		perimeter     int
+		width, height = 5, 6
+	)
 
 	// USE THE VARIABLES ABOVE WHEN CALCULATING YOUR RESULT
 
+	perimeter = (width + height) * 2
+
 	// ADD YOUR CODE BELOW
+	fmt.Println(perimeter)
 }

@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Observe the capacity growth
 //
@@ -39,4 +44,20 @@ package main
 //
 // ---------------------------------------------------------
 
-func main() {}
+func main() {
+	//  1. Create a nil slice
+	var my_slice []int
+	var initial_cap float64 = 0.
+	fmt.Printf("len:%d              cap:%d              growth:%.2f\n",
+		len(my_slice), cap(my_slice), (float64(cap(my_slice)))/initial_cap)
+	for i := 0; i < 1e7; i++ {
+		my_slice = append(my_slice, rand.Intn(1e7+1))
+		if initial_cap != float64(cap(my_slice)) {
+			fmt.Printf("len:%d              cap:%d              growth:%.2f\n",
+				len(my_slice), cap(my_slice), (float64(cap(my_slice)))/initial_cap)
+			initial_cap = float64(cap(my_slice))
+
+		}
+	}
+
+}

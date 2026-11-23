@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: ToLowercase
 //
@@ -28,4 +34,7 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	first_arg := os.Args[1]
+
+	fmt.Println(strings.ToLower(first_arg))
 }

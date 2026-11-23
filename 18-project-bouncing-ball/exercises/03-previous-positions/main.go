@@ -97,13 +97,6 @@ func main() {
 			vy *= -1
 		}
 
-		// remove the previous ball
-		for y := range board[0] {
-			for x := range board {
-				board[x][y] = false
-			}
-		}
-
 		// put the new ball
 		board[px][py] = true
 
@@ -125,6 +118,7 @@ func main() {
 		// print the buffer
 		screen.MoveTopLeft()
 		fmt.Print(string(buf))
+		board[px][py] = false
 
 		// slow down the animation
 		time.Sleep(speed)

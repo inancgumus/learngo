@@ -10,7 +10,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
@@ -20,17 +19,17 @@ func main() {
 		fmt.Println("Provide a directory")
 		return
 	}
-
-	files, err := ioutil.ReadDir(args[0])
+	root_dir := args[0]
+	files, err := os.ReadDir(root_dir)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	for _, file := range files {
-		if file.Size() == 0 {
-			name := file.Name()
-			fmt.Println(name)
+	for _, f := range files {
+		file_info, _ := f.Info()
+		if file_info.Size() == 0 {
+			fmt.Println("Empty_file: ", f.Name())
 		}
 	}
 }

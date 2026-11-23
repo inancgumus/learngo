@@ -12,6 +12,8 @@ import (
 	"fmt"
 
 	"github.com/inancgumus/learngo/16-slices/exercises/23-limit-the-backing-array-sharing/api"
+
+	s "github.com/inancgumus/prettyslice"
 )
 
 // ---------------------------------------------------------
@@ -81,7 +83,7 @@ func main() {
 	// DO NOT CHANGE ANYTHING IN THIS CODE.
 
 	// get the first three elements from api.temps
-	received := api.Read(0, 3)
+	received := api.Read(0, 3, 3)
 
 	// append changes the api package's temps slice's
 	// backing array as well.
@@ -89,4 +91,12 @@ func main() {
 
 	fmt.Println("api.temps     :", api.All())
 	fmt.Println("main.received :", received)
+	s.Show("api.temps", api.All())
+	s.Show("main.received", received)
+}
+
+func init() {
+	s.PrintBacking = true // prints the backing array
+	s.MaxPerLine = 10     // prints 10 slice elements per line
+	s.Width = 60
 }

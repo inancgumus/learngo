@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Number Sorter
 //
@@ -47,4 +53,29 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	input_args := os.Args[1:]
+	if len(input_args) < 1 {
+		fmt.Println("Please give me up to 5 numbers.")
+		return
+	}
+	if len(input_args) > 5 {
+		fmt.Println("Sorry. Go arrays are fixed. So, for now, I'm only supporting sorting 5 numbers...")
+		return
+	}
+	numbers := [5]int{}
+	for ind, number := range input_args {
+		num, err := strconv.Atoi(number)
+		if err != nil {
+			continue
+		}
+		numbers[ind] = num
+	}
+	for sorted_ind := 4; sorted_ind > 0; sorted_ind-- {
+		for ind := 0; ind < sorted_ind; ind++ {
+			if numbers[ind] > numbers[ind+1] {
+				numbers[ind], numbers[ind+1] = numbers[ind+1], numbers[ind]
+			}
+		}
+	}
+	fmt.Printf("%v\n", numbers)
 }
